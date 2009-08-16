@@ -1,0 +1,23 @@
+ 
+Creating db...
+ 
+Контекст базы данных изменен на "master".
+Свойство "DEFAULT" объекта файловая группа было установлено.
+Выполнение DBCC завершено. Если DBCC выдает сообщения об ошибках, обратитесь к системному администратору.
+ 
+Creating Users...
+ 
+Контекст базы данных изменен на "master".
+ 
+Creating db owner user...
+Контекст базы данных изменен на "ANGEL_TO_001_DEV".
+ 
+Creating db app user...
+ 
+Creating Tables...
+ 
+ 
+Creating SYS_DC...
+ 
+Creating table SYS_DC
+Creating primary key for table SYS_DC

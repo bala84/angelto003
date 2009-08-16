@@ -1,0 +1,5 @@
+G:\work\Angel_to_003\d-Source\Angel_to_003\bin\Debug\DataSourceModule.dll
+G:\work\Angel_to_003\d-Source\Angel_to_003\bin\Debug\DataSourceModule.pdb
+G:\work\Angel_to_003\d-Source\Angel_to_003\Source\DataSourceModule\DataSourceModule\obj\Debug\ResolveAssemblyReference.cache
+G:\work\Angel_to_003\d-Source\Angel_to_003\Source\DataSourceModule\DataSourceModule\obj\Debug\DataSourceModule.dll
+G:\work\Angel_to_003\d-Source\Angel_to_003\Source\DataSourceModule\DataSourceModule\obj\Debug\DataSourceModule.pdb

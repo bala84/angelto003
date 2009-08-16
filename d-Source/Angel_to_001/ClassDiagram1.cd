@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="Angel_to_001.ANGEL_TO_001_DEVDataSet" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ANGEL_TO_001_DataSet.cs</FileName>
+      <HashCode>AAAAAAAAAwAAAAJABAAAQQAQAAgCQBgAAAAAAAMABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Angel_to_001.ANGEL_TO_001_DEVDataSetTableAdapters.utfVPRT_EMPLOYEETableAdapter" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAGAAEAAAAAMAIAAAAAAAACAICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+</ClassDiagram>

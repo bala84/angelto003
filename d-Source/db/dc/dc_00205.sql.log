@@ -1,0 +1,42 @@
+'instance_name' scripting variable not defined.
+'dba_user_pwd' scripting variable not defined.
+Changed database context to 'ANGEL_TO_001_TEST4'.
+ 
+===============================================================================
+=          Starting script dc_00205.sql                                =
+===============================================================================
+ 
+start_time             
+-----------------------
+2008-12-26 14:29:01.013
+
+(1 rows affected)
+ 
+user                                                                                                                            
+--------------------------------------------------------------------------------------------------------------------------------
+ANGEL_TO_001_TEST_OWNER4                                                                                                        
+
+(1 rows affected)
+ 
+Msg 2714, Level 16, State 3, Server SRV-TS, Procedure uspVCAR_TS_TYPE_ROUTE_MASTER_DeleteById, Line 27
+There is already an object named 'uspVCAR_TS_TYPE_ROUTE_MASTER_DeleteById' in the database.
+ 
+===============================================================================
+=          Registering devchange                                              =
+===============================================================================
+ 
+Registering devchange.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 2
+Violation of PRIMARY KEY constraint 'SYS_DC_PK'. Cannot insert duplicate key in object 'dbo.sys_dc'.
+The statement has been terminated.
+ 
+finish_time            
+-----------------------
+2008-12-26 14:29:01.123
+
+(1 rows affected)
+ 
+===============================================================================
+=          Script dc_00205.sql finished                                =
+===============================================================================
+ 

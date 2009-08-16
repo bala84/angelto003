@@ -1,0 +1,2574 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="Employee_work_hour_amount_mech"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Landscape"
+		 pageWidth="1500"
+		 pageHeight="595"
+		 columnWidth="1440"
+		 columnSpacing="0"
+		 leftMargin="30"
+		 rightMargin="30"
+		 topMargin="20"
+		 bottomMargin="20"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false"
+		 isIgnorePagination="true">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+	<parameter name="start_date" isForPrompting="true" class="java.util.Date">
+		<defaultValueExpression ><![CDATA[null]]></defaultValueExpression>
+	</parameter>
+	<parameter name="end_date" isForPrompting="true" class="java.util.Date">
+		<defaultValueExpression ><![CDATA[null]]></defaultValueExpression>
+	</parameter>
+	<parameter name="employee_type_id" isForPrompting="true" class="java.lang.Double"/>
+	<parameter name="employee_type_sname" isForPrompting="false" class="java.lang.String">
+		<defaultValueExpression ><![CDATA["по всем должностям"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="organization_id" isForPrompting="true" class="java.lang.Double"/>
+	<parameter name="organization_sname" isForPrompting="false" class="java.lang.String">
+		<defaultValueExpression ><![CDATA["по всем организациям"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="report_type" isForPrompting="true" class="java.lang.String"/>
+	<queryString><![CDATA[DECLARE	@return_value int
+
+EXEC	@return_value = [dbo].[uspVREP_EMPLOYEE_HOUR_AMOUNT_MECH_SelectAll]
+		@p_start_date = $P{start_date},
+		@p_end_date = $P{end_date},
+		@p_employee_type_id = $P{employee_type_id},
+		@p_organization_id = $P{organization_id},
+		@p_report_type = $P{report_type}]]></queryString>
+
+	<field name="month_created" class="java.sql.Timestamp"/>
+	<field name="employee_id" class="java.math.BigDecimal"/>
+	<field name="person_id" class="java.math.BigDecimal"/>
+	<field name="value" class="java.lang.String"/>
+	<field name="lastname" class="java.lang.String"/>
+	<field name="name" class="java.lang.String"/>
+	<field name="surname" class="java.lang.String"/>
+	<field name="organization_id" class="java.math.BigDecimal"/>
+	<field name="organization_sname" class="java.lang.String"/>
+	<field name="employee_type_id" class="java.math.BigDecimal"/>
+	<field name="employee_type_sname" class="java.lang.String"/>
+	<field name="day_1" class="java.math.BigDecimal"/>
+	<field name="day_2" class="java.math.BigDecimal"/>
+	<field name="day_3" class="java.math.BigDecimal"/>
+	<field name="day_4" class="java.math.BigDecimal"/>
+	<field name="day_5" class="java.math.BigDecimal"/>
+	<field name="day_6" class="java.math.BigDecimal"/>
+	<field name="day_7" class="java.math.BigDecimal"/>
+	<field name="day_8" class="java.math.BigDecimal"/>
+	<field name="day_9" class="java.math.BigDecimal"/>
+	<field name="day_10" class="java.math.BigDecimal"/>
+	<field name="day_11" class="java.math.BigDecimal"/>
+	<field name="day_12" class="java.math.BigDecimal"/>
+	<field name="day_13" class="java.math.BigDecimal"/>
+	<field name="day_14" class="java.math.BigDecimal"/>
+	<field name="day_15" class="java.math.BigDecimal"/>
+	<field name="day_16" class="java.math.BigDecimal"/>
+	<field name="day_17" class="java.math.BigDecimal"/>
+	<field name="day_18" class="java.math.BigDecimal"/>
+	<field name="day_19" class="java.math.BigDecimal"/>
+	<field name="day_20" class="java.math.BigDecimal"/>
+	<field name="day_21" class="java.math.BigDecimal"/>
+	<field name="day_22" class="java.math.BigDecimal"/>
+	<field name="day_23" class="java.math.BigDecimal"/>
+	<field name="day_24" class="java.math.BigDecimal"/>
+	<field name="day_25" class="java.math.BigDecimal"/>
+	<field name="day_26" class="java.math.BigDecimal"/>
+	<field name="day_27" class="java.math.BigDecimal"/>
+	<field name="day_28" class="java.math.BigDecimal"/>
+	<field name="day_29" class="java.math.BigDecimal"/>
+	<field name="day_30" class="java.math.BigDecimal"/>
+	<field name="day_31" class="java.math.BigDecimal"/>
+	<field name="month_sum" class="java.math.BigDecimal"/>
+	<field name="first_half_month_sum" class="java.math.BigDecimal"/>
+	<field name="scnd_half_month_sum" class="java.math.BigDecimal"/>
+
+	<variable name="Employee_month_sum_count" class="java.math.BigDecimal" resetType="Group" resetGroup="employee" calculation="Sum">
+		<variableExpression><![CDATA[$F{month_sum}]]></variableExpression>
+	</variable>
+	<variable name="day_1_sum" class="java.math.BigDecimal" resetType="Group" resetGroup="employee" calculation="Sum">
+		<variableExpression><![CDATA[$F{day_1}]]></variableExpression>
+	</variable>
+	<variable name="day_2_sum" class="java.math.BigDecimal" resetType="Group" resetGroup="employee" calculation="Sum">
+		<variableExpression><![CDATA[$F{day_2}]]></variableExpression>
+	</variable>
+	<variable name="day_3_sum" class="java.math.BigDecimal" resetType="Group" resetGroup="employee" calculation="Sum">
+		<variableExpression><![CDATA[$F{day_3}]]></variableExpression>
+	</variable>
+	<variable name="day_4_sum" class="java.math.BigDecimal" resetType="Group" resetGroup="employee" calculation="Sum">
+		<variableExpression><![CDATA[$F{day_4}]]></variableExpression>
+	</variable>
+	<variable name="day_5_sum" class="java.math.BigDecimal" resetType="Group" resetGroup="employee" calculation="Sum">
+		<variableExpression><![CDATA[$F{day_5}]]></variableExpression>
+	</variable>
+	<variable name="day_6_sum" class="java.math.BigDecimal" resetType="Group" resetGroup="employee" calculation="Sum">
+		<variableExpression><![CDATA[$F{day_6}]]></variableExpression>
+	</variable>
+	<variable name="day_7_sum" class="java.math.BigDecimal" resetType="Group" resetGroup="employee" calculation="Sum">
+		<variableExpression><![CDATA[$F{day_7}]]></variableExpression>
+	</variable>
+	<variable name="day_8_sum" class="java.math.BigDecimal" resetType="Group" resetGroup="employee" calculation="Sum">
+		<variableExpression><![CDATA[$F{day_8}]]></variableExpression>
+	</variable>
+	<variable name="day_9_sum" class="java.math.BigDecimal" resetType="Group" resetGroup="employee" calculation="Sum">
+		<variableExpression><![CDATA[$F{day_9}]]></variableExpression>
+	</variable>
+	<variable name="day_10_sum" class="java.math.BigDecimal" resetType="Group" resetGroup="employee" calculation="Sum">
+		<variableExpression><![CDATA[$F{day_10}]]></variableExpression>
+	</variable>
+	<variable name="day_11_sum" class="java.math.BigDecimal" resetType="Group" resetGroup="employee" calculation="Sum">
+		<variableExpression><![CDATA[$F{day_11}]]></variableExpression>
+	</variable>
+	<variable name="day_12_sum" class="java.math.BigDecimal" resetType="Group" resetGroup="employee" calculation="Sum">
+		<variableExpression><![CDATA[$F{day_12}]]></variableExpression>
+	</variable>
+	<variable name="day_13_sum" class="java.math.BigDecimal" resetType="Group" resetGroup="employee" calculation="Sum">
+		<variableExpression><![CDATA[$F{day_13}]]></variableExpression>
+	</variable>
+	<variable name="day_14_sum" class="java.math.BigDecimal" resetType="Group" resetGroup="employee" calculation="Sum">
+		<variableExpression><![CDATA[$F{day_14}]]></variableExpression>
+	</variable>
+	<variable name="day_15_sum" class="java.math.BigDecimal" resetType="Group" resetGroup="employee" calculation="Sum">
+		<variableExpression><![CDATA[$F{day_15}]]></variableExpression>
+	</variable>
+	<variable name="day_16_sum" class="java.math.BigDecimal" resetType="Group" resetGroup="employee" calculation="Sum">
+		<variableExpression><![CDATA[$F{day_16}]]></variableExpression>
+	</variable>
+	<variable name="day_17_sum" class="java.math.BigDecimal" resetType="Group" resetGroup="employee" calculation="Sum">
+		<variableExpression><![CDATA[$F{day_17}]]></variableExpression>
+	</variable>
+	<variable name="day_18_sum" class="java.math.BigDecimal" resetType="Group" resetGroup="employee" calculation="Sum">
+		<variableExpression><![CDATA[$F{day_18}]]></variableExpression>
+	</variable>
+	<variable name="day_19_sum" class="java.math.BigDecimal" resetType="Group" resetGroup="employee" calculation="Sum">
+		<variableExpression><![CDATA[$F{day_19}]]></variableExpression>
+	</variable>
+	<variable name="day_20_sum" class="java.math.BigDecimal" resetType="Group" resetGroup="employee" calculation="Sum">
+		<variableExpression><![CDATA[$F{day_20}]]></variableExpression>
+	</variable>
+	<variable name="day_21_sum" class="java.math.BigDecimal" resetType="Group" resetGroup="employee" calculation="Sum">
+		<variableExpression><![CDATA[$F{day_21}]]></variableExpression>
+	</variable>
+	<variable name="day_22_sum" class="java.math.BigDecimal" resetType="Group" resetGroup="employee" calculation="Sum">
+		<variableExpression><![CDATA[$F{day_22}]]></variableExpression>
+	</variable>
+	<variable name="day_23_sum" class="java.math.BigDecimal" resetType="Group" resetGroup="employee" calculation="Sum">
+		<variableExpression><![CDATA[$F{day_23}]]></variableExpression>
+	</variable>
+	<variable name="day_24_sum" class="java.math.BigDecimal" resetType="Group" resetGroup="employee" calculation="Sum">
+		<variableExpression><![CDATA[$F{day_24}]]></variableExpression>
+	</variable>
+	<variable name="day_25_sum" class="java.math.BigDecimal" resetType="Group" resetGroup="employee" calculation="Sum">
+		<variableExpression><![CDATA[$F{day_25}]]></variableExpression>
+	</variable>
+	<variable name="day_26_sum" class="java.math.BigDecimal" resetType="Group" resetGroup="employee" calculation="Sum">
+		<variableExpression><![CDATA[$F{day_26}]]></variableExpression>
+	</variable>
+	<variable name="day_27_sum" class="java.math.BigDecimal" resetType="Group" resetGroup="employee" calculation="Sum">
+		<variableExpression><![CDATA[$F{day_27}]]></variableExpression>
+	</variable>
+	<variable name="day_28_sum" class="java.math.BigDecimal" resetType="Group" resetGroup="employee" calculation="Sum">
+		<variableExpression><![CDATA[$F{day_28}]]></variableExpression>
+	</variable>
+	<variable name="day_29_sum" class="java.math.BigDecimal" resetType="Group" resetGroup="employee" calculation="Sum">
+		<variableExpression><![CDATA[$F{day_29}]]></variableExpression>
+	</variable>
+	<variable name="day_30_sum" class="java.math.BigDecimal" resetType="Group" resetGroup="employee" calculation="Sum">
+		<variableExpression><![CDATA[$F{day_30}]]></variableExpression>
+	</variable>
+	<variable name="day_31_sum" class="java.math.BigDecimal" resetType="Group" resetGroup="employee" calculation="Sum">
+		<variableExpression><![CDATA[$F{day_31}]]></variableExpression>
+	</variable>
+	<variable name="org_month_sum_count" class="java.math.BigDecimal" resetType="Group" resetGroup="organization_sname" calculation="Sum">
+		<variableExpression><![CDATA[$F{month_sum}]]></variableExpression>
+	</variable>
+	<variable name="Employee_half_month_sum_count" class="java.math.BigDecimal" resetType="Group" resetGroup="employee" calculation="Sum">
+		<variableExpression><![CDATA[$F{first_half_month_sum}]]></variableExpression>
+	</variable>
+	<variable name="Employee_scnd_half_month_sum_count" class="java.math.BigDecimal" resetType="Group" resetGroup="employee" calculation="Sum">
+		<variableExpression><![CDATA[$F{scnd_half_month_sum}]]></variableExpression>
+	</variable>
+	<variable name="first_half_org_month_sum_count" class="java.math.BigDecimal" resetType="Group" resetGroup="organization_sname" calculation="Sum">
+		<variableExpression><![CDATA[$F{first_half_month_sum}]]></variableExpression>
+	</variable>
+	<variable name="scnd_half_org_month_sum_count" class="java.math.BigDecimal" resetType="Group" resetGroup="organization_sname" calculation="Sum">
+		<variableExpression><![CDATA[$F{scnd_half_month_sum}]]></variableExpression>
+	</variable>
+	<variable name="DAY_FORMULA" class="java.lang.String" resetType="None" calculation="Nothing">
+		<variableExpression><![CDATA["IF(INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN()))=0;SUBSTITUTE(0;0;' ');INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN())))"]]></variableExpression>
+	</variable>
+
+		<group  name="month_created" >
+			<groupExpression><![CDATA[$F{month_created}]]></groupExpression>
+			<groupHeader>
+			<band height="25"  isSplitAllowed="true" >
+				<rectangle radius="0" >
+					<reportElement
+						x="401"
+						y="2"
+						width="936"
+						height="23"
+						forecolor="#CCFFFF"
+						backcolor="#CCFFFF"
+						key="rectangle"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="1"
+						y="2"
+						width="147"
+						height="23"
+						forecolor="#000000"
+						backcolor="#CCFFFF"
+						key="staticText"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement>
+						<font size="16" pdfEncoding ="Cp1251"/>
+					</textElement>
+				<text><![CDATA[Месяц создания:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="148"
+						y="2"
+						width="253"
+						height="23"
+						forecolor="#000000"
+						backcolor="#CCFFFF"
+						key="textField"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement>
+						<font size="16" pdfEncoding ="Cp1251"/>
+					</textElement>
+				<textFieldExpression   class="java.sql.Timestamp"><![CDATA[$F{month_created}]]></textFieldExpression>
+				</textField>
+			</band>
+			</groupHeader>
+			<groupFooter>
+			<band height="5"  isSplitAllowed="true" >
+				<line direction="BottomUp">
+					<reportElement
+						x="1"
+						y="1"
+						width="1439"
+						height="0"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="line"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+			</band>
+			</groupFooter>
+		</group>
+		<group  name="organization_sname" >
+			<groupExpression><![CDATA[$F{organization_sname}]]></groupExpression>
+			<groupHeader>
+			<band height="41"  isSplitAllowed="true" >
+				<rectangle>
+					<reportElement
+						x="401"
+						y="0"
+						width="936"
+						height="23"
+						forecolor="#9999FF"
+						backcolor="#9999FF"
+						key="rectangle"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="0"
+						y="0"
+						width="148"
+						height="23"
+						forecolor="#000000"
+						backcolor="#9999FF"
+						key="staticText"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Left">
+						<font size="12" pdfEncoding ="Cp1251"/>
+					</textElement>
+				<text><![CDATA[Организация:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" pattern="" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="148"
+						y="0"
+						width="253"
+						height="23"
+						forecolor="#000000"
+						backcolor="#9999FF"
+						key="textField"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement>
+						<font size="12" pdfEncoding ="Cp1251"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{organization_sname}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="0"
+						y="23"
+						width="100"
+						height="17"
+						forecolor="#000000"
+						backcolor="#CCCCCC"
+						key="staticText"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font size="12" pdfEncoding ="Cp1251"/>
+					</textElement>
+				<text><![CDATA[Фамилия:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="100"
+						y="23"
+						width="103"
+						height="17"
+						forecolor="#000000"
+						backcolor="#CCCCCC"
+						key="staticText"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font size="12" pdfEncoding ="Cp1251"/>
+					</textElement>
+				<text><![CDATA[Имя:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="203"
+						y="23"
+						width="98"
+						height="17"
+						forecolor="#000000"
+						backcolor="#CCCCCC"
+						key="staticText"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font size="12" pdfEncoding ="Cp1251"/>
+					</textElement>
+				<text><![CDATA[Отчество:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="301"
+						y="23"
+						width="100"
+						height="17"
+						forecolor="#000000"
+						backcolor="#CCCCCC"
+						key="staticText"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font size="12" pdfEncoding ="Cp1251"/>
+					</textElement>
+				<text><![CDATA[Должность:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="497"
+						y="23"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#CCCCCC"
+						key="staticText"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font size="12" pdfEncoding ="Cp1251"/>
+					</textElement>
+				<text><![CDATA[1]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="519"
+						y="23"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#CCCCCC"
+						key="staticText"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font size="12" pdfEncoding ="Cp1251"/>
+					</textElement>
+				<text><![CDATA[2]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="541"
+						y="23"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#CCCCCC"
+						key="staticText"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font size="12" pdfEncoding ="Cp1251"/>
+					</textElement>
+				<text><![CDATA[3]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="563"
+						y="23"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#CCCCCC"
+						key="staticText"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font size="12" pdfEncoding ="Cp1251"/>
+					</textElement>
+				<text><![CDATA[4]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="585"
+						y="23"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#CCCCCC"
+						key="staticText"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font size="12" pdfEncoding ="Cp1251"/>
+					</textElement>
+				<text><![CDATA[5]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="607"
+						y="23"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#CCCCCC"
+						key="staticText"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font size="12" pdfEncoding ="Cp1251"/>
+					</textElement>
+				<text><![CDATA[6]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="629"
+						y="23"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#CCCCCC"
+						key="staticText"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font size="12" pdfEncoding ="Cp1251"/>
+					</textElement>
+				<text><![CDATA[7]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="651"
+						y="23"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#CCCCCC"
+						key="staticText"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font size="12" pdfEncoding ="Cp1251"/>
+					</textElement>
+				<text><![CDATA[8]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="673"
+						y="23"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#CCCCCC"
+						key="staticText"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font size="12" pdfEncoding ="Cp1251"/>
+					</textElement>
+				<text><![CDATA[9]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="695"
+						y="23"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#CCCCCC"
+						key="staticText"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font size="12" pdfEncoding ="Cp1251"/>
+					</textElement>
+				<text><![CDATA[10]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="717"
+						y="23"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#CCCCCC"
+						key="staticText"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font size="12" pdfEncoding ="Cp1251"/>
+					</textElement>
+				<text><![CDATA[11]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="739"
+						y="23"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#CCCCCC"
+						key="staticText"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font size="12" pdfEncoding ="Cp1251"/>
+					</textElement>
+				<text><![CDATA[12]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="761"
+						y="23"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#CCCCCC"
+						key="staticText"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font size="12" pdfEncoding ="Cp1251"/>
+					</textElement>
+				<text><![CDATA[13]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="783"
+						y="23"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#CCCCCC"
+						key="staticText"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font size="12" pdfEncoding ="Cp1251"/>
+					</textElement>
+				<text><![CDATA[14]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="805"
+						y="23"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#CCCCCC"
+						key="staticText"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font size="12" pdfEncoding ="Cp1251"/>
+					</textElement>
+				<text><![CDATA[15]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="879"
+						y="23"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#CCCCCC"
+						key="staticText"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font size="12" pdfEncoding ="Cp1251"/>
+					</textElement>
+				<text><![CDATA[16]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="901"
+						y="23"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#CCCCCC"
+						key="staticText"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font size="12" pdfEncoding ="Cp1251"/>
+					</textElement>
+				<text><![CDATA[17]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="923"
+						y="23"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#CCCCCC"
+						key="staticText"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font size="12" pdfEncoding ="Cp1251"/>
+					</textElement>
+				<text><![CDATA[18]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="945"
+						y="23"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#CCCCCC"
+						key="staticText"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font size="12" pdfEncoding ="Cp1251"/>
+					</textElement>
+				<text><![CDATA[19]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="967"
+						y="23"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#CCCCCC"
+						key="staticText"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font size="12" pdfEncoding ="Cp1251"/>
+					</textElement>
+				<text><![CDATA[20]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="989"
+						y="23"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#CCCCCC"
+						key="staticText"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font size="12" pdfEncoding ="Cp1251"/>
+					</textElement>
+				<text><![CDATA[21]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="1011"
+						y="23"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#CCCCCC"
+						key="staticText"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font size="12" pdfEncoding ="Cp1251"/>
+					</textElement>
+				<text><![CDATA[22]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="1033"
+						y="23"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#CCCCCC"
+						key="staticText"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font size="12" pdfEncoding ="Cp1251"/>
+					</textElement>
+				<text><![CDATA[23]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="1055"
+						y="23"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#CCCCCC"
+						key="staticText"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font size="12" pdfEncoding ="Cp1251"/>
+					</textElement>
+				<text><![CDATA[24]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="1077"
+						y="23"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#CCCCCC"
+						key="staticText"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font size="12" pdfEncoding ="Cp1251"/>
+					</textElement>
+				<text><![CDATA[25]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="1099"
+						y="23"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#CCCCCC"
+						key="staticText"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font size="12" pdfEncoding ="Cp1251"/>
+					</textElement>
+				<text><![CDATA[26]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="1121"
+						y="23"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#CCCCCC"
+						key="staticText"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font size="12" pdfEncoding ="Cp1251"/>
+					</textElement>
+				<text><![CDATA[27]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="1143"
+						y="23"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#CCCCCC"
+						key="staticText"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font size="12" pdfEncoding ="Cp1251"/>
+					</textElement>
+				<text><![CDATA[28]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="1165"
+						y="23"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#CCCCCC"
+						key="staticText"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font size="12" pdfEncoding ="Cp1251"/>
+					</textElement>
+				<text><![CDATA[29]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="1187"
+						y="23"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#CCCCCC"
+						key="staticText"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font size="12" pdfEncoding ="Cp1251"/>
+					</textElement>
+				<text><![CDATA[30]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="1209"
+						y="23"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#CCCCCC"
+						key="staticText"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font size="12" pdfEncoding ="Cp1251"/>
+					</textElement>
+				<text><![CDATA[31]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="401"
+						y="23"
+						width="96"
+						height="17"
+						forecolor="#000000"
+						backcolor="#CCCCCC"
+						key="staticText-1"
+						stretchType="RelativeToTallestObject"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement>
+						<font size="12" pdfEncoding ="Cp1251"/>
+					</textElement>
+				<text><![CDATA[Значение:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="1283"
+						y="23"
+						width="53"
+						height="17"
+						forecolor="#000000"
+						backcolor="#FF3300"
+						key="staticText-3"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font size="12" pdfEncoding ="Cp1251"/>
+					</textElement>
+				<text><![CDATA[Итого:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="827"
+						y="23"
+						width="52"
+						height="17"
+						forecolor="#000000"
+						backcolor="#FF9933"
+						key="staticText-6"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font size="12" pdfEncoding ="Cp1251"/>
+					</textElement>
+				<text><![CDATA[Итого:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="1231"
+						y="23"
+						width="52"
+						height="17"
+						forecolor="#000000"
+						backcolor="#FF9933"
+						key="staticText-7"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font size="12" pdfEncoding ="Cp1251"/>
+					</textElement>
+				<text><![CDATA[Итого:]]></text>
+				</staticText>
+			</band>
+			</groupHeader>
+			<groupFooter>
+			<band height="29"  isSplitAllowed="true" >
+				<line direction="BottomUp">
+					<reportElement
+						x="1"
+						y="4"
+						width="1439"
+						height="0"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="line"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="0"
+						y="4"
+						width="1440"
+						height="0"
+						forecolor="#808080"
+						backcolor="#FFFFFF"
+						key="line"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="739"
+						y="7"
+						width="88"
+						height="17"
+						forecolor="#000000"
+						backcolor="#FF3300"
+						key="staticText-5"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font size="12" pdfEncoding ="Cp1251"/>
+					</textElement>
+				<text><![CDATA[Итого:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" pattern="##0.00" isBlankWhenNull="true" evaluationTime="Auto" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="1283"
+						y="7"
+						width="53"
+						height="17"
+						backcolor="#FF3333"
+						key="textField-37"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{org_month_sum_count}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="##0.00" isBlankWhenNull="true" evaluationTime="Auto" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="1231"
+						y="7"
+						width="52"
+						height="17"
+						backcolor="#FF3300"
+						key="textField-42"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{scnd_half_org_month_sum_count}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="##0.00" isBlankWhenNull="true" evaluationTime="Auto" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="827"
+						y="7"
+						width="52"
+						height="17"
+						backcolor="#FF3300"
+						key="textField-43"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{first_half_org_month_sum_count}]]></textFieldExpression>
+				</textField>
+			</band>
+			</groupFooter>
+		</group>
+		<group  name="employee" >
+			<groupExpression><![CDATA[$F{employee_id}]]></groupExpression>
+			<groupHeader>
+			<band height="18"  isSplitAllowed="true" >
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="0"
+						y="1"
+						width="100"
+						height="17"
+						forecolor="#000000"
+						backcolor="#FF9900"
+						key="textField"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{lastname}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="100"
+						y="1"
+						width="103"
+						height="17"
+						forecolor="#000000"
+						backcolor="#FF9900"
+						key="textField"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{name}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="203"
+						y="1"
+						width="98"
+						height="17"
+						forecolor="#000000"
+						backcolor="#FF9900"
+						key="textField"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{surname}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="301"
+						y="1"
+						width="100"
+						height="17"
+						forecolor="#000000"
+						backcolor="#FF9900"
+						key="textField"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{employee_type_sname}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="401"
+						y="1"
+						width="96"
+						height="17"
+						backcolor="#FF9900"
+						key="staticText-4"/>
+					<box></box>
+					<textElement>
+						<font pdfEncoding ="Cp1251"/>
+					</textElement>
+				<text><![CDATA[Общее]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Group" evaluationGroup="employee"  hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="519"
+						y="1"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#FF9900"
+						key="textField-5"
+						stretchType="RelativeToTallestObject">
+							<property name="net.sf.jasperreports.export.xls.formula" value="IF(INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN()))=0;SUBSTITUTE(0;0;&quot; &quot;);INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN())))" />
+						</reportElement>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{day_2_sum}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Group" evaluationGroup="employee"  hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="541"
+						y="1"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#FF9900"
+						key="textField-6"
+						stretchType="RelativeToTallestObject">
+							<property name="net.sf.jasperreports.export.xls.formula" value="IF(INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN()))=0;SUBSTITUTE(0;0;&quot; &quot;);INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN())))" />
+						</reportElement>
+					<box></box>
+					<textElement textAlignment="Left" lineSpacing="Single">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{day_3_sum}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Group" evaluationGroup="employee"  hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="563"
+						y="1"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#FF9900"
+						key="textField-7"
+						stretchType="RelativeToTallestObject">
+							<property name="net.sf.jasperreports.export.xls.formula" value="IF(INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN()))=0;SUBSTITUTE(0;0;&quot; &quot;);INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN())))" />
+						</reportElement>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{day_4_sum}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Group" evaluationGroup="employee"  hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="585"
+						y="1"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#FF9900"
+						key="textField-8"
+						stretchType="RelativeToTallestObject">
+							<property name="net.sf.jasperreports.export.xls.formula" value="IF(INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN()))=0;SUBSTITUTE(0;0;&quot; &quot;);INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN())))" />
+						</reportElement>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{day_5_sum}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Group" evaluationGroup="employee"  hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="607"
+						y="1"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#FF9900"
+						key="textField-9"
+						stretchType="RelativeToTallestObject">
+							<property name="net.sf.jasperreports.export.xls.formula" value="IF(INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN()))=0;SUBSTITUTE(0;0;&quot; &quot;);INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN())))" />
+						</reportElement>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{day_6_sum}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Group" evaluationGroup="employee"  hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="629"
+						y="1"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#FF9900"
+						key="textField-10"
+						stretchType="RelativeToTallestObject">
+							<property name="net.sf.jasperreports.export.xls.formula" value="IF(INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN()))=0;SUBSTITUTE(0;0;&quot; &quot;);INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN())))" />
+						</reportElement>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{day_7_sum}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Group" evaluationGroup="employee"  hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="651"
+						y="1"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#FF9900"
+						key="textField-11"
+						stretchType="RelativeToTallestObject">
+							<property name="net.sf.jasperreports.export.xls.formula" value="IF(INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN()))=0;SUBSTITUTE(0;0;&quot; &quot;);INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN())))" />
+						</reportElement>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{day_8_sum}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Group" evaluationGroup="employee"  hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="673"
+						y="1"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#FF9900"
+						key="textField-12"
+						stretchType="RelativeToTallestObject">
+							<property name="net.sf.jasperreports.export.xls.formula" value="IF(INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN()))=0;SUBSTITUTE(0;0;&quot; &quot;);INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN())))" />
+						</reportElement>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{day_9_sum}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Group" evaluationGroup="employee"  hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="695"
+						y="1"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#FF9900"
+						key="textField-13"
+						stretchType="RelativeToTallestObject">
+							<property name="net.sf.jasperreports.export.xls.formula" value="IF(INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN()))=0;SUBSTITUTE(0;0;&quot; &quot;);INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN())))" />
+						</reportElement>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{day_10_sum}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Group" evaluationGroup="employee"  hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="717"
+						y="1"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#FF9900"
+						key="textField-14"
+						stretchType="RelativeToTallestObject">
+							<property name="net.sf.jasperreports.export.xls.formula" value="IF(INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN()))=0;SUBSTITUTE(0;0;&quot; &quot;);INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN())))" />
+						</reportElement>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{day_11_sum}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Group" evaluationGroup="employee"  hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="739"
+						y="1"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#FF9900"
+						key="textField-15"
+						stretchType="RelativeToTallestObject">
+							<property name="net.sf.jasperreports.export.xls.formula" value="IF(INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN()))=0;SUBSTITUTE(0;0;&quot; &quot;);INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN())))" />
+						</reportElement>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{day_12_sum}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Group" evaluationGroup="employee"  hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="761"
+						y="1"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#FF9900"
+						key="textField-16"
+						stretchType="RelativeToTallestObject">
+							<property name="net.sf.jasperreports.export.xls.formula" value="IF(INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN()))=0;SUBSTITUTE(0;0;&quot; &quot;);INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN())))" />
+						</reportElement>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{day_13_sum}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Group" evaluationGroup="employee"  hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="783"
+						y="1"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#FF9900"
+						key="textField-17"
+						stretchType="RelativeToTallestObject">
+							<property name="net.sf.jasperreports.export.xls.formula" value="IF(INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN()))=0;SUBSTITUTE(0;0;&quot; &quot;);INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN())))" />
+						</reportElement>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{day_14_sum}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Group" evaluationGroup="employee"  hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="805"
+						y="1"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#FF9900"
+						key="textField-18"
+						stretchType="RelativeToTallestObject">
+							<property name="net.sf.jasperreports.export.xls.formula" value="IF(INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN()))=0;SUBSTITUTE(0;0;&quot; &quot;);INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN())))" />
+						</reportElement>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{day_15_sum}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Group" evaluationGroup="employee"  hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="879"
+						y="1"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#FF9900"
+						key="textField-19"
+						stretchType="RelativeToTallestObject">
+							<property name="net.sf.jasperreports.export.xls.formula" value="IF(INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN()))=0;SUBSTITUTE(0;0;&quot; &quot;);INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN())))" />
+						</reportElement>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{day_16_sum}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Group" evaluationGroup="employee"  hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="901"
+						y="1"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#FF9900"
+						key="textField-20"
+						stretchType="RelativeToTallestObject">
+							<property name="net.sf.jasperreports.export.xls.formula" value="IF(INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN()))=0;SUBSTITUTE(0;0;&quot; &quot;);INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN())))" />
+						</reportElement>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{day_17_sum}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Group" evaluationGroup="employee"  hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="923"
+						y="1"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#FF9900"
+						key="textField-21"
+						stretchType="RelativeToTallestObject">
+							<property name="net.sf.jasperreports.export.xls.formula" value="IF(INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN()))=0;SUBSTITUTE(0;0;&quot; &quot;);INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN())))" />
+						</reportElement>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{day_18_sum}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Group" evaluationGroup="employee"  hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="945"
+						y="1"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#FF9900"
+						key="textField-22"
+						stretchType="RelativeToTallestObject">
+							<property name="net.sf.jasperreports.export.xls.formula" value="IF(INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN()))=0;SUBSTITUTE(0;0;&quot; &quot;);INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN())))" />
+						</reportElement>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{day_19_sum}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Group" evaluationGroup="employee"  hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="967"
+						y="1"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#FF9900"
+						key="textField-23"
+						stretchType="RelativeToTallestObject">
+							<property name="net.sf.jasperreports.export.xls.formula" value="IF(INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN()))=0;SUBSTITUTE(0;0;&quot; &quot;);INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN())))" />
+						</reportElement>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{day_20_sum}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Group" evaluationGroup="employee"  hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="989"
+						y="1"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#FF9900"
+						key="textField-24"
+						stretchType="RelativeToTallestObject">
+							<property name="net.sf.jasperreports.export.xls.formula" value="IF(INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN()))=0;SUBSTITUTE(0;0;&quot; &quot;);INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN())))" />
+						</reportElement>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{day_21_sum}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Group" evaluationGroup="employee"  hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="1011"
+						y="1"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#FF9900"
+						key="textField-25"
+						stretchType="RelativeToTallestObject">
+							<property name="net.sf.jasperreports.export.xls.formula" value="IF(INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN()))=0;SUBSTITUTE(0;0;&quot; &quot;);INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN())))" />
+						</reportElement>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{day_22_sum}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Group" evaluationGroup="employee"  hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="1033"
+						y="1"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#FF9900"
+						key="textField-26"
+						stretchType="RelativeToTallestObject">
+							<property name="net.sf.jasperreports.export.xls.formula" value="IF(INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN()))=0;SUBSTITUTE(0;0;&quot; &quot;);INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN())))" />
+						</reportElement>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{day_23_sum}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Group" evaluationGroup="employee"  hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="1055"
+						y="1"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#FF9900"
+						key="textField-27"
+						stretchType="RelativeToTallestObject">
+							<property name="net.sf.jasperreports.export.xls.formula" value="IF(INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN()))=0;SUBSTITUTE(0;0;&quot; &quot;);INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN())))" />
+						</reportElement>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{day_24_sum}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Group" evaluationGroup="employee"  hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="1077"
+						y="1"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#FF9900"
+						key="textField-28"
+						stretchType="RelativeToTallestObject">
+							<property name="net.sf.jasperreports.export.xls.formula" value="IF(INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN()))=0;SUBSTITUTE(0;0;&quot; &quot;);INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN())))" />
+						</reportElement>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{day_25_sum}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Group" evaluationGroup="employee"  hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="1099"
+						y="1"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#FF9900"
+						key="textField-29"
+						stretchType="RelativeToTallestObject">
+							<property name="net.sf.jasperreports.export.xls.formula" value="IF(INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN()))=0;SUBSTITUTE(0;0;&quot; &quot;);INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN())))" />
+						</reportElement>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{day_26_sum}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Group" evaluationGroup="employee"  hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="1121"
+						y="1"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#FF9900"
+						key="textField-30"
+						stretchType="RelativeToTallestObject">
+							<property name="net.sf.jasperreports.export.xls.formula" value="IF(INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN()))=0;SUBSTITUTE(0;0;&quot; &quot;);INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN())))" />
+						</reportElement>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{day_27_sum}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Group" evaluationGroup="employee"  hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="1143"
+						y="1"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#FF9900"
+						key="textField-31"
+						stretchType="RelativeToTallestObject">
+							<property name="net.sf.jasperreports.export.xls.formula" value="IF(INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN()))=0;SUBSTITUTE(0;0;&quot; &quot;);INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN())))" />
+						</reportElement>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{day_28_sum}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Group" evaluationGroup="employee"  hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="1165"
+						y="1"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#FF9900"
+						key="textField-32"
+						stretchType="RelativeToTallestObject">
+							<property name="net.sf.jasperreports.export.xls.formula" value="IF(INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN()))=0;SUBSTITUTE(0;0;&quot; &quot;);INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN())))" />
+						</reportElement>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{day_29_sum}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Group" evaluationGroup="employee"  hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="1187"
+						y="1"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#FF9900"
+						key="textField-33"
+						stretchType="RelativeToTallestObject">
+							<property name="net.sf.jasperreports.export.xls.formula" value="IF(INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN()))=0;SUBSTITUTE(0;0;&quot; &quot;);INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN())))" />
+						</reportElement>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{day_30_sum}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Group" evaluationGroup="employee"  hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="1209"
+						y="1"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#FF9900"
+						key="textField-34"
+						stretchType="RelativeToTallestObject">
+							<property name="net.sf.jasperreports.export.xls.formula" value="IF(INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN()))=0;SUBSTITUTE(0;0;&quot; &quot;);INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN())))" />
+						</reportElement>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{day_31_sum}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="##0.00" isBlankWhenNull="true" evaluationTime="Group" evaluationGroup="employee"  hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="1283"
+						y="1"
+						width="53"
+						height="17"
+						backcolor="#FF3300"
+						key="textField-35">
+							<property name="net.sf.jasperreports.export.xls.formula" value="IF(INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN()))=0;SUBSTITUTE(0;0;&quot; &quot;);INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN())))" />
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{Employee_month_sum_count}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Group" evaluationGroup="employee"  hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="497"
+						y="1"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						backcolor="#FF9900"
+						key="textField-36"
+						stretchType="RelativeToTallestObject">
+							<property name="net.sf.jasperreports.export.xls.formula" value="IF(INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN()))=0;SUBSTITUTE(0;0;&quot; &quot;);INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN())))" />
+						</reportElement>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{day_1_sum}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="##0.00" isBlankWhenNull="true" evaluationTime="Group" evaluationGroup="employee"  hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="827"
+						y="1"
+						width="52"
+						height="17"
+						backcolor="#FF9933"
+						key="textField-39">
+							<property name="net.sf.jasperreports.export.xls.formula" value="IF(INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN()))=0;SUBSTITUTE(0;0;&quot; &quot;);INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN())))" />
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{Employee_half_month_sum_count}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="##0.00" isBlankWhenNull="true" evaluationTime="Group" evaluationGroup="employee"  hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="1231"
+						y="1"
+						width="52"
+						height="17"
+						backcolor="#FF9933"
+						key="textField-40">
+							<property name="net.sf.jasperreports.export.xls.formula" value="IF(INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN()))=0;SUBSTITUTE(0;0;&quot; &quot;);INDIRECT(ADDRESS(ROW()+1;COLUMN()))+INDIRECT(ADDRESS(ROW()+2;COLUMN())))" />
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{Employee_scnd_half_month_sum_count}]]></textFieldExpression>
+				</textField>
+			</band>
+			</groupHeader>
+			<groupFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+			</groupFooter>
+		</group>
+		<group  name="value" >
+			<groupExpression><![CDATA[$F{value}]]></groupExpression>
+			<groupHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+			</groupHeader>
+			<groupFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+			</groupFooter>
+		</group>
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="50"  isSplitAllowed="true" >
+				<line direction="TopDown">
+					<reportElement
+						x="0"
+						y="48"
+						width="1440"
+						height="0"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="line"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="0"
+						y="3"
+						width="1440"
+						height="0"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="line"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="148"
+						y="10"
+						width="1189"
+						height="40"
+						key="staticText-2"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement>
+						<font size="18"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["Табель рабочего времени механиков c " + $P{start_date}.toLocaleString().substring(0,10) + " " + "по " +
+$P{end_date}.toLocaleString().substring(0,10)]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="0"
+						y="21"
+						width="148"
+						height="19"
+						forecolor="#FF0000"
+						key="textField-3"/>
+					<box></box>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["Тип отчета: " + $P{report_type}]]></textFieldExpression>
+				</textField>
+			</band>
+		</title>
+		<pageHeader>
+			<band height="9"  isSplitAllowed="true" >
+				<line direction="BottomUp">
+					<reportElement
+						x="0"
+						y="8"
+						width="1440"
+						height="0"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="line"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="18"  isSplitAllowed="true" >
+				<line direction="BottomUp">
+					<reportElement
+						x="0"
+						y="15"
+						width="1440"
+						height="0"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="line"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="17"  isSplitAllowed="true" >
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="519"
+						y="0"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						key="textField"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{day_2}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="541"
+						y="0"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						key="textField"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{day_3}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="563"
+						y="0"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						key="textField"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{day_4}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="585"
+						y="0"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						key="textField"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{day_5}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="607"
+						y="0"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						key="textField"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{day_6}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="629"
+						y="0"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						key="textField"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{day_7}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="651"
+						y="0"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						key="textField"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{day_8}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="673"
+						y="0"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						key="textField"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{day_9}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="695"
+						y="0"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						key="textField"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{day_10}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="717"
+						y="0"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						key="textField"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{day_11}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="739"
+						y="0"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						key="textField"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{day_12}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="761"
+						y="0"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						key="textField"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{day_13}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="783"
+						y="0"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						key="textField"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{day_14}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="805"
+						y="0"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						key="textField"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{day_15}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="879"
+						y="0"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						key="textField"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{day_16}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="901"
+						y="0"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						key="textField"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{day_17}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="923"
+						y="0"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						key="textField"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{day_18}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="945"
+						y="0"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						key="textField"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{day_19}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="967"
+						y="0"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						key="textField"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{day_20}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="989"
+						y="0"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						key="textField"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{day_21}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="1011"
+						y="0"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						key="textField"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{day_22}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="1033"
+						y="0"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						key="textField"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{day_23}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="1055"
+						y="0"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						key="textField"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{day_24}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="1077"
+						y="0"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						key="textField"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{day_25}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="1099"
+						y="0"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						key="textField"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{day_26}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="1121"
+						y="0"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						key="textField"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{day_27}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="1143"
+						y="0"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						key="textField"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{day_28}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="1165"
+						y="0"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						key="textField"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{day_29}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="1187"
+						y="0"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						key="textField"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{day_30}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="1209"
+						y="0"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						key="textField"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{day_31}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="401"
+						y="0"
+						width="96"
+						height="17"
+						key="textField"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" pdfEncoding ="Cp1251"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{value}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="##0.00" isBlankWhenNull="true" evaluationTime="Auto" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="1283"
+						y="0"
+						width="53"
+						height="17"
+						backcolor="#FF3333"
+						key="textField">
+							<property name="net.sf.jasperreports.export.xls.formula" value="INDIRECT(ADDRESS(ROW(),COLUMN()-19))+INDIRECT(ADDRESS(ROW(),COLUMN()-2))" />
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{month_sum}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="497"
+						y="0"
+						width="22"
+						height="17"
+						forecolor="#000000"
+						key="textField-4"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1251" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{day_1}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="##0.00" isBlankWhenNull="true" evaluationTime="Auto" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="827"
+						y="0"
+						width="52"
+						height="17"
+						backcolor="#FF9933"
+						key="textField-38">
+							<property name="net.sf.jasperreports.export.xls.formula" value="INDIRECT(ADDRESS(ROW(),COLUMN()-15))+INDIRECT(ADDRESS(ROW(),COLUMN()-14))+INDIRECT(ADDRESS(ROW(),COLUMN()-13))+INDIRECT(ADDRESS(ROW(),COLUMN()-12))+INDIRECT(ADDRESS(ROW(),COLUMN()-11))+INDIRECT(ADDRESS(ROW(),COLUMN()-10)) +INDIRECT(ADDRESS(ROW(),COLUMN()-9))+INDIRECT(ADDRESS(ROW(),COLUMN()-8))+INDIRECT(ADDRESS(ROW(),COLUMN()-7))+INDIRECT(ADDRESS(ROW(),COLUMN()-6)) +INDIRECT(ADDRESS(ROW(),COLUMN()-5))+INDIRECT(ADDRESS(ROW(),COLUMN()-4)) +INDIRECT(ADDRESS(ROW(),COLUMN()-3))+INDIRECT(ADDRESS(ROW(),COLUMN()-2)) +INDIRECT(ADDRESS(ROW(),COLUMN()-1))" />
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{first_half_month_sum}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="##0.00" isBlankWhenNull="true" evaluationTime="Auto" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="1231"
+						y="0"
+						width="52"
+						height="17"
+						backcolor="#FF9933"
+						key="textField-41">
+							<property name="net.sf.jasperreports.export.xls.formula" value="INDIRECT(ADDRESS(ROW(),COLUMN()-16))+INDIRECT(ADDRESS(ROW(),COLUMN()-15))+INDIRECT(ADDRESS(ROW(),COLUMN()-14))+INDIRECT(ADDRESS(ROW(),COLUMN()-13))+INDIRECT(ADDRESS(ROW(),COLUMN()-12))+INDIRECT(ADDRESS(ROW(),COLUMN()-11))+INDIRECT(ADDRESS(ROW(),COLUMN()-10)) +INDIRECT(ADDRESS(ROW(),COLUMN()-9))+INDIRECT(ADDRESS(ROW(),COLUMN()-8))+INDIRECT(ADDRESS(ROW(),COLUMN()-7))+INDIRECT(ADDRESS(ROW(),COLUMN()-6)) +INDIRECT(ADDRESS(ROW(),COLUMN()-5))+INDIRECT(ADDRESS(ROW(),COLUMN()-4)) +INDIRECT(ADDRESS(ROW(),COLUMN()-3))+INDIRECT(ADDRESS(ROW(),COLUMN()-2)) +INDIRECT(ADDRESS(ROW(),COLUMN()-1))" />
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{scnd_half_month_sum}]]></textFieldExpression>
+				</textField>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="65"  isSplitAllowed="true" >
+				<textField isStretchWithOverflow="false" pattern="" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="1232"
+						y="6"
+						width="146"
+						height="19"
+						forecolor="#000000"
+						key="textField"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Right">
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["Страница " + $V{PAGE_NUMBER} + " из "]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="" isBlankWhenNull="false" evaluationTime="Report" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Transparent"
+						x="1381"
+						y="6"
+						width="36"
+						height="19"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="textField"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement>
+						<font size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["" + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<line direction="TopDown">
+					<reportElement
+						x="0"
+						y="3"
+						width="1440"
+						height="0"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="line"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="1"
+						y="6"
+						width="202"
+						height="19"
+						forecolor="#000000"
+						key="textField"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.util.Date"><![CDATA[new Date()]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="203"
+						y="6"
+						width="294"
+						height="19"
+						key="textField-1"/>
+					<box></box>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["Должность: " + $P{employee_type_sname}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="203"
+						y="25"
+						width="294"
+						height="19"
+						key="textField-2"/>
+					<box></box>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["Организация: " + $P{organization_sname}]]></textFieldExpression>
+				</textField>
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

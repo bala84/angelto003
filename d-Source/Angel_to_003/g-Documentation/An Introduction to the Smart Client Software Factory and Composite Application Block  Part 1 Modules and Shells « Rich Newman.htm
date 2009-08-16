@@ -1,0 +1,866 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html style="position: static;" dir="ltr" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head profile="http://gmpg.org/xfn/11">
+
+
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<title>An Introduction to the Smart Client Software Factory and Composite Application Block: Part 1 Modules and Shells « Rich Newman</title>
+
+
+	<style type="text/css" media="screen">
+		@import url( http://s3.wordpress.com/wp-content/themes/pub/blue-green/style.css?m=1245873790b );
+	</style>
+
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://richnewman.wordpress.com/feed/">
+
+	<link rel="pingback" href="http://richnewman.wordpress.com/xmlrpc.php">
+	<link rel="alternate" type="application/rss+xml" title="Rich Newman » An Introduction to the Smart Client Software Factory and Composite Application Block: Part 1 Modules and&nbsp;Shells Comments Feed" href="http://richnewman.wordpress.com/2007/07/14/an-introduction-to-the-smart-client-software-factory-and-composite-application-block-part-1-modules-and-shells/feed/">
+<script src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/a_003.htm" type="text/javascript"></script><script src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/auto_shot.htm" type="text/javascript"></script><script type="text/javascript">
+/* <![CDATA[ */
+function addLoadEvent(func){var oldonload=window.onload;if(typeof window.onload!='function'){window.onload=func;}else{window.onload=function(){oldonload();func();}}}
+/* ]]> */
+</script>
+<link rel="stylesheet" href="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/global.css" type="text/css">
+<script type="text/javascript" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/comment-reply.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://richnewman.wordpress.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://richnewman.wordpress.com/wp-includes/wlwmanifest.xml"> 
+<link rel="index" title="Rich Newman" href="http://richnewman.wordpress.com/">
+<link rel="start" title="Day&nbsp;1" href="http://richnewman.wordpress.com/2007/03/04/day-1/">
+<link rel="prev" title="C#, Visual Basic and C++ .NET Line Counter Utility – Version&nbsp;2" href="http://richnewman.wordpress.com/2007/07/09/c-visual-basic-and-c-net-line-count-utility-version-2/">
+<link rel="next" title="An Introduction to the Smart Client Software Factory and Composite Application Block: Part 2&nbsp;WorkItems" href="http://richnewman.wordpress.com/2007/07/14/an-introduction-to-the-smart-client-software-factory-and-composite-application-block-part-2-workitems/">
+<meta name="generator" content="WordPress.com">
+<link rel="canonical" href="http://richnewman.wordpress.com/2007/07/14/an-introduction-to-the-smart-client-software-factory-and-composite-application-block-part-1-modules-and-shells/">
+<link rel="shortcut icon" type="image/x-icon" href="http://www.gravatar.com/blavatar/7864a25226671eb271870f6bdc69e29f?s=16&amp;d=http://s.wordpress.com/favicon.ico">
+<link rel="icon" type="image/x-icon" href="http://www.gravatar.com/blavatar/7864a25226671eb271870f6bdc69e29f?s=16&amp;d=http://s.wordpress.com/favicon.ico">
+<link rel="apple-touch-icon" href="http://www.gravatar.com/blavatar/cadbe3553ff3d2b663c10a55c50bef43?s=158&amp;d=http://s.wordpress.com/wp-content/themes/h4/i/webclip.png">
+<link rel="openid.server" href="http://richnewman.wordpress.com/?openidserver=1">
+<link rel="openid.delegate" href="http://richnewman.wordpress.com/">
+
+<script defer="defer" id="snap_preview_anywhere" type="text/javascript" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/snap_preview_anywhere.htm"></script>
+
+</head><body><div class="snap_noengage snap_noshots" style="border: 0pt none ; margin: 0pt; padding: 0pt; position: absolute; visibility: hidden; top: 0px; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; left: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; z-index: 99999; width: 328px; height: 346px;" id="snap_com_shot_main"><img id="snap_com_shot_link_icon" class="snap_preview_icon" style="border: 0pt none ; margin: 0pt ! important; padding: 1px 0pt 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/palette.gif); background-color: transparent; visibility: hidden; z-index: 99999; width: 14px; height: 12px; background-position: -1128px 0pt; background-repeat: no-repeat; text-decoration: none;" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/t.gif">
+<div style="border: 0pt none ; margin: 0pt; padding: 0pt; overflow: hidden; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; width: 50px; height: 50px;" id="snap_com_shot_bg_div_tl"><img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: -50px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999;" id="snap_com_shot_bg_img_tl" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/palette.png"></div>
+<div style="border: 0pt none ; margin: 0pt; padding: 0pt; overflow: hidden; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: auto; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; right: 0px; width: 50px; height: 50px;" id="snap_com_shot_bg_div_tr"><img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: -100px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999;" id="snap_com_shot_bg_img_tr" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/palette.png"></div>
+<div style="border: 0pt none ; margin: 0pt; padding: 0pt; overflow: hidden; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; bottom: 1px; width: 50px; height: 50px;" id="snap_com_shot_bg_div_bl"><img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: -150px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999;" id="snap_com_shot_bg_img_bl" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/palette.png"></div>
+<div style="border: 0pt none ; margin: 0pt; padding: 0pt; overflow: hidden; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; right: 0px; bottom: 1px; width: 50px; height: 50px;" id="snap_com_shot_bg_div_br"><img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999;" id="snap_com_shot_bg_img_br" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/palette.png"></div>
+<img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 50px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/bg/bg_lr.png); background-color: transparent; visibility: inherit; z-index: 99999; width: 100px; height: 246px; background-repeat: repeat;" id="snap_com_shot_bg_img_l" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/t.gif">
+<img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: auto; top: 50px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/bg/bg_lr.png); background-color: transparent; visibility: inherit; z-index: 99999; right: 0px; width: 100px; height: 246px; background-repeat: repeat;" id="snap_com_shot_bg_img_r" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/t.gif">
+<img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 50px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/bg/bg_tb.png); background-color: transparent; visibility: inherit; z-index: 99999; width: 228px; height: 100px; background-repeat: repeat;" id="snap_com_shot_bg_img_t" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/t.gif">
+<img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 50px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/bg/bg_tb.png); background-color: transparent; visibility: inherit; z-index: 99999; bottom: 1px; width: 228px; height: 100px; background-repeat: repeat;" id="snap_com_shot_bg_img_b" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/t.gif">
+<div id="snap_com_shot_bg_div_point" style="border: 0pt none ; margin: 0pt; padding: 0pt; overflow: hidden; z-index: 100000; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 7px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; width: 28px; height: 29px; bottom: -21px; right: auto;"><img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: -276px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999;" id="snap_com_shot_bg_img_point" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/palette.png"></div>
+<div style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 2px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: rgb(216, 216, 217); visibility: inherit; z-index: 99999; bottom: 37px; width: 320px; height: 82px;" id="snap_com_shot_bg_body"></div>
+
+<img style="border: 0pt none ; margin: 0pt; padding: 0pt; z-index: 100001; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 5px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; width: 200px; height: 5px; right: auto; bottom: 3px;" id="snap_com_shot_pointer0" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/t.gif">
+<img style="border: 0pt none ; margin: 0pt; padding: 0pt; z-index: 100001; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 5px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; width: 164px; height: 5px; right: auto; bottom: -1px;" id="snap_com_shot_pointer1" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/t.gif">
+<img style="border: 0pt none ; margin: 0pt; padding: 0pt; z-index: 100001; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 5px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; width: 128px; height: 5px; right: auto; bottom: -6px;" id="snap_com_shot_pointer2" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/t.gif">
+<img style="border: 0pt none ; margin: 0pt; padding: 0pt; z-index: 100001; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 5px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; width: 92px; height: 5px; right: auto; bottom: -11px;" id="snap_com_shot_pointer3" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/t.gif">
+<img style="border: 0pt none ; margin: 0pt; padding: 0pt; z-index: 100001; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 5px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; width: 56px; height: 5px; right: auto; bottom: -16px;" id="snap_com_shot_pointer4" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/t.gif">
+<img style="border: 0pt none ; margin: 0pt; padding: 0pt; z-index: 100001; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 5px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; width: 20px; height: 5px; right: auto; bottom: -21px;" id="snap_com_shot_pointer5" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/t.gif">
+<div style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 1px; top: 1px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; width: 322px; height: 338px;" id="snap_com_shot_bubble">
+<img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; width: 322px; height: 297px;" id="snap_com_shot_bubble_img" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/t.gif">
+<div style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; width: 322px; height: 338px; text-align: left;" id="snap_com_shot_body">
+ <table id="snap_com_shot_drag_overlay" title="drag to move" style="border: 0pt none ; margin: 0pt; padding: 0pt; display: none; z-index: 100008; cursor: move ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; width: 322px; height: 20px;"><tbody><tr><td style="border: 0pt none ; background-color: transparent;">&nbsp;</td></tr></tbody></table>
+ <div id="snap_com_shot_top_left_menu" style="border: 0pt none ; margin: 0pt; padding: 0pt; z-index: 100009; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 1px; top: 1px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: hidden;"><img id="snap_com_shot_preview_toggle" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/t.gif" style="border: 0pt none ; margin: 0pt; padding: 0pt; cursor: pointer ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/palette.gif); background-color: transparent; visibility: inherit; z-index: 99999; background-position: -319px 0pt; background-repeat: no-repeat; width: 25px; height: 18px; display: inline;"><img id="snap_com_shot_rss_toggle" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/t.gif" style="border: 0pt none ; margin: 0pt; padding: 0pt; cursor: pointer ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/palette.gif); background-color: transparent; visibility: inherit; z-index: 99999; background-position: -475px 0pt; background-repeat: no-repeat; width: 25px; height: 18px; display: inline;" align="top"></div>
+ <div id="snap_com_shot_top_right_menu" style="border: 0pt none ; margin: 0pt; padding: 0pt; z-index: 100009; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: auto; top: 1px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; right: 1px;"><img id="snap_com_shot_share_button" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/t.gif" style="border: 0pt none ; margin: 0pt; padding: 0pt; cursor: pointer ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/palette.gif); background-color: transparent; visibility: inherit; z-index: 99999; background-position: -807px 0pt; background-repeat: no-repeat; width: 50px; height: 17px; display: none;" align="top"><img title="Snap Shots Options" alt="Snap Shots Options" id="snap_com_shot_option_button" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/t.gif" style="border: 0pt none ; margin: 0pt; padding: 0pt; cursor: pointer ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/palette.gif); background-color: transparent; visibility: inherit; z-index: 99999; background-position: -421px 0pt; background-repeat: no-repeat; width: 27px; height: 18px; display: inline;"><img title="Make this Shot larger" id="snap_com_shot_zoom_img" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/t.gif" style="border: 0pt none ; margin: 0pt; padding: 0pt; cursor: pointer ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/palette.gif); background-color: transparent; visibility: inherit; z-index: 99999; background-position: -523px 0pt; background-repeat: no-repeat; width: 23px; height: 18px; display: inline;" align="top"><img id="snap_com_shot_pin_close_img" title="Close" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/t.gif" style="border: 0pt none ; margin: 0pt; padding: 0pt; cursor: pointer ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/palette.gif); background-color: transparent; visibility: inherit; z-index: 99999; background-position: -711px 0pt; background-repeat: no-repeat; width: 23px; height: 18px; display: none;" align="top"></div>
+ <div id="snap_com_shot_option_menu" style="border: 1px solid rgb(139, 138, 138); margin: 0pt; padding: 0pt; z-index: 100009; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: Trebuchet; float: none; position: absolute; left: auto; top: 18px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: white; visibility: hidden; right: 20px; font-size: 10px; color: rgb(51, 51, 51);">
+  <div title="Snap Shots Options" id="snap_com_shot_option_a" style="border: 0pt none ; margin: 0pt; padding: 0pt 5px; cursor: pointer ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; white-space: nowrap; height: 17px;">Options</div>
+  <div id="snap_com_shot_disable_a" style="border-style: solid none none; border-color: rgb(192, 192, 192) -moz-use-text-color -moz-use-text-color; border-width: 1px 0pt 0pt; margin: 0pt; padding: 0pt 5px; cursor: pointer ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; white-space: nowrap; height: 17px;">Disable</div>
+ </div>
+ <div id="snap_com_shot_search" style="border: 0pt none ; margin: 0pt ! important; padding: 0pt ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 1px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: rgb(238, 238, 238); visibility: hidden; z-index: 99999; bottom: 31px; width: 320px; height: 78px;">
+  <div id="snap_com_shot_search_form" style="border: 0pt none ; margin: 0pt ! important; padding: 0pt ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999;" action="#" method="GET" accept-charset="UTF8" target="_blank">
+   <input id="snap_com_shot_box" name="snap_com_shot_box_name" autocomplete="off" style="border: 1px solid rgb(153, 153, 153); margin: 0pt; padding: 5px 0pt 0pt 6px; visibility: inherit ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 12px; top: 24px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); z-index: 99999; width: 232px; height: 20px; font-size: 12px; color: rgb(51, 51, 51); direction: ltr; display: none;" type="text">
+   <button style="border: 0pt none ; margin: 0pt 0pt 0pt 5px; padding: 1px 2px 2px; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: auto; top: 23px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/palette.gif); background-color: transparent; visibility: inherit; z-index: 99999; right: 7px; background-position: -164px 0pt; background-repeat: no-repeat; width: 55px; height: 29px; cursor: pointer; font-size: 11px; color: rgb(68, 68, 68); text-align: center;" type="submit" name="snap_com_shot_submit" id="snap_com_shot_submit"></button>
+   <a style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999;" href="about:blank" id="snap_com_shot_hidden_link"></a>
+  </div>
+ </div>
+ <div style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 10px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: hidden; z-index: 99999; bottom: 8px; height: 15px; direction: ltr;" id="snap_com_shot_promo"><a href="https://account.snap.com/signup.php?source=richnewman.wordpress.com&amp;campaign=viral-foot" title="Sign Up and add Free Snap Shots to your site in less than 5 min!" style="border-style: none none dotted; border-color: -moz-use-text-color -moz-use-text-color rgb(116, 114, 116); border-width: 0pt 0pt 1px; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; font-size: 11px; color: rgb(51, 51, 51); text-decoration: none;" class="snap_nopreview" id="snap_com_shot_promo_a">Get Free Shots</a><img id="snap_com_shot_promo_icon" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/t.gif" style="border-top: 0pt none; border-left: 0pt none; border-right: 0pt none; border-bottom: medium none ! important; margin: 0pt; padding: 0pt; cursor: pointer ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/palette.gif); background-color: transparent; visibility: inherit; z-index: 99999; background-position: -1128px 0pt; background-repeat: no-repeat; width: 14px; height: 12px; display: inline;"></div>
+ <div style="border: 1px solid rgb(196, 196, 196); margin: 0pt; padding: 0pt; overflow: hidden; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 20px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: rgb(255, 255, 255); visibility: inherit; z-index: 99999; width: 320px; height: 207px;" id="snap_com_shot_preview_div">
+  <div style="border: 0pt none ; margin: 0pt; padding: 0pt; white-space: nowrap ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 6px; top: 5px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999;" id="snap_com_shot_url_wrapper"><a style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: white; visibility: inherit; z-index: 99999;" class="snap_nopreview" id="snap_com_shot_url_favicon" href="#"><img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/palette.gif); background-color: transparent; visibility: inherit; z-index: 99999; background-position: -889px 0pt; background-repeat: no-repeat; width: 16px; height: 16px; display: inline;" id="snap_com_shot_favicon" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/t.gif"></a>&nbsp;<a style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: bold; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: white; visibility: inherit; z-index: 99999; font-size: 13px; text-decoration: underline; color: rgb(0, 0, 238); text-align: left;" class="snap_nopreview" id="snap_com_shot_url_a" href="#"><span style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: bold; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; display: inline; font-size: 13px; text-align: left;" id="snap_com_shot_url"></span></a>&nbsp;<a style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: white; visibility: inherit; z-index: 99999;" class="snap_nopreview" id="snap_com_shot_url_arrow" href="#"><img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/palette.gif); background-color: transparent; visibility: inherit; z-index: 99999; background-position: -1165px 0pt; background-repeat: no-repeat; width: 7px; height: 7px; display: inline;" id="snap_com_shot_arrow" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/t.gif"></a></div>
+  <a style="border: 1px solid rgb(153, 153, 153); margin: 0pt; padding: 0pt; overflow: hidden; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 23px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: rgb(255, 255, 255); visibility: inherit; z-index: 99999; bottom: 12px; width: 270px; height: 161px;" class="snap_nopreview" id="snap_com_shot_img_a" href="#"><img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999;" id="snap_com_shot_preview_img" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/t.gif"></a>
+  <iframe style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: rgb(255, 255, 255); visibility: inherit; z-index: 99999; width: 320px; height: 207px;" name="snap_com_shot_preview" id="snap_com_shot_preview" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/a_002.htm" scrolling="no" frameborder="no"></iframe><img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99989; display: none;" id="snap_com_shot_loading_img" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/loading.gif">
+ </div>
+ <div style="border: 0pt none ; margin: 0pt; padding: 0pt; overflow: hidden; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 1px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: rgb(238, 238, 238); visibility: inherit; z-index: 99999; bottom: 30px; width: 320px; height: 79px;" id="snap_com_shot_marea"><div style="border: 0pt none ; margin: 0pt; padding: 0pt; overflow: hidden; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: rgb(238, 238, 238); width: 100%; height: 100%; display: none;"></div><div style="border: 0pt none ; margin: 0pt; padding: 0pt; overflow: hidden; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: rgb(238, 238, 238); width: 100%; height: 100%; display: none;"></div></div>
+ <img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 9px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; bottom: 6px;" id="snap_com_shot_cobrand_img" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/logo_wordpress.gif">
+  <table id="snap_com_shot_flash_overlay" title="Click to play" style="border: 0pt none ; margin: 0pt; padding: 0pt; display: none; z-index: 100010; cursor: pointer ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 50px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; width: 322px; height: 180px;"><tbody><tr><td>&nbsp;</td></tr></tbody></table>
+</div><div style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; width: 322px;" id="snap_com_shot_options">
+ <iframe style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 20px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: rgb(255, 255, 255); visibility: inherit; z-index: 99999; width: 321px; height: 207px;" id="snap_com_shot_option_iframe" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/a_002.htm" scrolling="no" width="265" frameborder="0" height="190"></iframe>
+ <div style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: auto; top: 1px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; right: 1px;" id="snap_com_shot_option_menu_bar"><img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/palette.gif); background-color: transparent; visibility: inherit; z-index: 99999; background-position: -394px 0pt; background-repeat: no-repeat; width: 27px; height: 18px; display: inline;" class="snap_nopreview" id="snap_com_shot_option_button_disabled" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/t.gif"><img title="Close" alt="Close" class="snap_nopreview" id="snap_com_shot_option_close_a" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/t.gif" style="border: 0pt none ; margin: 0pt; padding: 0pt; cursor: pointer ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/palette.gif); background-color: transparent; visibility: inherit; z-index: 99999; background-position: -711px 0pt; background-repeat: no-repeat; width: 23px; height: 18px; font-size: 10px; color: rgb(133, 122, 122); text-decoration: none;"></div>
+<input id="snap_com_shot_option_cancel" style="border: 1px solid rgb(153, 153, 153); margin: 0pt; padding: 0pt; background: transparent url(http://i.ixnp.com/images/btn-bkgd.gif) repeat scroll 0% 0%; visibility: inherit; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: auto; top: 201px; line-height: normal; z-index: 99999; right: 54px; width: 50px; height: 21px; font-size: 11px; color: rgb(51, 51, 51); -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; display: none;" name="snap_com_shot_option_cancel_name" value="Cancel" title="Close" type="button">
+</div>
+ <a style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 9px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; bottom: 6px; width: 100px; height: 20px;" class="snap_nopreview" id="snap_com_shot_cobrand_a" href="http://shots.snap.com/explore/9055/?key=e5a3c1e6dff5de35b1c6e7c470411886&amp;src=richnewman.wordpress.com&amp;cp=pub-logo&amp;url=http%3A%2F%2Fwordpress.com%2Fsnap" target="_blank"><div style="display: none;"></div></a>
+ <a title="Powered by Snap" class="snap_nopreview" id="snap_com_shot_logo_a" href="http://www.snap.com/about/shots1.php?source=pub-2311827-www.wordpress.com&amp;campaign=snap-shots-logo" style="border: 0pt none ; margin: 0pt; padding: 0pt; height: 15px; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/palette.gif); background-color: transparent; visibility: inherit; z-index: 99999; right: 7px; bottom: 8px; background-position: -950px 0pt; background-repeat: no-repeat; width: 81px;" target="_blank"><div style="display: none;"></div></a>
+ <a style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: hidden; z-index: 99999;" class="snap_nopreview" id="snap_com_shot_ribbon_a" href="http://www.snap.com/snapshots.php?source=richnewman.wordpress.com&amp;campaign=charity-ribbon#shares"><img title="Portions of Snap Shares Ad Impressions on this site are donated to Charity" alt="Snap Shares for charity" style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: hidden; z-index: 99999; right: 98px; bottom: 5px; width: 17px; height: 20px;" id="snap_com_shot_ribbon" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/ribbon.png"></a>
+ <img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: hidden; z-index: 99999;" id="snap_com_shot_lg" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/t.gif">
+</div>
+</div>
+<div id="rap">
+<h1 id="header"><a href="http://richnewman.wordpress.com/">Rich Newman</a></h1>
+
+<div id="content">
+<!-- end header -->
+
+
+<h2>July 14, 2007</h2>
+<div class="post-60 post hentry category-net category-cab category-composite-application-block category-gui category-scsf category-smart-client-software-factory category-user-interface category-beginners-guide category-c category-dotnet category-introduction category-technology" id="post-60">
+	 <h3 class="storytitle"><a href="http://richnewman.wordpress.com/2007/07/14/an-introduction-to-the-smart-client-software-factory-and-composite-application-block-part-1-modules-and-shells/" rel="bookmark">An Introduction to the Smart Client Software Factory and Composite Application Block: Part 1 Modules and&nbsp;Shells</a></h3>
+	<div class="meta">Filed under:  <a href="http://en.wordpress.com/tag/net/" title="View all posts in .net" rel="category tag">.net</a>, <a href="http://en.wordpress.com/tag/cab/" title="View all posts in CAB" rel="category tag">CAB</a>, <a href="http://en.wordpress.com/tag/composite-application-block/" title="View all posts in Composite Application Block" rel="category tag">Composite Application Block</a>, <a href="http://en.wordpress.com/tag/gui/" title="View all posts in GUI" rel="category tag">GUI</a>, <a href="http://en.wordpress.com/tag/scsf/" title="View all posts in SCSF" rel="category tag">SCSF</a>, <a href="http://en.wordpress.com/tag/smart-client-software-factory/" title="View all posts in Smart Client Software Factory" rel="category tag">Smart Client Software Factory</a>, <a href="http://en.wordpress.com/tag/user-interface/" title="View all posts in User Interface" rel="category tag">User Interface</a>, <a href="http://en.wordpress.com/tag/beginners-guide/" title="View all posts in beginners guide" rel="category tag">beginners guide</a>, <a href="http://en.wordpress.com/tag/c/" title="View all posts in c#" rel="category tag">c#</a>, <a href="http://en.wordpress.com/tag/dotnet/" title="View all posts in dotnet" rel="category tag">dotnet</a>, <a href="http://en.wordpress.com/tag/introduction/" title="View all posts in introduction" rel="category tag">introduction</a>, <a href="http://en.wordpress.com/tag/technology/" title="View all posts in technology" rel="category tag">technology</a> —  richnewman @ 4:06 pm </div>
+
+	<div class="storycontent">
+		<div class="snap_preview"><p><strong>Introduction</strong></p>
+<p>Microsoft’s Smart Client Software Factory (SCSF) and associated
+application blocks are excellent pieces of software. However, for a
+developer coming to them for the first time they can be extremely
+daunting. There are many things that can be confusing. Firstly we have
+modules, workitems, workspaces, and shells, all of which sound similar.
+Then there’s dependency injection, command patterns, event brokers,
+model-view-presenter patterns and other high-level concepts, none of
+which are easy to understand. There’s a load of other concepts as well,
+multiple example applications, and plenty of documentation. Microsoft’s
+documentation has a very steep learning curve indeed.</p>
+<p>I’m going to write a series of short articles that assume you are a
+developer coming to this for the first time and are confused as I was.
+To do this I’m going to focus on one or two basic concepts in each
+article. There’s quite a lot of blogging about CAB/SCSF on the web, but
+I couldn’t find anything that gave me a quick, basic introduction with
+a gentle learning curve. This is what I will try to achieve here.</p>
+<p>To start I’m going to look at the basic set up of modules and shells
+in the Composite Application Block. This is the starting point for most
+SCSF projects. I’m not going to cover WorkItems until my second article
+as I found them quite confusing initially.</p>
+<p><strong>Requirements</strong></p>
+<p>For this example you only need <a href="http://www.richnewman.plus.com/CABPart1.zip">download the code</a>. This contains the CAB dlls it needs to run.</p>
+<p><strong>Composite Application Block</strong></p>
+<p>The starting point for many developers coming to the Composite Application Block (CAB) is the need to either</p>
+<p>1. To design a complex user interface that has some kind of separate
+components that can be developed and released independently, or<br>
+2. To take several existing user interface applications and combine
+them in such a way that they can continue to be developed
+independently, but appear in the same window with common menus etc and
+can interoperate on some level.</p>
+<p>This is certainly where I started. The key point in both cases is
+that if we want our components to be released independently then they
+can’t have direct references to each other. In short we want
+‘applications’ or components that appear in the same user interface
+(same window) with common menus and some ability to talk to each other,
+but don’t directly reference each other.</p>
+<p>The CAB allows us to do this. It clearly offers us a lot more than just this, but in this article I will show the basics.</p>
+<p><strong>Modules and Shells</strong></p>
+<p>The first concept you need to understand for this is that of a
+‘module’. This is what I am referring to as a ‘application’ or
+‘component’ in the paragraph above: a block of code, usually with a
+user interface that can be displayed in a common window, but which
+doesn’t reference other modules. In reality these are separate .NET
+projects within our solution that don’t reference each other.</p>
+<p>The second concept is that of the ‘shell’. This is simply the
+‘common window’ I’m referring to in the paragraph above. It will
+contain our modules, or at least the visual parts of them. In reality
+the shell is usually contained in its own .NET project, but one that
+doesn’t reference any of the modules, nor is referenced by them.</p>
+<p>So, simplistically:</p>
+<p>Module = standalone project to be used in a composite user interface<br>
+Shell = the host form for the composite user interface</p>
+<p><strong>Our Example</strong></p>
+<p>Let’s start with a really simple example. Assume we have a C#
+project that just displays a red form, and another separate project
+that just displays a blue form. These are going to be our two modules.
+Then we want a third project to contain a shell, which in this case
+will just be another form that we want displayed. To keep this example
+really simple we won’t try to display the red and blue forms actually
+inside the shell: this will be done in part 2.</p>
+<p>The difficult bit is that although all these projects will be in the
+same solution, none of them will reference each other directly, yet all
+three forms will display at start up. Obviously we could do this fairly
+simply with reflection, but we will use the CAB to do it.</p>
+<p><strong>Naïve Application Example<br>
+</strong></p>
+<p><a href="http://www.richnewman.plus.com/CABPart1.zip">The code for this example is available.</a></p>
+<p>To implement the example:</p>
+<p>1. We set up three projects (all Windows applications) in a
+solution. We’ll call these Red, Blue, and Shell. For the Red and Blue
+projects (which will be our modules) we simply change the BackColor
+property of the form to red and blue as appropriate.<br>
+2. We add references to the CAB dlls
+(Microsoft.Practices.CompositeUI.dll,
+.Practices.CompositeUI.WinForms.dll, and
+Microsoft.Practices.ObjectBuilder.dll) to all three of the projects. We
+also make sure all three build into the same build directory (via the
+Properties/Build tab). Shell is the startup project.<br>
+3. Now if we run the projects all three will build, but clearly only
+the form from the Shell project will get displayed, since that is the
+start up project. We need to tell the other modules to show their
+forms. To do this we change Program.cs in Shell (our start up code) to
+inherit from FormShellApplication&lt;,&gt; as below:</p>
+<pre> <font size="2" color="#0000ff" face="Courier">using</font> <font size="2" color="#800080" face="Courier">System</font>;
+ <font size="2" color="#0000ff" face="Courier">using</font> <font size="2" color="#800080" face="Courier">Microsoft</font>.<font size="2" color="#800080" face="Courier">Practices</font>.<font size="2" color="#800080" face="Courier">CompositeUI</font>.<font size="2" color="#800080" face="Courier">WinForms</font>;
+ <font size="2" color="#0000ff" face="Courier">using</font> <font size="2" color="#800080" face="Courier">Microsoft</font>.<font size="2" color="#800080" face="Courier">Practices</font>.<font size="2" color="#800080" face="Courier">CompositeUI</font>;       
+
+ <font size="2" color="#0000ff" face="Courier">namespace</font> <font size="2" color="#800080" face="Courier">Shell</font>
+ {
+     <font size="2" color="#0000ff" face="Courier">public</font> <font size="2" color="#0000ff" face="Courier">class</font> <font size="2" color="#2b91af" face="Courier">Program</font> : <font size="2" color="#2b91af" face="Courier">FormShellApplication</font>&lt;<font size="2" color="#2b91af" face="Courier">WorkItem</font>, <font size="2" color="#2b91af" face="Courier">Form1</font>&gt;
+     {
+         [<font size="2" color="#2b91af" face="Courier">STAThread</font>]
+         <font size="2" color="#0000ff" face="Courier">static</font> <font size="2" color="#0000ff" face="Courier">void</font> <font size="2" color="#800080" face="Courier">Main</font>()
+         {
+             <font size="2" color="#0000ff" face="Courier">new</font> <font size="2" color="#2b91af" face="Courier">Program</font>().<font size="2" color="#800080" face="Courier">Run</font>();
+         }
+     }
+ }</pre>
+<p>The two types passed in to FormShellApplication&lt;,&gt; both get
+instantiated when Program is instantiated and .Run() is called (this
+calls into the base classes clearly). Form1 is our shell form and gets
+displayed, WorkItem I will discuss in part 2. After this change the
+application will still only display the MDI form, but the .Run() call
+will enable us to show the other two screens with some other simple
+changes.</p>
+<p>4. In fact the application is now looking for an XML file telling it
+what other modules to load. Again this happens as a result of the call
+to .Run(). The XML file has to be called ProfileCatalog.xml, has to be
+copied always into the output directory, and has to look like the XML
+below:</p>
+<pre><font size="2" color="#0000ff" face="Courier">&lt;?</font><font size="2" color="#a31515" face="Courier">xml</font><font size="2" color="#0000ff" face="Courier"> </font><font size="2" color="#ff0000" face="Courier">version</font><font size="2" color="#0000ff" face="Courier">=</font>"<font size="2" color="#0000ff" face="Courier">1.0</font>"<font size="2" color="#0000ff" face="Courier"> </font><font size="2" color="#ff0000" face="Courier">encoding</font><font size="2" color="#0000ff" face="Courier">=</font>"<font size="2" color="#0000ff" face="Courier">utf-8</font>"<font size="2" color="#0000ff" face="Courier"> ?&gt;</font>
+<font size="2" color="#0000ff" face="Courier">&lt;</font><font size="2" color="#a31515" face="Courier">SolutionProfile</font><font size="2" color="#0000ff" face="Courier"> </font><font size="2" color="#ff0000" face="Courier">xmlns</font><font size="2" color="#0000ff" face="Courier">=</font>"<font size="2" color="#0000ff" face="Courier">http://schemas.microsoft.com/pag/cab-profile</font>"<font size="2" color="#0000ff" face="Courier">&gt;</font>
+<font size="2" color="#0000ff" face="Courier">  &lt;</font><font size="2" color="#a31515" face="Courier">Modules</font><font size="2" color="#0000ff" face="Courier">&gt;</font>
+<font size="2" color="#0000ff" face="Courier">    &lt;</font><font size="2" color="#a31515" face="Courier">ModuleInfo</font><font size="2" color="#0000ff" face="Courier"> </font><font size="2" color="#ff0000" face="Courier">AssemblyFile</font><font size="2" color="#0000ff" face="Courier">=</font>"<font size="2" color="#0000ff" face="Courier">Red.exe</font>"<font size="2" color="#0000ff" face="Courier"> /&gt;</font>
+<font size="2" color="#0000ff" face="Courier">    &lt;</font><font size="2" color="#a31515" face="Courier">ModuleInfo</font><font size="2" color="#0000ff" face="Courier"> </font><font size="2" color="#ff0000" face="Courier">AssemblyFile</font><font size="2" color="#0000ff" face="Courier">=</font>"<font size="2" color="#0000ff" face="Courier">Blue.exe</font>"<font size="2" color="#0000ff" face="Courier"> /&gt;</font>
+<font size="2" color="#0000ff" face="Courier">  &lt;/</font><font size="2" color="#a31515" face="Courier">Modules</font><font size="2" color="#0000ff" face="Courier">&gt;</font>
+<font size="2" color="#0000ff" face="Courier">&lt;/</font><font size="2" color="#a31515" face="Courier">SolutionProfile</font><font size="2" color="#0000ff" face="Courier">&gt;</font></pre>
+<p>We add this file to the Shell project. Now if you get the names of
+the modules wrong and then run the application it will throw an
+exception, showing that it’s trying to find the relevant files.</p>
+<p>5. Finally we need something in the Red and Blue projects that will
+actually run as a result of this (the CAB doesn’t just call the usual
+start up code). We can do this by adding a class that inherits from
+Microsoft.Practices.CompositeUI.ModuleInit and overrides its Load()
+method. The CAB code will call this Load method from the .Run() call
+above:</p>
+<pre><font size="2" color="#0000ff" face="Courier">using</font> <font size="2" color="#800080" face="Courier">Microsoft</font>.<font size="2" color="#800080" face="Courier">Practices</font>.<font size="2" color="#800080" face="Courier">CompositeUI</font>;
+<font size="2" color="#0000ff" face="Courier">namespace</font> <font size="2" color="#800080" face="Courier">Blue</font>
+{
+    <font size="2" color="#0000ff" face="Courier">public</font> <font size="2" color="#0000ff" face="Courier">class</font> <font size="2" color="#2b91af" face="Courier">BlueModuleInit</font> : <font size="2" color="#2b91af" face="Courier">ModuleInit</font>
+    {
+        <font size="2" color="#0000ff" face="Courier">public</font> <font size="2" color="#0000ff" face="Courier">override</font> <font size="2" color="#0000ff" face="Courier">void</font> <font size="2" color="#800080" face="Courier">Load</font>()
+        {
+            <font size="2" color="#0000ff" face="Courier">base</font>.<font size="2" color="#800080" face="Courier">Load</font>();
+            <font size="2" color="#2b91af" face="Courier">Form1</font> <font size="2" color="#800080" face="Courier">form</font> = <font size="2" color="#0000ff" face="Courier">new</font> <font size="2" color="#2b91af" face="Courier">Form1</font>();
+            <font size="2" color="#800080" face="Courier">form</font>.<font size="2" color="#800080" face="Courier">Show</font>();
+        }
+    }
+}</pre>
+<p>That’s it: if we put the code above in the Blue project, and the
+equivalent in the Red project, the three forms will now load and we
+have our first composite application. None of the three separate
+projects has a direct reference to any other.</p>
+<p><strong>Summary </strong></p>
+<p>The difficult thing to understand when you see this for the first
+time is that the CAB is doing a lot of work for us when we call that
+.Run() method on a FormShellApplication class. It’s instantiating and
+showing our Form1 (our shell). It’s checking for an XML file called
+ProfileCatalog.xml. If it finds ProfileCatalog.xml, it is loading the
+assemblies it finds listed in there. It’s then looking for any
+ModuleInit classes in them, and calling .Load if it finds them. None of
+that’s too complicated, but it can feel a bit like smoke and mirrors
+are being used.</p>
+<p><a href="http://richnewman.wordpress.com/2007/07/14/an-introduction-to-the-smart-client-software-factory-and-composite-application-block-part-2-workitems/">This article is continued in part 2</a>,
+where I explain WorkItems, and part 3 where I will explain dependency
+injection, and show how we can get the two forms in the Red and Blue
+projects in our example to be MDI children in the shell.</p>
+<div style="margin-top: 1em;" class="possibly-related"><hr><p><strong>Possibly related posts: (automatically generated)</strong></p><ul><li><a rel="related" href="http://opinionmachine.wordpress.com/2009/04/19/composite-application-guidance-for-wpf/">Composite Application Guidance for WPF</a></li><li><a rel="related" href="http://markgar.wordpress.com/2007/04/18/rossport-five%e2%80%99s-position-vindicated/">Rossport Five’s position vindicated</a></li><li><a rel="related" href="http://bitbot.wordpress.com/2008/05/06/the-nus-facebook-module-a-students-perspective/">The NUS Facebook Module: A student’s perspective</a></li><li><a rel="related" href="http://www.tuaw.com/2009/06/26/friday-favorite-scrivener?icid=sphere_wpcom_inline">Friday Favorite: Scrivener</a></li></ul></div></div>	</div>
+
+	<div class="feedback">
+                        <a href="http://richnewman.wordpress.com/2007/07/14/an-introduction-to-the-smart-client-software-factory-and-composite-application-block-part-1-modules-and-shells/#comments" title="Comment on An Introduction to the Smart Client Software Factory and Composite Application Block: Part 1 Modules and&nbsp;Shells">Comments (40)</a>	</div>
+
+</div>
+
+<h2 id="comments">40 Comments 
+	<a href="#postcomment" title="Leave a comment">»</a>
+</h2>
+
+<ol id="commentlist" class="snap_preview">
+<li id="comment-211">
+	<div id="div-comment-211" class="vcard">
+	<img alt="" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/a.png" class="avatar avatar-32" width="32" height="32">	<p>The zip file seems to be corrupted. Thanks doe the nice article to start off …</p>
+	<p><cite>Comment by <span class="fn">Aneel</span> — August 14, 2007 @ <a href="#comment-211">6:53 pm</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2007/07/14/an-introduction-to-the-smart-client-software-factory-and-composite-application-block-part-1-modules-and-shells/?replytocom=211#respond" onclick='return addComment.moveForm("div-comment-211", "211", "respond", "60")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-241">
+	<div id="div-comment-241" class="vcard">
+	<img alt="" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/a.png" class="avatar avatar-32" width="32" height="32">	<p>the zip file is corrupted.</p>
+	<p><cite>Comment by <span class="fn">divya</span> — August 17, 2007 @ <a href="#comment-241">7:43 am</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2007/07/14/an-introduction-to-the-smart-client-software-factory-and-composite-application-block-part-1-modules-and-shells/?replytocom=241#respond" onclick='return addComment.moveForm("div-comment-241", "241", "respond", "60")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-324">
+	<div id="div-comment-324" class="vcard">
+	<img alt="" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/d64f162a70e5037144dc100bcaf5bf2f.png" class="avatar avatar-32" width="32" height="32">	<p>Zip file is corrupted. Kindly upload a new one..<br>
+Article is very good for a start</p>
+	<p><cite>Comment by <span class="fn">Ratheesh</span> — August 22, 2007 @ <a href="#comment-324">8:18 am</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2007/07/14/an-introduction-to-the-smart-client-software-factory-and-composite-application-block-part-1-modules-and-shells/?replytocom=324#respond" onclick='return addComment.moveForm("div-comment-324", "324", "respond", "60")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-332">
+	<div id="div-comment-332" class="vcard">
+	<img alt="" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/20ffeb59bba855d0069ee936add87d8b.jpeg" class="avatar avatar-32" width="32" height="32">	<p>I’ve reposted the zip file, it should be fine now.</p>
+	<p><cite>Comment by <span class="fn"><a href="http://www.richnewman.com/" rel="external nofollow" class="url">richnewman</a></span> — August 22, 2007 @ <a href="#comment-332">11:03 pm</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2007/07/14/an-introduction-to-the-smart-client-software-factory-and-composite-application-block-part-1-modules-and-shells/?replytocom=332#respond" onclick='return addComment.moveForm("div-comment-332", "332", "respond", "60")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-406">
+	<div id="div-comment-406" class="vcard">
+	<img alt="" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/a.png" class="avatar avatar-32" width="32" height="32">	<p>The article was really useful.<br>
+Thanks..</p>
+	<p><cite>Comment by <span class="fn">Uma</span> — August 27, 2007 @ <a href="#comment-406">3:41 am</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2007/07/14/an-introduction-to-the-smart-client-software-factory-and-composite-application-block-part-1-modules-and-shells/?replytocom=406#respond" onclick='return addComment.moveForm("div-comment-406", "406", "respond", "60")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-464">
+	<div id="div-comment-464" class="vcard">
+	<img alt="" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/78125d2b90ad31adbbfede1ffb83d06c.png" class="avatar avatar-32" width="32" height="32">	<p>A very well written article..</p>
+	<p><cite>Comment by <span class="fn">Kumaresan</span> — August 30, 2007 @ <a href="#comment-464">3:00 pm</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2007/07/14/an-introduction-to-the-smart-client-software-factory-and-composite-application-block-part-1-modules-and-shells/?replytocom=464#respond" onclick='return addComment.moveForm("div-comment-464", "464", "respond", "60")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-659">
+	<div id="div-comment-659" class="vcard">
+	<img alt="" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/5823c903e77d213a98e756938b3cfcf2.png" class="avatar avatar-32" width="32" height="32">	<p>Your article was very useful. Thanks for your work!</p>
+	<p><cite>Comment by <span class="fn">Jozsef Csaba Juhasz</span> — September 12, 2007 @ <a href="#comment-659">12:32 pm</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2007/07/14/an-introduction-to-the-smart-client-software-factory-and-composite-application-block-part-1-modules-and-shells/?replytocom=659#respond" onclick='return addComment.moveForm("div-comment-659", "659", "respond", "60")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-675">
+	<div id="div-comment-675" class="vcard">
+	<img alt="" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/a.png" class="avatar avatar-32" width="32" height="32">	<p>Thanks for the article, nice to have a dead simple primer when you’re new to something.</p>
+	<p><cite>Comment by <span class="fn">Jon</span> — September 13, 2007 @ <a href="#comment-675">12:21 pm</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2007/07/14/an-introduction-to-the-smart-client-software-factory-and-composite-application-block-part-1-modules-and-shells/?replytocom=675#respond" onclick='return addComment.moveForm("div-comment-675", "675", "respond", "60")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-729">
+	<div id="div-comment-729" class="vcard">
+	<img alt="" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/759cecc9cfdcb872ef521859c3e8817b.png" class="avatar avatar-32" width="32" height="32">	<p>The article was helpful. Thanks for the efforts.</p>
+	<p><cite>Comment by <span class="fn">Jayant</span> — September 17, 2007 @ <a href="#comment-729">9:27 am</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2007/07/14/an-introduction-to-the-smart-client-software-factory-and-composite-application-block-part-1-modules-and-shells/?replytocom=729#respond" onclick='return addComment.moveForm("div-comment-729", "729", "respond", "60")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-774">
+	<div id="div-comment-774" class="vcard">
+	<img alt="" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/2a6bc93b3adf29989dab8aeecca3d870.png" class="avatar avatar-32" width="32" height="32">	<p>Thank you for explaining complex technology clear with simple example.</p>
+	<p><cite>Comment by <span class="fn">hong</span> — September 20, 2007 @ <a href="#comment-774">5:15 am</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2007/07/14/an-introduction-to-the-smart-client-software-factory-and-composite-application-block-part-1-modules-and-shells/?replytocom=774#respond" onclick='return addComment.moveForm("div-comment-774", "774", "respond", "60")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-1095">
+	<div id="div-comment-1095" class="vcard">
+	<img alt="" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/a7cd9b90d5b4e42e47529f32dd5f6530.png" class="avatar avatar-32" width="32" height="32">	<p>Simple superb article. THANKS A TON for making things easier !!!</p>
+	<p><cite>Comment by <span class="fn">Om Bajpai</span> — October 19, 2007 @ <a href="#comment-1095">7:52 am</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2007/07/14/an-introduction-to-the-smart-client-software-factory-and-composite-application-block-part-1-modules-and-shells/?replytocom=1095#respond" onclick='return addComment.moveForm("div-comment-1095", "1095", "respond", "60")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-1135">
+	<div id="div-comment-1135" class="vcard">
+	<img alt="" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/e7b29aa8d4e2c3acd20cf6abcb0193eb.png" class="avatar avatar-32" width="32" height="32">	<p>Thank
+you for your help. I’ve read a lot of info and could not start. Now I
+can! Would you be so kind to provide VB.NET code in parallel? Thanks
+again.</p>
+	<p><cite>Comment by <span class="fn">Edouard Tomberg</span> — October 22, 2007 @ <a href="#comment-1135">9:02 pm</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2007/07/14/an-introduction-to-the-smart-client-software-factory-and-composite-application-block-part-1-modules-and-shells/?replytocom=1135#respond" onclick='return addComment.moveForm("div-comment-1135", "1135", "respond", "60")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-1145">
+	<div id="div-comment-1145" class="vcard">
+	<img alt="" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/f3618d2ff528d42e53f316adc5e16c98.png" class="avatar avatar-32" width="32" height="32">	<p>My dev team thanks you! After being immersed in the blogs, docs, HOL etc for the past week this is like a breath of fresh air!</p>
+	<p><cite>Comment by <span class="fn">John Pether</span> — October 24, 2007 @ <a href="#comment-1145">6:57 am</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2007/07/14/an-introduction-to-the-smart-client-software-factory-and-composite-application-block-part-1-modules-and-shells/?replytocom=1145#respond" onclick='return addComment.moveForm("div-comment-1145", "1145", "respond", "60")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-1160">
+	<div id="div-comment-1160" class="vcard">
+	<img alt="" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/a.png" class="avatar avatar-32" width="32" height="32">	<p>Hurray. At last a clear understandable CAB/SCSF article. Many thanks.</p>
+	<p><cite>Comment by <span class="fn">Ed</span> — October 26, 2007 @ <a href="#comment-1160">5:56 pm</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2007/07/14/an-introduction-to-the-smart-client-software-factory-and-composite-application-block-part-1-modules-and-shells/?replytocom=1160#respond" onclick='return addComment.moveForm("div-comment-1160", "1160", "respond", "60")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-1213">
+	<div id="div-comment-1213" class="vcard">
+	<img alt="" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/6f27f3195ac8e9c2640abff5bb7aa76d.png" class="avatar avatar-32" width="32" height="32">	<p>Rich,<br>
+Great article! We have been exploring the CAB and SCSF for a few
+months, but now it appears that both are being put out to pasture by
+Microsoft. What are your thoughts? Should we (or anyone else for that
+matter) invest any more energy in CAB/SCSF?</p>
+<p>Greg Bayer</p>
+	<p><cite>Comment by <span class="fn"><a href="http://www.bayernsoftware.com/" rel="external nofollow" class="url">Greg Bayer</a></span> — October 31, 2007 @ <a href="#comment-1213">5:19 pm</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2007/07/14/an-introduction-to-the-smart-client-software-factory-and-composite-application-block-part-1-modules-and-shells/?replytocom=1213#respond" onclick='return addComment.moveForm("div-comment-1213", "1213", "respond", "60")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-1221">
+	<div id="div-comment-1221" class="vcard">
+	<img alt="" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/5c875c53f7241f29f1627f2dddac0fc8.png" class="avatar avatar-32" width="32" height="32">	<p>Was
+really glad to find your article on the CAB – I have struggled with it
+for some time now. Eagerly, I tried your example coding it into a VS
+solution – it compiles ok but only shows the shell form! I downloaded
+your code, loaded it into VS and it runs fine! I’ve compared every line
+of code in every class and they look identical but mine still only
+shows the shell window. Also, tried deliberately changing one of the
+assembly names in the ProfileCatalog.xml file but it doesn’t throw an
+exception. Any ideas where I should look?</p>
+	<p><cite>Comment by <span class="fn">John Smith</span> — November 1, 2007 @ <a href="#comment-1221">2:26 pm</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2007/07/14/an-introduction-to-the-smart-client-software-factory-and-composite-application-block-part-1-modules-and-shells/?replytocom=1221#respond" onclick='return addComment.moveForm("div-comment-1221", "1221", "respond", "60")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-1247">
+	<div id="div-comment-1247" class="vcard">
+	<img alt="" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/5c875c53f7241f29f1627f2dddac0fc8.png" class="avatar avatar-32" width="32" height="32">	<p>Hi Rich,<br>
+Managed to sort it out myself. Forgot this part “The XML file has to be
+called ProfileCatalog.xml, has to be copied always into the output
+directory” – I had the file in the VS Shell project but didn’t copy it
+to the output directory (the bin\debug directory in my case). The light
+dawns <img src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/icon_smile.gif" alt=":-)" class="wp-smiley"> </p>
+	<p><cite>Comment by <span class="fn">John Smith</span> — November 2, 2007 @ <a href="#comment-1247">2:11 pm</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2007/07/14/an-introduction-to-the-smart-client-software-factory-and-composite-application-block-part-1-modules-and-shells/?replytocom=1247#respond" onclick='return addComment.moveForm("div-comment-1247", "1247", "respond", "60")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-1298">
+	<div id="div-comment-1298" class="vcard">
+	<img alt="" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/20ffeb59bba855d0069ee936add87d8b.jpeg" class="avatar avatar-32" width="32" height="32">	<p>Greg</p>
+<p>I posted some thoughts on your question</p>
+<p><a href="http://richnewman.wordpress.com/2007/11/04/composite-application-block-or-wpf-composite-client/" rel="nofollow">http://richnewman.wordpress.com/2007/11/04/composite-application-block-or-wpf-composite-client/</a></p>
+<p>Rich</p>
+	<p><cite>Comment by <span class="fn"><a href="http://www.richnewman.com/" rel="external nofollow" class="url">richnewman</a></span> — November 5, 2007 @ <a href="#comment-1298">12:27 am</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2007/07/14/an-introduction-to-the-smart-client-software-factory-and-composite-application-block-part-1-modules-and-shells/?replytocom=1298#respond" onclick='return addComment.moveForm("div-comment-1298", "1298", "respond", "60")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-1730">
+	<div id="div-comment-1730" class="vcard">
+	<img alt="" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/0a6acedf99ef38676c1f2adda706de5c.png" class="avatar avatar-32" width="32" height="32">	<p>Hey Rich,</p>
+<p>I was really looking for such an article which can take me from the
+ground zeor level for CAB, and you have written such a SIMPLE and
+WONDERFUL article that i can grasp CAB concept very easily and can
+start development on it fairly quickly. Thanks alot for such an
+excellent article.</p>
+<p>ATHER</p>
+	<p><cite>Comment by <span class="fn">Ather Ali</span> — November 26, 2007 @ <a href="#comment-1730">6:33 pm</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2007/07/14/an-introduction-to-the-smart-client-software-factory-and-composite-application-block-part-1-modules-and-shells/?replytocom=1730#respond" onclick='return addComment.moveForm("div-comment-1730", "1730", "respond", "60")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-2087">
+	<div id="div-comment-2087" class="vcard">
+	<img alt="" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/19f95759a7d61ab3e1b84a6d9d71062c.png" class="avatar avatar-32" width="32" height="32">	<p>very very nice article. After reading your articles I got a clear idea about SCSF.</p>
+	<p><cite>Comment by <span class="fn">Prakash</span> — December 31, 2007 @ <a href="#comment-2087">8:44 am</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2007/07/14/an-introduction-to-the-smart-client-software-factory-and-composite-application-block-part-1-modules-and-shells/?replytocom=2087#respond" onclick='return addComment.moveForm("div-comment-2087", "2087", "respond", "60")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-2295">
+	<div id="div-comment-2295" class="vcard">
+	<img alt="" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/51831d1b54c2fc2500a4a405e0988967.png" class="avatar avatar-32" width="32" height="32">	<p>Nice job, simple and to the point – exactly how it should be – thank you!</p>
+	<p><cite>Comment by <span class="fn">jpratt</span> — February 5, 2008 @ <a href="#comment-2295">6:39 pm</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2007/07/14/an-introduction-to-the-smart-client-software-factory-and-composite-application-block-part-1-modules-and-shells/?replytocom=2295#respond" onclick='return addComment.moveForm("div-comment-2295", "2295", "respond", "60")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-2330">
+	<div id="div-comment-2330" class="vcard">
+	<img alt="" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/91fb39dad1ea5b878b298ee1db9bd05b.png" class="avatar avatar-32" width="32" height="32">	<p>Getting the following Error :</p>
+<p>Could not load type
+‘Microsoft.Practices.CompositeUI.WinForms.WindowsFormsApplication`2′
+from assembly ‘Microsoft.Practices.CompositeUI.WinForms,
+Version=1.0.51205.0, Culture=neutral, PublicKeyToken=null’.</p>
+<p>When i try to add a 3rd project as yellow and try to launch all the four forms……please help me in this.</p>
+	<p><cite>Comment by <span class="fn">S.UMA</span> — February 13, 2008 @ <a href="#comment-2330">12:27 pm</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2007/07/14/an-introduction-to-the-smart-client-software-factory-and-composite-application-block-part-1-modules-and-shells/?replytocom=2330#respond" onclick='return addComment.moveForm("div-comment-2330", "2330", "respond", "60")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-2331">
+	<div id="div-comment-2331" class="vcard">
+	<img alt="" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/91fb39dad1ea5b878b298ee1db9bd05b.png" class="avatar avatar-32" width="32" height="32">	<p>article was really very good.</p>
+	<p><cite>Comment by <span class="fn">S.UMA</span> — February 13, 2008 @ <a href="#comment-2331">12:27 pm</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2007/07/14/an-introduction-to-the-smart-client-software-factory-and-composite-application-block-part-1-modules-and-shells/?replytocom=2331#respond" onclick='return addComment.moveForm("div-comment-2331", "2331", "respond", "60")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-2624">
+	<div id="div-comment-2624" class="vcard">
+	<img alt="" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/a.png" class="avatar avatar-32" width="32" height="32">	<p>really a nice article for beginners</p>
+	<p><cite>Comment by <span class="fn">Mohsin</span> — March 28, 2008 @ <a href="#comment-2624">6:01 am</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2007/07/14/an-introduction-to-the-smart-client-software-factory-and-composite-application-block-part-1-modules-and-shells/?replytocom=2624#respond" onclick='return addComment.moveForm("div-comment-2624", "2624", "respond", "60")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-2641">
+	<div id="div-comment-2641" class="vcard">
+	<img alt="" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/90a538fcb394df6c6c1ac7077e8e8473.png" class="avatar avatar-32" width="32" height="32">	<p>Regarding comment 22. </p>
+<p>S.UMA it seems like you’ve solved the problem: Could not load type
+‘Microsoft.Practices.CompositeUI.WinForms.WindowsFormsApplication`2′
+from assembly ‘Microsoft.Practices.CompositeUI.WinForms,
+Version=1.0.51205.0, Culture=neutral, PublicKeyToken=null’.</p>
+<p>Can you post solution?</p>
+	<p><cite>Comment by <span class="fn">Andrey</span> — April 1, 2008 @ <a href="#comment-2641">2:38 pm</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2007/07/14/an-introduction-to-the-smart-client-software-factory-and-composite-application-block-part-1-modules-and-shells/?replytocom=2641#respond" onclick='return addComment.moveForm("div-comment-2641", "2641", "respond", "60")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-2662">
+	<div id="div-comment-2662" class="vcard">
+	<img alt="" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/39080e216141537b9f25a3c97495b59d.png" class="avatar avatar-32" width="32" height="32">	<p>Andrey </p>
+<p>I found the same error and corrected the same. The error is due to mismatch of the version of the 3 DLL<br>
+-Microsoft.Practices.CompositeUI.dll<br>
+-Microsoft.Practices.CompositeUI.WinForms.dll<br>
+-Microsoft.Practices.ObjectBuilder.dll</p>
+<p>When adding reference to the above 3 in the new project make sure
+you pick the DLL’s up from CABPart1\Resources and the error will vanish.</p>
+<p>Alternatively (this is what I did) you can also point to the
+‘C:\Program Files\Microsoft Smart Client Factory\Lib’ location for all
+projects ( 3 from Rich and the new ones)</p>
+	<p><cite>Comment by <span class="fn">Siddhartha</span> — April 16, 2008 @ <a href="#comment-2662">6:51 am</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2007/07/14/an-introduction-to-the-smart-client-software-factory-and-composite-application-block-part-1-modules-and-shells/?replytocom=2662#respond" onclick='return addComment.moveForm("div-comment-2662", "2662", "respond", "60")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-2793">
+	<div id="div-comment-2793" class="vcard">
+	<img alt="" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/a.png" class="avatar avatar-32" width="32" height="32">	<p>Exactly what I was looking for.<br>
+Thanks</p>
+	<p><cite>Comment by <span class="fn">Ariel</span> — August 7, 2008 @ <a href="#comment-2793">11:10 am</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2007/07/14/an-introduction-to-the-smart-client-software-factory-and-composite-application-block-part-1-modules-and-shells/?replytocom=2793#respond" onclick='return addComment.moveForm("div-comment-2793", "2793", "respond", "60")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-2794">
+	<div id="div-comment-2794" class="vcard">
+	<img alt="" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/b2236c2b3a1ca35269a1a1d2c08bbee0.png" class="avatar avatar-32" width="32" height="32">	<p>Thanks for this simple, yet very effective lesson on CAB.</p>
+	<p><cite>Comment by <span class="fn">Edgardo</span> — August 8, 2008 @ <a href="#comment-2794">6:05 am</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2007/07/14/an-introduction-to-the-smart-client-software-factory-and-composite-application-block-part-1-modules-and-shells/?replytocom=2794#respond" onclick='return addComment.moveForm("div-comment-2794", "2794", "respond", "60")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-2795">
+	<div id="div-comment-2795" class="vcard">
+		<p>[...] <a href="http://richnewman.wordpress.com/2007/07/14/an-introduction-to-the-smart-client-software-factory-and-.." rel="nofollow">http://richnewman.wordpress.com/2007/07/14/an-introduction-to-the-smart-client-software-factory-and-..</a>. [...]</p>
+	<p><cite>Pingback by <span class="fn"><a href="http://russprof.wordpress.com/2008/08/11/cab-scsf/" rel="external nofollow" class="url">CAB / SCSF « Russ Development Weblog</a></span> — August 11, 2008 @ <a href="#comment-2795">10:06 am</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2007/07/14/an-introduction-to-the-smart-client-software-factory-and-composite-application-block-part-1-modules-and-shells/?replytocom=2795#respond" onclick='return addComment.moveForm("div-comment-2795", "2795", "respond", "60")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-2796">
+	<div id="div-comment-2796" class="vcard">
+	<img alt="" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/198cc21389803dfaefee5e3a4cf58086.png" class="avatar avatar-32" width="32" height="32">	<p>Nice one for start up Reader of SmartClient and CAB.</p>
+	<p><cite>Comment by <span class="fn">PompanaGouda</span> — August 12, 2008 @ <a href="#comment-2796">2:16 pm</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2007/07/14/an-introduction-to-the-smart-client-software-factory-and-composite-application-block-part-1-modules-and-shells/?replytocom=2796#respond" onclick='return addComment.moveForm("div-comment-2796", "2796", "respond", "60")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-2802">
+	<div id="div-comment-2802" class="vcard">
+	<img alt="" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/2a1558695c6ebaad7296025963845416.png" class="avatar avatar-32" width="32" height="32">	<p>Does the associated code only work with VS 2005?  (I want to use VS 2008 for my SCSF project.)</p>
+	<p><cite>Comment by <span class="fn">Rod</span> — August 19, 2008 @ <a href="#comment-2802">10:44 pm</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2007/07/14/an-introduction-to-the-smart-client-software-factory-and-composite-application-block-part-1-modules-and-shells/?replytocom=2802#respond" onclick='return addComment.moveForm("div-comment-2802", "2802", "respond", "60")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-2839">
+	<div id="div-comment-2839" class="vcard">
+	<img alt="" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/b51095af5b30ff270b4a2fa1f9ae0fcb.png" class="avatar avatar-32" width="32" height="32">	<p>nice article,when we made new exe like Yellow.the form is not show.i wrote the code in xml.how solve my problem</p>
+	<p><cite>Comment by <span class="fn">samiksha</span> — September 19, 2008 @ <a href="#comment-2839">6:34 am</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2007/07/14/an-introduction-to-the-smart-client-software-factory-and-composite-application-block-part-1-modules-and-shells/?replytocom=2839#respond" onclick='return addComment.moveForm("div-comment-2839", "2839", "respond", "60")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-2846">
+	<div id="div-comment-2846" class="vcard">
+	<img alt="" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/798ca6d566f79d0b0f88c24d42c8e445.png" class="avatar avatar-32" width="32" height="32">	<p>Very good explanation.<br>
+I followed the same steps and the build succeeded but I get the message ModuleEnumeratorException unhandled. Any idea?</p>
+	<p><cite>Comment by <span class="fn">Vaishnavi</span> — September 22, 2008 @ <a href="#comment-2846">1:26 pm</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2007/07/14/an-introduction-to-the-smart-client-software-factory-and-composite-application-block-part-1-modules-and-shells/?replytocom=2846#respond" onclick='return addComment.moveForm("div-comment-2846", "2846", "respond", "60")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-2858">
+	<div id="div-comment-2858" class="vcard">
+	<img alt="" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/a.png" class="avatar avatar-32" width="32" height="32">	<p>Thanks
+for this post finally I really got the point of CAB, after reading tons
+of bla bla bla on MSDN i as not able to speed up with CAb yet</p>
+	<p><cite>Comment by <span class="fn">Jaime Calahorrano</span> — September 30, 2008 @ <a href="#comment-2858">3:43 pm</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2007/07/14/an-introduction-to-the-smart-client-software-factory-and-composite-application-block-part-1-modules-and-shells/?replytocom=2858#respond" onclick='return addComment.moveForm("div-comment-2858", "2858", "respond", "60")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-2918">
+	<div id="div-comment-2918" class="vcard">
+	<img alt="" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/a.png" class="avatar avatar-32" width="32" height="32">	<p>I am a first time user of CAB. This post really helps me understand the basic without wasting time.</p>
+	<p><cite>Comment by <span class="fn">Josh</span> — November 25, 2008 @ <a href="#comment-2918">6:07 am</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2007/07/14/an-introduction-to-the-smart-client-software-factory-and-composite-application-block-part-1-modules-and-shells/?replytocom=2918#respond" onclick='return addComment.moveForm("div-comment-2918", "2918", "respond", "60")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-2973">
+	<div id="div-comment-2973" class="vcard">
+	<img alt="" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/5d25c7e13d3e1da8a692289bc92e866f.png" class="avatar avatar-32" width="32" height="32">	<p>Excellent intro to CAB. Tired of reading lots of blah blah , this one was short and gets right to the point. Excellent !!!</p>
+	<p><cite>Comment by <span class="fn">Kodez</span> — January 10, 2009 @ <a href="#comment-2973">3:01 am</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2007/07/14/an-introduction-to-the-smart-client-software-factory-and-composite-application-block-part-1-modules-and-shells/?replytocom=2973#respond" onclick='return addComment.moveForm("div-comment-2973", "2973", "respond", "60")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-3019">
+	<div id="div-comment-3019" class="vcard">
+	<img alt="" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/0cc50df556dd603f099d6bdd92f54ddf.jpeg" class="avatar avatar-32" width="32" height="32">	<p>nice intro to cab. I like this. i will be expecting for more great tuts from you. <img src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/icon_smile.gif" alt=":)" class="wp-smiley">  thanks!</p>
+	<p><cite>Comment by <span class="fn"><a href="http://ebtenorio.wordpress.com/" rel="external nofollow" class="url">Eldon</a></span> — March 2, 2009 @ <a href="#comment-3019">6:29 am</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2007/07/14/an-introduction-to-the-smart-client-software-factory-and-composite-application-block-part-1-modules-and-shells/?replytocom=3019#respond" onclick='return addComment.moveForm("div-comment-3019", "3019", "respond", "60")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-3025">
+	<div id="div-comment-3025" class="vcard">
+	<img alt="" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/392befefbe6de9af2305575bf328322c.png" class="avatar avatar-32" width="32" height="32">	<p>thank you for excellent intro to CAB.</p>
+	<p><cite>Comment by <span class="fn">filip</span> — March 7, 2009 @ <a href="#comment-3025">9:53 pm</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2007/07/14/an-introduction-to-the-smart-client-software-factory-and-composite-application-block-part-1-modules-and-shells/?replytocom=3025#respond" onclick='return addComment.moveForm("div-comment-3025", "3025", "respond", "60")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-3103">
+	<div id="div-comment-3103" class="vcard">
+	<img alt="" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/48316a006e674f91b8f96d44e257c120.png" class="avatar avatar-32" width="32" height="32">	<p>Thanks, this is very good stuff.</p>
+	<p><cite>Comment by <span class="fn">SomRad</span> — June 3, 2009 @ <a href="#comment-3103">8:13 pm</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2007/07/14/an-introduction-to-the-smart-client-software-factory-and-composite-application-block-part-1-modules-and-shells/?replytocom=3103#respond" onclick='return addComment.moveForm("div-comment-3103", "3103", "respond", "60")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-3108">
+	<div id="div-comment-3108" class="vcard">
+	<img alt="" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/1fa3f6668e6e999ba7ccb31e7891146b.png" class="avatar avatar-32" width="32" height="32">	<p>Thanks, this is a good article<br>
+but when i debugging a solution it displays me only one Form-Shell..
+that is why where are only 3 folders in solution directory: shell,
+blue, red.. these folders contains only one exe files. There is no bin
+folder which have to contain three exe and other files of blue red and
+shell programs..<br>
+How can i slow this prolem??</p>
+	<p><cite>Comment by <span class="fn">eminach</span> — June 12, 2009 @ <a href="#comment-3108">8:42 am</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2007/07/14/an-introduction-to-the-smart-client-software-factory-and-composite-application-block-part-1-modules-and-shells/?replytocom=3108#respond" onclick='return addComment.moveForm("div-comment-3108", "3108", "respond", "60")'>Reply</a>	</div>
+	</div>
+</li>
+</ol>
+
+<div class="navigation">
+	<div class="alignleft"></div>
+	<div class="alignright"></div>
+</div>
+<br>
+
+
+<p><a href="http://richnewman.wordpress.com/2007/07/14/an-introduction-to-the-smart-client-software-factory-and-composite-application-block-part-1-modules-and-shells/feed/"><abbr title="Really Simple Syndication">RSS</abbr> feed for comments on this post.</a> 
+	<a href="http://richnewman.wordpress.com/2007/07/14/an-introduction-to-the-smart-client-software-factory-and-composite-application-block-part-1-modules-and-shells/trackback/" rel="trackback">TrackBack <abbr title="Uniform Resource Identifier">URI</abbr></a>
+</p>
+
+<div id="respond">
+<h2 id="postcomment">Leave a comment</h2>
+<div id="cancel-comment-reply"><small><a rel="nofollow" id="cancel-comment-reply-link" href="http://richnewman.wordpress.com/2007/07/14/an-introduction-to-the-smart-client-software-factory-and-composite-application-block-part-1-modules-and-shells/#respond" style="display: none;">Click here to cancel reply.</a></small></div>
+
+
+<form action="http://richnewman.wordpress.com/wp-comments-post.php" method="post" id="commentform">
+
+
+<p><input name="author" id="author" value="" size="22" tabindex="1" type="text">
+<label for="author"><small>Name </small></label></p>
+
+<p><input name="email" id="email" value="" size="22" tabindex="2" type="text">
+<label for="email"><small>Mail (will not be published) </small></label></p>
+
+<p><input name="url" id="url" value="" size="22" tabindex="3" type="text">
+<label for="url"><small>Website</small></label></p>
+
+
+<!--<p><small><strong>XHTML:</strong> You can use these tags: &lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;cite&gt; &lt;code&gt; &lt;pre&gt; &lt;del datetime=&quot;&quot;&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=&quot;&quot;&gt; &lt;strike&gt; &lt;strong&gt; </small></p>-->
+
+<p><textarea name="comment" id="comment" cols="100" rows="10" tabindex="4"></textarea></p>
+
+<p><input name="submit" id="submit" tabindex="5" value="Submit Comment" type="submit">
+<input name="comment_post_ID" value="60" id="comment_post_ID" type="hidden">
+<input name="comment_parent" id="comment_parent" value="0" type="hidden">
+</p>
+
+<input name="genseq" value="1246694688" type="hidden">
+<p><input name="subscribe" id="subscribe" value="subscribe" style="width: auto;" type="checkbox">
+		<label for="subscribe" id="subscribe-label">Notify me of follow-up comments via email.</label></p>
+</form>
+
+</div>
+
+
+
+<!-- begin footer -->
+</div>
+
+
+<!-- begin sidebar -->
+<div id="menu">
+
+<ul>
+<li id="search-2" class="widget widget_search"><form role="search" method="get" id="searchform" action="http://richnewman.wordpress.com/">
+	<div><label class="screen-reader-text" for="s">Search for:</label>
+	<input value="" name="s" id="s" type="text">
+	<input id="searchsubmit" value="Search" type="submit">
+	</div>
+	</form></li>
+		<li id="text-2" class="widget widget_text">			<h2 class="widgettitle">recent posts</h2>
+			<div class="textwidget"><a href="http://richnewman.wordpress.com/2009/06/06/running-visual-studio-as-an-administrator-under-windows-vista/">Running Visual Studio as an Administrator under Windows Vista</a><br><br>
+
+<a href="http://richnewman.wordpress.com/2008/02/23/table-of-contents-introduction-to-using-financial-products-markup-language-fpml-with-microsoft-net-tools/">Introduction to using Financial Products Markup Language (FpML) with Microsoft .NET Tools</a><br><br>
+
+<a href="http://richnewman.wordpress.com/intro-to-cab-toc/">An Introduction to the Smart Client Software Factory and Composite Application Block</a> <br><br>
+
+<a href="http://richnewman.wordpress.com/2007/12/09/a-beginners-guide-to-credit-default-swaps/">beginner's guide to credit default swaps</a><br><br>
+
+<a href="http://richnewman.wordpress.com/2007/10/26/user-interface-design-for-business-applications/">User Interface Design for Business Applications</a><br><br>
+
+<a href="http://richnewman.wordpress.com/2007/08/04/some-thoughts-on-soa-and-application-design-using-the-cabscsf/">Some Thoughts on SOA and Application Design using the CAB/SCSF</a> <br><br>
+
+<a href="http://richnewman.wordpress.com/2007/07/01/c-and-vbnet-line-count-utility/">C# And VB.NET Line Count Utility</a> <br><br>
+
+<a href="http://richnewman.wordpress.com/2007/06/24/a-beginner%e2%80%99s-guide-to-the-black-scholes-option-pricing-formula-part-1/">Beginner’s Guide to the Black-Scholes Option Pricing Formula</a> <br><br>
+
+<a href="http://richnewman.wordpress.com/2007/04/29/using-hsl-color-hue-saturation-luminosity-to-create-better-looking-guis-part-1/">Using HSL Color to Create Better-Looking GUIs</a> <br><br>
+
+<a href="http://richnewman.wordpress.com/2007/04/15/a-beginner%e2%80%99s-guide-to-calling-a-net-library-from-excel/">Beginner's Guide to Calling a .NET Library from Excel</a><br><br>
+
+<a href="http://richnewman.wordpress.com/2007/04/08/top-level-exception-handling-in-windows-forms-applications-part-1/">Top-level Exception Handling in Windows Forms Applications</a><br><br>
+
+<a href="http://richnewman.wordpress.com/2007/03/23/comparing-values-in-net-identity-and-equivalence-part-1/">Comparing Values for Equality in .NET: Identity and Equivalence</a><br><br></div>
+		</li>
+		<li id="text-3" class="widget widget_text">			<h2 class="widgettitle">pages</h2>
+			<div class="textwidget"><a href="http://richnewman.wordpress.com/about/">About Me</a> <br><br></div>
+		</li>
+<li id="archives-2" class="widget widget_archive"><h2 class="widgettitle">Archives</h2>
+		<ul>
+			<li><a href="http://richnewman.wordpress.com/2009/06/" title="June 2009">June 2009</a>&nbsp;(2)</li>
+	<li><a href="http://richnewman.wordpress.com/2008/03/" title="March 2008">March 2008</a>&nbsp;(3)</li>
+	<li><a href="http://richnewman.wordpress.com/2008/02/" title="February 2008">February 2008</a>&nbsp;(4)</li>
+	<li><a href="http://richnewman.wordpress.com/2008/01/" title="January 2008">January 2008</a>&nbsp;(3)</li>
+	<li><a href="http://richnewman.wordpress.com/2007/12/" title="December 2007">December 2007</a>&nbsp;(6)</li>
+	<li><a href="http://richnewman.wordpress.com/2007/11/" title="November 2007">November 2007</a>&nbsp;(3)</li>
+	<li><a href="http://richnewman.wordpress.com/2007/10/" title="October 2007">October 2007</a>&nbsp;(5)</li>
+	<li><a href="http://richnewman.wordpress.com/2007/09/" title="September 2007">September 2007</a>&nbsp;(8)</li>
+	<li><a href="http://richnewman.wordpress.com/2007/08/" title="August 2007">August 2007</a>&nbsp;(6)</li>
+	<li><a href="http://richnewman.wordpress.com/2007/07/" title="July 2007">July 2007</a>&nbsp;(8)</li>
+	<li><a href="http://richnewman.wordpress.com/2007/06/" title="June 2007">June 2007</a>&nbsp;(4)</li>
+	<li><a href="http://richnewman.wordpress.com/2007/05/" title="May 2007">May 2007</a>&nbsp;(2)</li>
+	<li><a href="http://richnewman.wordpress.com/2007/04/" title="April 2007">April 2007</a>&nbsp;(5)</li>
+	<li><a href="http://richnewman.wordpress.com/2007/03/" title="March 2007">March 2007</a>&nbsp;(5)</li>
+		</ul>
+</li>
+		<li id="text-1" class="widget widget_text">						<div class="textwidget"><a href="http://richnewman.wordpress.com/feed"><img src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/e28.png"></a> </div>
+		</li>
+<li id="pages-2" class="widget widget_pages"><h2 class="widgettitle">Pages</h2>
+		<ul>
+			<li class="page_item page-item-2"><a href="http://richnewman.wordpress.com/about/" title="About">About</a></li>
+<li class="page_item page-item-79"><a href="http://richnewman.wordpress.com/attempted-solutions-to-random-numbers-problem/" title="Attempted Solutions to Random Numbers&nbsp;Problem">Attempted Solutions to Random Numbers&nbsp;Problem</a></li>
+<li class="page_item page-item-67"><a href="http://richnewman.wordpress.com/dependency-injection-example-constructor-injection/" title="Dependency Injection Example: Constructor&nbsp;Injection">Dependency Injection Example: Constructor&nbsp;Injection</a></li>
+<li class="page_item page-item-69"><a href="http://richnewman.wordpress.com/dependency-injection-example-interface-injection/" title="Dependency Injection Example: Interface&nbsp;Injection">Dependency Injection Example: Interface&nbsp;Injection</a></li>
+<li class="page_item page-item-68"><a href="http://richnewman.wordpress.com/dependency-injection-example-setter-injection/" title="Dependency Injection Example: Setter&nbsp;Injection">Dependency Injection Example: Setter&nbsp;Injection</a></li>
+<li class="page_item page-item-39"><a href="http://richnewman.wordpress.com/hslcolor-class/" title="HSLColor&nbsp;Class">HSLColor&nbsp;Class</a></li>
+<li class="page_item page-item-76"><a href="http://richnewman.wordpress.com/weirdinteger-an-example-of-the-use-of-icomparable/" title="Inversion of Control in .NET: an example of the use of&nbsp;IComparable">Inversion of Control in .NET: an example of the use of&nbsp;IComparable</a></li>
+<li class="page_item page-item-100"><a href="http://richnewman.wordpress.com/intro-to-cab-toc/" title="Table of Contents: Introduction to&nbsp;CAB/SCSF">Table of Contents: Introduction to&nbsp;CAB/SCSF</a></li>
+<li class="page_item page-item-32"><a href="http://richnewman.wordpress.com/top-level-exception-handling-code-listing-1/" title="Top-level Exception Handling – Code Listing&nbsp;2">Top-level Exception Handling – Code Listing&nbsp;2</a></li>
+<li class="page_item page-item-33"><a href="http://richnewman.wordpress.com/top-level-exception-handling-code-listing-2/" title="Top-level Exception Handling – Code Listing&nbsp;3">Top-level Exception Handling – Code Listing&nbsp;3</a></li>
+<li class="page_item page-item-34"><a href="http://richnewman.wordpress.com/top-level-exception-handling-code-listing-3/" title="Top-level Exception Handling – Code Listing&nbsp;4">Top-level Exception Handling – Code Listing&nbsp;4</a></li>
+<li class="page_item page-item-94"><a href="http://richnewman.wordpress.com/using-custom-net-events-to-invoke-commands/" title="Using Custom .NET Events to Invoke&nbsp;Commands">Using Custom .NET Events to Invoke&nbsp;Commands</a></li>
+<li class="page_item page-item-38"><a href="http://richnewman.wordpress.com/using-hsl-color-original-color-scheme/" title="Using HSL Color – Original Color&nbsp;Scheme">Using HSL Color – Original Color&nbsp;Scheme</a></li>
+		</ul>
+		</li>
+<li id="calendar-2" class="widget widget_calendar"><h2 class="widgettitle">&nbsp;</h2>
+<div id="calendar_wrap"><table id="wp-calendar" summary="Calendar">
+	<caption>July 2007</caption>
+	<thead>
+	<tr>
+		<th abbr="Monday" scope="col" title="Monday">M</th>
+		<th abbr="Tuesday" scope="col" title="Tuesday">T</th>
+		<th abbr="Wednesday" scope="col" title="Wednesday">W</th>
+		<th abbr="Thursday" scope="col" title="Thursday">T</th>
+		<th abbr="Friday" scope="col" title="Friday">F</th>
+		<th abbr="Saturday" scope="col" title="Saturday">S</th>
+		<th abbr="Sunday" scope="col" title="Sunday">S</th>
+	</tr>
+	</thead>
+
+	<tfoot>
+	<tr>
+		<td abbr="June" colspan="3" id="prev"><a href="http://richnewman.wordpress.com/2007/06/" title="View posts for June 2007">« Jun</a></td>
+		<td class="pad">&nbsp;</td>
+		<td abbr="August" colspan="3" id="next"><a href="http://richnewman.wordpress.com/2007/08/" title="View posts for August 2007">Aug »</a></td>
+	</tr>
+	</tfoot>
+
+	<tbody>
+	<tr>
+		<td colspan="6" class="pad">&nbsp;</td><td><a href="http://richnewman.wordpress.com/2007/07/01/" title="A Beginner’s Guide to the Black-Scholes Option Pricing Formula (Part&nbsp;3)
+C# and VB.NET Line Count Utility – Version&nbsp;1">1</a></td>
+	</tr>
+	<tr>
+		<td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td>
+	</tr>
+	<tr>
+		<td><a href="http://richnewman.wordpress.com/2007/07/09/" title="C#, Visual Basic and C++ .NET Line Counter Utility – Version&nbsp;2">9</a></td><td>10</td><td>11</td><td>12</td><td>13</td><td><a href="http://richnewman.wordpress.com/2007/07/14/" title="An Introduction to the Smart Client Software Factory and Composite Application Block: Part 1 Modules and&nbsp;Shells
+An Introduction to the Smart Client Software Factory and Composite Application Block: Part 2&nbsp;WorkItems">14</a></td><td>15</td>
+	</tr>
+	<tr>
+		<td>16</td><td>17</td><td>18</td><td>19</td><td><a href="http://richnewman.wordpress.com/2007/07/20/" title="Two Philosophers&nbsp;Problem">20</a></td><td><a href="http://richnewman.wordpress.com/2007/07/21/" title="Introduction to Dependency Injection (Introduction to CAB/SCSF Part&nbsp;3)">21</a></td><td>22</td>
+	</tr>
+	<tr>
+		<td>23</td><td>24</td><td>25</td><td>26</td><td><a href="http://richnewman.wordpress.com/2007/07/27/" title="Composite Application Block MdiWorkspace&nbsp;Sample">27</a></td><td>28</td><td>29</td>
+	</tr>
+	<tr>
+		<td>30</td><td>31</td>
+		<td class="pad" colspan="5">&nbsp;</td>
+	</tr>
+	</tbody>
+	</table></div></li>
+<li id="meta-2" class="widget widget_meta"><h2 class="widgettitle">Meta</h2>
+			<ul>
+						<li><a href="http://richnewman.wordpress.com/wp-login.php">Log in</a></li>
+			<li><a href="http://richnewman.wordpress.com/feed/" title="Syndicate this site using RSS 2.0">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://richnewman.wordpress.com/comments/feed/" title="The latest comments to all posts in RSS">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://wordpress.com/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.com</a></li>
+						</ul>
+</li>
+
+</ul>
+
+</div>
+
+
+<p class="credit"><a href="http://wordpress.com/" rel="generator">Blog at WordPress.com</a>.</p>
+
+</div>
+
+<script type="text/javascript" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/quant.js"></script>
+<script type="text/javascript">_qoptions = { labels:"adt.0,language.en" };_qacct="p-18-mFEk4J448M";quantserve();</script>
+<noscript><p><img
+src="http://pixel.quantserve.com/pixel/p-18-mFEk4J448M.gif?labels=adt.0%2Clanguage.en"
+style="display: none" height="1" width="1" alt="" /></p></noscript>
+<script src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/w.js" type="text/javascript"></script>
+<script type="text/javascript">
+st_go({'blog':'909413','v':'wpcom','user_id':'0','post':'60','subd':'richnewman'});
+ex_go({'crypt':'RDZ8LFkxbXFDdT8yZmU5JitKNVZhUVdPbUEyLltsWGhDL0l0bEJda0p8aHJrJnlQMUdNXTR1PVZVU3pwT0NXeDF8WSsxbFJjV3p2UzFbelMzRUpvT0duWmdxdm0mL3NGNXBmbXFiZ3M4SHxjfE0mRyVTJnl5LGd4QnZLOVAvKzlRejNhK3diNyZaXWdzYWJwLjloZV1hViVlNmsmR1M5ckQmMmpfOWx2Rmdxa01VLWI3QmNJZW44NjA/clR4eGpTLEIuZ1d4ei5TLSxUJW5vVHhIdXxTN0lMZDd+WEMxYl1kL3kyR3hlc1l2'});
+re_go({'v':'sph','b':'909413','p':'60','d[opinionmachine.wordpress.com]':'1','d[markgar.wordpress.com]':'1','d[bitbot.wordpress.com]':'1','d[www.tuaw.com]':'1'});
+addLoadEvent(function(){linktracker_init('909413',60);});
+</script><img id="wpstats" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/g.gif" alt=""><img id="wpstats2" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/g_002.gif" alt="" style="display: none;"><img id="wpstats" src="An%20Introduction%20to%20the%20Smart%20Client%20Software%20Factory%20and%20Composite%20Application%20Block%20%20Part%201%20Modules%20and%20Shells%20%C2%AB%20Rich%20Newman_files/g_003.gif" alt="" style="display: none;">
+</body></html>

@@ -1,0 +1,35 @@
+'instance_name' scripting variable not defined.
+'dba_user_pwd' scripting variable not defined.
+Changed database context to 'ANGEL_TO_001_TEST4'.
+ 
+===============================================================================
+=          Starting script dc_00390.sql                                =
+===============================================================================
+ 
+Msg 15135, Level 16, State 2, Server SRV-TS, Procedure sp_addextendedproperty, Line 38
+Object is invalid. Extended properties are not permitted on 'ANGEL_TO_001_TEST_OWNER4.CWRH_GOOD_CATEGORY.car_mark_id', or the object does not exist.
+Msg 15135, Level 16, State 2, Server SRV-TS, Procedure sp_addextendedproperty, Line 38
+Object is invalid. Extended properties are not permitted on 'ANGEL_TO_001_TEST_OWNER4.CWRH_GOOD_CATEGORY.car_model_id', or the object does not exist.
+Msg 3701, Level 11, State 6, Server SRV-TS, Line 4
+Cannot drop the index 'dbo.u_good_mark_full_name_gd_ctgry', because it does not exist or you do not have permission.
+Msg 1913, Level 16, State 1, Server SRV-TS, Line 2
+The operation failed because an index or statistics with name 'u_good_mark_full_name_gd_ctgry' already exists on table 'dbo.CWRH_GOOD_CATEGORY'.
+ 
+===============================================================================
+=          Registering devchange                                              =
+===============================================================================
+ 
+Registering devchange.
+
+(1 rows affected)
+ 
+finish_time            
+-----------------------
+2009-04-02 12:55:28.607
+
+(1 rows affected)
+ 
+===============================================================================
+=          Script dc_00390.sql finished                                =
+===============================================================================
+ 

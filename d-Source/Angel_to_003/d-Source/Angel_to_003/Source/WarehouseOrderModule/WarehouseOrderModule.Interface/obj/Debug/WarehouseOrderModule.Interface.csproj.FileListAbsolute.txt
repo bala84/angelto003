@@ -1,0 +1,5 @@
+G:\work\Angel_to_003\d-Source\Angel_to_003\bin\Debug\WarehouseOrderModule.Interface.dll
+G:\work\Angel_to_003\d-Source\Angel_to_003\bin\Debug\WarehouseOrderModule.Interface.pdb
+G:\work\Angel_to_003\d-Source\Angel_to_003\Source\WarehouseOrderModule\WarehouseOrderModule.Interface\obj\Debug\ResolveAssemblyReference.cache
+G:\work\Angel_to_003\d-Source\Angel_to_003\Source\WarehouseOrderModule\WarehouseOrderModule.Interface\obj\Debug\WarehouseOrderModule.Interface.dll
+G:\work\Angel_to_003\d-Source\Angel_to_003\Source\WarehouseOrderModule\WarehouseOrderModule.Interface\obj\Debug\WarehouseOrderModule.Interface.pdb

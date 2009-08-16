@@ -1,0 +1,9 @@
+G:\work\Angel_to_003\d-Source\Angel_to_003\bin\Debug\Shell.exe.config
+G:\work\Angel_to_003\d-Source\Angel_to_003\bin\Debug\ProfileCatalog.xml
+G:\work\Angel_to_003\d-Source\Angel_to_003\bin\Debug\Shell.exe
+G:\work\Angel_to_003\d-Source\Angel_to_003\bin\Debug\Shell.pdb
+G:\work\Angel_to_003\d-Source\Angel_to_003\Source\Infrastructure\Shell\obj\Debug\ResolveAssemblyReference.cache
+G:\work\Angel_to_003\d-Source\Angel_to_003\Source\Infrastructure\Shell\obj\Debug\Angel_to_003.Infrastructure.Shell.ShellForm.resources
+G:\work\Angel_to_003\d-Source\Angel_to_003\Source\Infrastructure\Shell\obj\Debug\Shell.csproj.GenerateResource.Cache
+G:\work\Angel_to_003\d-Source\Angel_to_003\Source\Infrastructure\Shell\obj\Debug\Shell.exe
+G:\work\Angel_to_003\d-Source\Angel_to_003\Source\Infrastructure\Shell\obj\Debug\Shell.pdb

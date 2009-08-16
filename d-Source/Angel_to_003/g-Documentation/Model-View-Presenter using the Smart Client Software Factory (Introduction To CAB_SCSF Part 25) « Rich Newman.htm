@@ -1,0 +1,828 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html style="position: static;" dir="ltr" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head profile="http://gmpg.org/xfn/11">
+
+
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<title>Model-View-Presenter using the Smart Client Software Factory (Introduction To CAB/SCSF Part 25) « Rich Newman</title>
+
+
+	<style type="text/css" media="screen">
+		@import url( http://s3.wordpress.com/wp-content/themes/pub/blue-green/style.css?m=1245902089b );
+	</style>
+
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://richnewman.wordpress.com/feed/">
+
+	<link rel="pingback" href="http://richnewman.wordpress.com/xmlrpc.php">
+	<link rel="alternate" type="application/rss+xml" title="Rich Newman » Model-View-Presenter using the Smart Client Software Factory (Introduction To CAB/SCSF Part&nbsp;25) Comments Feed" href="http://richnewman.wordpress.com/2008/03/02/model-view-presenter-using-the-smart-client-software-factory-introduction-to-cabscsf-part-25/feed/">
+<script src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/a_003.htm" type="text/javascript"></script><script src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/auto_shot.htm" type="text/javascript"></script><script type="text/javascript">
+/* <![CDATA[ */
+function addLoadEvent(func){var oldonload=window.onload;if(typeof window.onload!='function'){window.onload=func;}else{window.onload=function(){oldonload();func();}}}
+/* ]]> */
+</script>
+<link rel="stylesheet" href="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/global.css" type="text/css">
+<script type="text/javascript" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/comment-reply.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://richnewman.wordpress.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://richnewman.wordpress.com/wp-includes/wlwmanifest.xml"> 
+<link rel="index" title="Rich Newman" href="http://richnewman.wordpress.com/">
+<link rel="start" title="Day&nbsp;1" href="http://richnewman.wordpress.com/2007/03/04/day-1/">
+<link rel="prev" title="Model-View-Presenter: Variations on the Basic Pattern (Introduction to CAB/SCSF Part&nbsp;24)" href="http://richnewman.wordpress.com/2008/02/26/model-view-presenter-variations-on-the-basic-pattern-introduction-to-cabscsf-part-24/">
+<link rel="next" title="Apologies: Code Links Are&nbsp;Broken" href="http://richnewman.wordpress.com/2008/03/19/apologies-code-links-are-broken/">
+<meta name="generator" content="WordPress.com">
+<link rel="canonical" href="http://richnewman.wordpress.com/2008/03/02/model-view-presenter-using-the-smart-client-software-factory-introduction-to-cabscsf-part-25/">
+<link rel="shortcut icon" type="image/x-icon" href="http://www.gravatar.com/blavatar/7864a25226671eb271870f6bdc69e29f?s=16&amp;d=http://s.wordpress.com/favicon.ico">
+<link rel="icon" type="image/x-icon" href="http://www.gravatar.com/blavatar/7864a25226671eb271870f6bdc69e29f?s=16&amp;d=http://s.wordpress.com/favicon.ico">
+<link rel="apple-touch-icon" href="http://www.gravatar.com/blavatar/cadbe3553ff3d2b663c10a55c50bef43?s=158&amp;d=http://s.wordpress.com/wp-content/themes/h4/i/webclip.png">
+<link rel="openid.server" href="http://richnewman.wordpress.com/?openidserver=1">
+<link rel="openid.delegate" href="http://richnewman.wordpress.com/">
+
+<script defer="defer" id="snap_preview_anywhere" type="text/javascript" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/snap_preview_anywhere.htm"></script>
+
+</head><body><div class="snap_noengage snap_noshots" style="border: 0pt none ; margin: 0pt; padding: 0pt; position: absolute; visibility: hidden; top: 0px; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; left: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; z-index: 99999; width: 328px; height: 346px;" id="snap_com_shot_main"><img id="snap_com_shot_link_icon" class="snap_preview_icon" style="border: 0pt none ; margin: 0pt ! important; padding: 1px 0pt 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/palette.gif); background-color: transparent; visibility: hidden; z-index: 99999; width: 14px; height: 12px; background-position: -1128px 0pt; background-repeat: no-repeat; text-decoration: none;" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/t.gif">
+<div style="border: 0pt none ; margin: 0pt; padding: 0pt; overflow: hidden; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; width: 50px; height: 50px;" id="snap_com_shot_bg_div_tl"><img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: -50px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999;" id="snap_com_shot_bg_img_tl" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/palette.png"></div>
+<div style="border: 0pt none ; margin: 0pt; padding: 0pt; overflow: hidden; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: auto; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; right: 0px; width: 50px; height: 50px;" id="snap_com_shot_bg_div_tr"><img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: -100px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999;" id="snap_com_shot_bg_img_tr" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/palette.png"></div>
+<div style="border: 0pt none ; margin: 0pt; padding: 0pt; overflow: hidden; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; bottom: 1px; width: 50px; height: 50px;" id="snap_com_shot_bg_div_bl"><img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: -150px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999;" id="snap_com_shot_bg_img_bl" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/palette.png"></div>
+<div style="border: 0pt none ; margin: 0pt; padding: 0pt; overflow: hidden; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; right: 0px; bottom: 1px; width: 50px; height: 50px;" id="snap_com_shot_bg_div_br"><img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999;" id="snap_com_shot_bg_img_br" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/palette.png"></div>
+<img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 50px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/bg/bg_lr.png); background-color: transparent; visibility: inherit; z-index: 99999; width: 100px; height: 246px; background-repeat: repeat;" id="snap_com_shot_bg_img_l" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/t.gif">
+<img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: auto; top: 50px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/bg/bg_lr.png); background-color: transparent; visibility: inherit; z-index: 99999; right: 0px; width: 100px; height: 246px; background-repeat: repeat;" id="snap_com_shot_bg_img_r" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/t.gif">
+<img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 50px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/bg/bg_tb.png); background-color: transparent; visibility: inherit; z-index: 99999; width: 228px; height: 100px; background-repeat: repeat;" id="snap_com_shot_bg_img_t" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/t.gif">
+<img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 50px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/bg/bg_tb.png); background-color: transparent; visibility: inherit; z-index: 99999; bottom: 1px; width: 228px; height: 100px; background-repeat: repeat;" id="snap_com_shot_bg_img_b" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/t.gif">
+<div id="snap_com_shot_bg_div_point" style="border: 0pt none ; margin: 0pt; padding: 0pt; overflow: hidden; z-index: 100000; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 7px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; width: 28px; height: 29px; bottom: -21px; right: auto;"><img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: -276px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999;" id="snap_com_shot_bg_img_point" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/palette.png"></div>
+<div style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 2px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: rgb(216, 216, 217); visibility: inherit; z-index: 99999; bottom: 37px; width: 320px; height: 82px;" id="snap_com_shot_bg_body"></div>
+
+<img style="border: 0pt none ; margin: 0pt; padding: 0pt; z-index: 100001; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 5px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; width: 200px; height: 5px; right: auto; bottom: 3px;" id="snap_com_shot_pointer0" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/t.gif">
+<img style="border: 0pt none ; margin: 0pt; padding: 0pt; z-index: 100001; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 5px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; width: 164px; height: 5px; right: auto; bottom: -1px;" id="snap_com_shot_pointer1" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/t.gif">
+<img style="border: 0pt none ; margin: 0pt; padding: 0pt; z-index: 100001; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 5px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; width: 128px; height: 5px; right: auto; bottom: -6px;" id="snap_com_shot_pointer2" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/t.gif">
+<img style="border: 0pt none ; margin: 0pt; padding: 0pt; z-index: 100001; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 5px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; width: 92px; height: 5px; right: auto; bottom: -11px;" id="snap_com_shot_pointer3" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/t.gif">
+<img style="border: 0pt none ; margin: 0pt; padding: 0pt; z-index: 100001; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 5px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; width: 56px; height: 5px; right: auto; bottom: -16px;" id="snap_com_shot_pointer4" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/t.gif">
+<img style="border: 0pt none ; margin: 0pt; padding: 0pt; z-index: 100001; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 5px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; width: 20px; height: 5px; right: auto; bottom: -21px;" id="snap_com_shot_pointer5" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/t.gif">
+<div style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 1px; top: 1px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; width: 322px; height: 338px;" id="snap_com_shot_bubble">
+<img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; width: 322px; height: 297px;" id="snap_com_shot_bubble_img" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/t.gif">
+<div style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; width: 322px; height: 338px; text-align: left;" id="snap_com_shot_body">
+ <table id="snap_com_shot_drag_overlay" title="drag to move" style="border: 0pt none ; margin: 0pt; padding: 0pt; display: none; z-index: 100008; cursor: move ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; width: 322px; height: 20px;"><tbody><tr><td style="border: 0pt none ; background-color: transparent;">&nbsp;</td></tr></tbody></table>
+ <div id="snap_com_shot_top_left_menu" style="border: 0pt none ; margin: 0pt; padding: 0pt; z-index: 100009; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 1px; top: 1px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: hidden;"><img id="snap_com_shot_preview_toggle" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/t.gif" style="border: 0pt none ; margin: 0pt; padding: 0pt; cursor: pointer ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/palette.gif); background-color: transparent; visibility: inherit; z-index: 99999; background-position: -319px 0pt; background-repeat: no-repeat; width: 25px; height: 18px; display: inline;"><img id="snap_com_shot_rss_toggle" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/t.gif" style="border: 0pt none ; margin: 0pt; padding: 0pt; cursor: pointer ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/palette.gif); background-color: transparent; visibility: inherit; z-index: 99999; background-position: -475px 0pt; background-repeat: no-repeat; width: 25px; height: 18px; display: inline;" align="top"></div>
+ <div id="snap_com_shot_top_right_menu" style="border: 0pt none ; margin: 0pt; padding: 0pt; z-index: 100009; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: auto; top: 1px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; right: 1px;"><img id="snap_com_shot_share_button" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/t.gif" style="border: 0pt none ; margin: 0pt; padding: 0pt; cursor: pointer ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/palette.gif); background-color: transparent; visibility: inherit; z-index: 99999; background-position: -807px 0pt; background-repeat: no-repeat; width: 50px; height: 17px; display: none;" align="top"><img title="Snap Shots Options" alt="Snap Shots Options" id="snap_com_shot_option_button" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/t.gif" style="border: 0pt none ; margin: 0pt; padding: 0pt; cursor: pointer ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/palette.gif); background-color: transparent; visibility: inherit; z-index: 99999; background-position: -421px 0pt; background-repeat: no-repeat; width: 27px; height: 18px; display: inline;"><img title="Make this Shot larger" id="snap_com_shot_zoom_img" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/t.gif" style="border: 0pt none ; margin: 0pt; padding: 0pt; cursor: pointer ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/palette.gif); background-color: transparent; visibility: inherit; z-index: 99999; background-position: -523px 0pt; background-repeat: no-repeat; width: 23px; height: 18px; display: inline;" align="top"><img id="snap_com_shot_pin_close_img" title="Close" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/t.gif" style="border: 0pt none ; margin: 0pt; padding: 0pt; cursor: pointer ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/palette.gif); background-color: transparent; visibility: inherit; z-index: 99999; background-position: -711px 0pt; background-repeat: no-repeat; width: 23px; height: 18px; display: none;" align="top"></div>
+ <div id="snap_com_shot_option_menu" style="border: 1px solid rgb(139, 138, 138); margin: 0pt; padding: 0pt; z-index: 100009; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: Trebuchet; float: none; position: absolute; left: auto; top: 18px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: white; visibility: hidden; right: 20px; font-size: 10px; color: rgb(51, 51, 51);">
+  <div title="Snap Shots Options" id="snap_com_shot_option_a" style="border: 0pt none ; margin: 0pt; padding: 0pt 5px; cursor: pointer ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; white-space: nowrap; height: 17px;">Options</div>
+  <div id="snap_com_shot_disable_a" style="border-style: solid none none; border-color: rgb(192, 192, 192) -moz-use-text-color -moz-use-text-color; border-width: 1px 0pt 0pt; margin: 0pt; padding: 0pt 5px; cursor: pointer ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; white-space: nowrap; height: 17px;">Disable</div>
+ </div>
+ <div id="snap_com_shot_search" style="border: 0pt none ; margin: 0pt ! important; padding: 0pt ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 1px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: rgb(238, 238, 238); visibility: hidden; z-index: 99999; bottom: 31px; width: 320px; height: 78px;">
+  <div id="snap_com_shot_search_form" style="border: 0pt none ; margin: 0pt ! important; padding: 0pt ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999;" action="#" method="GET" accept-charset="UTF8" target="_blank">
+   <input id="snap_com_shot_box" name="snap_com_shot_box_name" autocomplete="off" style="border: 1px solid rgb(153, 153, 153); margin: 0pt; padding: 5px 0pt 0pt 6px; visibility: inherit ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 12px; top: 24px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); z-index: 99999; width: 232px; height: 20px; font-size: 12px; color: rgb(51, 51, 51); direction: ltr; display: none;" type="text">
+   <button style="border: 0pt none ; margin: 0pt 0pt 0pt 5px; padding: 1px 2px 2px; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: auto; top: 23px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/palette.gif); background-color: transparent; visibility: inherit; z-index: 99999; right: 7px; background-position: -164px 0pt; background-repeat: no-repeat; width: 55px; height: 29px; cursor: pointer; font-size: 11px; color: rgb(68, 68, 68); text-align: center;" type="submit" name="snap_com_shot_submit" id="snap_com_shot_submit"></button>
+   <a style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999;" href="about:blank" id="snap_com_shot_hidden_link"></a>
+  </div>
+ </div>
+ <div style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 10px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: hidden; z-index: 99999; bottom: 8px; height: 15px; direction: ltr;" id="snap_com_shot_promo"><a href="https://account.snap.com/signup.php?source=richnewman.wordpress.com&amp;campaign=viral-foot" title="Sign Up and add Free Snap Shots to your site in less than 5 min!" style="border-style: none none dotted; border-color: -moz-use-text-color -moz-use-text-color rgb(116, 114, 116); border-width: 0pt 0pt 1px; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; font-size: 11px; color: rgb(51, 51, 51); text-decoration: none;" class="snap_nopreview" id="snap_com_shot_promo_a">Get Free Shots</a><img id="snap_com_shot_promo_icon" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/t.gif" style="border-top: 0pt none; border-left: 0pt none; border-right: 0pt none; border-bottom: medium none ! important; margin: 0pt; padding: 0pt; cursor: pointer ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/palette.gif); background-color: transparent; visibility: inherit; z-index: 99999; background-position: -1128px 0pt; background-repeat: no-repeat; width: 14px; height: 12px; display: inline;"></div>
+ <div style="border: 1px solid rgb(196, 196, 196); margin: 0pt; padding: 0pt; overflow: hidden; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 20px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: rgb(255, 255, 255); visibility: inherit; z-index: 99999; width: 320px; height: 207px;" id="snap_com_shot_preview_div">
+  <div style="border: 0pt none ; margin: 0pt; padding: 0pt; white-space: nowrap ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 6px; top: 5px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999;" id="snap_com_shot_url_wrapper"><a style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: white; visibility: inherit; z-index: 99999;" class="snap_nopreview" id="snap_com_shot_url_favicon" href="#"><img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/palette.gif); background-color: transparent; visibility: inherit; z-index: 99999; background-position: -889px 0pt; background-repeat: no-repeat; width: 16px; height: 16px; display: inline;" id="snap_com_shot_favicon" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/t.gif"></a>&nbsp;<a style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: bold; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: white; visibility: inherit; z-index: 99999; font-size: 13px; text-decoration: underline; color: rgb(0, 0, 238); text-align: left;" class="snap_nopreview" id="snap_com_shot_url_a" href="#"><span style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: bold; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; display: inline; font-size: 13px; text-align: left;" id="snap_com_shot_url"></span></a>&nbsp;<a style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: white; visibility: inherit; z-index: 99999;" class="snap_nopreview" id="snap_com_shot_url_arrow" href="#"><img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/palette.gif); background-color: transparent; visibility: inherit; z-index: 99999; background-position: -1165px 0pt; background-repeat: no-repeat; width: 7px; height: 7px; display: inline;" id="snap_com_shot_arrow" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/t.gif"></a></div>
+  <a style="border: 1px solid rgb(153, 153, 153); margin: 0pt; padding: 0pt; overflow: hidden; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 23px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: rgb(255, 255, 255); visibility: inherit; z-index: 99999; bottom: 12px; width: 270px; height: 161px;" class="snap_nopreview" id="snap_com_shot_img_a" href="#"><img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999;" id="snap_com_shot_preview_img" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/t.gif"></a>
+  <iframe style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: rgb(255, 255, 255); visibility: inherit; z-index: 99999; width: 320px; height: 207px;" name="snap_com_shot_preview" id="snap_com_shot_preview" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/a_002.htm" scrolling="no" frameborder="no"></iframe><img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99989; display: none;" id="snap_com_shot_loading_img" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/loading.gif">
+ </div>
+ <div style="border: 0pt none ; margin: 0pt; padding: 0pt; overflow: hidden; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 1px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: rgb(238, 238, 238); visibility: inherit; z-index: 99999; bottom: 30px; width: 320px; height: 79px;" id="snap_com_shot_marea"><div style="border: 0pt none ; margin: 0pt; padding: 0pt; overflow: hidden; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: rgb(238, 238, 238); width: 100%; height: 100%; display: none;"></div><div style="border: 0pt none ; margin: 0pt; padding: 0pt; overflow: hidden; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: rgb(238, 238, 238); width: 100%; height: 100%; display: none;"></div></div>
+ <img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 9px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; bottom: 6px;" id="snap_com_shot_cobrand_img" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/logo_wordpress.gif">
+  <table id="snap_com_shot_flash_overlay" title="Click to play" style="border: 0pt none ; margin: 0pt; padding: 0pt; display: none; z-index: 100010; cursor: pointer ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 50px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; width: 322px; height: 180px;"><tbody><tr><td>&nbsp;</td></tr></tbody></table>
+</div><div style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; width: 322px;" id="snap_com_shot_options">
+ <iframe style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 20px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: rgb(255, 255, 255); visibility: inherit; z-index: 99999; width: 321px; height: 207px;" id="snap_com_shot_option_iframe" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/a_002.htm" scrolling="no" width="265" frameborder="0" height="190"></iframe>
+ <div style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: auto; top: 1px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; right: 1px;" id="snap_com_shot_option_menu_bar"><img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/palette.gif); background-color: transparent; visibility: inherit; z-index: 99999; background-position: -394px 0pt; background-repeat: no-repeat; width: 27px; height: 18px; display: inline;" class="snap_nopreview" id="snap_com_shot_option_button_disabled" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/t.gif"><img title="Close" alt="Close" class="snap_nopreview" id="snap_com_shot_option_close_a" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/t.gif" style="border: 0pt none ; margin: 0pt; padding: 0pt; cursor: pointer ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/palette.gif); background-color: transparent; visibility: inherit; z-index: 99999; background-position: -711px 0pt; background-repeat: no-repeat; width: 23px; height: 18px; font-size: 10px; color: rgb(133, 122, 122); text-decoration: none;"></div>
+<input id="snap_com_shot_option_cancel" style="border: 1px solid rgb(153, 153, 153); margin: 0pt; padding: 0pt; background: transparent url(http://i.ixnp.com/images/btn-bkgd.gif) repeat scroll 0% 0%; visibility: inherit; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: auto; top: 201px; line-height: normal; z-index: 99999; right: 54px; width: 50px; height: 21px; font-size: 11px; color: rgb(51, 51, 51); -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; display: none;" name="snap_com_shot_option_cancel_name" value="Cancel" title="Close" type="button">
+</div>
+ <a style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 9px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; bottom: 6px; width: 100px; height: 20px;" class="snap_nopreview" id="snap_com_shot_cobrand_a" href="http://shots.snap.com/explore/45146/?key=e5a3c1e6dff5de35b1c6e7c470411886&amp;src=richnewman.wordpress.com&amp;cp=pub-logo&amp;url=http%3A%2F%2Fwordpress.com%2Fsnap" target="_blank"><div style="display: none;"></div></a>
+ <a title="Powered by Snap" class="snap_nopreview" id="snap_com_shot_logo_a" href="http://www.snap.com/about/shots1.php?source=pub-2311827-www.wordpress.com&amp;campaign=snap-shots-logo" style="border: 0pt none ; margin: 0pt; padding: 0pt; height: 15px; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/palette.gif); background-color: transparent; visibility: inherit; z-index: 99999; right: 7px; bottom: 8px; background-position: -950px 0pt; background-repeat: no-repeat; width: 81px;" target="_blank"><div style="display: none;"></div></a>
+ <a style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: hidden; z-index: 99999;" class="snap_nopreview" id="snap_com_shot_ribbon_a" href="http://www.snap.com/snapshots.php?source=richnewman.wordpress.com&amp;campaign=charity-ribbon#shares"><img title="Portions of Snap Shares Ad Impressions on this site are donated to Charity" alt="Snap Shares for charity" style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: hidden; z-index: 99999; right: 98px; bottom: 5px; width: 17px; height: 20px;" id="snap_com_shot_ribbon" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/ribbon.png"></a>
+ <img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: hidden; z-index: 99999;" id="snap_com_shot_lg" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/t.gif">
+</div>
+</div>
+<div id="rap">
+<h1 id="header"><a href="http://richnewman.wordpress.com/">Rich Newman</a></h1>
+
+<div id="content">
+<!-- end header -->
+
+
+<h2>March 2, 2008</h2>
+<div class="post-166 post hentry category-cab category-composite-application-block category-guidance-automation-package category-model-view-presenter category-scsf category-smart-client-software-factory category-visual-studio category-beginners-guide category-c category-introduction category-mvp tag-beginners-guide tag-cab tag-composite-application-block tag-guidance-automation-package tag-model-view-presenter tag-mvp tag-scsf tag-smart-client-software-factory" id="post-166">
+	 <h3 class="storytitle"><a href="http://richnewman.wordpress.com/2008/03/02/model-view-presenter-using-the-smart-client-software-factory-introduction-to-cabscsf-part-25/" rel="bookmark">Model-View-Presenter using the Smart Client Software Factory (Introduction To CAB/SCSF Part&nbsp;25)</a></h3>
+	<div class="meta">Filed under:  <a href="http://en.wordpress.com/tag/cab/" title="View all posts in CAB" rel="category tag">CAB</a>, <a href="http://en.wordpress.com/tag/composite-application-block/" title="View all posts in Composite Application Block" rel="category tag">Composite Application Block</a>, <a href="http://en.wordpress.com/tag/guidance-automation-package/" title="View all posts in Guidance Automation Package" rel="category tag">Guidance Automation Package</a>, <a href="http://en.wordpress.com/tag/model-view-presenter/" title="View all posts in Model-View-Presenter" rel="category tag">Model-View-Presenter</a>, <a href="http://en.wordpress.com/tag/scsf/" title="View all posts in SCSF" rel="category tag">SCSF</a>, <a href="http://en.wordpress.com/tag/smart-client-software-factory/" title="View all posts in Smart Client Software Factory" rel="category tag">Smart Client Software Factory</a>, <a href="http://en.wordpress.com/tag/visual-studio/" title="View all posts in Visual Studio" rel="category tag">Visual Studio</a>, <a href="http://en.wordpress.com/tag/beginners-guide/" title="View all posts in beginners guide" rel="category tag">beginners guide</a>, <a href="http://en.wordpress.com/tag/c/" title="View all posts in c#" rel="category tag">c#</a>, <a href="http://en.wordpress.com/tag/introduction/" title="View all posts in introduction" rel="category tag">introduction</a>, <a href="http://en.wordpress.com/tag/mvp/" title="View all posts in mvp" rel="category tag">mvp</a> — Tags: <a href="http://en.wordpress.com/tag/beginners-guide/" rel="tag">beginners guide</a>, <a href="http://en.wordpress.com/tag/cab/" rel="tag">CAB</a>, <a href="http://en.wordpress.com/tag/composite-application-block/" rel="tag">Composite Application Block</a>, <a href="http://en.wordpress.com/tag/guidance-automation-package/" rel="tag">Guidance Automation Package</a>, <a href="http://en.wordpress.com/tag/model-view-presenter/" rel="tag">Model-View-Presenter</a>, <a href="http://en.wordpress.com/tag/mvp/" rel="tag">mvp</a>, <a href="http://en.wordpress.com/tag/scsf/" rel="tag">SCSF</a>, <a href="http://en.wordpress.com/tag/smart-client-software-factory/" rel="tag">Smart Client Software Factory</a> —  richnewman @ 4:57 pm </div>
+
+	<div class="storycontent">
+		<div class="snap_preview"><p><span style="font-weight: bold;">Introduction</span></p>
+<p><a href="http://richnewman.wordpress.com/2008/02/25/model-view-presenter-why-we-need-it-and-the-basic-pattern-introduction-to-cabscsf-part-23/">Part 23</a> and <a href="http://richnewman.wordpress.com/2008/02/26/model-view-presenter-variations-on-the-basic-pattern-introduction-to-cabscsf-part-24/">part 24</a> of this series of articles described the Model-View-Presenter pattern.</p>
+<p>This article explains how the Smart Client Software Factory supports this pattern by generating appropriate classes.</p>
+<p>Part 26 of this series of articles will show how to use the generated classes in more detail.</p>
+<p><span style="font-weight: bold;">Guidance Automation Packages in the Smart Client Software Factory</span></p>
+<p>We saw how we could use the Smart Client Application Guidance Automation Package to set up a Smart Client Application in <a href="http://richnewman.wordpress.com/2007/12/08/introduction-to-the-smart-client-software-factory-cabscsf-part-18/">part 18</a>.
+We can also set up a Model-View-Presenter pattern in a Smart Client
+application using another of the Guidance Automation Packages.</p>
+<p>This will only work in an existing Smart Client Application.</p>
+<p><span style="font-weight: bold;">Running the Model-View-Presenter Package</span></p>
+<p>To use the Guidance Automation Package we right-click in Solution
+Explorer on a project or folder where we want to run the package. It is
+intended that we do this in the Views folder in a business module. On
+the right-click menu we select ‘Smart Client Factory/Add View (with
+presenter)’. We get a configuration screen that lets us name our view,
+and also lets us put the classes that get created into a folder. For
+the purposes of this example we name our view ‘Test’, and check the
+checkbox that says we do want to create a folder for the view.</p>
+<p>When we click ‘Finish’ we get three classes and a TestView folder as below:</p>
+<p><img src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/mvpsolutionexplorer.jpg" alt="mvpsolutionexplorer.jpg"></p>
+<p><b>Classes Created</b></p>
+<ol>
+<li>TestView<br>
+This is (obviously) our View class. It is intended that this contain
+the auto-generated code to display the View. As discussed in the
+previous articles any complex view logic will not go into this class,
+but will go into the Presenter.</li>
+<li>TestViewPresenter<br>
+This is our Presenter class. As discussed in previous articles this
+should contain logic to deal with user events. It should also contain
+any complex view logic, and should directly update the View with the
+results of an view logic calculations. It has access to the View class
+via an interface.</li>
+<li>ITestView<br>
+This is the interface that the View implements.  The Presenter can only update the View through this interface.</li>
+</ol>
+<p><b>Diagram</b></p>
+<p>In terms of the diagrams shown in parts 23 and 24 this looks as
+below. Remember that we may or may not have arrows between the Model
+and the View depending on whether we are using the active View or
+passive View version of Model-View-Presenter:</p>
+<p><img src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/mvpdiagram2.jpg" alt="mvpdiagram2.jpg"></p>
+<p><b>Where’s the Model?</b></p>
+<p>The Guidance Automation package does not set up a Model class for
+us. As we have seen, the Model has no direct references to a
+View/Presenter pair (it raises events), and there may be multiple
+View/Presenter pairs for one Model. Further the Model would not usually
+be in the same folder, or even in the same component, as our View and
+Presenter.</p>
+<p>For these reasons we are expected to set up our Model classes separately by hand.</p>
+<p>Note that the Presenter (and the View as well if we are using the
+active View pattern) will have a direct reference to the Model. We will
+have to add these references manually.</p>
+<p><b>Active and Passive View: a Quick Recap</b></p>
+<p>Remember that in Model-View-Presenter the Presenter updates the View via an interface.  We can set this up so <b>only</b>
+the Presenter is allowed to update the View. This is the ‘passive View’
+pattern. We can also set this up so that the Presenter can update the
+View in complex cases, but the View can also update itself (in response
+to an event or user request) in simple cases. This is the ‘active View’
+pattern.</p>
+<p><b>Active and Passive View: Which Should We Use?</b></p>
+<p>The pattern described in the SCSF documentation is the passive View:
+the documentation implies that all updates to the View should be done
+by the Presenter.</p>
+<p>However there is nothing to stop us using the active View pattern
+with the classes generated by the Guidance Automation Package. We can
+add code to update the View wherever we like. In fact I would recommend
+using active View in simple cases: passive View should only be used
+where we are putting too much logic into the View class.</p>
+<p><b>Should We Use Model-View-Presenter for Every Screen?  A Personal View</b></p>
+<p>Let me also reiterate a point made in <a href="http://richnewman.wordpress.com/2008/02/26/model-view-presenter-variations-on-the-basic-pattern-introduction-to-cabscsf-part-24/">part 24</a>.
+It’s easy to get obsessive about the use of patterns and use them
+everywhere without thinking. My personal opinion is that we should only
+use the full Model-View-Presenter pattern where we have a complex
+screen that will benefit from the separation of the View and Presenter
+classes. For very basic screens the pattern is really too complex to
+give us benefit. In simple cases I think it is fine to put event
+handling and screen update logic directly behind the screen.</p>
+<p>Note that I don’t think this applies to the use of the Model. We
+should always separate out the business logic from our screens into
+separate classes (this is what Martin Fowler calls <a href="http://www.martinfowler.com/eaaDev/SeparatedPresentation.html">‘Separated Presentation’</a>).
+However, we frequently have screens that don’t show any business logic
+or business data, so we may not need a Model class either.</p>
+<p>For example an About screen that just shows the system name and
+version won’t need separate View and Presenter classes, and probably
+won’t need anything in a Model class either.</p>
+<p>Equally a screen that shows a read-only grid of currencies used in a
+trading system probably doesn’t need separate View and Presenter
+classes. In this case the currencies themselves should be in a Model
+class so that other screens can access them.</p>
+<p><b>Implementation Details: What We’d Expect</b></p>
+<p>If we examine the diagram above, we expect the Presenter to have a
+data member with type of our ITestView interface that it will use to
+access the View. We expect the View to implement the ITestView
+interface to allow this. We further expect the View to have a direct
+reference to the Presenter class (a data member), which it will use to
+invoke code relating to user events. We’d probably expect both the View
+and the Presenter classes to be created the first time the View is
+needed.</p>
+<p><b>Implementation Details: the Base Presenter Class</b></p>
+<p>The actual details of the implementation of the Presenter are a little unusual.</p>
+<p>If we look at the code generated by the Guidance Automation Package
+we see that the TestViewPresenter above has been given its core
+functionality by inheriting from an abstract Presenter&lt;TView&gt;
+class. Remember that the generic ‘TView’ simply lets us provide a type
+whenever we use the Presenter class. Here we inherit from Presenter,
+and provide the type when we inherit:</p>
+<pre>    <font size="2" color="blue" face="Courier">public</font> <font size="2" color="blue" face="Courier">partial</font> <font size="2" color="blue" face="Courier">class</font> <font size="2" color="#2b91af" face="Courier">TestViewPresenter</font> : <font size="2" color="#2b91af" face="Courier">Presenter</font>&lt;<font size="2" color="#2b91af" face="Courier">ITestView</font>&gt;
+    {</pre>
+<p>This allows the base Presenter class to have a data member of type
+ITestView (which is what we expect), rather than it being directly in
+the TestViewPresenter class. Note that the base Presenter is in the
+Infrastructure.Interface project (which is one of the reasons why we
+have to use this pattern in a Smart Client application).</p>
+<p>The base Presenter class exposes our ITestView data member publicly,
+contains a reference to our WorkItem, and has disposal code and a
+CloseView method. It also has virtual OnViewReady and OnViewSet
+methods. These get called when you’d expect from the name and let us
+respond at the appropriate times by overriding the methods in our
+TestViewPresenter class.</p>
+<p>All the above functionality in the base Presenter class means that
+the derived TestViewPresenter class is basically empty when it is
+created. It is up to us to put logic in there to handle user events and
+complex view logic.</p>
+<p>The TestView class is a normal user control. It implements ITestView
+and contains a reference to the TestViewPresenter as we’d expect. It
+also calls OnViewReady as appropriate (in the OnLoad event of the user
+control). Again other than this TestView is also basically empty.</p>
+<p><b>Conclusion</b></p>
+<p>This article has shown us how to set up Model-View-Presenter classes
+using the Smart Client Software Factory, and discussed some issues
+surrounding it.</p>
+<p>Part 26 of this series of articles will show how to use these classes in practice, providing code examples.</p>
+<div style="margin-top: 1em;" class="possibly-related"><hr><p><strong>Possibly related posts: (automatically generated)</strong></p><ul><li><a rel="related" href="http://richnewman.wordpress.com/2008/02/25/model-view-presenter-why-we-need-it-and-the-basic-pattern-introduction-to-cabscsf-part-23/" style="font-weight: bold;">Model-View-Presenter: Why We Need It and the Basic Pattern (Introduction to…</a></li><li><a rel="related" href="http://richnewman.wordpress.com/2008/02/23/model-view-controller-explained-introduction-to-cabscsf-part-22/" style="font-weight: bold;">Model-View-Controller Explained (Introduction to CAB/SCSF Part 22)</a></li><li><a rel="related" href="http://richnewman.wordpress.com/2008/01/27/generating-net-classes-from-the-fpml-xsd-schema-introduction-to-using-fpml-with-net-tools-part-3/" style="font-weight: bold;">Generating .NET Classes from the FpML XSD Schema (Introduction to using FpM…</a></li><li><a rel="related" href="http://wesaday.wordpress.com/2009/03/23/model-view-presenter-and-model-view-viewmodel-in-prism/">Model-View-Presenter and Model-View-ViewModel in Prism</a></li></ul></div></div>	</div>
+
+	<div class="feedback">
+                        <a href="http://richnewman.wordpress.com/2008/03/02/model-view-presenter-using-the-smart-client-software-factory-introduction-to-cabscsf-part-25/#comments" title="Comment on Model-View-Presenter using the Smart Client Software Factory (Introduction To CAB/SCSF Part&nbsp;25)">Comments (26)</a>	</div>
+
+</div>
+
+<h2 id="comments">26 Comments 
+	<a href="#postcomment" title="Leave a comment">»</a>
+</h2>
+
+<ol id="commentlist" class="snap_preview">
+<li id="comment-2480">
+	<div id="div-comment-2480" class="vcard">
+	<img alt="" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/a.png" class="avatar avatar-32" width="32" height="32">	<p>awesome! looking for forward to new part!</p>
+	<p><cite>Comment by <span class="fn">Eric</span> — March 6, 2008 @ <a href="#comment-2480">1:06 pm</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2008/03/02/model-view-presenter-using-the-smart-client-software-factory-introduction-to-cabscsf-part-25/?replytocom=2480#respond" onclick='return addComment.moveForm("div-comment-2480", "2480", "respond", "166")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-2486">
+	<div id="div-comment-2486" class="vcard">
+	<img alt="" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/383d10527512ccdbf7dde55133e9594c.png" class="avatar avatar-32" width="32" height="32">	<p>Ahhh no part 26 yet <img src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/icon_smile.gif" alt=":)" class="wp-smiley"> </p>
+<p>Microsoft should leave out those CAB quickstarts like BankTeller or seperate them<br>
+More a SCSF project with Model-View-Presenter examples is what im looking for</p>
+<p>Again: Awesome introduction!</p>
+<p>I ordered a book by “David S. Platt” called “Programming Microsoft
+Composite UI Application Block and Smart Client Software Factory”. When
+i have it i wonder if that is anything near this documentation. Anyway
+he get paid to write about it and u do it freely <img src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/icon_smile.gif" alt=":)" class="wp-smiley"> </p>
+	<p><cite>Comment by <span class="fn">rfcdejong</span> — March 7, 2008 @ <a href="#comment-2486">11:38 am</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2008/03/02/model-view-presenter-using-the-smart-client-software-factory-introduction-to-cabscsf-part-25/?replytocom=2486#respond" onclick='return addComment.moveForm("div-comment-2486", "2486", "respond", "166")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-2599">
+	<div id="div-comment-2599" class="vcard">
+	<img alt="" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/51f24477394be3c40c6dd52768b16301.png" class="avatar avatar-32" width="32" height="32">	<p>I must say this is the type of documentation that should have been provided.<br>
+Maybe the P&amp;P guys can leave the real high end blah to themselves and provide this type of info in the future.</p>
+<p>rfcdejong, i would not get your hopes up over the book you ordered,
+i didnt find it usefull at all MS Press should have got these blogs
+posted instead of the book, but thats my opinion.</p>
+	<p><cite>Comment by <span class="fn">Wayne</span> — March 25, 2008 @ <a href="#comment-2599">2:33 pm</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2008/03/02/model-view-presenter-using-the-smart-client-software-factory-introduction-to-cabscsf-part-25/?replytocom=2599#respond" onclick='return addComment.moveForm("div-comment-2599", "2599", "respond", "166")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-2670">
+	<div id="div-comment-2670" class="vcard">
+	<img alt="" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/a.png" class="avatar avatar-32" width="32" height="32">	<p>How do we have different presenters present to the same view? or<br>
+supply a different model to the same presenter?</p>
+<p>This may be required for forms that can handle more than one scenario, like new &amp; edit.</p>
+	<p><cite>Comment by <span class="fn">Ant</span> — April 23, 2008 @ <a href="#comment-2670">5:32 am</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2008/03/02/model-view-presenter-using-the-smart-client-software-factory-introduction-to-cabscsf-part-25/?replytocom=2670#respond" onclick='return addComment.moveForm("div-comment-2670", "2670", "respond", "166")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-2681">
+	<div id="div-comment-2681" class="vcard">
+	<img alt="" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/a.png" class="avatar avatar-32" width="32" height="32">	<p>ff</p>
+	<p><cite>Comment by <span class="fn">Anonymous</span> — May 14, 2008 @ <a href="#comment-2681">8:52 am</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2008/03/02/model-view-presenter-using-the-smart-client-software-factory-introduction-to-cabscsf-part-25/?replytocom=2681#respond" onclick='return addComment.moveForm("div-comment-2681", "2681", "respond", "166")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-2682">
+	<div id="div-comment-2682" class="vcard">
+	<img alt="" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/a.png" class="avatar avatar-32" width="32" height="32">	<p>Sorry
+for the above anonymous comment (my mistake). Rick i have been
+following your excellent series and havn’t found any material better to
+read yet. Kindly, in the future, do explain on how to build a sample
+smart client application. I havn’t found any VS2005 (although VS2008 is
+out now) smart client sample application. I am interested in an app
+working in an offline/online mode.</p>
+	<p><cite>Comment by <span class="fn">.NET Fan</span> — May 14, 2008 @ <a href="#comment-2682">8:58 am</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2008/03/02/model-view-presenter-using-the-smart-client-software-factory-introduction-to-cabscsf-part-25/?replytocom=2682#respond" onclick='return addComment.moveForm("div-comment-2682", "2682", "respond", "166")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-2683">
+	<div id="div-comment-2683" class="vcard">
+	<img alt="" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/4619a1188238a46b5f828d3899935b47.png" class="avatar avatar-32" width="32" height="32">	<p>Thanks for taking the time to write all these, and I am looking forward to number 26 <img src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/icon_smile.gif" alt=":)" class="wp-smiley"> </p>
+<p>I have looked at using SCSF for almost a year now and have always
+backed away again. But now the time came to do some serious user
+interface stuff in our SOA environment so I needed some finished
+plumbing. I stumbled onto your series yesterday, and I am now ready to
+get my feet wet. I have now started the downloads and tomorrow the
+first spike will be created…</p>
+	<p><cite>Comment by <span class="fn">Morten</span> — May 14, 2008 @ <a href="#comment-2683">9:25 pm</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2008/03/02/model-view-presenter-using-the-smart-client-software-factory-introduction-to-cabscsf-part-25/?replytocom=2683#respond" onclick='return addComment.moveForm("div-comment-2683", "2683", "respond", "166")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-2693">
+	<div id="div-comment-2693" class="vcard">
+	<img alt="" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/a.png" class="avatar avatar-32" width="32" height="32">	<p>Oh no 26, btw.. richnewman, u have some more new stuff to write about with the release of SCSF 2008 <img src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/icon_smile.gif" alt=":)" class="wp-smiley"> </p>
+	<p><cite>Comment by <span class="fn">rfcdejong</span> — May 26, 2008 @ <a href="#comment-2693">7:16 am</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2008/03/02/model-view-presenter-using-the-smart-client-software-factory-introduction-to-cabscsf-part-25/?replytocom=2693#respond" onclick='return addComment.moveForm("div-comment-2693", "2693", "respond", "166")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-2699">
+	<div id="div-comment-2699" class="vcard">
+	<img alt="" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/4619a1188238a46b5f828d3899935b47.png" class="avatar avatar-32" width="32" height="32">	<p>As a newbie with MVP I could use an article number 26 right about now. <img src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/icon_smile.gif" alt=":)" class="wp-smiley"> </p>
+<p>Any estimates on delivery?</p>
+<p>Morten</p>
+	<p><cite>Comment by <span class="fn">Morten Petteroe</span> — May 28, 2008 @ <a href="#comment-2699">12:58 pm</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2008/03/02/model-view-presenter-using-the-smart-client-software-factory-introduction-to-cabscsf-part-25/?replytocom=2699#respond" onclick='return addComment.moveForm("div-comment-2699", "2699", "respond", "166")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-2716">
+	<div id="div-comment-2716" class="vcard">
+	<img alt="" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/a.png" class="avatar avatar-32" width="32" height="32">	<p>Fantastic articles, I got better understanding on MVP and MVC pattern. Really appreciate. Thanks a lot!</p>
+	<p><cite>Comment by <span class="fn">Anonymous</span> — June 11, 2008 @ <a href="#comment-2716">7:20 am</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2008/03/02/model-view-presenter-using-the-smart-client-software-factory-introduction-to-cabscsf-part-25/?replytocom=2716#respond" onclick='return addComment.moveForm("div-comment-2716", "2716", "respond", "166")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-2740">
+	<div id="div-comment-2740" class="vcard">
+	<img alt="" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/3723bf0abb88d7f58c89c87098906337.png" class="avatar avatar-32" width="32" height="32">	<p>Please
+do not stop writing about SCSF and CAP! Your articles are the best
+documentation I have seen. You explanations are short and clear, there
+is no water and long introduction.</p>
+<p>And could you write a few articles about Security Application Block please?</p>
+<p>Thanks in advance!<br>
+Stan</p>
+	<p><cite>Comment by <span class="fn">Stan</span> — June 24, 2008 @ <a href="#comment-2740">5:27 pm</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2008/03/02/model-view-presenter-using-the-smart-client-software-factory-introduction-to-cabscsf-part-25/?replytocom=2740#respond" onclick='return addComment.moveForm("div-comment-2740", "2740", "respond", "166")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-2765">
+	<div id="div-comment-2765" class="vcard">
+	<img alt="" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/6e4327b3fcf1efb861f18820541efb95.png" class="avatar avatar-32" width="32" height="32">	<p>Good Work!<br>
+I was already familiar with CAB &amp; a variation of SCSF that was
+developed internally, but I have to say that your articles have cleared
+up some important things for me. Especially Workitems, how are they
+used and the little nuances that you wouldn’t normaly know unless you
+went and read the CAB &amp; SCSF code.</p>
+<p>I find the CAB/SCSF a very “promising” Framework that does provides
+many of the best practices any developer should use in thier
+applications. However, I still think it is not mature enough to be
+called a fully functional and easily usable/extensible framework.</p>
+<p>The learning curve is steep (even though you do help quite a bit)
+and I am not even sure that throught its development the p&amp;p guys
+were excatly sure of everything they want to do. It’s still the best
+Framework of it’s kind geared towards to Microsoft’s presentation
+technology and .NET but it still has a long way to go before it reaches
+the level of clarity .NET has.</p>
+<p>That being said, I’m still going to use it, although one Guidance
+receipe that I am desperatly in need of is a “Create a Workitem with
+View/Presenter”. I think that would help in the logical separation of
+Use Cases instead of having to do it all by hand.</p>
+<p>In any case, looking forward to the rest of the articles, although I think No. 26 will come in September <img src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/icon_wink.gif" alt=";)" class="wp-smiley"> </p>
+	<p><cite>Comment by <span class="fn">willhunting</span> — July 17, 2008 @ <a href="#comment-2765">11:25 am</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2008/03/02/model-view-presenter-using-the-smart-client-software-factory-introduction-to-cabscsf-part-25/?replytocom=2765#respond" onclick='return addComment.moveForm("div-comment-2765", "2765", "respond", "166")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-2771">
+	<div id="div-comment-2771" class="vcard">
+	<img alt="" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/5de15c81a9644c6efbaa2f114a3a51a8.png" class="avatar avatar-32" width="32" height="32">	<p>I
+was throwed with the task to develop a smartclient application with
+SCSF and I didn’t know where to start. After reading all of your 25
+articles, it’s like seeing light in the midst of total darkness. Thank
+you.</p>
+	<p><cite>Comment by <span class="fn">Bon</span> — July 22, 2008 @ <a href="#comment-2771">11:33 am</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2008/03/02/model-view-presenter-using-the-smart-client-software-factory-introduction-to-cabscsf-part-25/?replytocom=2771#respond" onclick='return addComment.moveForm("div-comment-2771", "2771", "respond", "166")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-2800">
+	<div id="div-comment-2800" class="vcard">
+	<img alt="" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/67517754a70aa5acf02bef03eb93f6f1.png" class="avatar avatar-32" width="32" height="32">	<p>Rich,</p>
+<p>Thanks very much for your great articles. I found the MS
+documentation and quick start tutorial almost useless so was a great
+relief to find your excellent articles. I have also bought the
+Composite UI Application Block and Smart Client Software Factory so
+will be interesting to see how the book fairs with your articles.</p>
+<p>In your last few articles you talk about the MVC and MVP patterns
+and passive and active MVC/MVP. Can you not have an active View without
+the view referencing the Model? For example could you not expose
+another Interface that the Presenter implements that will raise events
+when the model updates its state. So the Presenter would subscribe for
+changes in the model and this could then cause an event to be raised by
+the Presenter (event is in interface) which the View subscribes? Not
+sure if that is breaking the pattern or i have misunderstood something.
+Alternatively the presenter can subscribe to state updates from the
+model and update the view using the ITestView interface? Would that not
+achieve the active view without the view having to reference the model?</p>
+<p>Also, given the lack of decent documentation (apart from yours) and
+the number of comments regarding the difficulties of learning CAB what
+are your experiences when hiring new developers who have not worked
+with CAB? Do they have reservations about the framework or is it just a
+matter of taking the time to learn it and with time it becomes clearer?</p>
+<p>Kind Regards,</p>
+	<p><cite>Comment by <span class="fn">LonD</span> — August 18, 2008 @ <a href="#comment-2800">11:55 am</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2008/03/02/model-view-presenter-using-the-smart-client-software-factory-introduction-to-cabscsf-part-25/?replytocom=2800#respond" onclick='return addComment.moveForm("div-comment-2800", "2800", "respond", "166")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-2819">
+	<div id="div-comment-2819" class="vcard">
+	<img alt="" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/8e5229d1ff80408d679d972e7c42a4a5.jpeg" class="avatar avatar-32" width="32" height="32">	<p>Hi Rich</p>
+<p> When I try to do this or follow the examples, in the business
+module when I right click, I do NOT get an “Add View (with Presenter)”
+option only an “Create Disconnected Service Agent” in the Smart Client
+Factory right click menu..</p>
+<p> How do I get the add view with presenter option to work and/or do it by hand? This is with VS 2008 and latest Smart Client…</p>
+<p>Jordan</p>
+	<p><cite>Comment by <span class="fn">Jordan</span> — September 4, 2008 @ <a href="#comment-2819">10:02 pm</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2008/03/02/model-view-presenter-using-the-smart-client-software-factory-introduction-to-cabscsf-part-25/?replytocom=2819#respond" onclick='return addComment.moveForm("div-comment-2819", "2819", "respond", "166")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-2875">
+	<div id="div-comment-2875" class="vcard">
+	<img alt="" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/a.png" class="avatar avatar-32" width="32" height="32">	<p>Part 26 Link ???</p>
+	<p><cite>Comment by <span class="fn">ItsMe</span> — October 16, 2008 @ <a href="#comment-2875">1:51 pm</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2008/03/02/model-view-presenter-using-the-smart-client-software-factory-introduction-to-cabscsf-part-25/?replytocom=2875#respond" onclick='return addComment.moveForm("div-comment-2875", "2875", "respond", "166")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-2903">
+	<div id="div-comment-2903" class="vcard">
+	<img alt="" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/77502515fffb435a6cd4577a1295e9e3.png" class="avatar avatar-32" width="32" height="32">	<p>Excellent examples and insite. A much needed addition to the documentation.</p>
+	<p><cite>Comment by <span class="fn">Kevin Plotner</span> — November 6, 2008 @ <a href="#comment-2903">9:54 pm</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2008/03/02/model-view-presenter-using-the-smart-client-software-factory-introduction-to-cabscsf-part-25/?replytocom=2903#respond" onclick='return addComment.moveForm("div-comment-2903", "2903", "respond", "166")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-2908">
+	<div id="div-comment-2908" class="vcard">
+	<img alt="" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/f4056038027c45b3fb1f08de70795843.png" class="avatar avatar-32" width="32" height="32">	<p>Rich,</p>
+<p>I think your articles are very clear and easy to understand.<br>
+I request you to provide us a link in ur site for examples download.</p>
+<p>I would read all your articles again about CAB and SCSF.<br>
+Can you help us about displaying/relaoding a view in right workspace
+based on some selecctions/criteria in left workspace UI? -is it in any
+specific article..if not can u write a quick one..would be of great
+help for my project..Thanks a Ton!</p>
+<p>Rgds,<br>
+SA.</p>
+	<p><cite>Comment by <span class="fn">SA</span> — November 13, 2008 @ <a href="#comment-2908">1:33 am</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2008/03/02/model-view-presenter-using-the-smart-client-software-factory-introduction-to-cabscsf-part-25/?replytocom=2908#respond" onclick='return addComment.moveForm("div-comment-2908", "2908", "respond", "166")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-2916">
+	<div id="div-comment-2916" class="vcard">
+	<img alt="" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/b0da528f5f4c1e582f1948332498dc83.png" class="avatar avatar-32" width="32" height="32">	<p>I’ve
+your 25 articles and they were really great at understanding and
+building a SCSF solution. Now, I see there is a lot of hype around
+Composite WPF. Question: Does this replace the SCSF and is it time to
+learn a new practice? How do the two guidance’s compare?</p>
+	<p><cite>Comment by <span class="fn">Vince</span> — November 24, 2008 @ <a href="#comment-2916">1:56 am</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2008/03/02/model-view-presenter-using-the-smart-client-software-factory-introduction-to-cabscsf-part-25/?replytocom=2916#respond" onclick='return addComment.moveForm("div-comment-2916", "2916", "respond", "166")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-3016">
+	<div id="div-comment-3016" class="vcard">
+	<img alt="" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/49d0a5fac14b95f59753649c8ed9f418.png" class="avatar avatar-32" width="32" height="32">	<p>HI Rich<br>
+Many Many Thanks for such a great article series on CAB &amp; SCSF<br>
+Keep going the good work<br>
+Eagerly waiting for new articles in this series…..!<br>
+Thanks &amp; Regards<br>
+Swakesh</p>
+	<p><cite>Comment by <span class="fn">swakesh</span> — February 27, 2009 @ <a href="#comment-3016">11:06 am</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2008/03/02/model-view-presenter-using-the-smart-client-software-factory-introduction-to-cabscsf-part-25/?replytocom=3016#respond" onclick='return addComment.moveForm("div-comment-3016", "3016", "respond", "166")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-3033">
+	<div id="div-comment-3033" class="vcard">
+	<img alt="" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/4dbb40346f07302e5570e8a5ad7b6643.png" class="avatar avatar-32" width="32" height="32">	<p>Jordon,</p>
+<p>I have the same problem as you: no “Add View (with Presenter)”
+option only an “Create Disconnected Service Agent” in the Smart Client
+Factory right click menu.</p>
+<p>Did you find a solution for this?</p>
+	<p><cite>Comment by <span class="fn">Roy</span> — March 26, 2009 @ <a href="#comment-3033">4:49 am</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2008/03/02/model-view-presenter-using-the-smart-client-software-factory-introduction-to-cabscsf-part-25/?replytocom=3033#respond" onclick='return addComment.moveForm("div-comment-3033", "3033", "respond", "166")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-3035">
+	<div id="div-comment-3035" class="vcard">
+	<img alt="" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/b04853668523b0083a1833ae3185dd80.png" class="avatar avatar-32" width="32" height="32">	<p>Hi Rich,<br>
+first of all, I’d like to thank you so much!<br>
+Your articles are simply super: they demistified the SCFS, they are
+well structured and good explained. They are a very good reference to
+beginners.<br>
+The stuff is very simple to assimilate and understand, but Microsoft (my own opinion) make it very complex and ununderstandable.</p>
+<p>I’d like to add that if one perefers not to use the default
+implementation (WindowsPrincipalAuthenticationService) of the
+IAuthenticationService Service and writes his/her own, this must be
+added in the ShellApplication’s AddServices method and not in the
+AddServices of any other Module, as the Modules Loading &amp;
+Initialization take place after the authentication. In the “Hospital
+example” of the book “Programming Microsoft® Composite UI Application
+Block and Smart Client Software Factory” of “The Mad Professor” (David
+S. Platt), an AutenticatinService is added in the AddServices of a
+loaded Module. This is wrong.<br>
+In the same Example, the same AutenticatinService is added via the
+App.Config file: that’s what let the application (the Authentication)
+work.</p>
+<p>To Roy and Jordon:<br>
+I had the same problem: the solution is to (unfortunately) generate a
+new SCSF Application and add a new BusinessModule. As long as I remove
+a (already added) BusinessModule, it’s not more possible to add a View
+(with Presenter), just the option “Create Disconnected Service Agent”
+is available.</p>
+<p>Meziano</p>
+	<p><cite>Comment by <span class="fn">Meziano</span> — March 31, 2009 @ <a href="#comment-3035">3:35 pm</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2008/03/02/model-view-presenter-using-the-smart-client-software-factory-introduction-to-cabscsf-part-25/?replytocom=3035#respond" onclick='return addComment.moveForm("div-comment-3035", "3035", "respond", "166")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-3050">
+	<div id="div-comment-3050" class="vcard">
+	<img alt="" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/e63a3838b94aaf632324be97dfac4bd1.png" class="avatar avatar-32" width="32" height="32">	<p>Rich,
+your articles are very well written and are a great start for anyone
+who wants to pick up CAB from the start of a project or get to
+understand it in an already ongoing project.</p>
+<p>To Roy and Jordon:<br>
+I had the same problem and found why it was happening. The recipe that
+add the “Add View (with Presenter)” option to the right-click menu look
+for a reference to the Infrastructure.Interface.dll. If you changed the
+output name of this library after creating your SCFS Application, it
+may not find it and will not present the option. It also uses the
+RootNamespace you provided at the creation of the project. Rename the
+library back to Infrastructure.Interface insated of, for exemple,
+MyProject.Infrastructure.Interface and the recipe should work fine!</p>
+<p>Rider.</p>
+	<p><cite>Comment by <span class="fn">Rider</span> — April 17, 2009 @ <a href="#comment-3050">7:10 pm</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2008/03/02/model-view-presenter-using-the-smart-client-software-factory-introduction-to-cabscsf-part-25/?replytocom=3050#respond" onclick='return addComment.moveForm("div-comment-3050", "3050", "respond", "166")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-3052">
+	<div id="div-comment-3052" class="vcard">
+	<img alt="" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/d6340d574e8f2373b7442ecbb8bc6007.png" class="avatar avatar-32" width="32" height="32">	<p>For those that are having problems with VS 2008 SP1 not displaying the Add View menu item, a fix has been packaged as an MSI at <a href="http://artazor.wordpress.com/2008/12/07/scsf-april-2008-fix-for-visual-studio-2008-sp1/" rel="nofollow">http://artazor.wordpress.com/2008/12/07/scsf-april-2008-fix-for-visual-studio-2008-sp1/</a>. It will work on new solutions only. </p>
+<p>The SCSF issues are also documented here <a href="http://smartclient.codeplex.com/Wiki/View.aspx?title=Known%20Issues%3a%20SC-SF%20April%202008%20with%20Visual%20Studio%202008%20and%20SP1%20Beta&amp;referringTitle=SCSF%20Knowledge%20Base#Fix3" rel="nofollow">http://smartclient.codeplex.com/Wiki/View.aspx?title=Known%20Issues%3a%20SC-SF%20April%202008%20with%20Visual%20Studio%202008%20and%20SP1%20Beta&amp;referringTitle=SCSF%20Knowledge%20Base#Fix3</a></p>
+	<p><cite>Comment by <span class="fn">Adrian</span> — April 19, 2009 @ <a href="#comment-3052">1:55 pm</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2008/03/02/model-view-presenter-using-the-smart-client-software-factory-introduction-to-cabscsf-part-25/?replytocom=3052#respond" onclick='return addComment.moveForm("div-comment-3052", "3052", "respond", "166")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-3098">
+	<div id="div-comment-3098" class="vcard">
+	<img alt="" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/b04853668523b0083a1833ae3185dd80.png" class="avatar avatar-32" width="32" height="32">	<p>Hi Rich,</p>
+<p>I hope you are well.</p>
+<p>We are missing the rest: we have know understood the basics, we need to know how to make this knowledge into practice.</p>
+<p>The following points are very important in my opinion:</p>
+<p>1- The startup sequence of SCSF Application??<br>
+2- What is “Action Catalog Service” and how to use it?<br>
+3- How to put the puzzle together?</p>
+<p>A real-world example (with a DB as Back-end) would be very welcome:
+it will shows us when the differnts modules will be loaded? When the
+different SmartParts will be shown?<br>
+Hopping to read you soon..</p>
+<p>Meziano</p>
+	<p><cite>Comment by <span class="fn">Meziano</span> — May 30, 2009 @ <a href="#comment-3098">11:34 pm</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2008/03/02/model-view-presenter-using-the-smart-client-software-factory-introduction-to-cabscsf-part-25/?replytocom=3098#respond" onclick='return addComment.moveForm("div-comment-3098", "3098", "respond", "166")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-3117">
+	<div id="div-comment-3117" class="vcard">
+	<img alt="" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/1daac8b8470817dbefbbb6e9c4bef1ee.png" class="avatar avatar-32" width="32" height="32">	<p>Hi Rich,</p>
+<p>Kindly Provide us some basic Examples to start with the Practical
+Implementation of SCSF, I am very much thankful to you for giving us
+this great Series of Articles, wish you all the success in your life</p>
+<p>Thanks and regards,</p>
+<p>Rajesh KUmar.S</p>
+	<p><cite>Comment by <span class="fn">rajesh</span> — June 15, 2009 @ <a href="#comment-3117">7:41 am</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2008/03/02/model-view-presenter-using-the-smart-client-software-factory-introduction-to-cabscsf-part-25/?replytocom=3117#respond" onclick='return addComment.moveForm("div-comment-3117", "3117", "respond", "166")'>Reply</a>	</div>
+	</div>
+</li>
+</ol>
+
+<div class="navigation">
+	<div class="alignleft"></div>
+	<div class="alignright"></div>
+</div>
+<br>
+
+
+<p><a href="http://richnewman.wordpress.com/2008/03/02/model-view-presenter-using-the-smart-client-software-factory-introduction-to-cabscsf-part-25/feed/"><abbr title="Really Simple Syndication">RSS</abbr> feed for comments on this post.</a> 
+	<a href="http://richnewman.wordpress.com/2008/03/02/model-view-presenter-using-the-smart-client-software-factory-introduction-to-cabscsf-part-25/trackback/" rel="trackback">TrackBack <abbr title="Uniform Resource Identifier">URI</abbr></a>
+</p>
+
+<div id="respond">
+<h2 id="postcomment">Leave a comment</h2>
+<div id="cancel-comment-reply"><small><a rel="nofollow" id="cancel-comment-reply-link" href="http://richnewman.wordpress.com/2008/03/02/model-view-presenter-using-the-smart-client-software-factory-introduction-to-cabscsf-part-25/#respond" style="display: none;">Click here to cancel reply.</a></small></div>
+
+
+<form action="http://richnewman.wordpress.com/wp-comments-post.php" method="post" id="commentform">
+
+
+<p><input name="author" id="author" value="" size="22" tabindex="1" type="text">
+<label for="author"><small>Name </small></label></p>
+
+<p><input name="email" id="email" value="" size="22" tabindex="2" type="text">
+<label for="email"><small>Mail (will not be published) </small></label></p>
+
+<p><input name="url" id="url" value="" size="22" tabindex="3" type="text">
+<label for="url"><small>Website</small></label></p>
+
+
+<!--<p><small><strong>XHTML:</strong> You can use these tags: &lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;cite&gt; &lt;code&gt; &lt;pre&gt; &lt;del datetime=&quot;&quot;&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=&quot;&quot;&gt; &lt;strike&gt; &lt;strong&gt; </small></p>-->
+
+<p><textarea name="comment" id="comment" cols="100" rows="10" tabindex="4"></textarea></p>
+
+<p><input name="submit" id="submit" tabindex="5" value="Submit Comment" type="submit">
+<input name="comment_post_ID" value="166" id="comment_post_ID" type="hidden">
+<input name="comment_parent" id="comment_parent" value="0" type="hidden">
+</p>
+
+<input name="genseq" value="1246695810" type="hidden">
+<p><input name="subscribe" id="subscribe" value="subscribe" style="width: auto;" type="checkbox">
+		<label for="subscribe" id="subscribe-label">Notify me of follow-up comments via email.</label></p>
+</form>
+
+</div>
+
+
+
+<!-- begin footer -->
+</div>
+
+
+<!-- begin sidebar -->
+<div id="menu">
+
+<ul>
+<li id="search-2" class="widget widget_search"><form role="search" method="get" id="searchform" action="http://richnewman.wordpress.com/">
+	<div><label class="screen-reader-text" for="s">Search for:</label>
+	<input value="" name="s" id="s" type="text">
+	<input id="searchsubmit" value="Search" type="submit">
+	</div>
+	</form></li>
+		<li id="text-2" class="widget widget_text">			<h2 class="widgettitle">recent posts</h2>
+			<div class="textwidget"><a href="http://richnewman.wordpress.com/2009/06/06/running-visual-studio-as-an-administrator-under-windows-vista/">Running Visual Studio as an Administrator under Windows Vista</a><br><br>
+
+<a href="http://richnewman.wordpress.com/2008/02/23/table-of-contents-introduction-to-using-financial-products-markup-language-fpml-with-microsoft-net-tools/">Introduction to using Financial Products Markup Language (FpML) with Microsoft .NET Tools</a><br><br>
+
+<a href="http://richnewman.wordpress.com/intro-to-cab-toc/">An Introduction to the Smart Client Software Factory and Composite Application Block</a> <br><br>
+
+<a href="http://richnewman.wordpress.com/2007/12/09/a-beginners-guide-to-credit-default-swaps/">beginner's guide to credit default swaps</a><br><br>
+
+<a href="http://richnewman.wordpress.com/2007/10/26/user-interface-design-for-business-applications/">User Interface Design for Business Applications</a><br><br>
+
+<a href="http://richnewman.wordpress.com/2007/08/04/some-thoughts-on-soa-and-application-design-using-the-cabscsf/">Some Thoughts on SOA and Application Design using the CAB/SCSF</a> <br><br>
+
+<a href="http://richnewman.wordpress.com/2007/07/01/c-and-vbnet-line-count-utility/">C# And VB.NET Line Count Utility</a> <br><br>
+
+<a href="http://richnewman.wordpress.com/2007/06/24/a-beginner%e2%80%99s-guide-to-the-black-scholes-option-pricing-formula-part-1/">Beginner’s Guide to the Black-Scholes Option Pricing Formula</a> <br><br>
+
+<a href="http://richnewman.wordpress.com/2007/04/29/using-hsl-color-hue-saturation-luminosity-to-create-better-looking-guis-part-1/">Using HSL Color to Create Better-Looking GUIs</a> <br><br>
+
+<a href="http://richnewman.wordpress.com/2007/04/15/a-beginner%e2%80%99s-guide-to-calling-a-net-library-from-excel/">Beginner's Guide to Calling a .NET Library from Excel</a><br><br>
+
+<a href="http://richnewman.wordpress.com/2007/04/08/top-level-exception-handling-in-windows-forms-applications-part-1/">Top-level Exception Handling in Windows Forms Applications</a><br><br>
+
+<a href="http://richnewman.wordpress.com/2007/03/23/comparing-values-in-net-identity-and-equivalence-part-1/">Comparing Values for Equality in .NET: Identity and Equivalence</a><br><br></div>
+		</li>
+		<li id="text-3" class="widget widget_text">			<h2 class="widgettitle">pages</h2>
+			<div class="textwidget"><a href="http://richnewman.wordpress.com/about/">About Me</a> <br><br></div>
+		</li>
+<li id="archives-2" class="widget widget_archive"><h2 class="widgettitle">Archives</h2>
+		<ul>
+			<li><a href="http://richnewman.wordpress.com/2009/06/" title="June 2009">June 2009</a>&nbsp;(2)</li>
+	<li><a href="http://richnewman.wordpress.com/2008/03/" title="March 2008">March 2008</a>&nbsp;(3)</li>
+	<li><a href="http://richnewman.wordpress.com/2008/02/" title="February 2008">February 2008</a>&nbsp;(4)</li>
+	<li><a href="http://richnewman.wordpress.com/2008/01/" title="January 2008">January 2008</a>&nbsp;(3)</li>
+	<li><a href="http://richnewman.wordpress.com/2007/12/" title="December 2007">December 2007</a>&nbsp;(6)</li>
+	<li><a href="http://richnewman.wordpress.com/2007/11/" title="November 2007">November 2007</a>&nbsp;(3)</li>
+	<li><a href="http://richnewman.wordpress.com/2007/10/" title="October 2007">October 2007</a>&nbsp;(5)</li>
+	<li><a href="http://richnewman.wordpress.com/2007/09/" title="September 2007">September 2007</a>&nbsp;(8)</li>
+	<li><a href="http://richnewman.wordpress.com/2007/08/" title="August 2007">August 2007</a>&nbsp;(6)</li>
+	<li><a href="http://richnewman.wordpress.com/2007/07/" title="July 2007">July 2007</a>&nbsp;(8)</li>
+	<li><a href="http://richnewman.wordpress.com/2007/06/" title="June 2007">June 2007</a>&nbsp;(4)</li>
+	<li><a href="http://richnewman.wordpress.com/2007/05/" title="May 2007">May 2007</a>&nbsp;(2)</li>
+	<li><a href="http://richnewman.wordpress.com/2007/04/" title="April 2007">April 2007</a>&nbsp;(5)</li>
+	<li><a href="http://richnewman.wordpress.com/2007/03/" title="March 2007">March 2007</a>&nbsp;(5)</li>
+		</ul>
+</li>
+		<li id="text-1" class="widget widget_text">						<div class="textwidget"><a href="http://richnewman.wordpress.com/feed"><img src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/e28.png"></a> </div>
+		</li>
+<li id="pages-2" class="widget widget_pages"><h2 class="widgettitle">Pages</h2>
+		<ul>
+			<li class="page_item page-item-2"><a href="http://richnewman.wordpress.com/about/" title="About">About</a></li>
+<li class="page_item page-item-79"><a href="http://richnewman.wordpress.com/attempted-solutions-to-random-numbers-problem/" title="Attempted Solutions to Random Numbers&nbsp;Problem">Attempted Solutions to Random Numbers&nbsp;Problem</a></li>
+<li class="page_item page-item-67"><a href="http://richnewman.wordpress.com/dependency-injection-example-constructor-injection/" title="Dependency Injection Example: Constructor&nbsp;Injection">Dependency Injection Example: Constructor&nbsp;Injection</a></li>
+<li class="page_item page-item-69"><a href="http://richnewman.wordpress.com/dependency-injection-example-interface-injection/" title="Dependency Injection Example: Interface&nbsp;Injection">Dependency Injection Example: Interface&nbsp;Injection</a></li>
+<li class="page_item page-item-68"><a href="http://richnewman.wordpress.com/dependency-injection-example-setter-injection/" title="Dependency Injection Example: Setter&nbsp;Injection">Dependency Injection Example: Setter&nbsp;Injection</a></li>
+<li class="page_item page-item-39"><a href="http://richnewman.wordpress.com/hslcolor-class/" title="HSLColor&nbsp;Class">HSLColor&nbsp;Class</a></li>
+<li class="page_item page-item-76"><a href="http://richnewman.wordpress.com/weirdinteger-an-example-of-the-use-of-icomparable/" title="Inversion of Control in .NET: an example of the use of&nbsp;IComparable">Inversion of Control in .NET: an example of the use of&nbsp;IComparable</a></li>
+<li class="page_item page-item-100"><a href="http://richnewman.wordpress.com/intro-to-cab-toc/" title="Table of Contents: Introduction to&nbsp;CAB/SCSF">Table of Contents: Introduction to&nbsp;CAB/SCSF</a></li>
+<li class="page_item page-item-32"><a href="http://richnewman.wordpress.com/top-level-exception-handling-code-listing-1/" title="Top-level Exception Handling – Code Listing&nbsp;2">Top-level Exception Handling – Code Listing&nbsp;2</a></li>
+<li class="page_item page-item-33"><a href="http://richnewman.wordpress.com/top-level-exception-handling-code-listing-2/" title="Top-level Exception Handling – Code Listing&nbsp;3">Top-level Exception Handling – Code Listing&nbsp;3</a></li>
+<li class="page_item page-item-34"><a href="http://richnewman.wordpress.com/top-level-exception-handling-code-listing-3/" title="Top-level Exception Handling – Code Listing&nbsp;4">Top-level Exception Handling – Code Listing&nbsp;4</a></li>
+<li class="page_item page-item-94"><a href="http://richnewman.wordpress.com/using-custom-net-events-to-invoke-commands/" title="Using Custom .NET Events to Invoke&nbsp;Commands">Using Custom .NET Events to Invoke&nbsp;Commands</a></li>
+<li class="page_item page-item-38"><a href="http://richnewman.wordpress.com/using-hsl-color-original-color-scheme/" title="Using HSL Color – Original Color&nbsp;Scheme">Using HSL Color – Original Color&nbsp;Scheme</a></li>
+		</ul>
+		</li>
+<li id="calendar-2" class="widget widget_calendar"><h2 class="widgettitle">&nbsp;</h2>
+<div id="calendar_wrap"><table id="wp-calendar" summary="Calendar">
+	<caption>March 2008</caption>
+	<thead>
+	<tr>
+		<th abbr="Monday" scope="col" title="Monday">M</th>
+		<th abbr="Tuesday" scope="col" title="Tuesday">T</th>
+		<th abbr="Wednesday" scope="col" title="Wednesday">W</th>
+		<th abbr="Thursday" scope="col" title="Thursday">T</th>
+		<th abbr="Friday" scope="col" title="Friday">F</th>
+		<th abbr="Saturday" scope="col" title="Saturday">S</th>
+		<th abbr="Sunday" scope="col" title="Sunday">S</th>
+	</tr>
+	</thead>
+
+	<tfoot>
+	<tr>
+		<td abbr="February" colspan="3" id="prev"><a href="http://richnewman.wordpress.com/2008/02/" title="View posts for February 2008">« Feb</a></td>
+		<td class="pad">&nbsp;</td>
+		<td abbr="June" colspan="3" id="next"><a href="http://richnewman.wordpress.com/2009/06/" title="View posts for June 2009">Jun »</a></td>
+	</tr>
+	</tfoot>
+
+	<tbody>
+	<tr>
+		<td colspan="5" class="pad">&nbsp;</td><td>1</td><td><a href="http://richnewman.wordpress.com/2008/03/02/" title="Model-View-Presenter using the Smart Client Software Factory (Introduction To CAB/SCSF Part&nbsp;25)">2</a></td>
+	</tr>
+	<tr>
+		<td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td>
+	</tr>
+	<tr>
+		<td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td>
+	</tr>
+	<tr>
+		<td>17</td><td>18</td><td><a href="http://richnewman.wordpress.com/2008/03/19/" title="Apologies: Code Links Are&nbsp;Broken">19</a></td><td>20</td><td>21</td><td>22</td><td>23</td>
+	</tr>
+	<tr>
+		<td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td>
+	</tr>
+	<tr>
+		<td><a href="http://richnewman.wordpress.com/2008/03/31/" title="Code links now working&nbsp;again">31</a></td>
+		<td class="pad" colspan="6">&nbsp;</td>
+	</tr>
+	</tbody>
+	</table></div></li>
+<li id="meta-2" class="widget widget_meta"><h2 class="widgettitle">Meta</h2>
+			<ul>
+						<li><a href="http://richnewman.wordpress.com/wp-login.php">Log in</a></li>
+			<li><a href="http://richnewman.wordpress.com/feed/" title="Syndicate this site using RSS 2.0">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://richnewman.wordpress.com/comments/feed/" title="The latest comments to all posts in RSS">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://wordpress.com/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.com</a></li>
+						</ul>
+</li>
+
+</ul>
+
+</div>
+
+
+<p class="credit"><a href="http://wordpress.com/" rel="generator">Blog at WordPress.com</a>.</p>
+
+</div>
+
+<script type="text/javascript" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/quant.js"></script>
+<script type="text/javascript">_qoptions = { labels:"adt.0,language.en,posttag.beginners-guide,posttag.cab,posttag.composite-application-block,posttag.guidance-automation-package,posttag.model-view-presenter,posttag.mvp,posttag.scsf,posttag.smart-client-software-factory" };_qacct="p-18-mFEk4J448M";quantserve();</script>
+<noscript><p><img
+src="http://pixel.quantserve.com/pixel/p-18-mFEk4J448M.gif?labels=adt.0%2Clanguage.en%2Cposttag.beginners-guide%2Cposttag.cab%2Cposttag.composite-application-block%2Cposttag.guidance-automation-package%2Cposttag.model-view-presenter%2Cposttag.mvp%2Cposttag.scsf%2Cposttag.smart-client-software-factory"
+style="display: none" height="1" width="1" alt="" /></p></noscript>
+<script src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/w.js" type="text/javascript"></script>
+<script type="text/javascript">
+st_go({'blog':'909413','v':'wpcom','user_id':'0','post':'166','subd':'richnewman'});
+ex_go({'crypt':'RDZ8LFkxbXFDdT8yZmU5JitKNVZhUVdPbUEyLltsWHFDTXd6NS98VS1ML0ZRJWROW2NLSz0wSUp1fGhTU2NySVldTi1YcVhSJUJkfDQ4JT92UFYlXWNIVVpUU0guLlYvdTJ5TStGczVbcEhSM08uQy9IclM/NVUxNkxkLGViWlo5JnBvc0kvL1dBZjlVRnpLNlppRzJvLEJ3Li0vZWRrJi9ETDdMc0pPYTUsVnxsTGl2PStiM0M0QiZ1MV1jemY/P0NjbVRDM1Nad3V2Ri84TmkrLk9+'});
+re_go({'v':'sph','b':'909413','p':'166','d[richnewman.wordpress.com]':'3','d[wesaday.wordpress.com]':'1'});
+addLoadEvent(function(){linktracker_init('909413',166);});
+</script><img id="wpstats" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/g_003.gif" alt=""><img id="wpstats2" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/g_002.gif" alt="" style="display: none;"><img id="wpstats" src="Model-View-Presenter%20using%20the%20Smart%20Client%20Software%20Factory%20%28Introduction%20To%20CAB_SCSF%20Part%2025%29%20%C2%AB%20Rich%20Newman_files/g.gif" alt="" style="display: none;">
+</body></html>

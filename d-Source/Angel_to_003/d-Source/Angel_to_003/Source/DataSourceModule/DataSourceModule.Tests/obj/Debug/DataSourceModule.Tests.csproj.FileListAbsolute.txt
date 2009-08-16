@@ -1,0 +1,14 @@
+G:\work\Angel_to_003\d-Source\Angel_to_003\Source\DataSourceModule\DataSourceModule.Tests\bin\Debug\DataSourceModule.Tests.dll
+G:\work\Angel_to_003\d-Source\Angel_to_003\Source\DataSourceModule\DataSourceModule.Tests\bin\Debug\DataSourceModule.Tests.pdb
+G:\work\Angel_to_003\d-Source\Angel_to_003\Source\DataSourceModule\DataSourceModule.Tests\bin\Debug\DataSourceModule.dll
+G:\work\Angel_to_003\d-Source\Angel_to_003\Source\DataSourceModule\DataSourceModule.Tests\bin\Debug\DataSourceModule.Interface.dll
+G:\work\Angel_to_003\d-Source\Angel_to_003\Source\DataSourceModule\DataSourceModule.Tests\bin\Debug\Infrastructure.Interface.dll
+G:\work\Angel_to_003\d-Source\Angel_to_003\Source\DataSourceModule\DataSourceModule.Tests\bin\Debug\Microsoft.Practices.CompositeUI.dll
+G:\work\Angel_to_003\d-Source\Angel_to_003\Source\DataSourceModule\DataSourceModule.Tests\bin\Debug\Microsoft.Practices.CompositeUI.WinForms.dll
+G:\work\Angel_to_003\d-Source\Angel_to_003\Source\DataSourceModule\DataSourceModule.Tests\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+G:\work\Angel_to_003\d-Source\Angel_to_003\Source\DataSourceModule\DataSourceModule.Tests\bin\Debug\DataSourceModule.pdb
+G:\work\Angel_to_003\d-Source\Angel_to_003\Source\DataSourceModule\DataSourceModule.Tests\bin\Debug\Infrastructure.Interface.pdb
+G:\work\Angel_to_003\d-Source\Angel_to_003\Source\DataSourceModule\DataSourceModule.Tests\bin\Debug\DataSourceModule.Interface.pdb
+G:\work\Angel_to_003\d-Source\Angel_to_003\Source\DataSourceModule\DataSourceModule.Tests\obj\Debug\ResolveAssemblyReference.cache
+G:\work\Angel_to_003\d-Source\Angel_to_003\Source\DataSourceModule\DataSourceModule.Tests\obj\Debug\DataSourceModule.Tests.dll
+G:\work\Angel_to_003\d-Source\Angel_to_003\Source\DataSourceModule\DataSourceModule.Tests\obj\Debug\DataSourceModule.Tests.pdb

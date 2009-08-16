@@ -1,0 +1,84 @@
+'instance_name' scripting variable not defined.
+'dba_user_pwd' scripting variable not defined.
+Changed database context to 'ANGEL_TO_001_TEST4'.
+ 
+===============================================================================
+=          Starting script _drop_chis_all_objects.sql                         =
+===============================================================================
+ 
+ 
+===============================================================================
+=          Starting script dc_00446.sql                                =
+===============================================================================
+ 
+Msg 2705, Level 16, State 4, Server SRV-TS, Line 4
+Column names in each table must be unique. Column name 'is_comm_duty_car' in table 'dbo.ccar_car_kind' is specified more than once.
+Msg 1913, Level 16, State 1, Server SRV-TS, Line 2
+The operation failed because an index or statistics with name 'i_ccar_car_kind_is_comm_duty_car' already exists on table 'dbo.ccar_car_kind'.
+Msg 15233, Level 16, State 1, Server SRV-TS, Procedure sp_addextendedproperty, Line 38
+Property cannot be added. Property 'MS_Description' already exists for 'dbo.ccar_car_kind.is_comm_duty_car'.
+
+(3 rows affected)
+Msg 2714, Level 16, State 6, Server SRV-TS, Line 1
+There is already an object named 'CCAR_CAR_EVENT' in the database.
+Msg 15233, Level 16, State 1, Server SRV-TS, Procedure sp_addextendedproperty, Line 38
+Property cannot be added. Property 'MS_Description' already exists for 'dbo.CCAR_CAR_EVENT.id'.
+Msg 15233, Level 16, State 1, Server SRV-TS, Procedure sp_addextendedproperty, Line 38
+Property cannot be added. Property 'MS_Description' already exists for 'dbo.CCAR_CAR_EVENT.sys_status'.
+Msg 15233, Level 16, State 1, Server SRV-TS, Procedure sp_addextendedproperty, Line 38
+Property cannot be added. Property 'MS_Description' already exists for 'dbo.CCAR_CAR_EVENT.sys_comment'.
+Msg 15233, Level 16, State 1, Server SRV-TS, Procedure sp_addextendedproperty, Line 38
+Property cannot be added. Property 'MS_Description' already exists for 'dbo.CCAR_CAR_EVENT.sys_date_modified'.
+Msg 15233, Level 16, State 1, Server SRV-TS, Procedure sp_addextendedproperty, Line 38
+Property cannot be added. Property 'MS_Description' already exists for 'dbo.CCAR_CAR_EVENT.sys_date_created'.
+Msg 15233, Level 16, State 1, Server SRV-TS, Procedure sp_addextendedproperty, Line 38
+Property cannot be added. Property 'MS_Description' already exists for 'dbo.CCAR_CAR_EVENT.sys_user_modified'.
+Msg 15233, Level 16, State 1, Server SRV-TS, Procedure sp_addextendedproperty, Line 38
+Property cannot be added. Property 'MS_Description' already exists for 'dbo.CCAR_CAR_EVENT.sys_user_created'.
+Msg 15233, Level 16, State 1, Server SRV-TS, Procedure sp_addextendedproperty, Line 38
+Property cannot be added. Property 'MS_Description' already exists for 'dbo.CCAR_CAR_EVENT.car_id'.
+Msg 15233, Level 16, State 1, Server SRV-TS, Procedure sp_addextendedproperty, Line 38
+Property cannot be added. Property 'MS_Description' already exists for 'dbo.CCAR_CAR_EVENT.event'.
+Msg 15233, Level 16, State 1, Server SRV-TS, Procedure sp_addextendedproperty, Line 38
+Property cannot be added. Property 'MS_Description' already exists for 'dbo.CCAR_CAR_EVENT.date_started'.
+Msg 15233, Level 16, State 1, Server SRV-TS, Procedure sp_addextendedproperty, Line 38
+Property cannot be added. Property 'MS_Description' already exists for 'dbo.CCAR_CAR_EVENT.date_ended'.
+Msg 15233, Level 16, State 1, Server SRV-TS, Procedure sp_addextendedproperty, Line 38
+Property cannot be added. Property 'MS_Description' already exists for 'dbo.CCAR_CAR_EVENT'.
+Msg 2714, Level 16, State 4, Server SRV-TS, Line 2
+There is already an object named 'CCAR_CAR_EVENT_CAR_ID_FK' in the database.
+Msg 1750, Level 16, State 1, Server SRV-TS, Line 2
+Could not create constraint. See previous errors.
+Msg 1913, Level 16, State 1, Server SRV-TS, Line 2
+The operation failed because an index or statistics with name 'i_ccar_car_event_car_id' already exists on table 'dbo.ccar_car_event'.
+Msg 1913, Level 16, State 1, Server SRV-TS, Line 2
+The operation failed because an index or statistics with name 'i_ccar_car_event_date_ended' already exists on table 'dbo.ccar_car_event'.
+Msg 1913, Level 16, State 1, Server SRV-TS, Line 2
+The operation failed because an index or statistics with name 'u_ccar_car_event_car_id_event_date_started' already exists on table 'dbo.ccar_car_event'.
+Msg 1913, Level 16, State 1, Server SRV-TS, Line 5
+The operation failed because an index or statistics with name 'i_cprt_emp_event_date_ended' already exists on table 'dbo.CPRT_EMPLOYEE_EVENT'.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 4
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+
+(1 rows affected)
+ 
+===============================================================================
+=          Registering devchange                                              =
+===============================================================================
+ 
+Registering devchange.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 2
+Violation of PRIMARY KEY constraint 'SYS_DC_PK'. Cannot insert duplicate key in object 'dbo.sys_dc'.
+The statement has been terminated.
+ 
+finish_time            
+-----------------------
+2009-04-10 11:18:11.937
+
+(1 rows affected)
+ 
+===============================================================================
+=          Script dc_00446.sql finished                                =
+===============================================================================
+ 

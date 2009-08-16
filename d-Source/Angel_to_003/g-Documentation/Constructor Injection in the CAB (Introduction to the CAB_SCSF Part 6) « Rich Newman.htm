@@ -1,0 +1,489 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html style="position: static;" dir="ltr" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head profile="http://gmpg.org/xfn/11">
+
+
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<title>Constructor Injection in the CAB (Introduction to the CAB/SCSF Part 6) « Rich Newman</title>
+
+
+	<style type="text/css" media="screen">
+		@import url( http://s3.wordpress.com/wp-content/themes/pub/blue-green/style.css?m=1245873790b );
+	</style>
+
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://richnewman.wordpress.com/feed/">
+
+	<link rel="pingback" href="http://richnewman.wordpress.com/xmlrpc.php">
+	<link rel="alternate" type="application/rss+xml" title="Rich Newman » Constructor Injection in the CAB (Introduction to the CAB/SCSF Part&nbsp;6) Comments Feed" href="http://richnewman.wordpress.com/2007/09/04/constructor-injection-in-the-cab-introduction-to-the-cabscsf-part-6/feed/">
+<script src="Constructor%20Injection%20in%20the%20CAB%20%28Introduction%20to%20the%20CAB_SCSF%20Part%206%29%20%C2%AB%20Rich%20Newman_files/a_003.htm" type="text/javascript"></script><script src="Constructor%20Injection%20in%20the%20CAB%20%28Introduction%20to%20the%20CAB_SCSF%20Part%206%29%20%C2%AB%20Rich%20Newman_files/auto_shot.htm" type="text/javascript"></script><script type="text/javascript">
+/* <![CDATA[ */
+function addLoadEvent(func){var oldonload=window.onload;if(typeof window.onload!='function'){window.onload=func;}else{window.onload=function(){oldonload();func();}}}
+/* ]]> */
+</script>
+<link rel="stylesheet" href="Constructor%20Injection%20in%20the%20CAB%20%28Introduction%20to%20the%20CAB_SCSF%20Part%206%29%20%C2%AB%20Rich%20Newman_files/global.css" type="text/css">
+<script type="text/javascript" src="Constructor%20Injection%20in%20the%20CAB%20%28Introduction%20to%20the%20CAB_SCSF%20Part%206%29%20%C2%AB%20Rich%20Newman_files/comment-reply.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://richnewman.wordpress.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://richnewman.wordpress.com/wp-includes/wlwmanifest.xml"> 
+<link rel="index" title="Rich Newman" href="http://richnewman.wordpress.com/">
+<link rel="start" title="Day&nbsp;1" href="http://richnewman.wordpress.com/2007/03/04/day-1/">
+<link rel="prev" title="Book Review: ‘Programming Microsoft Composite UI Application Block and Smart Client Software Factory’ by David S Platt (Microsoft&nbsp;Press)" href="http://richnewman.wordpress.com/2007/08/25/book-review-programming-microsoft-composite-ui-application-block-and-smart-client-software-factory-by-david-s-platt-microsoft-press/">
+<link rel="next" title="Introduction to Services in the CAB (Introduction to the CAB/SCSF Part&nbsp;7)" href="http://richnewman.wordpress.com/2007/09/08/introduction-to-services-in-the-cab-introduction-to-the-cabscsf-part-7/">
+<meta name="generator" content="WordPress.com">
+<link rel="canonical" href="http://richnewman.wordpress.com/2007/09/04/constructor-injection-in-the-cab-introduction-to-the-cabscsf-part-6/">
+<link rel="shortcut icon" type="image/x-icon" href="http://www.gravatar.com/blavatar/7864a25226671eb271870f6bdc69e29f?s=16&amp;d=http://s.wordpress.com/favicon.ico">
+<link rel="icon" type="image/x-icon" href="http://www.gravatar.com/blavatar/7864a25226671eb271870f6bdc69e29f?s=16&amp;d=http://s.wordpress.com/favicon.ico">
+<link rel="apple-touch-icon" href="http://www.gravatar.com/blavatar/cadbe3553ff3d2b663c10a55c50bef43?s=158&amp;d=http://s.wordpress.com/wp-content/themes/h4/i/webclip.png">
+<link rel="openid.server" href="http://richnewman.wordpress.com/?openidserver=1">
+<link rel="openid.delegate" href="http://richnewman.wordpress.com/">
+
+<script defer="defer" id="snap_preview_anywhere" type="text/javascript" src="Constructor%20Injection%20in%20the%20CAB%20%28Introduction%20to%20the%20CAB_SCSF%20Part%206%29%20%C2%AB%20Rich%20Newman_files/snap_preview_anywhere.htm"></script>
+
+</head><body><div class="snap_noengage snap_noshots" style="border: 0pt none ; margin: 0pt; padding: 0pt; position: absolute; visibility: hidden; top: 0px; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; left: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; z-index: 99999; width: 328px; height: 346px;" id="snap_com_shot_main"><img id="snap_com_shot_link_icon" class="snap_preview_icon" style="border: 0pt none ; margin: 0pt ! important; padding: 1px 0pt 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/palette.gif); background-color: transparent; visibility: hidden; z-index: 99999; width: 14px; height: 12px; background-position: -1128px 0pt; background-repeat: no-repeat; text-decoration: none;" src="Constructor%20Injection%20in%20the%20CAB%20%28Introduction%20to%20the%20CAB_SCSF%20Part%206%29%20%C2%AB%20Rich%20Newman_files/t.gif">
+<div style="border: 0pt none ; margin: 0pt; padding: 0pt; overflow: hidden; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; width: 50px; height: 50px;" id="snap_com_shot_bg_div_tl"><img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: -50px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999;" id="snap_com_shot_bg_img_tl" src="Constructor%20Injection%20in%20the%20CAB%20%28Introduction%20to%20the%20CAB_SCSF%20Part%206%29%20%C2%AB%20Rich%20Newman_files/palette.png"></div>
+<div style="border: 0pt none ; margin: 0pt; padding: 0pt; overflow: hidden; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: auto; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; right: 0px; width: 50px; height: 50px;" id="snap_com_shot_bg_div_tr"><img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: -100px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999;" id="snap_com_shot_bg_img_tr" src="Constructor%20Injection%20in%20the%20CAB%20%28Introduction%20to%20the%20CAB_SCSF%20Part%206%29%20%C2%AB%20Rich%20Newman_files/palette.png"></div>
+<div style="border: 0pt none ; margin: 0pt; padding: 0pt; overflow: hidden; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; bottom: 1px; width: 50px; height: 50px;" id="snap_com_shot_bg_div_bl"><img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: -150px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999;" id="snap_com_shot_bg_img_bl" src="Constructor%20Injection%20in%20the%20CAB%20%28Introduction%20to%20the%20CAB_SCSF%20Part%206%29%20%C2%AB%20Rich%20Newman_files/palette.png"></div>
+<div style="border: 0pt none ; margin: 0pt; padding: 0pt; overflow: hidden; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; right: 0px; bottom: 1px; width: 50px; height: 50px;" id="snap_com_shot_bg_div_br"><img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999;" id="snap_com_shot_bg_img_br" src="Constructor%20Injection%20in%20the%20CAB%20%28Introduction%20to%20the%20CAB_SCSF%20Part%206%29%20%C2%AB%20Rich%20Newman_files/palette.png"></div>
+<img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 50px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/bg/bg_lr.png); background-color: transparent; visibility: inherit; z-index: 99999; width: 100px; height: 246px; background-repeat: repeat;" id="snap_com_shot_bg_img_l" src="Constructor%20Injection%20in%20the%20CAB%20%28Introduction%20to%20the%20CAB_SCSF%20Part%206%29%20%C2%AB%20Rich%20Newman_files/t.gif">
+<img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: auto; top: 50px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/bg/bg_lr.png); background-color: transparent; visibility: inherit; z-index: 99999; right: 0px; width: 100px; height: 246px; background-repeat: repeat;" id="snap_com_shot_bg_img_r" src="Constructor%20Injection%20in%20the%20CAB%20%28Introduction%20to%20the%20CAB_SCSF%20Part%206%29%20%C2%AB%20Rich%20Newman_files/t.gif">
+<img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 50px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/bg/bg_tb.png); background-color: transparent; visibility: inherit; z-index: 99999; width: 228px; height: 100px; background-repeat: repeat;" id="snap_com_shot_bg_img_t" src="Constructor%20Injection%20in%20the%20CAB%20%28Introduction%20to%20the%20CAB_SCSF%20Part%206%29%20%C2%AB%20Rich%20Newman_files/t.gif">
+<img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 50px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/bg/bg_tb.png); background-color: transparent; visibility: inherit; z-index: 99999; bottom: 1px; width: 228px; height: 100px; background-repeat: repeat;" id="snap_com_shot_bg_img_b" src="Constructor%20Injection%20in%20the%20CAB%20%28Introduction%20to%20the%20CAB_SCSF%20Part%206%29%20%C2%AB%20Rich%20Newman_files/t.gif">
+<div id="snap_com_shot_bg_div_point" style="border: 0pt none ; margin: 0pt; padding: 0pt; overflow: hidden; z-index: 100000; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 7px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; width: 28px; height: 29px; bottom: -21px; right: auto;"><img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: -276px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999;" id="snap_com_shot_bg_img_point" src="Constructor%20Injection%20in%20the%20CAB%20%28Introduction%20to%20the%20CAB_SCSF%20Part%206%29%20%C2%AB%20Rich%20Newman_files/palette.png"></div>
+<div style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 2px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: rgb(216, 216, 217); visibility: inherit; z-index: 99999; bottom: 37px; width: 320px; height: 82px;" id="snap_com_shot_bg_body"></div>
+
+<img style="border: 0pt none ; margin: 0pt; padding: 0pt; z-index: 100001; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 5px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; width: 200px; height: 5px; right: auto; bottom: 3px;" id="snap_com_shot_pointer0" src="Constructor%20Injection%20in%20the%20CAB%20%28Introduction%20to%20the%20CAB_SCSF%20Part%206%29%20%C2%AB%20Rich%20Newman_files/t.gif">
+<img style="border: 0pt none ; margin: 0pt; padding: 0pt; z-index: 100001; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 5px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; width: 164px; height: 5px; right: auto; bottom: -1px;" id="snap_com_shot_pointer1" src="Constructor%20Injection%20in%20the%20CAB%20%28Introduction%20to%20the%20CAB_SCSF%20Part%206%29%20%C2%AB%20Rich%20Newman_files/t.gif">
+<img style="border: 0pt none ; margin: 0pt; padding: 0pt; z-index: 100001; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 5px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; width: 128px; height: 5px; right: auto; bottom: -6px;" id="snap_com_shot_pointer2" src="Constructor%20Injection%20in%20the%20CAB%20%28Introduction%20to%20the%20CAB_SCSF%20Part%206%29%20%C2%AB%20Rich%20Newman_files/t.gif">
+<img style="border: 0pt none ; margin: 0pt; padding: 0pt; z-index: 100001; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 5px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; width: 92px; height: 5px; right: auto; bottom: -11px;" id="snap_com_shot_pointer3" src="Constructor%20Injection%20in%20the%20CAB%20%28Introduction%20to%20the%20CAB_SCSF%20Part%206%29%20%C2%AB%20Rich%20Newman_files/t.gif">
+<img style="border: 0pt none ; margin: 0pt; padding: 0pt; z-index: 100001; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 5px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; width: 56px; height: 5px; right: auto; bottom: -16px;" id="snap_com_shot_pointer4" src="Constructor%20Injection%20in%20the%20CAB%20%28Introduction%20to%20the%20CAB_SCSF%20Part%206%29%20%C2%AB%20Rich%20Newman_files/t.gif">
+<img style="border: 0pt none ; margin: 0pt; padding: 0pt; z-index: 100001; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 5px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; width: 20px; height: 5px; right: auto; bottom: -21px;" id="snap_com_shot_pointer5" src="Constructor%20Injection%20in%20the%20CAB%20%28Introduction%20to%20the%20CAB_SCSF%20Part%206%29%20%C2%AB%20Rich%20Newman_files/t.gif">
+<div style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 1px; top: 1px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; width: 322px; height: 338px;" id="snap_com_shot_bubble">
+<img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; width: 322px; height: 297px;" id="snap_com_shot_bubble_img" src="Constructor%20Injection%20in%20the%20CAB%20%28Introduction%20to%20the%20CAB_SCSF%20Part%206%29%20%C2%AB%20Rich%20Newman_files/t.gif">
+<div style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; width: 322px; height: 338px; text-align: left;" id="snap_com_shot_body">
+ <table id="snap_com_shot_drag_overlay" title="drag to move" style="border: 0pt none ; margin: 0pt; padding: 0pt; display: none; z-index: 100008; cursor: move ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; width: 322px; height: 20px;"><tbody><tr><td style="border: 0pt none ; background-color: transparent;">&nbsp;</td></tr></tbody></table>
+ <div id="snap_com_shot_top_left_menu" style="border: 0pt none ; margin: 0pt; padding: 0pt; z-index: 100009; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 1px; top: 1px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: hidden;"><img id="snap_com_shot_preview_toggle" src="Constructor%20Injection%20in%20the%20CAB%20%28Introduction%20to%20the%20CAB_SCSF%20Part%206%29%20%C2%AB%20Rich%20Newman_files/t.gif" style="border: 0pt none ; margin: 0pt; padding: 0pt; cursor: pointer ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/palette.gif); background-color: transparent; visibility: inherit; z-index: 99999; background-position: -319px 0pt; background-repeat: no-repeat; width: 25px; height: 18px; display: inline;"><img id="snap_com_shot_rss_toggle" src="Constructor%20Injection%20in%20the%20CAB%20%28Introduction%20to%20the%20CAB_SCSF%20Part%206%29%20%C2%AB%20Rich%20Newman_files/t.gif" style="border: 0pt none ; margin: 0pt; padding: 0pt; cursor: pointer ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/palette.gif); background-color: transparent; visibility: inherit; z-index: 99999; background-position: -475px 0pt; background-repeat: no-repeat; width: 25px; height: 18px; display: inline;" align="top"></div>
+ <div id="snap_com_shot_top_right_menu" style="border: 0pt none ; margin: 0pt; padding: 0pt; z-index: 100009; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: auto; top: 1px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; right: 1px;"><img id="snap_com_shot_share_button" src="Constructor%20Injection%20in%20the%20CAB%20%28Introduction%20to%20the%20CAB_SCSF%20Part%206%29%20%C2%AB%20Rich%20Newman_files/t.gif" style="border: 0pt none ; margin: 0pt; padding: 0pt; cursor: pointer ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/palette.gif); background-color: transparent; visibility: inherit; z-index: 99999; background-position: -807px 0pt; background-repeat: no-repeat; width: 50px; height: 17px; display: none;" align="top"><img title="Snap Shots Options" alt="Snap Shots Options" id="snap_com_shot_option_button" src="Constructor%20Injection%20in%20the%20CAB%20%28Introduction%20to%20the%20CAB_SCSF%20Part%206%29%20%C2%AB%20Rich%20Newman_files/t.gif" style="border: 0pt none ; margin: 0pt; padding: 0pt; cursor: pointer ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/palette.gif); background-color: transparent; visibility: inherit; z-index: 99999; background-position: -421px 0pt; background-repeat: no-repeat; width: 27px; height: 18px; display: inline;"><img title="Make this Shot larger" id="snap_com_shot_zoom_img" src="Constructor%20Injection%20in%20the%20CAB%20%28Introduction%20to%20the%20CAB_SCSF%20Part%206%29%20%C2%AB%20Rich%20Newman_files/t.gif" style="border: 0pt none ; margin: 0pt; padding: 0pt; cursor: pointer ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/palette.gif); background-color: transparent; visibility: inherit; z-index: 99999; background-position: -523px 0pt; background-repeat: no-repeat; width: 23px; height: 18px; display: inline;" align="top"><img id="snap_com_shot_pin_close_img" title="Close" src="Constructor%20Injection%20in%20the%20CAB%20%28Introduction%20to%20the%20CAB_SCSF%20Part%206%29%20%C2%AB%20Rich%20Newman_files/t.gif" style="border: 0pt none ; margin: 0pt; padding: 0pt; cursor: pointer ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/palette.gif); background-color: transparent; visibility: inherit; z-index: 99999; background-position: -711px 0pt; background-repeat: no-repeat; width: 23px; height: 18px; display: none;" align="top"></div>
+ <div id="snap_com_shot_option_menu" style="border: 1px solid rgb(139, 138, 138); margin: 0pt; padding: 0pt; z-index: 100009; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: Trebuchet; float: none; position: absolute; left: auto; top: 18px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: white; visibility: hidden; right: 20px; font-size: 10px; color: rgb(51, 51, 51);">
+  <div title="Snap Shots Options" id="snap_com_shot_option_a" style="border: 0pt none ; margin: 0pt; padding: 0pt 5px; cursor: pointer ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; white-space: nowrap; height: 17px;">Options</div>
+  <div id="snap_com_shot_disable_a" style="border-style: solid none none; border-color: rgb(192, 192, 192) -moz-use-text-color -moz-use-text-color; border-width: 1px 0pt 0pt; margin: 0pt; padding: 0pt 5px; cursor: pointer ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; white-space: nowrap; height: 17px;">Disable</div>
+ </div>
+ <div id="snap_com_shot_search" style="border: 0pt none ; margin: 0pt ! important; padding: 0pt ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 1px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: rgb(238, 238, 238); visibility: hidden; z-index: 99999; bottom: 31px; width: 320px; height: 78px;">
+  <div id="snap_com_shot_search_form" style="border: 0pt none ; margin: 0pt ! important; padding: 0pt ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999;" action="#" method="GET" accept-charset="UTF8" target="_blank">
+   <input id="snap_com_shot_box" name="snap_com_shot_box_name" autocomplete="off" style="border: 1px solid rgb(153, 153, 153); margin: 0pt; padding: 5px 0pt 0pt 6px; visibility: inherit ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 12px; top: 24px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); z-index: 99999; width: 232px; height: 20px; font-size: 12px; color: rgb(51, 51, 51); direction: ltr; display: none;" type="text">
+   <button style="border: 0pt none ; margin: 0pt 0pt 0pt 5px; padding: 1px 2px 2px; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: auto; top: 23px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/palette.gif); background-color: transparent; visibility: inherit; z-index: 99999; right: 7px; background-position: -164px 0pt; background-repeat: no-repeat; width: 55px; height: 29px; cursor: pointer; font-size: 11px; color: rgb(68, 68, 68); text-align: center;" type="submit" name="snap_com_shot_submit" id="snap_com_shot_submit"></button>
+   <a style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999;" href="about:blank" id="snap_com_shot_hidden_link"></a>
+  </div>
+ </div>
+ <div style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 10px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: hidden; z-index: 99999; bottom: 8px; height: 15px; direction: ltr;" id="snap_com_shot_promo"><a href="https://account.snap.com/signup.php?source=richnewman.wordpress.com&amp;campaign=viral-foot" title="Sign Up and add Free Snap Shots to your site in less than 5 min!" style="border-style: none none dotted; border-color: -moz-use-text-color -moz-use-text-color rgb(116, 114, 116); border-width: 0pt 0pt 1px; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; font-size: 11px; color: rgb(51, 51, 51); text-decoration: none;" class="snap_nopreview" id="snap_com_shot_promo_a">Get Free Shots</a><img id="snap_com_shot_promo_icon" src="Constructor%20Injection%20in%20the%20CAB%20%28Introduction%20to%20the%20CAB_SCSF%20Part%206%29%20%C2%AB%20Rich%20Newman_files/t.gif" style="border-top: 0pt none; border-left: 0pt none; border-right: 0pt none; border-bottom: medium none ! important; margin: 0pt; padding: 0pt; cursor: pointer ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/palette.gif); background-color: transparent; visibility: inherit; z-index: 99999; background-position: -1128px 0pt; background-repeat: no-repeat; width: 14px; height: 12px; display: inline;"></div>
+ <div style="border: 1px solid rgb(196, 196, 196); margin: 0pt; padding: 0pt; overflow: hidden; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 20px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: rgb(255, 255, 255); visibility: inherit; z-index: 99999; width: 320px; height: 207px;" id="snap_com_shot_preview_div">
+  <div style="border: 0pt none ; margin: 0pt; padding: 0pt; white-space: nowrap ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 6px; top: 5px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999;" id="snap_com_shot_url_wrapper"><a style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: white; visibility: inherit; z-index: 99999;" class="snap_nopreview" id="snap_com_shot_url_favicon" href="#"><img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/palette.gif); background-color: transparent; visibility: inherit; z-index: 99999; background-position: -889px 0pt; background-repeat: no-repeat; width: 16px; height: 16px; display: inline;" id="snap_com_shot_favicon" src="Constructor%20Injection%20in%20the%20CAB%20%28Introduction%20to%20the%20CAB_SCSF%20Part%206%29%20%C2%AB%20Rich%20Newman_files/t.gif"></a>&nbsp;<a style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: bold; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: white; visibility: inherit; z-index: 99999; font-size: 13px; text-decoration: underline; color: rgb(0, 0, 238); text-align: left;" class="snap_nopreview" id="snap_com_shot_url_a" href="#"><span style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: bold; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; display: inline; font-size: 13px; text-align: left;" id="snap_com_shot_url"></span></a>&nbsp;<a style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: white; visibility: inherit; z-index: 99999;" class="snap_nopreview" id="snap_com_shot_url_arrow" href="#"><img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/palette.gif); background-color: transparent; visibility: inherit; z-index: 99999; background-position: -1165px 0pt; background-repeat: no-repeat; width: 7px; height: 7px; display: inline;" id="snap_com_shot_arrow" src="Constructor%20Injection%20in%20the%20CAB%20%28Introduction%20to%20the%20CAB_SCSF%20Part%206%29%20%C2%AB%20Rich%20Newman_files/t.gif"></a></div>
+  <a style="border: 1px solid rgb(153, 153, 153); margin: 0pt; padding: 0pt; overflow: hidden; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 23px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: rgb(255, 255, 255); visibility: inherit; z-index: 99999; bottom: 12px; width: 270px; height: 161px;" class="snap_nopreview" id="snap_com_shot_img_a" href="#"><img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999;" id="snap_com_shot_preview_img" src="Constructor%20Injection%20in%20the%20CAB%20%28Introduction%20to%20the%20CAB_SCSF%20Part%206%29%20%C2%AB%20Rich%20Newman_files/t.gif"></a>
+  <iframe style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: rgb(255, 255, 255); visibility: inherit; z-index: 99999; width: 320px; height: 207px;" name="snap_com_shot_preview" id="snap_com_shot_preview" src="Constructor%20Injection%20in%20the%20CAB%20%28Introduction%20to%20the%20CAB_SCSF%20Part%206%29%20%C2%AB%20Rich%20Newman_files/a_002.htm" scrolling="no" frameborder="no"></iframe><img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99989; display: none;" id="snap_com_shot_loading_img" src="Constructor%20Injection%20in%20the%20CAB%20%28Introduction%20to%20the%20CAB_SCSF%20Part%206%29%20%C2%AB%20Rich%20Newman_files/loading.gif">
+ </div>
+ <div style="border: 0pt none ; margin: 0pt; padding: 0pt; overflow: hidden; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 1px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: rgb(238, 238, 238); visibility: inherit; z-index: 99999; bottom: 30px; width: 320px; height: 79px;" id="snap_com_shot_marea"><div style="border: 0pt none ; margin: 0pt; padding: 0pt; overflow: hidden; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: rgb(238, 238, 238); width: 100%; height: 100%; display: none;"></div><div style="border: 0pt none ; margin: 0pt; padding: 0pt; overflow: hidden; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: rgb(238, 238, 238); width: 100%; height: 100%; display: none;"></div></div>
+ <img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 9px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; bottom: 6px;" id="snap_com_shot_cobrand_img" src="Constructor%20Injection%20in%20the%20CAB%20%28Introduction%20to%20the%20CAB_SCSF%20Part%206%29%20%C2%AB%20Rich%20Newman_files/logo_wordpress.gif">
+  <table id="snap_com_shot_flash_overlay" title="Click to play" style="border: 0pt none ; margin: 0pt; padding: 0pt; display: none; z-index: 100010; cursor: pointer ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 50px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; width: 322px; height: 180px;"><tbody><tr><td>&nbsp;</td></tr></tbody></table>
+</div><div style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; width: 322px;" id="snap_com_shot_options">
+ <iframe style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 20px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: rgb(255, 255, 255); visibility: inherit; z-index: 99999; width: 321px; height: 207px;" id="snap_com_shot_option_iframe" src="Constructor%20Injection%20in%20the%20CAB%20%28Introduction%20to%20the%20CAB_SCSF%20Part%206%29%20%C2%AB%20Rich%20Newman_files/a_002.htm" scrolling="no" width="265" frameborder="0" height="190"></iframe>
+ <div style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: auto; top: 1px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; right: 1px;" id="snap_com_shot_option_menu_bar"><img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/palette.gif); background-color: transparent; visibility: inherit; z-index: 99999; background-position: -394px 0pt; background-repeat: no-repeat; width: 27px; height: 18px; display: inline;" class="snap_nopreview" id="snap_com_shot_option_button_disabled" src="Constructor%20Injection%20in%20the%20CAB%20%28Introduction%20to%20the%20CAB_SCSF%20Part%206%29%20%C2%AB%20Rich%20Newman_files/t.gif"><img title="Close" alt="Close" class="snap_nopreview" id="snap_com_shot_option_close_a" src="Constructor%20Injection%20in%20the%20CAB%20%28Introduction%20to%20the%20CAB_SCSF%20Part%206%29%20%C2%AB%20Rich%20Newman_files/t.gif" style="border: 0pt none ; margin: 0pt; padding: 0pt; cursor: pointer ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/palette.gif); background-color: transparent; visibility: inherit; z-index: 99999; background-position: -711px 0pt; background-repeat: no-repeat; width: 23px; height: 18px; font-size: 10px; color: rgb(133, 122, 122); text-decoration: none;"></div>
+<input id="snap_com_shot_option_cancel" style="border: 1px solid rgb(153, 153, 153); margin: 0pt; padding: 0pt; background: transparent url(http://i.ixnp.com/images/btn-bkgd.gif) repeat scroll 0% 0%; visibility: inherit; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: auto; top: 201px; line-height: normal; z-index: 99999; right: 54px; width: 50px; height: 21px; font-size: 11px; color: rgb(51, 51, 51); -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; display: none;" name="snap_com_shot_option_cancel_name" value="Cancel" title="Close" type="button">
+</div>
+ <a style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 9px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; bottom: 6px; width: 100px; height: 20px;" class="snap_nopreview" id="snap_com_shot_cobrand_a" href="http://shots.snap.com/explore/47190/?key=e5a3c1e6dff5de35b1c6e7c470411886&amp;src=richnewman.wordpress.com&amp;cp=pub-logo&amp;url=http%3A%2F%2Fwordpress.com%2Fsnap" target="_blank"><div style="display: none;"></div></a>
+ <a title="Powered by Snap" class="snap_nopreview" id="snap_com_shot_logo_a" href="http://www.snap.com/about/shots1.php?source=pub-2311827-www.wordpress.com&amp;campaign=snap-shots-logo" style="border: 0pt none ; margin: 0pt; padding: 0pt; height: 15px; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/palette.gif); background-color: transparent; visibility: inherit; z-index: 99999; right: 7px; bottom: 8px; background-position: -950px 0pt; background-repeat: no-repeat; width: 81px;" target="_blank"><div style="display: none;"></div></a>
+ <a style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: hidden; z-index: 99999;" class="snap_nopreview" id="snap_com_shot_ribbon_a" href="http://www.snap.com/snapshots.php?source=richnewman.wordpress.com&amp;campaign=charity-ribbon#shares"><img title="Portions of Snap Shares Ad Impressions on this site are donated to Charity" alt="Snap Shares for charity" style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: hidden; z-index: 99999; right: 98px; bottom: 5px; width: 17px; height: 20px;" id="snap_com_shot_ribbon" src="Constructor%20Injection%20in%20the%20CAB%20%28Introduction%20to%20the%20CAB_SCSF%20Part%206%29%20%C2%AB%20Rich%20Newman_files/ribbon.png"></a>
+ <img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: hidden; z-index: 99999;" id="snap_com_shot_lg" src="Constructor%20Injection%20in%20the%20CAB%20%28Introduction%20to%20the%20CAB_SCSF%20Part%206%29%20%C2%AB%20Rich%20Newman_files/t.gif">
+</div>
+</div>
+<div id="rap">
+<h1 id="header"><a href="http://richnewman.wordpress.com/">Rich Newman</a></h1>
+
+<div id="content">
+<!-- end header -->
+
+
+<h2>September 4, 2007</h2>
+<div class="post-89 post hentry category-net category-cab category-composite-application-block category-dependency-injection category-scsf category-smart-client-software-factory category-c category-dotnet" id="post-89">
+	 <h3 class="storytitle"><a href="http://richnewman.wordpress.com/2007/09/04/constructor-injection-in-the-cab-introduction-to-the-cabscsf-part-6/" rel="bookmark">Constructor Injection in the CAB (Introduction to the CAB/SCSF Part&nbsp;6)</a></h3>
+	<div class="meta">Filed under:  <a href="http://en.wordpress.com/tag/net/" title="View all posts in .net" rel="category tag">.net</a>, <a href="http://en.wordpress.com/tag/cab/" title="View all posts in CAB" rel="category tag">CAB</a>, <a href="http://en.wordpress.com/tag/composite-application-block/" title="View all posts in Composite Application Block" rel="category tag">Composite Application Block</a>, <a href="http://en.wordpress.com/tag/dependency-injection/" title="View all posts in Dependency Injection" rel="category tag">Dependency Injection</a>, <a href="http://en.wordpress.com/tag/scsf/" title="View all posts in SCSF" rel="category tag">SCSF</a>, <a href="http://en.wordpress.com/tag/smart-client-software-factory/" title="View all posts in Smart Client Software Factory" rel="category tag">Smart Client Software Factory</a>, <a href="http://en.wordpress.com/tag/c/" title="View all posts in c#" rel="category tag">c#</a>, <a href="http://en.wordpress.com/tag/dotnet/" title="View all posts in dotnet" rel="category tag">dotnet</a> —  richnewman @ 11:00 pm </div>
+
+	<div class="storycontent">
+		<div class="snap_preview"><p><strong>Introduction</strong></p>
+<p><a href="http://richnewman.wordpress.com/2007/07/21/introduction-to-dependency-injection-introduction-to-cabscsf-part-3/">Part 3</a>
+of this series of articles described the different types of dependency
+injection that we can use in general. These are setter injection,
+constructor injection and interface injection.</p>
+<p><a href="http://richnewman.wordpress.com/2007/08/05/dependency-injection-and-the-composite-application-block-introduction-to-cabscsf-part-5/">Part 5</a>
+showed how dependency injection works in the CAB. The examples given
+there exclusively used setter injection. In general we don’t use
+interface injection in CAB projects, but we can use constructor
+injection. This short article will show you how.</p>
+<p><strong>Constructor Injection Example</strong></p>
+<p>As is fairly obvious, constructor injection injects your
+dependencies in a constructor rather than a setter. To do this in the
+CAB we once again use attributes.</p>
+<p>We can return to our original example of setter injection and rework
+it to use constructor injection. To do this we add a constructor to our
+Component2 class as below, and we remove the setters we were using
+previously (they are commented out below):</p>
+<pre>    <font size="2" color="blue" face="Courier">public</font> <font size="2" color="blue" face="Courier">class</font> <font size="2" color="#2b91af" face="Courier">Component2</font>
+    {
+        <font size="2" color="blue" face="Courier">private</font> <font size="2" color="#2b91af" face="Courier">Component1</font> <font size="2" color="purple" face="Courier">component11</font>;
+        <font size="2" color="green" face="Courier">//[ComponentDependency("FirstComponent1")]</font>
+        <font size="2" color="green" face="Courier">//public Component1 Component11</font>
+        <font size="2" color="green" face="Courier">//{</font>
+        <font size="2" color="green" face="Courier">//    set { component11 = value; }</font>
+        <font size="2" color="green" face="Courier">//}</font>
+<font size="2" color="green" face="Courier">&nbsp;</font>
+        <font size="2" color="blue" face="Courier">private</font> <font size="2" color="#2b91af" face="Courier">Component1</font> <font size="2" color="purple" face="Courier">component12</font>;
+        <font size="2" color="green" face="Courier">//[CreateNew]</font>
+        <font size="2" color="green" face="Courier">//public Component1 Component12</font>
+        <font size="2" color="green" face="Courier">//{</font>
+        <font size="2" color="green" face="Courier">//    set { component12 = value; }</font>
+        <font size="2" color="green" face="Courier">//}</font>
+<font size="2" color="green" face="Courier">&nbsp;</font>
+        [<font size="2" color="#2b91af" face="Courier">InjectionConstructor</font>]
+        <font size="2" color="blue" face="Courier">public</font> <font size="2" color="purple" face="Courier">Component2</font>([<font size="2" color="#2b91af" face="Courier">ComponentDependency</font>(<font size="2" color="#a31515" face="Courier">"FirstComponent1"</font>)]<font size="2" color="#2b91af" face="Courier">Component1</font> <font size="2" color="purple" face="Courier">component</font>, [<font size="2" color="#2b91af" face="Courier">CreateNew</font>]<font size="2" color="#2b91af" face="Courier">Component1</font> <font size="2" color="purple" face="Courier">component2</font>)
+        {
+            <font size="2" color="purple" face="Courier">component11</font> = <font size="2" color="purple" face="Courier">component</font>;
+            <font size="2" color="purple" face="Courier">component12</font> = <font size="2" color="purple" face="Courier">component2</font>;
+        }
+    }
+&nbsp;</pre>
+<p>The constructor will inject the same dependencies as the setters did
+previously if we create Component2 with the AddNew method of a
+WorkItem’s Items collection as below:</p>
+<pre><font size="2" color="purple" face="Courier">RootWorkItem</font>.<font size="2" color="purple" face="Courier">Items</font>.<font size="2" color="purple" face="Courier">AddNew</font>&lt;<font size="2" color="#2b91af" face="Courier">Component2</font>&gt;(<font size="2" color="#a31515" face="Courier">"Component2"</font>);</pre>
+<p>When the CAB creates a component with AddNew it looks for a
+constructor decorated with the InjectionConstructor attribute. If it
+finds one it calls that constructor, and injects dependencies via the
+constructor parameters as shown. It applies the usual rules if any of
+the constructor parameters are decorated with the CreateNew,
+ServiceDependency or ComponentDependency attributes.</p>
+<p><a href="http://www.richnewman.plus.com/CABDI4.zip">The code for this example is available.</a></p>
+<p><strong>Constructor Injection Issues</strong></p>
+<p>Note that if there’s only one constructor in the class you don’t
+actually need the InjectionConstructor attribute. The CAB assumes you
+mean to use that one constructor as the injection constructor. Our
+example above will work without the attribute. If you have more than
+one constructor in the class you do need the attribute, and in general
+it’s probably good practice to include the attribute if you are using
+constructor injection.</p>
+<p>Note also that in the original example in <a href="http://richnewman.wordpress.com/2007/08/05/dependency-injection-and-the-composite-application-block-introduction-to-cabscsf-part-5/">part 5</a> we created the Component2 instance with a standard ‘new’ keyword and then added it to the items collection:</p>
+<pre>            <font size="2" color="#2b91af" face="Courier">Component2</font> <font size="2" color="purple" face="Courier">component2</font> = <font size="2" color="blue" face="Courier">new</font> <font size="2" color="#2b91af" face="Courier">Component2</font>();
+            <font size="2" color="purple" face="Courier">RootWorkItem</font>.<font size="2" color="purple" face="Courier">Items</font>.<font size="2" color="purple" face="Courier">Add</font>(<font size="2" color="purple" face="Courier">component2</font>);</pre>
+<p>If we do this with our new Component2 the injection will not work.
+In fact the code won’t even compile as we no longer have a constructor
+that doesn’t take any arguments. Even if we put a constructor with no
+arguments into Component2 we’re clearly not going to get any dependency
+injection as we are not creating the component with the CAB and the
+standard ‘new’ keyword doesn’t know how to do constructor injection.</p>
+<p>Finally it’s worth noting that if you don’t put any attribute on an
+argument of an injection constructor the CAB treats it as if it had a
+ServiceDependency attribute. That is, it tries to inject a service of
+the appropriate type. If there’s no such service it creates a new one
+and adds it to the Services collection. This is NOT the behaviour you
+get with the ServiceDependency attribute: if you apply the
+ServiceDependency attribute and there’s no such service you get a
+ServiceMissingException when you try to create the new object.</p>
+<p><strong>Setter Injection vs Constructor Injection</strong></p>
+<p>Whether you use setter injection or constructor injection is really
+a personal choice. There isn’t much to choose between them in terms of
+functionality. As we’ve seen if you create your object with the ‘new’
+keyword initially and then add it to a CAB collection you can’t use
+constructor injection. Also arguably the syntax for the constructors is
+a little cumbersome. But normally your CAB objects will be created and
+added to CAB collections with the AddNew keyword or something
+equivalent. In this case both setter injection and constructor
+injection inject the dependencies on creation of the object, and the
+two types of injection are functionally equivalent.</p>
+<p><strong>Conclusion</strong></p>
+<p>We’ve now covered dependency injection in the CAB in some detail.  <a href="http://richnewman.wordpress.com/2007/09/08/introduction-to-services-in-the-cab-introduction-to-the-cabscsf-part-7/">Part 7 of this series</a> will discuss services in the CAB.</p>
+</div>	</div>
+
+	<div class="feedback">
+                        <a href="http://richnewman.wordpress.com/2007/09/04/constructor-injection-in-the-cab-introduction-to-the-cabscsf-part-6/#comments" title="Comment on Constructor Injection in the CAB (Introduction to the CAB/SCSF Part&nbsp;6)">Comments (3)</a>	</div>
+
+</div>
+
+<h2 id="comments">3 Comments 
+	<a href="#postcomment" title="Leave a comment">»</a>
+</h2>
+
+<ol id="commentlist" class="snap_preview">
+<li id="comment-562">
+	<div id="div-comment-562" class="vcard">
+	<img alt="" src="Constructor%20Injection%20in%20the%20CAB%20%28Introduction%20to%20the%20CAB_SCSF%20Part%206%29%20%C2%AB%20Rich%20Newman_files/78125d2b90ad31adbbfede1ffb83d06c.png" class="avatar avatar-32" width="32" height="32">	<p>Nice one…Waititng for Part 7</p>
+	<p><cite>Comment by <span class="fn">Kumaresan</span> — September 5, 2007 @ <a href="#comment-562">2:26 pm</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2007/09/04/constructor-injection-in-the-cab-introduction-to-the-cabscsf-part-6/?replytocom=562#respond" onclick='return addComment.moveForm("div-comment-562", "562", "respond", "89")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-1155">
+	<div id="div-comment-1155" class="vcard">
+	<img alt="" src="Constructor%20Injection%20in%20the%20CAB%20%28Introduction%20to%20the%20CAB_SCSF%20Part%206%29%20%C2%AB%20Rich%20Newman_files/d326b5abdea0ea4bce4d1a79b2f52842.png" class="avatar avatar-32" width="32" height="32">	<p>I
+think the choice between Setter and Construction injection is
+substantial. For example, if you decide to new an object and then add
+it to one of the WorkItem collection, you have bypassed the Constructor
+injections completely because the builder ignores them (there is
+nothing to construct). On the other hand, the builder will set all
+properties marked for setter injection even for an object added to the
+collection.</p>
+<p>Inheritance is a problem with constructor injection in CAB. If B
+inherits from A, and both A and B have injection constructors, CAB will
+perform injection for the derived class (B) but not for the base class
+(A). That means when I write (B), I have to be aware that it’s base
+constructor’s parms are injected and mark (B)’s constructor parms with
+the same attributes. I am unwilling to give (B) that degree of
+awareness of (A). Consequently, I have been unable to use constructor
+injection for any class that is not final; it almost obliges me to seal
+a class that uses constructor injection.</p>
+	<p><cite>Comment by <span class="fn">Ward Bell</span> — October 25, 2007 @ <a href="#comment-1155">9:49 pm</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2007/09/04/constructor-injection-in-the-cab-introduction-to-the-cabscsf-part-6/?replytocom=1155#respond" onclick='return addComment.moveForm("div-comment-1155", "1155", "respond", "89")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-1156">
+	<div id="div-comment-1156" class="vcard">
+	<img alt="" src="Constructor%20Injection%20in%20the%20CAB%20%28Introduction%20to%20the%20CAB_SCSF%20Part%206%29%20%C2%AB%20Rich%20Newman_files/d326b5abdea0ea4bce4d1a79b2f52842.png" class="avatar avatar-32" width="32" height="32">	<p>I
+also have a beef with setter injection. In CAB, every injection member
+(constructor, property, method) must be public. There are good “code
+access security” reasons for this requirement that are out of scope for
+this comment.</p>
+<p>In the case of an injected property, the “set” must be public. The
+“get” does not have to be public and, in general, I don’t want the
+property to be public at all. As a result, injected properties are
+often designed with a public set and a private/protected get. You’ll
+see this in SCSF code (take a look at the Presenter property in the
+view of the SCSF MVP recipe).</p>
+<p>That violates one of the Framework Design principles: thou shalt not
+have a setter with wider access than the getter. INMHO, that principle
+is not arbitrary but, rather, the fruit of real experience.</p>
+<p>The other thing I don’t like about property injection is that one
+ends up with a bunch of marked properties scattered about the class.
+You can count on the builder calling them at runtime before anything
+else has a chance to use your class instance. But during test (unless
+you incorporate the builder in your test harness), the test developer
+must remember to set every property before using the object and do so
+in an the order that CAB will set them. The tester should not have the
+burden of that knowledge.</p>
+<p>Therefore, I prefer the method injection option. You get one of
+these when you decorate a method with the InjectionMethodAttribute as
+in this example:<br>
+&lt;![CDATA[<br>
+/// Object Builder injected presenter - do not call.<br>
+[InjectionMethod]<br>
+public void InjectPresenter([CreateNew] MyPresenter presenter)<br>
+{<br>
+  //.. do something<br>
+}<br>
+]]&gt;</p>
+<p>Notice how you decorate the parameter with an attribute just as you would the parameters of a constructor.</p>
+<p>The virtues of this approach are (a) all injection in one place
+making the class easier to test, (b) distinctive name makes it easy to
+find, (c) conforms to official Framework Design Guidelines, (d) unlike
+constructor injection, it will always be called by object builder.</p>
+	<p><cite>Comment by <span class="fn">Ward Bell</span> — October 25, 2007 @ <a href="#comment-1156">10:24 pm</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2007/09/04/constructor-injection-in-the-cab-introduction-to-the-cabscsf-part-6/?replytocom=1156#respond" onclick='return addComment.moveForm("div-comment-1156", "1156", "respond", "89")'>Reply</a>	</div>
+	</div>
+</li>
+</ol>
+
+<div class="navigation">
+	<div class="alignleft"></div>
+	<div class="alignright"></div>
+</div>
+<br>
+
+
+<p><a href="http://richnewman.wordpress.com/2007/09/04/constructor-injection-in-the-cab-introduction-to-the-cabscsf-part-6/feed/"><abbr title="Really Simple Syndication">RSS</abbr> feed for comments on this post.</a> 
+	<a href="http://richnewman.wordpress.com/2007/09/04/constructor-injection-in-the-cab-introduction-to-the-cabscsf-part-6/trackback/" rel="trackback">TrackBack <abbr title="Uniform Resource Identifier">URI</abbr></a>
+</p>
+
+<div id="respond">
+<h2 id="postcomment">Leave a comment</h2>
+<div id="cancel-comment-reply"><small><a rel="nofollow" id="cancel-comment-reply-link" href="http://richnewman.wordpress.com/2007/09/04/constructor-injection-in-the-cab-introduction-to-the-cabscsf-part-6/#respond" style="display: none;">Click here to cancel reply.</a></small></div>
+
+
+<form action="http://richnewman.wordpress.com/wp-comments-post.php" method="post" id="commentform">
+
+
+<p><input name="author" id="author" value="" size="22" tabindex="1" type="text">
+<label for="author"><small>Name </small></label></p>
+
+<p><input name="email" id="email" value="" size="22" tabindex="2" type="text">
+<label for="email"><small>Mail (will not be published) </small></label></p>
+
+<p><input name="url" id="url" value="" size="22" tabindex="3" type="text">
+<label for="url"><small>Website</small></label></p>
+
+
+<!--<p><small><strong>XHTML:</strong> You can use these tags: &lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;cite&gt; &lt;code&gt; &lt;pre&gt; &lt;del datetime=&quot;&quot;&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=&quot;&quot;&gt; &lt;strike&gt; &lt;strong&gt; </small></p>-->
+
+<p><textarea name="comment" id="comment" cols="100" rows="10" tabindex="4"></textarea></p>
+
+<p><input name="submit" id="submit" tabindex="5" value="Submit Comment" type="submit">
+<input name="comment_post_ID" value="89" id="comment_post_ID" type="hidden">
+<input name="comment_parent" id="comment_parent" value="0" type="hidden">
+</p>
+
+<input name="genseq" value="1246694895" type="hidden">
+<p><input name="subscribe" id="subscribe" value="subscribe" style="width: auto;" type="checkbox">
+		<label for="subscribe" id="subscribe-label">Notify me of follow-up comments via email.</label></p>
+</form>
+
+</div>
+
+
+
+<!-- begin footer -->
+</div>
+
+
+<!-- begin sidebar -->
+<div id="menu">
+
+<ul>
+<li id="search-2" class="widget widget_search"><form role="search" method="get" id="searchform" action="http://richnewman.wordpress.com/">
+	<div><label class="screen-reader-text" for="s">Search for:</label>
+	<input value="" name="s" id="s" type="text">
+	<input id="searchsubmit" value="Search" type="submit">
+	</div>
+	</form></li>
+		<li id="text-2" class="widget widget_text">			<h2 class="widgettitle">recent posts</h2>
+			<div class="textwidget"><a href="http://richnewman.wordpress.com/2009/06/06/running-visual-studio-as-an-administrator-under-windows-vista/">Running Visual Studio as an Administrator under Windows Vista</a><br><br>
+
+<a href="http://richnewman.wordpress.com/2008/02/23/table-of-contents-introduction-to-using-financial-products-markup-language-fpml-with-microsoft-net-tools/">Introduction to using Financial Products Markup Language (FpML) with Microsoft .NET Tools</a><br><br>
+
+<a href="http://richnewman.wordpress.com/intro-to-cab-toc/">An Introduction to the Smart Client Software Factory and Composite Application Block</a> <br><br>
+
+<a href="http://richnewman.wordpress.com/2007/12/09/a-beginners-guide-to-credit-default-swaps/">beginner's guide to credit default swaps</a><br><br>
+
+<a href="http://richnewman.wordpress.com/2007/10/26/user-interface-design-for-business-applications/">User Interface Design for Business Applications</a><br><br>
+
+<a href="http://richnewman.wordpress.com/2007/08/04/some-thoughts-on-soa-and-application-design-using-the-cabscsf/">Some Thoughts on SOA and Application Design using the CAB/SCSF</a> <br><br>
+
+<a href="http://richnewman.wordpress.com/2007/07/01/c-and-vbnet-line-count-utility/">C# And VB.NET Line Count Utility</a> <br><br>
+
+<a href="http://richnewman.wordpress.com/2007/06/24/a-beginner%e2%80%99s-guide-to-the-black-scholes-option-pricing-formula-part-1/">Beginner’s Guide to the Black-Scholes Option Pricing Formula</a> <br><br>
+
+<a href="http://richnewman.wordpress.com/2007/04/29/using-hsl-color-hue-saturation-luminosity-to-create-better-looking-guis-part-1/">Using HSL Color to Create Better-Looking GUIs</a> <br><br>
+
+<a href="http://richnewman.wordpress.com/2007/04/15/a-beginner%e2%80%99s-guide-to-calling-a-net-library-from-excel/">Beginner's Guide to Calling a .NET Library from Excel</a><br><br>
+
+<a href="http://richnewman.wordpress.com/2007/04/08/top-level-exception-handling-in-windows-forms-applications-part-1/">Top-level Exception Handling in Windows Forms Applications</a><br><br>
+
+<a href="http://richnewman.wordpress.com/2007/03/23/comparing-values-in-net-identity-and-equivalence-part-1/">Comparing Values for Equality in .NET: Identity and Equivalence</a><br><br></div>
+		</li>
+		<li id="text-3" class="widget widget_text">			<h2 class="widgettitle">pages</h2>
+			<div class="textwidget"><a href="http://richnewman.wordpress.com/about/">About Me</a> <br><br></div>
+		</li>
+<li id="archives-2" class="widget widget_archive"><h2 class="widgettitle">Archives</h2>
+		<ul>
+			<li><a href="http://richnewman.wordpress.com/2009/06/" title="June 2009">June 2009</a>&nbsp;(2)</li>
+	<li><a href="http://richnewman.wordpress.com/2008/03/" title="March 2008">March 2008</a>&nbsp;(3)</li>
+	<li><a href="http://richnewman.wordpress.com/2008/02/" title="February 2008">February 2008</a>&nbsp;(4)</li>
+	<li><a href="http://richnewman.wordpress.com/2008/01/" title="January 2008">January 2008</a>&nbsp;(3)</li>
+	<li><a href="http://richnewman.wordpress.com/2007/12/" title="December 2007">December 2007</a>&nbsp;(6)</li>
+	<li><a href="http://richnewman.wordpress.com/2007/11/" title="November 2007">November 2007</a>&nbsp;(3)</li>
+	<li><a href="http://richnewman.wordpress.com/2007/10/" title="October 2007">October 2007</a>&nbsp;(5)</li>
+	<li><a href="http://richnewman.wordpress.com/2007/09/" title="September 2007">September 2007</a>&nbsp;(8)</li>
+	<li><a href="http://richnewman.wordpress.com/2007/08/" title="August 2007">August 2007</a>&nbsp;(6)</li>
+	<li><a href="http://richnewman.wordpress.com/2007/07/" title="July 2007">July 2007</a>&nbsp;(8)</li>
+	<li><a href="http://richnewman.wordpress.com/2007/06/" title="June 2007">June 2007</a>&nbsp;(4)</li>
+	<li><a href="http://richnewman.wordpress.com/2007/05/" title="May 2007">May 2007</a>&nbsp;(2)</li>
+	<li><a href="http://richnewman.wordpress.com/2007/04/" title="April 2007">April 2007</a>&nbsp;(5)</li>
+	<li><a href="http://richnewman.wordpress.com/2007/03/" title="March 2007">March 2007</a>&nbsp;(5)</li>
+		</ul>
+</li>
+		<li id="text-1" class="widget widget_text">						<div class="textwidget"><a href="http://richnewman.wordpress.com/feed"><img src="Constructor%20Injection%20in%20the%20CAB%20%28Introduction%20to%20the%20CAB_SCSF%20Part%206%29%20%C2%AB%20Rich%20Newman_files/e28.png"></a> </div>
+		</li>
+<li id="pages-2" class="widget widget_pages"><h2 class="widgettitle">Pages</h2>
+		<ul>
+			<li class="page_item page-item-2"><a href="http://richnewman.wordpress.com/about/" title="About">About</a></li>
+<li class="page_item page-item-79"><a href="http://richnewman.wordpress.com/attempted-solutions-to-random-numbers-problem/" title="Attempted Solutions to Random Numbers&nbsp;Problem">Attempted Solutions to Random Numbers&nbsp;Problem</a></li>
+<li class="page_item page-item-67"><a href="http://richnewman.wordpress.com/dependency-injection-example-constructor-injection/" title="Dependency Injection Example: Constructor&nbsp;Injection">Dependency Injection Example: Constructor&nbsp;Injection</a></li>
+<li class="page_item page-item-69"><a href="http://richnewman.wordpress.com/dependency-injection-example-interface-injection/" title="Dependency Injection Example: Interface&nbsp;Injection">Dependency Injection Example: Interface&nbsp;Injection</a></li>
+<li class="page_item page-item-68"><a href="http://richnewman.wordpress.com/dependency-injection-example-setter-injection/" title="Dependency Injection Example: Setter&nbsp;Injection">Dependency Injection Example: Setter&nbsp;Injection</a></li>
+<li class="page_item page-item-39"><a href="http://richnewman.wordpress.com/hslcolor-class/" title="HSLColor&nbsp;Class">HSLColor&nbsp;Class</a></li>
+<li class="page_item page-item-76"><a href="http://richnewman.wordpress.com/weirdinteger-an-example-of-the-use-of-icomparable/" title="Inversion of Control in .NET: an example of the use of&nbsp;IComparable">Inversion of Control in .NET: an example of the use of&nbsp;IComparable</a></li>
+<li class="page_item page-item-100"><a href="http://richnewman.wordpress.com/intro-to-cab-toc/" title="Table of Contents: Introduction to&nbsp;CAB/SCSF">Table of Contents: Introduction to&nbsp;CAB/SCSF</a></li>
+<li class="page_item page-item-32"><a href="http://richnewman.wordpress.com/top-level-exception-handling-code-listing-1/" title="Top-level Exception Handling – Code Listing&nbsp;2">Top-level Exception Handling – Code Listing&nbsp;2</a></li>
+<li class="page_item page-item-33"><a href="http://richnewman.wordpress.com/top-level-exception-handling-code-listing-2/" title="Top-level Exception Handling – Code Listing&nbsp;3">Top-level Exception Handling – Code Listing&nbsp;3</a></li>
+<li class="page_item page-item-34"><a href="http://richnewman.wordpress.com/top-level-exception-handling-code-listing-3/" title="Top-level Exception Handling – Code Listing&nbsp;4">Top-level Exception Handling – Code Listing&nbsp;4</a></li>
+<li class="page_item page-item-94"><a href="http://richnewman.wordpress.com/using-custom-net-events-to-invoke-commands/" title="Using Custom .NET Events to Invoke&nbsp;Commands">Using Custom .NET Events to Invoke&nbsp;Commands</a></li>
+<li class="page_item page-item-38"><a href="http://richnewman.wordpress.com/using-hsl-color-original-color-scheme/" title="Using HSL Color – Original Color&nbsp;Scheme">Using HSL Color – Original Color&nbsp;Scheme</a></li>
+		</ul>
+		</li>
+<li id="calendar-2" class="widget widget_calendar"><h2 class="widgettitle">&nbsp;</h2>
+<div id="calendar_wrap"><table id="wp-calendar" summary="Calendar">
+	<caption>September 2007</caption>
+	<thead>
+	<tr>
+		<th abbr="Monday" scope="col" title="Monday">M</th>
+		<th abbr="Tuesday" scope="col" title="Tuesday">T</th>
+		<th abbr="Wednesday" scope="col" title="Wednesday">W</th>
+		<th abbr="Thursday" scope="col" title="Thursday">T</th>
+		<th abbr="Friday" scope="col" title="Friday">F</th>
+		<th abbr="Saturday" scope="col" title="Saturday">S</th>
+		<th abbr="Sunday" scope="col" title="Sunday">S</th>
+	</tr>
+	</thead>
+
+	<tfoot>
+	<tr>
+		<td abbr="August" colspan="3" id="prev"><a href="http://richnewman.wordpress.com/2007/08/" title="View posts for August 2007">« Aug</a></td>
+		<td class="pad">&nbsp;</td>
+		<td abbr="October" colspan="3" id="next"><a href="http://richnewman.wordpress.com/2007/10/" title="View posts for October 2007">Oct »</a></td>
+	</tr>
+	</tfoot>
+
+	<tbody>
+	<tr>
+		<td colspan="5" class="pad">&nbsp;</td><td>1</td><td>2</td>
+	</tr>
+	<tr>
+		<td>3</td><td><a href="http://richnewman.wordpress.com/2007/09/04/" title="Constructor Injection in the CAB (Introduction to the CAB/SCSF Part&nbsp;6)">4</a></td><td>5</td><td>6</td><td>7</td><td><a href="http://richnewman.wordpress.com/2007/09/08/" title="Introduction to Services in the CAB (Introduction to the CAB/SCSF Part&nbsp;7)">8</a></td><td><a href="http://richnewman.wordpress.com/2007/09/09/" title="Creating and Using Services in the CAB (Introduction to the CAB/SCSF Part&nbsp;8)">9</a></td>
+	</tr>
+	<tr>
+		<td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td><a href="http://richnewman.wordpress.com/2007/09/15/" title="The Command Design Pattern (Introduction To The CAB/SCSF Part&nbsp;9)">15</a></td><td><a href="http://richnewman.wordpress.com/2007/09/16/" title="Commands in the CAB (Introduction to CAB/SCSF Part&nbsp;10)">16</a></td>
+	</tr>
+	<tr>
+		<td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td><a href="http://richnewman.wordpress.com/2007/09/22/" title="Introduction to Events in the CAB (Introduction to CAB/SCSF Part&nbsp;11)">22</a></td><td><a href="http://richnewman.wordpress.com/2007/09/23/" title="Events in the CAB (Introduction to CAB/SCSF Part&nbsp;12)
+Table of Contents for ‘Introduction to CAB/SCSF’&nbsp;Articles">23</a></td>
+	</tr>
+	<tr>
+		<td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td>
+	</tr>
+	</tbody>
+	</table></div></li>
+<li id="meta-2" class="widget widget_meta"><h2 class="widgettitle">Meta</h2>
+			<ul>
+						<li><a href="http://richnewman.wordpress.com/wp-login.php">Log in</a></li>
+			<li><a href="http://richnewman.wordpress.com/feed/" title="Syndicate this site using RSS 2.0">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://richnewman.wordpress.com/comments/feed/" title="The latest comments to all posts in RSS">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://wordpress.com/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.com</a></li>
+						</ul>
+</li>
+
+</ul>
+
+</div>
+
+
+<p class="credit"><a href="http://wordpress.com/" rel="generator">Blog at WordPress.com</a>.</p>
+
+</div>
+
+<script type="text/javascript" src="Constructor%20Injection%20in%20the%20CAB%20%28Introduction%20to%20the%20CAB_SCSF%20Part%206%29%20%C2%AB%20Rich%20Newman_files/quant.js"></script>
+<script type="text/javascript">_qoptions = { labels:"adt.0,language.en" };_qacct="p-18-mFEk4J448M";quantserve();</script>
+<noscript><p><img
+src="http://pixel.quantserve.com/pixel/p-18-mFEk4J448M.gif?labels=adt.0%2Clanguage.en"
+style="display: none" height="1" width="1" alt="" /></p></noscript>
+<script src="Constructor%20Injection%20in%20the%20CAB%20%28Introduction%20to%20the%20CAB_SCSF%20Part%206%29%20%C2%AB%20Rich%20Newman_files/w.js" type="text/javascript"></script>
+<script type="text/javascript">
+st_go({'blog':'909413','v':'wpcom','user_id':'0','post':'89','subd':'richnewman'});
+ex_go({'crypt':'RDZ8LFkxbXFDdT8yZmU5JitKNVZhUVdPbUEyLltsWHFDTXd6NS98VS1ML0ZRJWROW2NLSz0wSUp1fGhTU2NySVldTi1YcVhSJUJkfDQ4JT92UFYlXWNIVVpUU0guLlYvdTJ5TStGczVbcEhSM08uQy9IclM/NVUxNkxkLGViWlo5JnBvc0kvL1dBZjlVRnpLNlppRzJvLEJ3Li0vZWRrJi9ETDdMc0pPYTUsVnxsLVJqSGdtemMrRkpsT2RkNGM='});
+addLoadEvent(function(){linktracker_init('909413',89);});
+</script><img id="wpstats" src="Constructor%20Injection%20in%20the%20CAB%20%28Introduction%20to%20the%20CAB_SCSF%20Part%206%29%20%C2%AB%20Rich%20Newman_files/g.gif" alt=""><img id="wpstats2" src="Constructor%20Injection%20in%20the%20CAB%20%28Introduction%20to%20the%20CAB_SCSF%20Part%206%29%20%C2%AB%20Rich%20Newman_files/g_002.gif" alt="" style="display: none;">
+</body></html>

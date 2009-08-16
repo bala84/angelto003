@@ -1,0 +1,19 @@
+<configuration>
+    <configSections>
+        <section name="EnvironmentMergeData" type="Microsoft.Practices.EnterpriseLibrary.Configuration.EnvironmentalOverrides.Configuration.EnvironmentMergeSection, Microsoft.Practices.EnterpriseLibrary.Configuration.EnvironmentalOverrides, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    </configSections>
+    <EnvironmentMergeData environmentName="DevelopmentEnvironment"
+        environmentDeltaFile="DevelopmentEnvironment.config">
+        <mergeElements>
+            <override nodePath="/Data Access Application Block/Connection Strings/SqlServerSource"
+                overrideProperties="true" />
+            <override nodePath="/Data Access Application Block/Connection Strings"
+                overrideProperties="false" />
+            <override nodePath="/Data Access Application Block" overrideProperties="false">
+                <overridddenProperties>
+                    <add name="DefaultDatabase" value="/Data Access Application Block/Connection Strings/DevelopmentSqlServer" />
+                </overridddenProperties>
+            </override>
+        </mergeElements>
+    </EnvironmentMergeData>
+</configuration>

@@ -1,0 +1,596 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html style="position: static;" dir="ltr" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head profile="http://gmpg.org/xfn/11">
+
+
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<title>Introduction to Dependency Injection (Introduction to CAB/SCSF Part 3) « Rich Newman</title>
+
+
+	<style type="text/css" media="screen">
+		@import url( http://s3.wordpress.com/wp-content/themes/pub/blue-green/style.css?m=1245873790b );
+	</style>
+
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://richnewman.wordpress.com/feed/">
+
+	<link rel="pingback" href="http://richnewman.wordpress.com/xmlrpc.php">
+	<link rel="alternate" type="application/rss+xml" title="Rich Newman » Introduction to Dependency Injection (Introduction to CAB/SCSF Part&nbsp;3) Comments Feed" href="http://richnewman.wordpress.com/2007/07/21/introduction-to-dependency-injection-introduction-to-cabscsf-part-3/feed/">
+<script src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/a_003.htm" type="text/javascript"></script><script src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/auto_shot.htm" type="text/javascript"></script><script type="text/javascript">
+/* <![CDATA[ */
+function addLoadEvent(func){var oldonload=window.onload;if(typeof window.onload!='function'){window.onload=func;}else{window.onload=function(){oldonload();func();}}}
+/* ]]> */
+</script>
+<link rel="stylesheet" href="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/global.css" type="text/css">
+<script type="text/javascript" src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/comment-reply.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://richnewman.wordpress.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://richnewman.wordpress.com/wp-includes/wlwmanifest.xml"> 
+<link rel="index" title="Rich Newman" href="http://richnewman.wordpress.com/">
+<link rel="start" title="Day&nbsp;1" href="http://richnewman.wordpress.com/2007/03/04/day-1/">
+<link rel="prev" title="Two Philosophers&nbsp;Problem" href="http://richnewman.wordpress.com/2007/07/20/two-philosophers-problem/">
+<link rel="next" title="Composite Application Block MdiWorkspace&nbsp;Sample" href="http://richnewman.wordpress.com/2007/07/27/composite-application-block-mdiworkspace-sample/">
+<meta name="generator" content="WordPress.com">
+<link rel="canonical" href="http://richnewman.wordpress.com/2007/07/21/introduction-to-dependency-injection-introduction-to-cabscsf-part-3/">
+<link rel="shortcut icon" type="image/x-icon" href="http://www.gravatar.com/blavatar/7864a25226671eb271870f6bdc69e29f?s=16&amp;d=http://s.wordpress.com/favicon.ico">
+<link rel="icon" type="image/x-icon" href="http://www.gravatar.com/blavatar/7864a25226671eb271870f6bdc69e29f?s=16&amp;d=http://s.wordpress.com/favicon.ico">
+<link rel="apple-touch-icon" href="http://www.gravatar.com/blavatar/cadbe3553ff3d2b663c10a55c50bef43?s=158&amp;d=http://s.wordpress.com/wp-content/themes/h4/i/webclip.png">
+<link rel="openid.server" href="http://richnewman.wordpress.com/?openidserver=1">
+<link rel="openid.delegate" href="http://richnewman.wordpress.com/">
+
+<script defer="defer" id="snap_preview_anywhere" type="text/javascript" src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/snap_preview_anywhere.htm"></script>
+
+</head><body><div class="snap_noengage snap_noshots" style="border: 0pt none ; margin: 0pt; padding: 0pt; position: absolute; visibility: hidden; top: 0px; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; left: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; z-index: 99999; width: 328px; height: 346px;" id="snap_com_shot_main"><img id="snap_com_shot_link_icon" class="snap_preview_icon" style="border: 0pt none ; margin: 0pt ! important; padding: 1px 0pt 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/palette.gif); background-color: transparent; visibility: hidden; z-index: 99999; width: 14px; height: 12px; background-position: -1128px 0pt; background-repeat: no-repeat; text-decoration: none;" src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/t.gif">
+<div style="border: 0pt none ; margin: 0pt; padding: 0pt; overflow: hidden; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; width: 50px; height: 50px;" id="snap_com_shot_bg_div_tl"><img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: -50px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999;" id="snap_com_shot_bg_img_tl" src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/palette.png"></div>
+<div style="border: 0pt none ; margin: 0pt; padding: 0pt; overflow: hidden; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: auto; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; right: 0px; width: 50px; height: 50px;" id="snap_com_shot_bg_div_tr"><img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: -100px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999;" id="snap_com_shot_bg_img_tr" src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/palette.png"></div>
+<div style="border: 0pt none ; margin: 0pt; padding: 0pt; overflow: hidden; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; bottom: 1px; width: 50px; height: 50px;" id="snap_com_shot_bg_div_bl"><img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: -150px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999;" id="snap_com_shot_bg_img_bl" src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/palette.png"></div>
+<div style="border: 0pt none ; margin: 0pt; padding: 0pt; overflow: hidden; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; right: 0px; bottom: 1px; width: 50px; height: 50px;" id="snap_com_shot_bg_div_br"><img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999;" id="snap_com_shot_bg_img_br" src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/palette.png"></div>
+<img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 50px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/bg/bg_lr.png); background-color: transparent; visibility: inherit; z-index: 99999; width: 100px; height: 246px; background-repeat: repeat;" id="snap_com_shot_bg_img_l" src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/t.gif">
+<img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: auto; top: 50px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/bg/bg_lr.png); background-color: transparent; visibility: inherit; z-index: 99999; right: 0px; width: 100px; height: 246px; background-repeat: repeat;" id="snap_com_shot_bg_img_r" src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/t.gif">
+<img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 50px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/bg/bg_tb.png); background-color: transparent; visibility: inherit; z-index: 99999; width: 228px; height: 100px; background-repeat: repeat;" id="snap_com_shot_bg_img_t" src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/t.gif">
+<img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 50px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/bg/bg_tb.png); background-color: transparent; visibility: inherit; z-index: 99999; bottom: 1px; width: 228px; height: 100px; background-repeat: repeat;" id="snap_com_shot_bg_img_b" src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/t.gif">
+<div id="snap_com_shot_bg_div_point" style="border: 0pt none ; margin: 0pt; padding: 0pt; overflow: hidden; z-index: 100000; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 7px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; width: 28px; height: 29px; bottom: -21px; right: auto;"><img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: -276px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999;" id="snap_com_shot_bg_img_point" src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/palette.png"></div>
+<div style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 2px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: rgb(216, 216, 217); visibility: inherit; z-index: 99999; bottom: 37px; width: 320px; height: 82px;" id="snap_com_shot_bg_body"></div>
+
+<img style="border: 0pt none ; margin: 0pt; padding: 0pt; z-index: 100001; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 5px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; width: 200px; height: 5px; right: auto; bottom: 3px;" id="snap_com_shot_pointer0" src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/t.gif">
+<img style="border: 0pt none ; margin: 0pt; padding: 0pt; z-index: 100001; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 5px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; width: 164px; height: 5px; right: auto; bottom: -1px;" id="snap_com_shot_pointer1" src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/t.gif">
+<img style="border: 0pt none ; margin: 0pt; padding: 0pt; z-index: 100001; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 5px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; width: 128px; height: 5px; right: auto; bottom: -6px;" id="snap_com_shot_pointer2" src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/t.gif">
+<img style="border: 0pt none ; margin: 0pt; padding: 0pt; z-index: 100001; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 5px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; width: 92px; height: 5px; right: auto; bottom: -11px;" id="snap_com_shot_pointer3" src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/t.gif">
+<img style="border: 0pt none ; margin: 0pt; padding: 0pt; z-index: 100001; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 5px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; width: 56px; height: 5px; right: auto; bottom: -16px;" id="snap_com_shot_pointer4" src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/t.gif">
+<img style="border: 0pt none ; margin: 0pt; padding: 0pt; z-index: 100001; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 5px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; width: 20px; height: 5px; right: auto; bottom: -21px;" id="snap_com_shot_pointer5" src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/t.gif">
+<div style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 1px; top: 1px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; width: 322px; height: 338px;" id="snap_com_shot_bubble">
+<img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; width: 322px; height: 297px;" id="snap_com_shot_bubble_img" src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/t.gif">
+<div style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; width: 322px; height: 338px; text-align: left;" id="snap_com_shot_body">
+ <table id="snap_com_shot_drag_overlay" title="drag to move" style="border: 0pt none ; margin: 0pt; padding: 0pt; display: none; z-index: 100008; cursor: move ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; width: 322px; height: 20px;"><tbody><tr><td style="border: 0pt none ; background-color: transparent;">&nbsp;</td></tr></tbody></table>
+ <div id="snap_com_shot_top_left_menu" style="border: 0pt none ; margin: 0pt; padding: 0pt; z-index: 100009; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 1px; top: 1px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: hidden;"><img id="snap_com_shot_preview_toggle" src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/t.gif" style="border: 0pt none ; margin: 0pt; padding: 0pt; cursor: pointer ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/palette.gif); background-color: transparent; visibility: inherit; z-index: 99999; background-position: -319px 0pt; background-repeat: no-repeat; width: 25px; height: 18px; display: inline;"><img id="snap_com_shot_rss_toggle" src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/t.gif" style="border: 0pt none ; margin: 0pt; padding: 0pt; cursor: pointer ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/palette.gif); background-color: transparent; visibility: inherit; z-index: 99999; background-position: -475px 0pt; background-repeat: no-repeat; width: 25px; height: 18px; display: inline;" align="top"></div>
+ <div id="snap_com_shot_top_right_menu" style="border: 0pt none ; margin: 0pt; padding: 0pt; z-index: 100009; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: auto; top: 1px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; right: 1px;"><img id="snap_com_shot_share_button" src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/t.gif" style="border: 0pt none ; margin: 0pt; padding: 0pt; cursor: pointer ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/palette.gif); background-color: transparent; visibility: inherit; z-index: 99999; background-position: -807px 0pt; background-repeat: no-repeat; width: 50px; height: 17px; display: none;" align="top"><img title="Snap Shots Options" alt="Snap Shots Options" id="snap_com_shot_option_button" src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/t.gif" style="border: 0pt none ; margin: 0pt; padding: 0pt; cursor: pointer ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/palette.gif); background-color: transparent; visibility: inherit; z-index: 99999; background-position: -421px 0pt; background-repeat: no-repeat; width: 27px; height: 18px; display: inline;"><img title="Make this Shot larger" id="snap_com_shot_zoom_img" src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/t.gif" style="border: 0pt none ; margin: 0pt; padding: 0pt; cursor: pointer ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/palette.gif); background-color: transparent; visibility: inherit; z-index: 99999; background-position: -523px 0pt; background-repeat: no-repeat; width: 23px; height: 18px; display: inline;" align="top"><img id="snap_com_shot_pin_close_img" title="Close" src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/t.gif" style="border: 0pt none ; margin: 0pt; padding: 0pt; cursor: pointer ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/palette.gif); background-color: transparent; visibility: inherit; z-index: 99999; background-position: -711px 0pt; background-repeat: no-repeat; width: 23px; height: 18px; display: none;" align="top"></div>
+ <div id="snap_com_shot_option_menu" style="border: 1px solid rgb(139, 138, 138); margin: 0pt; padding: 0pt; z-index: 100009; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: Trebuchet; float: none; position: absolute; left: auto; top: 18px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: white; visibility: hidden; right: 20px; font-size: 10px; color: rgb(51, 51, 51);">
+  <div title="Snap Shots Options" id="snap_com_shot_option_a" style="border: 0pt none ; margin: 0pt; padding: 0pt 5px; cursor: pointer ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; white-space: nowrap; height: 17px;">Options</div>
+  <div id="snap_com_shot_disable_a" style="border-style: solid none none; border-color: rgb(192, 192, 192) -moz-use-text-color -moz-use-text-color; border-width: 1px 0pt 0pt; margin: 0pt; padding: 0pt 5px; cursor: pointer ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; white-space: nowrap; height: 17px;">Disable</div>
+ </div>
+ <div id="snap_com_shot_search" style="border: 0pt none ; margin: 0pt ! important; padding: 0pt ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 1px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: rgb(238, 238, 238); visibility: hidden; z-index: 99999; bottom: 31px; width: 320px; height: 78px;">
+  <div id="snap_com_shot_search_form" style="border: 0pt none ; margin: 0pt ! important; padding: 0pt ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999;" action="#" method="GET" accept-charset="UTF8" target="_blank">
+   <input id="snap_com_shot_box" name="snap_com_shot_box_name" autocomplete="off" style="border: 1px solid rgb(153, 153, 153); margin: 0pt; padding: 5px 0pt 0pt 6px; visibility: inherit ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 12px; top: 24px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); z-index: 99999; width: 232px; height: 20px; font-size: 12px; color: rgb(51, 51, 51); direction: ltr; display: none;" type="text">
+   <button style="border: 0pt none ; margin: 0pt 0pt 0pt 5px; padding: 1px 2px 2px; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: auto; top: 23px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/palette.gif); background-color: transparent; visibility: inherit; z-index: 99999; right: 7px; background-position: -164px 0pt; background-repeat: no-repeat; width: 55px; height: 29px; cursor: pointer; font-size: 11px; color: rgb(68, 68, 68); text-align: center;" type="submit" name="snap_com_shot_submit" id="snap_com_shot_submit"></button>
+   <a style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999;" href="about:blank" id="snap_com_shot_hidden_link"></a>
+  </div>
+ </div>
+ <div style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 10px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: hidden; z-index: 99999; bottom: 8px; height: 15px; direction: ltr;" id="snap_com_shot_promo"><a href="https://account.snap.com/signup.php?source=richnewman.wordpress.com&amp;campaign=viral-foot" title="Sign Up and add Free Snap Shots to your site in less than 5 min!" style="border-style: none none dotted; border-color: -moz-use-text-color -moz-use-text-color rgb(116, 114, 116); border-width: 0pt 0pt 1px; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; font-size: 11px; color: rgb(51, 51, 51); text-decoration: none;" class="snap_nopreview" id="snap_com_shot_promo_a">Get Free Shots</a><img id="snap_com_shot_promo_icon" src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/t.gif" style="border-top: 0pt none; border-left: 0pt none; border-right: 0pt none; border-bottom: medium none ! important; margin: 0pt; padding: 0pt; cursor: pointer ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/palette.gif); background-color: transparent; visibility: inherit; z-index: 99999; background-position: -1128px 0pt; background-repeat: no-repeat; width: 14px; height: 12px; display: inline;"></div>
+ <div style="border: 1px solid rgb(196, 196, 196); margin: 0pt; padding: 0pt; overflow: hidden; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 20px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: rgb(255, 255, 255); visibility: inherit; z-index: 99999; width: 320px; height: 207px;" id="snap_com_shot_preview_div">
+  <div style="border: 0pt none ; margin: 0pt; padding: 0pt; white-space: nowrap ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 6px; top: 5px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999;" id="snap_com_shot_url_wrapper"><a style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: white; visibility: inherit; z-index: 99999;" class="snap_nopreview" id="snap_com_shot_url_favicon" href="#"><img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/palette.gif); background-color: transparent; visibility: inherit; z-index: 99999; background-position: -889px 0pt; background-repeat: no-repeat; width: 16px; height: 16px; display: inline;" id="snap_com_shot_favicon" src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/t.gif"></a>&nbsp;<a style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: bold; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: white; visibility: inherit; z-index: 99999; font-size: 13px; text-decoration: underline; color: rgb(0, 0, 238); text-align: left;" class="snap_nopreview" id="snap_com_shot_url_a" href="#"><span style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: bold; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; display: inline; font-size: 13px; text-align: left;" id="snap_com_shot_url"></span></a>&nbsp;<a style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: white; visibility: inherit; z-index: 99999;" class="snap_nopreview" id="snap_com_shot_url_arrow" href="#"><img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/palette.gif); background-color: transparent; visibility: inherit; z-index: 99999; background-position: -1165px 0pt; background-repeat: no-repeat; width: 7px; height: 7px; display: inline;" id="snap_com_shot_arrow" src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/t.gif"></a></div>
+  <a style="border: 1px solid rgb(153, 153, 153); margin: 0pt; padding: 0pt; overflow: hidden; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 23px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: rgb(255, 255, 255); visibility: inherit; z-index: 99999; bottom: 12px; width: 270px; height: 161px;" class="snap_nopreview" id="snap_com_shot_img_a" href="#"><img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999;" id="snap_com_shot_preview_img" src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/t.gif"></a>
+  <iframe style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: rgb(255, 255, 255); visibility: inherit; z-index: 99999; width: 320px; height: 207px;" name="snap_com_shot_preview" id="snap_com_shot_preview" src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/a_002.htm" scrolling="no" frameborder="no"></iframe><img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99989; display: none;" id="snap_com_shot_loading_img" src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/loading.gif">
+ </div>
+ <div style="border: 0pt none ; margin: 0pt; padding: 0pt; overflow: hidden; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 1px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: rgb(238, 238, 238); visibility: inherit; z-index: 99999; bottom: 30px; width: 320px; height: 79px;" id="snap_com_shot_marea"><div style="border: 0pt none ; margin: 0pt; padding: 0pt; overflow: hidden; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: rgb(238, 238, 238); width: 100%; height: 100%; display: none;"></div><div style="border: 0pt none ; margin: 0pt; padding: 0pt; overflow: hidden; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: rgb(238, 238, 238); width: 100%; height: 100%; display: none;"></div></div>
+ <img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 9px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; bottom: 6px;" id="snap_com_shot_cobrand_img" src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/logo_wordpress.gif">
+  <table id="snap_com_shot_flash_overlay" title="Click to play" style="border: 0pt none ; margin: 0pt; padding: 0pt; display: none; z-index: 100010; cursor: pointer ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 50px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; width: 322px; height: 180px;"><tbody><tr><td>&nbsp;</td></tr></tbody></table>
+</div><div style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 0px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; width: 322px;" id="snap_com_shot_options">
+ <iframe style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 0px; top: 20px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: rgb(255, 255, 255); visibility: inherit; z-index: 99999; width: 321px; height: 207px;" id="snap_com_shot_option_iframe" src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/a_002.htm" scrolling="no" width="265" frameborder="0" height="190"></iframe>
+ <div style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: auto; top: 1px; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; right: 1px;" id="snap_com_shot_option_menu_bar"><img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/palette.gif); background-color: transparent; visibility: inherit; z-index: 99999; background-position: -394px 0pt; background-repeat: no-repeat; width: 27px; height: 18px; display: inline;" class="snap_nopreview" id="snap_com_shot_option_button_disabled" src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/t.gif"><img title="Close" alt="Close" class="snap_nopreview" id="snap_com_shot_option_close_a" src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/t.gif" style="border: 0pt none ; margin: 0pt; padding: 0pt; cursor: pointer ! important; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/palette.gif); background-color: transparent; visibility: inherit; z-index: 99999; background-position: -711px 0pt; background-repeat: no-repeat; width: 23px; height: 18px; font-size: 10px; color: rgb(133, 122, 122); text-decoration: none;"></div>
+<input id="snap_com_shot_option_cancel" style="border: 1px solid rgb(153, 153, 153); margin: 0pt; padding: 0pt; background: transparent url(http://i.ixnp.com/images/btn-bkgd.gif) repeat scroll 0% 0%; visibility: inherit; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: auto; top: 201px; line-height: normal; z-index: 99999; right: 54px; width: 50px; height: 21px; font-size: 11px; color: rgb(51, 51, 51); -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; display: none;" name="snap_com_shot_option_cancel_name" value="Cancel" title="Close" type="button">
+</div>
+ <a style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: 9px; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: inherit; z-index: 99999; bottom: 6px; width: 100px; height: 20px;" class="snap_nopreview" id="snap_com_shot_cobrand_a" href="http://shots.snap.com/explore/36579/?key=e5a3c1e6dff5de35b1c6e7c470411886&amp;src=richnewman.wordpress.com&amp;cp=pub-logo&amp;url=http%3A%2F%2Fwordpress.com%2Fsnap" target="_blank"><div style="display: none;"></div></a>
+ <a title="Powered by Snap" class="snap_nopreview" id="snap_com_shot_logo_a" href="http://www.snap.com/about/shots1.php?source=pub-2311827-www.wordpress.com&amp;campaign=snap-shots-logo" style="border: 0pt none ; margin: 0pt; padding: 0pt; height: 15px; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/theme/silver/palette.gif); background-color: transparent; visibility: inherit; z-index: 99999; right: 7px; bottom: 8px; background-position: -950px 0pt; background-repeat: no-repeat; width: 81px;" target="_blank"><div style="display: none;"></div></a>
+ <a style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: hidden; z-index: 99999;" class="snap_nopreview" id="snap_com_shot_ribbon_a" href="http://www.snap.com/snapshots.php?source=richnewman.wordpress.com&amp;campaign=charity-ribbon#shares"><img title="Portions of Snap Shares Ad Impressions on this site are donated to Charity" alt="Snap Shares for charity" style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: absolute; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: hidden; z-index: 99999; right: 98px; bottom: 5px; width: 17px; height: 20px;" id="snap_com_shot_ribbon" src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/ribbon.png"></a>
+ <img style="border: 0pt none ; margin: 0pt; padding: 0pt; max-height: 2000px; max-width: 2000px; min-width: 0px; min-height: 0px; font-style: normal; font-weight: normal; font-family: &quot;trebuchet ms&quot;,arial,helvetica,sans-serif; float: none; position: static; left: auto; top: auto; line-height: normal; background-image: url(http://i.ixnp.com/images/v3.88/t.gif); background-color: transparent; visibility: hidden; z-index: 99999;" id="snap_com_shot_lg" src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/t.gif">
+</div>
+</div>
+<div id="rap">
+<h1 id="header"><a href="http://richnewman.wordpress.com/">Rich Newman</a></h1>
+
+<div id="content">
+<!-- end header -->
+
+
+<h2>July 21, 2007</h2>
+<div class="post-65 post hentry category-net category-dependency-injection category-beginners-guide category-introduction" id="post-65">
+	 <h3 class="storytitle"><a href="http://richnewman.wordpress.com/2007/07/21/introduction-to-dependency-injection-introduction-to-cabscsf-part-3/" rel="bookmark">Introduction to Dependency Injection (Introduction to CAB/SCSF Part&nbsp;3)</a></h3>
+	<div class="meta">Filed under:  <a href="http://en.wordpress.com/tag/net/" title="View all posts in .net" rel="category tag">.net</a>, <a href="http://en.wordpress.com/tag/dependency-injection/" title="View all posts in Dependency Injection" rel="category tag">Dependency Injection</a>, <a href="http://en.wordpress.com/tag/beginners-guide/" title="View all posts in beginners guide" rel="category tag">beginners guide</a>, <a href="http://en.wordpress.com/tag/introduction/" title="View all posts in introduction" rel="category tag">introduction</a> —  richnewman @ 12:26 am </div>
+
+	<div class="storycontent">
+		<div class="snap_preview"><p><strong>Introduction</strong></p>
+<p>This article is actually part 3 of an introductory series of
+articles on Microsoft’s Composite Application Block (CAB) and Smart
+Client Software Factory (SCSF). However, this particular article will
+only talk about dependency injection in general terms and not discuss
+the CAB/SCSF. Part 5 of the series will address dependency injection in
+the CAB. <a href="http://richnewman.wordpress.com/2007/08/04/an-aside-on-inversion-of-control-dependency-inversion-and-dependency-injection-introduction-to-cabscsf-part-4/">Part 4 of the series</a> expands the discussion here by talking about inversion of control (IoC) and dependency inversion.</p>
+<p><strong>Dependency Injection</strong></p>
+<p>Dependency injection as a general concept is explained far better than I could do it by Martin Fowler at <a href="http://www.martinfowler.com/articles/injection.html">http://www.martinfowler.com/articles/injection.html</a>.
+However, in short it is a means of allowing a main class to use a
+second, dependent class without directly referencing that class. Some
+external entity will provide the second class to the main class at
+runtime – it will ‘inject’ the ‘dependency’. Obviously to be useful the
+second class will need to implement an interface that the main class
+knows about.</p>
+<p>The aim of this is to let us change the behaviour of our class
+structure by changing which second class is injected into the main
+class. Because the main class has no hard dependency on the second
+class this can be done at runtime. Thus our code is very flexible, easy
+to modify and loosely coupled.</p>
+<p><strong>Class Diagram</strong></p>
+<p>The class diagram looks something like this:</p>
+<p><img src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/classdiagram.jpg" alt="Dependency Injection Class Diagram"></p>
+<p>MainClass contains a reference to an object that implements
+IDependentClass, and can thus call the DoSomethingInDependentClass
+method on that object. DependentClass1, DependentClass2, and
+DependentClass3 implement the interface.</p>
+<p>Some client code will then create the appropriate dependent class
+and tell the main class to use it (via the interface). It’s easiest to
+understand this via some example code, which I’ll demonstrate below.</p>
+<p><strong>Strategy Pattern? </strong></p>
+<p>In many ways this is the classic Gang of Four Strategy pattern with
+a twist. The class diagram above is very similar to the usual one given
+for the strategy pattern: see <a href="http://www.dofactory.com/Patterns/PatternStrategy.aspx">http://www.dofactory.com/Patterns/PatternStrategy.aspx</a>
+(don’t worry if you don’t know the strategy pattern at this stage
+though). The difference is that with dependency injection exactly which
+class is going to be provided as the dependency (strategy) is often
+left to configuration at runtime. That is, it can be abstracted out of
+the code entirely.</p>
+<p>In the Spring framework, for example, XML configuration files can be
+used to specify which class gets created and used. This is an extreme
+example of deciding which class to use at runtime: you can change the
+dependencies without changing the compiled code at all.</p>
+<p>However, there are some reasons for not using external configuration
+files to specify these dependencies: it makes it difficult to debug,
+and you’re probably not going to want to change application behaviour
+via a configuration file in any case. Dependency injection frameworks
+in general will allow you to specify your injection in code (Spring
+allows this).</p>
+<p><strong>Dependency Injection Example</strong></p>
+<p>We can easily create <a href="http://richnewman.wordpress.com/dependency-injection-example-setter-injection/">an example that does this using .NET</a>.  Full code for all these examples is available <a href="http://www.richnewman.plus.com/DependencyInjectionTypes.zip">for download</a>.</p>
+<p>Firstly we create an interface that will be used to call our dependent class:</p>
+<pre>    <font size="2" color="blue" face="Courier">public</font> <font size="2" color="blue" face="Courier">interface</font> <font size="2" color="#2b91af" face="Courier">IDependentClass</font>
+    {
+        <font size="2" color="blue" face="Courier">void</font> <font size="2" color="purple" face="Courier">DoSomethingInDependentClass</font>();
+    }
+&nbsp;</pre>
+<p>Then we create dependent classes that implement this interface to do
+something. Which one of these classes will actually be used will only
+be decided at runtime based on a setting in the App.Config file:</p>
+<pre>    <font size="2" color="blue" face="Courier">public</font> <font size="2" color="blue" face="Courier">class</font> <font size="2" color="#2b91af" face="Courier">DependentClass1</font> : <font size="2" color="#2b91af" face="Courier">IDependentClass</font>
+    {
+        <font size="2" color="blue" face="Courier">public</font> <font size="2" color="blue" face="Courier">void</font> <font size="2" color="purple" face="Courier">DoSomethingInDependentClass</font>()
+        {
+            <font size="2" color="#2b91af" face="Courier">Console</font>.<font size="2" color="purple" face="Courier">WriteLine</font>(<font size="2" color="#a31515" face="Courier">"Hello from DependentClass1: I can be injected into MainClass"</font>);
+        }
+    }
+&nbsp;
+    <font size="2" color="blue" face="Courier">public</font> <font size="2" color="blue" face="Courier">class</font> <font size="2" color="#2b91af" face="Courier">DependentClass2</font> : <font size="2" color="#2b91af" face="Courier">IDependentClass</font>
+    {
+        <font size="2" color="blue" face="Courier">public</font> <font size="2" color="blue" face="Courier">void</font> <font size="2" color="purple" face="Courier">DoSomethingInDependentClass</font>()
+        {
+            <font size="2" color="#2b91af" face="Courier">Console</font>.<font size="2" color="purple" face="Courier">WriteLine</font>(<font size="2" color="#a31515" face="Courier">"Hello from DependentClass2: I can be injected as well, just change App.Config"</font>);
+        }
+    }</pre>
+<p>Now we create a class that will use the dependent classes, calling
+their functionality via the interface. This ‘main’ class has no
+knowledge of the dependent classes types, only of the interface that
+they implement:</p>
+<pre>    <font size="2" color="blue" face="Courier">public</font> <font size="2" color="blue" face="Courier">class</font> <font size="2" color="#2b91af" face="Courier">MainClass</font>
+    {
+        <font size="2" color="#2b91af" face="Courier">IDependentClass</font> <font size="2" color="purple" face="Courier">dependentClass</font>;
+        <font size="2" color="blue" face="Courier">public</font> <font size="2" color="#2b91af" face="Courier">IDependentClass</font> <font size="2" color="purple" face="Courier">DependentClass</font> { <font size="2" color="blue" face="Courier">get</font> { <font size="2" color="blue" face="Courier">return</font> <font size="2" color="purple" face="Courier">dependentClass</font>; } <font size="2" color="blue" face="Courier">set</font> { <font size="2" color="purple" face="Courier">dependentClass</font> = <font size="2" color="blue" face="Courier">value</font>; } }
+&nbsp;
+        <font size="2" color="blue" face="Courier">public</font> <font size="2" color="blue" face="Courier">void</font> <font size="2" color="purple" face="Courier">DoSomething</font>()
+        {
+            <font size="2" color="purple" face="Courier">dependentClass</font>.<font size="2" color="purple" face="Courier">DoSomethingInDependentClass</font>();
+        }
+    }
+&nbsp;</pre>
+<p>Now we need some code that will use this structure. Clearly we need
+to instantiate the main class and tell it (using the interface) which
+dependent class to use. We can then call the functionality on the main
+class.</p>
+<pre>        <font size="2" color="blue" face="Courier">static</font> <font size="2" color="blue" face="Courier">void</font> <font size="2" color="purple" face="Courier">Main</font>(<font size="2" color="blue" face="Courier">string</font>[] <font size="2" color="purple" face="Courier">args</font>)
+        {
+            <font size="2" color="green" face="Courier">// Get the correct dependency based on configuration file</font>
+            <font size="2" color="#2b91af" face="Courier">IDependentClass</font> <font size="2" color="purple" face="Courier">dependency</font> = <font size="2" color="purple" face="Courier">GetCorrectDependency</font>();
+&nbsp;
+            <font size="2" color="green" face="Courier">// Create our main class and inject the dependency</font>
+            <font size="2" color="#2b91af" face="Courier">MainClass</font> <font size="2" color="purple" face="Courier">mainClass</font> = <font size="2" color="blue" face="Courier">new</font> <font size="2" color="#2b91af" face="Courier">MainClass</font>();
+            <font size="2" color="purple" face="Courier">mainClass</font>.<font size="2" color="purple" face="Courier">DependentClass</font> = <font size="2" color="purple" face="Courier">dependency</font>;
+&nbsp;
+            <font size="2" color="green" face="Courier">// Use the main class, the method references the dependency</font>
+            <font size="2" color="green" face="Courier">// so behaviour depends on the configuration file</font>
+            <font size="2" color="purple" face="Courier">mainClass</font>.<font size="2" color="purple" face="Courier">DoSomething</font>();
+&nbsp;
+            <font size="2" color="#2b91af" face="Courier">Console</font>.<font size="2" color="purple" face="Courier">ReadLine</font>();
+        }
+&nbsp;</pre>
+<p>Finally we need some code in GetCorrectDependency() that decides
+which dependent class we are going to use, and instantiates it. We do
+this by examining the ‘ClassName’ setting in App.Config, and
+instantiating that using Activator.CreateInstance:</p>
+<pre>        <font size="2" color="blue" face="Courier">static</font> <font size="2" color="#2b91af" face="Courier">IDependentClass</font> <font size="2" color="purple" face="Courier">GetCorrectDependency</font>()
+        {
+            <font size="2" color="blue" face="Courier">string</font> <font size="2" color="purple" face="Courier">classToCreate</font> = <font size="2" color="purple" face="Courier">System</font>.<font size="2" color="purple" face="Courier">Configuration</font>.<font size="2" color="#2b91af" face="Courier">ConfigurationManager</font>.<font size="2" color="purple" face="Courier">AppSettings</font>[<font size="2" color="#a31515" face="Courier">"ClassName"</font>];
+            <font size="2" color="#2b91af" face="Courier">Type</font> <font size="2" color="purple" face="Courier">type</font> = <font size="2" color="purple" face="Courier">System</font>.<font size="2" color="#2b91af" face="Courier">Type</font>.<font size="2" color="purple" face="Courier">GetType</font>(<font size="2" color="purple" face="Courier">classToCreate</font>);
+            <font size="2" color="#2b91af" face="Courier">IDependentClass</font> <font size="2" color="purple" face="Courier">dependency</font> = (<font size="2" color="#2b91af" face="Courier">IDependentClass</font>)<font size="2" color="#2b91af" face="Courier">Activator</font>.<font size="2" color="purple" face="Courier">CreateInstance</font>(<font size="2" color="purple" face="Courier">type</font>);
+            <font size="2" color="blue" face="Courier">return</font> <font size="2" color="purple" face="Courier">dependency</font>;
+        }
+&nbsp;</pre>
+<p>The App.Config file is as below:</p>
+<pre><font size="2" color="blue" face="Courier">&lt;?</font><font size="2" color="#a31515" face="Courier">xml</font><font size="2" color="blue" face="Courier"> </font><font size="2" color="red" face="Courier">version</font><font size="2" color="blue" face="Courier">=</font>"<font size="2" color="blue" face="Courier">1.0</font>"<font size="2" color="blue" face="Courier"> </font><font size="2" color="red" face="Courier">encoding</font><font size="2" color="blue" face="Courier">=</font>"<font size="2" color="blue" face="Courier">utf-8</font>"<font size="2" color="blue" face="Courier"> ?&gt;</font>
+<font size="2" color="blue" face="Courier">&lt;</font><font size="2" color="#a31515" face="Courier">configuration</font><font size="2" color="blue" face="Courier">&gt;</font>
+<font size="2" color="blue" face="Courier">  &lt;</font><font size="2" color="#a31515" face="Courier">appSettings</font><font size="2" color="blue" face="Courier">&gt;</font>
+<font size="2" color="blue" face="Courier">    &lt;</font><font size="2" color="#a31515" face="Courier">add</font><font size="2" color="blue" face="Courier"> </font><font size="2" color="red" face="Courier">key</font><font size="2" color="blue" face="Courier">=</font>"<font size="2" color="blue" face="Courier">ClassName</font>"<font size="2" color="blue" face="Courier"> </font><font size="2" color="red" face="Courier">value</font><font size="2" color="blue" face="Courier">=</font>"<font size="2" color="blue" face="Courier">DependencyInjection.DependentClass1</font>"<font size="2" color="blue" face="Courier"> /&gt;</font>
+<font size="2" color="blue" face="Courier">  &lt;/</font><font size="2" color="#a31515" face="Courier">appSettings</font><font size="2" color="blue" face="Courier">&gt;</font>
+<font size="2" color="blue" face="Courier">&lt;/</font><font size="2" color="#a31515" face="Courier">configuration</font><font size="2" color="blue" face="Courier">&gt;</font></pre>
+<p>So we can compile this code and run it as above and it will output
+the message in DependentClass1. If we then just change the
+configuration file so that the ClassName value is
+DependencyInjection.DependentClass2 and re-run the code will output the
+message in DependentClass2.</p>
+<p>Note that what is powerful about this code is we could write a
+DependentClass3, with new behaviour, and use it by changing the
+configuration file without the need to change any of the existing code.</p>
+<p><strong>Types of Dependency Injection</strong></p>
+<p>Martin Fowler’s article talks about three different types of
+dependency injection: constructor injection, interface injection and
+setter injection. The <a href="http://richnewman.wordpress.com/dependency-injection-example-setter-injection/">example above uses setter injection</a>: we give the main class its dependency via a setter in the line:</p>
+<p>mainClass.DependentClass = dependency;</p>
+<p>In constructor injection we give the main class its dependency in
+the constructor. With interface injection we define another interface
+that the main class will implement that sets the dependency.</p>
+<p>I have reworked the example above for both <a href="http://richnewman.wordpress.com/dependency-injection-example-constructor-injection/">constructor injection</a> and <a href="http://richnewman.wordpress.com/dependency-injection-example-interface-injection/">interface injection</a>.  As you can see these are relatively trivial changes in this simple example.</p>
+<p><a href="http://www.richnewman.plus.com/DependencyInjectionTypes.zip">Full C# code for these examples is available.</a></p>
+<p>This series of articles is continued in <a href="http://richnewman.wordpress.com/2007/08/04/an-aside-on-inversion-of-control-dependency-inversion-and-dependency-injection-introduction-to-cabscsf-part-4/">part 4</a>, which discusses inversion of control.</p>
+<div style="margin-top: 1em;" class="possibly-related"><hr><p><strong>Possibly related posts: (automatically generated)</strong></p><ul><li><a rel="related" href="http://richnewman.wordpress.com/2007/08/04/an-aside-on-inversion-of-control-dependency-inversion-and-dependency-injection-introduction-to-cabscsf-part-4/" style="font-weight: bold;">An Aside on Inversion of Control, Dependency Inversion and Dependency Injec…</a></li><li><a rel="related" href="http://richnewman.wordpress.com/2008/01/27/generating-net-classes-from-the-fpml-xsd-schema-introduction-to-using-fpml-with-net-tools-part-3/" style="font-weight: bold;">Generating .NET Classes from the FpML XSD Schema (Introduction to using FpM…</a></li><li><a rel="related" href="http://richnewman.wordpress.com/2009/06/12/extending-classes-extension-methods-or-inheritance/" style="font-weight: bold;">Extending Classes: Extension Methods or Inheritance?</a></li><li><a rel="related" href="http://icoder.wordpress.com/2007/07/04/how-to-handle-dependency-injection-with-nested-dependencies/">How to handle dependency injection with nested dependencies</a></li></ul></div></div>	</div>
+
+	<div class="feedback">
+                        <a href="http://richnewman.wordpress.com/2007/07/21/introduction-to-dependency-injection-introduction-to-cabscsf-part-3/#comments" title="Comment on Introduction to Dependency Injection (Introduction to CAB/SCSF Part&nbsp;3)">Comments (12)</a>	</div>
+
+</div>
+
+<h2 id="comments">12 Comments 
+	<a href="#postcomment" title="Leave a comment">»</a>
+</h2>
+
+<ol id="commentlist" class="snap_preview">
+<li id="comment-134">
+	<div id="div-comment-134" class="vcard">
+	<img alt="" src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/777dc5a5689218e5055357db19adb47e.png" class="avatar avatar-32" width="32" height="32">	<p>I’m
+trying to get up to speed with CAB and SCSF fast and have found your
+articles to be very useful. As you have mentioned there is nothing that
+provides a simple explanation of these topics until now. I’ve found all
+three parts invaluable, and look forward to part 4 (hope it’s soon).</p>
+	<p><cite>Comment by <span class="fn">Rich</span> — July 31, 2007 @ <a href="#comment-134">9:19 pm</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2007/07/21/introduction-to-dependency-injection-introduction-to-cabscsf-part-3/?replytocom=134#respond" onclick='return addComment.moveForm("div-comment-134", "134", "respond", "65")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-1002">
+	<div id="div-comment-1002" class="vcard">
+	<img alt="" src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/d0eb2cde3c1717aa549d52d5e52ec798.png" class="avatar avatar-32" width="32" height="32">	<p>Great article. I was confused with dependency injection. Thanks for keeping it so simple. Keep the good work up and thanks.</p>
+<p>Regards<br>
+Irfan</p>
+	<p><cite>Comment by <span class="fn">Mirza Irfan Baig</span> — October 8, 2007 @ <a href="#comment-1002">5:48 am</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2007/07/21/introduction-to-dependency-injection-introduction-to-cabscsf-part-3/?replytocom=1002#respond" onclick='return addComment.moveForm("div-comment-1002", "1002", "respond", "65")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-1090">
+	<div id="div-comment-1090" class="vcard">
+	<img alt="" src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/166cc18568ccfbe35a8a71be3991dd2c.png" class="avatar avatar-32" width="32" height="32">	<p>Great
+series of articles, a great resource to explain novices about the ideas
+behind CAB and how to use it. I appreciate very much your effort.</p>
+	<p><cite>Comment by <span class="fn"><a href="http://www.hires.uab.edu/" rel="external nofollow" class="url">Giovanni Mazza</a></span> — October 18, 2007 @ <a href="#comment-1090">9:16 pm</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2007/07/21/introduction-to-dependency-injection-introduction-to-cabscsf-part-3/?replytocom=1090#respond" onclick='return addComment.moveForm("div-comment-1090", "1090", "respond", "65")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-1137">
+	<div id="div-comment-1137" class="vcard">
+	<img alt="" src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/a7bee8ba4d3653c3f9bc448550dc133e.png" class="avatar avatar-32" width="32" height="32">	<p>Awesome work.<br>
+A real gr8 article from startup to completes indepth implementation.</p>
+<p>Gr8 job:)</p>
+	<p><cite>Comment by <span class="fn"><a href="http://none/" rel="external nofollow" class="url">Ujjwal Sinha</a></span> — October 23, 2007 @ <a href="#comment-1137">12:05 pm</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2007/07/21/introduction-to-dependency-injection-introduction-to-cabscsf-part-3/?replytocom=1137#respond" onclick='return addComment.moveForm("div-comment-1137", "1137", "respond", "65")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-1720">
+	<div id="div-comment-1720" class="vcard">
+	<img alt="" src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/ad6d2dea3bdb177b567dd4cf7439084f.png" class="avatar avatar-32" width="32" height="32">	<p>Hi,Its really gr8.Good way to explain.Thanks a lot.</p>
+	<p><cite>Comment by <span class="fn">Krish.</span> — November 26, 2007 @ <a href="#comment-1720">8:39 am</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2007/07/21/introduction-to-dependency-injection-introduction-to-cabscsf-part-3/?replytocom=1720#respond" onclick='return addComment.moveForm("div-comment-1720", "1720", "respond", "65")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-1814">
+	<div id="div-comment-1814" class="vcard">
+	<img alt="" src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/1e247c19aa753afad81f7cecfcdf2826.png" class="avatar avatar-32" width="32" height="32">	<p>I was so confused with wht dependency injection is all bout.. and this article clears all my doubts on the same.. Thanks <img src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/icon_smile.gif" alt=":)" class="wp-smiley"> </p>
+	<p><cite>Comment by <span class="fn">kirthika</span> — December 4, 2007 @ <a href="#comment-1814">10:38 am</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2007/07/21/introduction-to-dependency-injection-introduction-to-cabscsf-part-3/?replytocom=1814#respond" onclick='return addComment.moveForm("div-comment-1814", "1814", "respond", "65")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-2489">
+	<div id="div-comment-2489" class="vcard">
+	<img alt="" src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/c11ad32cc7693c7cb306d4056fdcf11c.png" class="avatar avatar-32" width="32" height="32">	<p>WOW!
+I’ve been trying to find time to teach myself CAB for the past two
+years. Everytime I gave up because I never found clear/good tutos.
+Yours is A-B-S-O-L-U-T-E-L-Y limpid. I’ve understood more in 30 minutes
+reading till this part than in 2 years reading tons of tutos, doc,
+forum post.<br>
+Thank you very much for sharing your understanding.</p>
+	<p><cite>Comment by <span class="fn">KDave</span> — March 8, 2008 @ <a href="#comment-2489">4:52 pm</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2007/07/21/introduction-to-dependency-injection-introduction-to-cabscsf-part-3/?replytocom=2489#respond" onclick='return addComment.moveForm("div-comment-2489", "2489", "respond", "65")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-2559">
+	<div id="div-comment-2559" class="vcard">
+	<img alt="" src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/071b8aa7a2c543eba2f03b35771c8139.png" class="avatar avatar-32" width="32" height="32">	<p>Thanks for the great series.  </p>
+<p>I just wanted to let you know the link to the code is broken, other than that great article.</p>
+<p>Keep up the good work.</p>
+<p>Thanks,</p>
+<p>B</p>
+	<p><cite>Comment by <span class="fn">Burt</span> — March 19, 2008 @ <a href="#comment-2559">3:02 pm</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2007/07/21/introduction-to-dependency-injection-introduction-to-cabscsf-part-3/?replytocom=2559#respond" onclick='return addComment.moveForm("div-comment-2559", "2559", "respond", "65")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-2652">
+	<div id="div-comment-2652" class="vcard">
+	<img alt="" src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/6c8958b7d6b4b62035ce24288b368a9f.png" class="avatar avatar-32" width="32" height="32">	<p>Thanks for your good article, I think you’ve described it better than The Great Martin Fowler!<br>
+Simple &amp; Easy &amp; Enough</p>
+	<p><cite>Comment by <span class="fn">Behdad Khoshbin</span> — April 8, 2008 @ <a href="#comment-2652">10:00 am</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2007/07/21/introduction-to-dependency-injection-introduction-to-cabscsf-part-3/?replytocom=2652#respond" onclick='return addComment.moveForm("div-comment-2652", "2652", "respond", "65")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-2655">
+	<div id="div-comment-2655" class="vcard">
+	<img alt="" src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/a.png" class="avatar avatar-32" width="32" height="32">	<p>Dependency Injection made easy.  Just what we need.  Thanks for the good writeup.</p>
+	<p><cite>Comment by <span class="fn">Klaus</span> — April 8, 2008 @ <a href="#comment-2655">9:33 pm</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2007/07/21/introduction-to-dependency-injection-introduction-to-cabscsf-part-3/?replytocom=2655#respond" onclick='return addComment.moveForm("div-comment-2655", "2655", "respond", "65")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-2867">
+	<div id="div-comment-2867" class="vcard">
+	<img alt="" src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/a.png" class="avatar avatar-32" width="32" height="32">	<p>I agree you explained way better than The Great Martin Fowler</p>
+	<p><cite>Comment by <span class="fn">Bill</span> — October 9, 2008 @ <a href="#comment-2867">1:49 am</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2007/07/21/introduction-to-dependency-injection-introduction-to-cabscsf-part-3/?replytocom=2867#respond" onclick='return addComment.moveForm("div-comment-2867", "2867", "respond", "65")'>Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-2904">
+	<div id="div-comment-2904" class="vcard">
+	<img alt="" src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/ea6f3fe2c93a07ab171cf8c41ad171bc.png" class="avatar avatar-32" width="32" height="32">	<p>The
+Fowler’s DI pattern is just confusing. It’s does not add anything more
+new than waht the Stategy pattern offers except more complications for
+configurating the code at run time. Of course, this is an anti pattern
+like the whole CAB practice.</p>
+	<p><cite>Comment by <span class="fn">somisko</span> — November 7, 2008 @ <a href="#comment-2904">1:33 pm</a></cite> </p>
+	<div class="reply">
+		<a rel="nofollow" class="comment-reply-link" href="http://richnewman.wordpress.com/2007/07/21/introduction-to-dependency-injection-introduction-to-cabscsf-part-3/?replytocom=2904#respond" onclick='return addComment.moveForm("div-comment-2904", "2904", "respond", "65")'>Reply</a>	</div>
+	</div>
+</li>
+</ol>
+
+<div class="navigation">
+	<div class="alignleft"></div>
+	<div class="alignright"></div>
+</div>
+<br>
+
+
+<p><a href="http://richnewman.wordpress.com/2007/07/21/introduction-to-dependency-injection-introduction-to-cabscsf-part-3/feed/"><abbr title="Really Simple Syndication">RSS</abbr> feed for comments on this post.</a> 
+	<a href="http://richnewman.wordpress.com/2007/07/21/introduction-to-dependency-injection-introduction-to-cabscsf-part-3/trackback/" rel="trackback">TrackBack <abbr title="Uniform Resource Identifier">URI</abbr></a>
+</p>
+
+<div id="respond">
+<h2 id="postcomment">Leave a comment</h2>
+<div id="cancel-comment-reply"><small><a rel="nofollow" id="cancel-comment-reply-link" href="http://richnewman.wordpress.com/2007/07/21/introduction-to-dependency-injection-introduction-to-cabscsf-part-3/#respond" style="display: none;">Click here to cancel reply.</a></small></div>
+
+
+<form action="http://richnewman.wordpress.com/wp-comments-post.php" method="post" id="commentform">
+
+
+<p><input name="author" id="author" value="" size="22" tabindex="1" type="text">
+<label for="author"><small>Name </small></label></p>
+
+<p><input name="email" id="email" value="" size="22" tabindex="2" type="text">
+<label for="email"><small>Mail (will not be published) </small></label></p>
+
+<p><input name="url" id="url" value="" size="22" tabindex="3" type="text">
+<label for="url"><small>Website</small></label></p>
+
+
+<!--<p><small><strong>XHTML:</strong> You can use these tags: &lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;cite&gt; &lt;code&gt; &lt;pre&gt; &lt;del datetime=&quot;&quot;&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=&quot;&quot;&gt; &lt;strike&gt; &lt;strong&gt; </small></p>-->
+
+<p><textarea name="comment" id="comment" cols="100" rows="10" tabindex="4"></textarea></p>
+
+<p><input name="submit" id="submit" tabindex="5" value="Submit Comment" type="submit">
+<input name="comment_post_ID" value="65" id="comment_post_ID" type="hidden">
+<input name="comment_parent" id="comment_parent" value="0" type="hidden">
+</p>
+
+<input name="genseq" value="1246694746" type="hidden">
+<p><input name="subscribe" id="subscribe" value="subscribe" style="width: auto;" type="checkbox">
+		<label for="subscribe" id="subscribe-label">Notify me of follow-up comments via email.</label></p>
+</form>
+
+</div>
+
+
+
+<!-- begin footer -->
+</div>
+
+
+<!-- begin sidebar -->
+<div id="menu">
+
+<ul>
+<li id="search-2" class="widget widget_search"><form role="search" method="get" id="searchform" action="http://richnewman.wordpress.com/">
+	<div><label class="screen-reader-text" for="s">Search for:</label>
+	<input value="" name="s" id="s" type="text">
+	<input id="searchsubmit" value="Search" type="submit">
+	</div>
+	</form></li>
+		<li id="text-2" class="widget widget_text">			<h2 class="widgettitle">recent posts</h2>
+			<div class="textwidget"><a href="http://richnewman.wordpress.com/2009/06/06/running-visual-studio-as-an-administrator-under-windows-vista/">Running Visual Studio as an Administrator under Windows Vista</a><br><br>
+
+<a href="http://richnewman.wordpress.com/2008/02/23/table-of-contents-introduction-to-using-financial-products-markup-language-fpml-with-microsoft-net-tools/">Introduction to using Financial Products Markup Language (FpML) with Microsoft .NET Tools</a><br><br>
+
+<a href="http://richnewman.wordpress.com/intro-to-cab-toc/">An Introduction to the Smart Client Software Factory and Composite Application Block</a> <br><br>
+
+<a href="http://richnewman.wordpress.com/2007/12/09/a-beginners-guide-to-credit-default-swaps/">beginner's guide to credit default swaps</a><br><br>
+
+<a href="http://richnewman.wordpress.com/2007/10/26/user-interface-design-for-business-applications/">User Interface Design for Business Applications</a><br><br>
+
+<a href="http://richnewman.wordpress.com/2007/08/04/some-thoughts-on-soa-and-application-design-using-the-cabscsf/">Some Thoughts on SOA and Application Design using the CAB/SCSF</a> <br><br>
+
+<a href="http://richnewman.wordpress.com/2007/07/01/c-and-vbnet-line-count-utility/">C# And VB.NET Line Count Utility</a> <br><br>
+
+<a href="http://richnewman.wordpress.com/2007/06/24/a-beginner%e2%80%99s-guide-to-the-black-scholes-option-pricing-formula-part-1/">Beginner’s Guide to the Black-Scholes Option Pricing Formula</a> <br><br>
+
+<a href="http://richnewman.wordpress.com/2007/04/29/using-hsl-color-hue-saturation-luminosity-to-create-better-looking-guis-part-1/">Using HSL Color to Create Better-Looking GUIs</a> <br><br>
+
+<a href="http://richnewman.wordpress.com/2007/04/15/a-beginner%e2%80%99s-guide-to-calling-a-net-library-from-excel/">Beginner's Guide to Calling a .NET Library from Excel</a><br><br>
+
+<a href="http://richnewman.wordpress.com/2007/04/08/top-level-exception-handling-in-windows-forms-applications-part-1/">Top-level Exception Handling in Windows Forms Applications</a><br><br>
+
+<a href="http://richnewman.wordpress.com/2007/03/23/comparing-values-in-net-identity-and-equivalence-part-1/">Comparing Values for Equality in .NET: Identity and Equivalence</a><br><br></div>
+		</li>
+		<li id="text-3" class="widget widget_text">			<h2 class="widgettitle">pages</h2>
+			<div class="textwidget"><a href="http://richnewman.wordpress.com/about/">About Me</a> <br><br></div>
+		</li>
+<li id="archives-2" class="widget widget_archive"><h2 class="widgettitle">Archives</h2>
+		<ul>
+			<li><a href="http://richnewman.wordpress.com/2009/06/" title="June 2009">June 2009</a>&nbsp;(2)</li>
+	<li><a href="http://richnewman.wordpress.com/2008/03/" title="March 2008">March 2008</a>&nbsp;(3)</li>
+	<li><a href="http://richnewman.wordpress.com/2008/02/" title="February 2008">February 2008</a>&nbsp;(4)</li>
+	<li><a href="http://richnewman.wordpress.com/2008/01/" title="January 2008">January 2008</a>&nbsp;(3)</li>
+	<li><a href="http://richnewman.wordpress.com/2007/12/" title="December 2007">December 2007</a>&nbsp;(6)</li>
+	<li><a href="http://richnewman.wordpress.com/2007/11/" title="November 2007">November 2007</a>&nbsp;(3)</li>
+	<li><a href="http://richnewman.wordpress.com/2007/10/" title="October 2007">October 2007</a>&nbsp;(5)</li>
+	<li><a href="http://richnewman.wordpress.com/2007/09/" title="September 2007">September 2007</a>&nbsp;(8)</li>
+	<li><a href="http://richnewman.wordpress.com/2007/08/" title="August 2007">August 2007</a>&nbsp;(6)</li>
+	<li><a href="http://richnewman.wordpress.com/2007/07/" title="July 2007">July 2007</a>&nbsp;(8)</li>
+	<li><a href="http://richnewman.wordpress.com/2007/06/" title="June 2007">June 2007</a>&nbsp;(4)</li>
+	<li><a href="http://richnewman.wordpress.com/2007/05/" title="May 2007">May 2007</a>&nbsp;(2)</li>
+	<li><a href="http://richnewman.wordpress.com/2007/04/" title="April 2007">April 2007</a>&nbsp;(5)</li>
+	<li><a href="http://richnewman.wordpress.com/2007/03/" title="March 2007">March 2007</a>&nbsp;(5)</li>
+		</ul>
+</li>
+		<li id="text-1" class="widget widget_text">						<div class="textwidget"><a href="http://richnewman.wordpress.com/feed"><img src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/e28.png"></a> </div>
+		</li>
+<li id="pages-2" class="widget widget_pages"><h2 class="widgettitle">Pages</h2>
+		<ul>
+			<li class="page_item page-item-2"><a href="http://richnewman.wordpress.com/about/" title="About">About</a></li>
+<li class="page_item page-item-79"><a href="http://richnewman.wordpress.com/attempted-solutions-to-random-numbers-problem/" title="Attempted Solutions to Random Numbers&nbsp;Problem">Attempted Solutions to Random Numbers&nbsp;Problem</a></li>
+<li class="page_item page-item-67"><a href="http://richnewman.wordpress.com/dependency-injection-example-constructor-injection/" title="Dependency Injection Example: Constructor&nbsp;Injection">Dependency Injection Example: Constructor&nbsp;Injection</a></li>
+<li class="page_item page-item-69"><a href="http://richnewman.wordpress.com/dependency-injection-example-interface-injection/" title="Dependency Injection Example: Interface&nbsp;Injection">Dependency Injection Example: Interface&nbsp;Injection</a></li>
+<li class="page_item page-item-68"><a href="http://richnewman.wordpress.com/dependency-injection-example-setter-injection/" title="Dependency Injection Example: Setter&nbsp;Injection">Dependency Injection Example: Setter&nbsp;Injection</a></li>
+<li class="page_item page-item-39"><a href="http://richnewman.wordpress.com/hslcolor-class/" title="HSLColor&nbsp;Class">HSLColor&nbsp;Class</a></li>
+<li class="page_item page-item-76"><a href="http://richnewman.wordpress.com/weirdinteger-an-example-of-the-use-of-icomparable/" title="Inversion of Control in .NET: an example of the use of&nbsp;IComparable">Inversion of Control in .NET: an example of the use of&nbsp;IComparable</a></li>
+<li class="page_item page-item-100"><a href="http://richnewman.wordpress.com/intro-to-cab-toc/" title="Table of Contents: Introduction to&nbsp;CAB/SCSF">Table of Contents: Introduction to&nbsp;CAB/SCSF</a></li>
+<li class="page_item page-item-32"><a href="http://richnewman.wordpress.com/top-level-exception-handling-code-listing-1/" title="Top-level Exception Handling – Code Listing&nbsp;2">Top-level Exception Handling – Code Listing&nbsp;2</a></li>
+<li class="page_item page-item-33"><a href="http://richnewman.wordpress.com/top-level-exception-handling-code-listing-2/" title="Top-level Exception Handling – Code Listing&nbsp;3">Top-level Exception Handling – Code Listing&nbsp;3</a></li>
+<li class="page_item page-item-34"><a href="http://richnewman.wordpress.com/top-level-exception-handling-code-listing-3/" title="Top-level Exception Handling – Code Listing&nbsp;4">Top-level Exception Handling – Code Listing&nbsp;4</a></li>
+<li class="page_item page-item-94"><a href="http://richnewman.wordpress.com/using-custom-net-events-to-invoke-commands/" title="Using Custom .NET Events to Invoke&nbsp;Commands">Using Custom .NET Events to Invoke&nbsp;Commands</a></li>
+<li class="page_item page-item-38"><a href="http://richnewman.wordpress.com/using-hsl-color-original-color-scheme/" title="Using HSL Color – Original Color&nbsp;Scheme">Using HSL Color – Original Color&nbsp;Scheme</a></li>
+		</ul>
+		</li>
+<li id="calendar-2" class="widget widget_calendar"><h2 class="widgettitle">&nbsp;</h2>
+<div id="calendar_wrap"><table id="wp-calendar" summary="Calendar">
+	<caption>July 2007</caption>
+	<thead>
+	<tr>
+		<th abbr="Monday" scope="col" title="Monday">M</th>
+		<th abbr="Tuesday" scope="col" title="Tuesday">T</th>
+		<th abbr="Wednesday" scope="col" title="Wednesday">W</th>
+		<th abbr="Thursday" scope="col" title="Thursday">T</th>
+		<th abbr="Friday" scope="col" title="Friday">F</th>
+		<th abbr="Saturday" scope="col" title="Saturday">S</th>
+		<th abbr="Sunday" scope="col" title="Sunday">S</th>
+	</tr>
+	</thead>
+
+	<tfoot>
+	<tr>
+		<td abbr="June" colspan="3" id="prev"><a href="http://richnewman.wordpress.com/2007/06/" title="View posts for June 2007">« Jun</a></td>
+		<td class="pad">&nbsp;</td>
+		<td abbr="August" colspan="3" id="next"><a href="http://richnewman.wordpress.com/2007/08/" title="View posts for August 2007">Aug »</a></td>
+	</tr>
+	</tfoot>
+
+	<tbody>
+	<tr>
+		<td colspan="6" class="pad">&nbsp;</td><td><a href="http://richnewman.wordpress.com/2007/07/01/" title="A Beginner’s Guide to the Black-Scholes Option Pricing Formula (Part&nbsp;3)
+C# and VB.NET Line Count Utility – Version&nbsp;1">1</a></td>
+	</tr>
+	<tr>
+		<td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td>
+	</tr>
+	<tr>
+		<td><a href="http://richnewman.wordpress.com/2007/07/09/" title="C#, Visual Basic and C++ .NET Line Counter Utility – Version&nbsp;2">9</a></td><td>10</td><td>11</td><td>12</td><td>13</td><td><a href="http://richnewman.wordpress.com/2007/07/14/" title="An Introduction to the Smart Client Software Factory and Composite Application Block: Part 1 Modules and&nbsp;Shells
+An Introduction to the Smart Client Software Factory and Composite Application Block: Part 2&nbsp;WorkItems">14</a></td><td>15</td>
+	</tr>
+	<tr>
+		<td>16</td><td>17</td><td>18</td><td>19</td><td><a href="http://richnewman.wordpress.com/2007/07/20/" title="Two Philosophers&nbsp;Problem">20</a></td><td><a href="http://richnewman.wordpress.com/2007/07/21/" title="Introduction to Dependency Injection (Introduction to CAB/SCSF Part&nbsp;3)">21</a></td><td>22</td>
+	</tr>
+	<tr>
+		<td>23</td><td>24</td><td>25</td><td>26</td><td><a href="http://richnewman.wordpress.com/2007/07/27/" title="Composite Application Block MdiWorkspace&nbsp;Sample">27</a></td><td>28</td><td>29</td>
+	</tr>
+	<tr>
+		<td>30</td><td>31</td>
+		<td class="pad" colspan="5">&nbsp;</td>
+	</tr>
+	</tbody>
+	</table></div></li>
+<li id="meta-2" class="widget widget_meta"><h2 class="widgettitle">Meta</h2>
+			<ul>
+						<li><a href="http://richnewman.wordpress.com/wp-login.php">Log in</a></li>
+			<li><a href="http://richnewman.wordpress.com/feed/" title="Syndicate this site using RSS 2.0">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://richnewman.wordpress.com/comments/feed/" title="The latest comments to all posts in RSS">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://wordpress.com/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.com</a></li>
+						</ul>
+</li>
+
+</ul>
+
+</div>
+
+
+<p class="credit"><a href="http://wordpress.com/" rel="generator">Blog at WordPress.com</a>.</p>
+
+</div>
+
+<script type="text/javascript" src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/quant.js"></script>
+<script type="text/javascript">_qoptions = { labels:"adt.0,language.en" };_qacct="p-18-mFEk4J448M";quantserve();</script>
+<noscript><p><img
+src="http://pixel.quantserve.com/pixel/p-18-mFEk4J448M.gif?labels=adt.0%2Clanguage.en"
+style="display: none" height="1" width="1" alt="" /></p></noscript>
+<script src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/w.js" type="text/javascript"></script>
+<script type="text/javascript">
+st_go({'blog':'909413','v':'wpcom','user_id':'0','post':'65','subd':'richnewman'});
+ex_go({'crypt':'RDZ8LFkxbXFDdT8yZmU5JitKNVZhUVdPbUEyLltsWGhDL0l0bEJda0p8aHJrJnlQMUdNXTR1PVZVU3pwT0NXeDF8WSsxbFJjV3p2UzFbelMzRUpvT0duWmdxdm0mL3NGNXBmbXFiZ3M4SHxjfE0mRyVTJnl5LGd4QnZLOVAvKzlRejNhK3diNyZaXWdzYWJwLjloZV1hViVlNmsmR1M5ckQmMmpfOWx2Rmdxa01VTWFPTlEvfFB+Nm9WfjNSaV92ZH54dnM4fF9BMVp5RUc1fld+cXox'});
+re_go({'v':'sph','b':'909413','p':'65','d[richnewman.wordpress.com]':'3','d[icoder.wordpress.com]':'1'});
+addLoadEvent(function(){linktracker_init('909413',65);});
+</script><img id="wpstats" src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/g.gif" alt=""><img id="wpstats2" src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/g_002.gif" alt="" style="display: none;"><img id="wpstats" src="Introduction%20to%20Dependency%20Injection%20%28Introduction%20to%20CAB_SCSF%20Part%203%29%20%C2%AB%20Rich%20Newman_files/g_003.gif" alt="" style="display: none;">
+</body></html>

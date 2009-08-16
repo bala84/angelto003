@@ -1,0 +1,32 @@
+'instance_name' scripting variable not defined.
+Changed database context to 'ANGEL_TO_001_TEST4'.
+ 
+===============================================================================
+=          Starting script _drop_chis_all_objects.sql                         =
+===============================================================================
+ 
+ 
+===============================================================================
+=          Starting script dc_00470.sql                                =
+===============================================================================
+ 
+ 
+===============================================================================
+=          Registering devchange                                              =
+===============================================================================
+ 
+Registering devchange.
+Msg 2627, Level 14, State 1, Server POLUS-LAPTOP, Line 2
+Violation of PRIMARY KEY constraint 'SYS_DC_PK'. Cannot insert duplicate key in object 'dbo.sys_dc'.
+The statement has been terminated.
+ 
+finish_time            
+-----------------------
+2009-06-05 12:40:03.780
+
+(1 rows affected)
+ 
+===============================================================================
+=          Script dc_00470.sql finished                                =
+===============================================================================
+ 
