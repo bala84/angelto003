@@ -1,0 +1,7 @@
+G:\work\Angel_to_003\d-Source\Angel_to_003\bin\Debug\Infrastructure.Module.dll
+G:\work\Angel_to_003\d-Source\Angel_to_003\bin\Debug\Infrastructure.Module.pdb
+G:\work\Angel_to_003\d-Source\Angel_to_003\Source\Infrastructure\Infrastructure.Module\obj\Debug\ResolveAssemblyReference.cache
+G:\work\Angel_to_003\d-Source\Angel_to_003\Source\Infrastructure\Infrastructure.Module\obj\Debug\Angel_to_003.Infrastructure.Module.TreeMainMenuView.resources
+G:\work\Angel_to_003\d-Source\Angel_to_003\Source\Infrastructure\Infrastructure.Module\obj\Debug\Infrastructure.Module.csproj.GenerateResource.Cache
+G:\work\Angel_to_003\d-Source\Angel_to_003\Source\Infrastructure\Infrastructure.Module\obj\Debug\Infrastructure.Module.dll
+G:\work\Angel_to_003\d-Source\Angel_to_003\Source\Infrastructure\Infrastructure.Module\obj\Debug\Infrastructure.Module.pdb

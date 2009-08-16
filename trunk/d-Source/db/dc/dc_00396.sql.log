@@ -1,0 +1,380 @@
+'instance_name' scripting variable not defined.
+'dba_user_pwd' scripting variable not defined.
+Changed database context to 'ANGEL_TO_001_TEST4'.
+ 
+===============================================================================
+=          Starting script _drop_chis_all_objects.sql                         =
+===============================================================================
+ 
+Dropping trigger "TIUD_CCAR_CAR_KIND_HIS_ALL"...
+...trigger "TIUD_CCAR_CAR_KIND_HIS_ALL" dropped.
+Dropping trigger "TIUD_CWRH_WRH_DEMAND_MASTER_TYPE_HIS_ALL"...
+...trigger "TIUD_CWRH_WRH_DEMAND_MASTER_TYPE_HIS_ALL" dropped.
+Dropping trigger "TIUD_CPRT_EMPLOYEE_HIS_ALL"...
+...trigger "TIUD_CPRT_EMPLOYEE_HIS_ALL" dropped.
+Dropping trigger "TIUD_CWRH_GOOD_CATEGORY_TYPE_HIS_ALL"...
+...trigger "TIUD_CWRH_GOOD_CATEGORY_TYPE_HIS_ALL" dropped.
+Dropping trigger "TIUD_CCAR_CAR_MARK_HIS_ALL"...
+...trigger "TIUD_CCAR_CAR_MARK_HIS_ALL" dropped.
+Dropping trigger "TIUD_CDRV_TRAILER_HIS_ALL"...
+...trigger "TIUD_CDRV_TRAILER_HIS_ALL" dropped.
+Dropping trigger "TIUD_CPRT_GROUP_HIS_ALL"...
+...trigger "TIUD_CPRT_GROUP_HIS_ALL" dropped.
+Dropping trigger "TIUD_CWRH_WAREHOUSE_ITEM_HIS_ALL"...
+...trigger "TIUD_CWRH_WAREHOUSE_ITEM_HIS_ALL" dropped.
+Dropping trigger "TIUD_CCAR_CAR_MODEL_HIS_ALL"...
+...trigger "TIUD_CCAR_CAR_MODEL_HIS_ALL" dropped.
+Dropping trigger "TIUD_CPRT_ORGANIZATION_HIS_ALL"...
+...trigger "TIUD_CPRT_ORGANIZATION_HIS_ALL" dropped.
+Dropping trigger "TIUD_CWRH_WAREHOUSE_TYPE_HIS_ALL"...
+...trigger "TIUD_CWRH_WAREHOUSE_TYPE_HIS_ALL" dropped.
+Dropping trigger "TIUD_CCAR_CAR_STATE_HIS_ALL"...
+...trigger "TIUD_CCAR_CAR_STATE_HIS_ALL" dropped.
+Dropping trigger "TIUD_CRPR_REPAIR_TYPE_MASTER_KIND_HIS_ALL"...
+...trigger "TIUD_CRPR_REPAIR_TYPE_MASTER_KIND_HIS_ALL" dropped.
+Dropping trigger "TIUD_CDRV_DRIVER_PLAN_DETAIL_HIS_ALL"...
+...trigger "TIUD_CDRV_DRIVER_PLAN_DETAIL_HIS_ALL" dropped.
+Dropping trigger "TIUD_CPRT_PARTY_HIS_ALL"...
+...trigger "TIUD_CPRT_PARTY_HIS_ALL" dropped.
+Dropping trigger "TIUD_CCAR_CAR_TYPE_HIS_ALL"...
+...trigger "TIUD_CCAR_CAR_TYPE_HIS_ALL" dropped.
+Dropping trigger "TIUD_CLOC_ABBREVIATION_HIS_ALL"...
+...trigger "TIUD_CLOC_ABBREVIATION_HIS_ALL" dropped.
+Dropping trigger "TIUD_CCAR_CAR_RETURN_REASON_TYPE_HIS_ALL"...
+...trigger "TIUD_CCAR_CAR_RETURN_REASON_TYPE_HIS_ALL" dropped.
+Dropping trigger "TIUD_CPRT_PERSON_HIS_ALL"...
+...trigger "TIUD_CPRT_PERSON_HIS_ALL" dropped.
+Dropping trigger "TIUD_CWRH_WRH_DEMAND_MASTER_HIS_ALL"...
+...trigger "TIUD_CWRH_WRH_DEMAND_MASTER_HIS_ALL" dropped.
+Dropping trigger "TIUD_CCAR_FUEL_TYPE_HIS_ALL"...
+...trigger "TIUD_CCAR_FUEL_TYPE_HIS_ALL" dropped.
+Dropping trigger "TIUD_CLOC_COUNTRY_HIS_ALL"...
+...trigger "TIUD_CLOC_COUNTRY_HIS_ALL" dropped.
+Dropping trigger "TIUD_CCAR_CAR_RETURN_HIS_ALL"...
+...trigger "TIUD_CCAR_CAR_RETURN_HIS_ALL" dropped.
+Dropping trigger "TIUD_CCAR_ADDTNL_TS_TYPE_MASTER_HIS_ALL"...
+...trigger "TIUD_CCAR_ADDTNL_TS_TYPE_MASTER_HIS_ALL" dropped.
+Dropping trigger "TIUD_CPRT_USER_HIS_ALL"...
+...trigger "TIUD_CPRT_USER_HIS_ALL" dropped.
+Dropping trigger "TIUD_CWRH_WRH_ORDER_MASTER_TYPE_HIS_ALL"...
+...trigger "TIUD_CWRH_WRH_ORDER_MASTER_TYPE_HIS_ALL" dropped.
+Dropping trigger "TIUD_CWRH_WRH_INCOME_DETAIL_HIS_ALL"...
+...trigger "TIUD_CWRH_WRH_INCOME_DETAIL_HIS_ALL" dropped.
+Dropping trigger "TIUD_CLOC_DISTRICT_HIS_ALL"...
+...trigger "TIUD_CLOC_DISTRICT_HIS_ALL" dropped.
+Dropping trigger "TIUD_CPRT_USER_GROUP_HIS_ALL"...
+...trigger "TIUD_CPRT_USER_GROUP_HIS_ALL" dropped.
+Dropping trigger "TIUD_CWRH_WRH_INCOME_MASTER_HIS_ALL"...
+...trigger "TIUD_CWRH_WRH_INCOME_MASTER_HIS_ALL" dropped.
+Dropping trigger "TIUD_CWRH_ORDER_MASTER_REPAIR_TYPE_MASTER_HIS_ALL"...
+...trigger "TIUD_CWRH_ORDER_MASTER_REPAIR_TYPE_MASTER_HIS_ALL" dropped.
+Dropping trigger "TIUD_CLOC_LOCATION_HIS_ALL"...
+...trigger "TIUD_CLOC_LOCATION_HIS_ALL" dropped.
+Dropping trigger "TIUD_CCAR_CONDITION_HIS_ALL"...
+...trigger "TIUD_CCAR_CONDITION_HIS_ALL" dropped.
+Dropping trigger "TIUD_CWRH_WRH_ORDER_DETAIL_HIS_ALL"...
+...trigger "TIUD_CWRH_WRH_ORDER_DETAIL_HIS_ALL" dropped.
+Dropping trigger "TIUD_CLOC_LOCATION_LINK_HIS_ALL"...
+...trigger "TIUD_CLOC_LOCATION_LINK_HIS_ALL" dropped.
+Dropping trigger "TIUD_CWRH_WRH_ORDER_MASTER_HIS_ALL"...
+...trigger "TIUD_CWRH_WRH_ORDER_MASTER_HIS_ALL" dropped.
+Dropping trigger "TIUD_CLOC_LOCATION_TYPE_HIS_ALL"...
+...trigger "TIUD_CLOC_LOCATION_TYPE_HIS_ALL" dropped.
+Dropping trigger "TIUD_CCAR_TS_TYPE_RELATION_HIS_ALL"...
+...trigger "TIUD_CCAR_TS_TYPE_RELATION_HIS_ALL" dropped.
+Dropping trigger "TIUD_CCAR_REPAIR_TYPE_RELATION_HIS_ALL"...
+...trigger "TIUD_CCAR_REPAIR_TYPE_RELATION_HIS_ALL" dropped.
+Dropping trigger "TIUD_CCAR_TS_TYPE_MASTER_HIS_ALL"...
+...trigger "TIUD_CCAR_TS_TYPE_MASTER_HIS_ALL" dropped.
+Dropping trigger "TIUD_CLOC_REGION_HIS_ALL"...
+...trigger "TIUD_CLOC_REGION_HIS_ALL" dropped.
+Dropping trigger "TIUD_CDRV_MONTH_PLAN_HIS_ALL"...
+...trigger "TIUD_CDRV_MONTH_PLAN_HIS_ALL" dropped.
+Dropping trigger "TIUD_CCAR_TS_TYPE_ROUTE_DETAIL_HIS_ALL"...
+...trigger "TIUD_CCAR_TS_TYPE_ROUTE_DETAIL_HIS_ALL" dropped.
+Dropping trigger "TIUD_CDEV_DEVICE_HIS_ALL"...
+...trigger "TIUD_CDEV_DEVICE_HIS_ALL" dropped.
+Dropping trigger "TIUD_CLOC_SETTLEMENT_HIS_ALL"...
+...trigger "TIUD_CLOC_SETTLEMENT_HIS_ALL" dropped.
+Dropping trigger "TIUD_CDRV_DRIVER_PLAN_HIS_ALL"...
+...trigger "TIUD_CDRV_DRIVER_PLAN_HIS_ALL" dropped.
+Dropping trigger "TIUD_CCAR_TS_TYPE_ROUTE_MASTER_HIS_ALL"...
+...trigger "TIUD_CCAR_TS_TYPE_ROUTE_MASTER_HIS_ALL" dropped.
+Dropping trigger "TIUD_CDRV_CONTROL_TYPE_HIS_ALL"...
+...trigger "TIUD_CDRV_CONTROL_TYPE_HIS_ALL" dropped.
+Dropping trigger "TIUD_CPRT_EMPLOYEE_TYPE_HIS_ALL"...
+...trigger "TIUD_CPRT_EMPLOYEE_TYPE_HIS_ALL" dropped.
+Dropping trigger "TIUD_CLOC_STATE_HIS_ALL"...
+...trigger "TIUD_CLOC_STATE_HIS_ALL" dropped.
+Dropping trigger "TIUD_CRPR_REPAIR_TYPE_MASTER_HIS_ALL"...
+...trigger "TIUD_CRPR_REPAIR_TYPE_MASTER_HIS_ALL" dropped.
+Dropping trigger "TIUD_CDRV_DRIVER_CONTROL_HIS_ALL"...
+...trigger "TIUD_CDRV_DRIVER_CONTROL_HIS_ALL" dropped.
+Dropping trigger "TIUD_CPRT_EMPLOYEE_EVENT_HIS_ALL"...
+...trigger "TIUD_CPRT_EMPLOYEE_EVENT_HIS_ALL" dropped.
+Dropping trigger "TIUD_CLOC_STREET_HIS_ALL"...
+...trigger "TIUD_CLOC_STREET_HIS_ALL" dropped.
+Dropping trigger "TIUD_CRPR_REPAIR_ZONE_DETAIL_HIS_ALL"...
+...trigger "TIUD_CRPR_REPAIR_ZONE_DETAIL_HIS_ALL" dropped.
+Dropping trigger "TIUD_CDRV_DRIVER_LIST_HIS_ALL"...
+...trigger "TIUD_CDRV_DRIVER_LIST_HIS_ALL" dropped.
+Dropping trigger "TIUD_CUSR_AUTHENTICATION_HIS_ALL"...
+...trigger "TIUD_CUSR_AUTHENTICATION_HIS_ALL" dropped.
+Dropping trigger "TIUD_CNOT_NOTE_HIS_ALL"...
+...trigger "TIUD_CNOT_NOTE_HIS_ALL" dropped.
+Dropping trigger "TIUD_CRPR_REPAIR_ZONE_MASTER_HIS_ALL"...
+...trigger "TIUD_CRPR_REPAIR_ZONE_MASTER_HIS_ALL" dropped.
+Dropping trigger "TIUD_CRPR_REPAIR_BILL_MASTER_HIS_ALL"...
+...trigger "TIUD_CRPR_REPAIR_BILL_MASTER_HIS_ALL" dropped.
+Dropping trigger "TIUD_CNOT_NOTE_LINK_HIS_ALL"...
+...trigger "TIUD_CNOT_NOTE_LINK_HIS_ALL" dropped.
+Dropping trigger "TIUD_CWRH_GOOD_CATEGORY_HIS_ALL"...
+...trigger "TIUD_CWRH_GOOD_CATEGORY_HIS_ALL" dropped.
+Dropping trigger "TIUD_CCAR_FUEL_MODEL_HIS_ALL"...
+...trigger "TIUD_CCAR_FUEL_MODEL_HIS_ALL" dropped.
+Dropping trigger "TIUD_CDRV_DRIVER_LIST_STATE_HIS_ALL"...
+...trigger "TIUD_CDRV_DRIVER_LIST_STATE_HIS_ALL" dropped.
+Dropping trigger "TIUD_CDRV_DRIVER_PLAN_DETAIL2_HIS_ALL"...
+...trigger "TIUD_CDRV_DRIVER_PLAN_DETAIL2_HIS_ALL" dropped.
+Dropping trigger "TIUD_CNOT_NOTE_TYPE_HIS_ALL"...
+...trigger "TIUD_CNOT_NOTE_TYPE_HIS_ALL" dropped.
+Dropping trigger "TIUD_CRPR_REPAIR_TYPE_DETAIL_HIS_ALL"...
+...trigger "TIUD_CRPR_REPAIR_TYPE_DETAIL_HIS_ALL" dropped.
+Dropping trigger "TIUD_CRPR_REPAIR_BILL_DETAIL_HIS_ALL"...
+...trigger "TIUD_CRPR_REPAIR_BILL_DETAIL_HIS_ALL" dropped.
+Dropping trigger "TIUD_CCAR_CAR_HIS_ALL"...
+...trigger "TIUD_CCAR_CAR_HIS_ALL" dropped.
+Dropping trigger "TIUD_CWRH_GOOD_CATEGORY_PRICE_HIS_ALL"...
+...trigger "TIUD_CWRH_GOOD_CATEGORY_PRICE_HIS_ALL" dropped.
+Dropping trigger "TIUD_CDRV_DRIVER_LIST_TYPE_HIS_ALL"...
+...trigger "TIUD_CDRV_DRIVER_LIST_TYPE_HIS_ALL" dropped.
+Dropping trigger "TIUD_CSYS_CONST_HIS_ALL"...
+...trigger "TIUD_CSYS_CONST_HIS_ALL" dropped.
+ 
+===============================================================================
+=          Starting script dc_00396.sql                                =
+===============================================================================
+ 
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 4
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 5
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 6
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 7
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 8
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 9
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 10
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 11
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 12
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 13
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 14
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 15
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 16
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 17
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 18
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 19
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 20
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 21
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 22
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 23
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 24
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 25
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 26
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 27
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 28
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 29
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 30
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 31
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 32
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 33
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 34
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 35
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 36
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 37
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 38
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 39
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 40
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 41
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 42
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 43
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 44
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 45
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 46
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 47
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 48
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 49
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 50
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 51
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 52
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 53
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 54
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 55
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 56
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 57
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 58
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 59
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 60
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 61
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 62
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 63
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 64
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 65
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 66
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 67
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 68
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 69
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+ 
+===============================================================================
+=          Registering devchange                                              =
+===============================================================================
+ 
+Registering devchange.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 2
+Violation of PRIMARY KEY constraint 'SYS_DC_PK'. Cannot insert duplicate key in object 'dbo.sys_dc'.
+The statement has been terminated.
+ 
+finish_time            
+-----------------------
+2009-04-02 12:57:05.700
+
+(1 rows affected)
+ 
+===============================================================================
+=          Script dc_00396.sql finished                                =
+===============================================================================
+ 
+ 
+===============================================================================
+=          Starting script _add_chis_all_objects.sql                          =
+===============================================================================
+ 

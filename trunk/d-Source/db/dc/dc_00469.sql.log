@@ -1,0 +1,47 @@
+'instance_name' scripting variable not defined.
+Changed database context to 'ANGEL_TO_001_TEST4'.
+ 
+===============================================================================
+=          Starting script _drop_chis_all_objects.sql                         =
+===============================================================================
+ 
+ 
+===============================================================================
+=          Starting script dc_00469.sql                                =
+===============================================================================
+ 
+Msg 2705, Level 16, State 4, Server POLUS-LAPTOP, Line 3
+Column names in each table must be unique. Column name 'sent_addtnl_ts' in table 'dbo.CWRH_ORDER_MASTER_REPAIR_TYPE_MASTER' is specified more than once.
+Msg 15233, Level 16, State 1, Server POLUS-LAPTOP, Procedure sp_addextendedproperty, Line 38
+Property cannot be added. Property 'MS_Description' already exists for 'dbo.CWRH_ORDER_MASTER_REPAIR_TYPE_MASTER.sent_addtnl_ts'.
+Msg 1913, Level 16, State 1, Server POLUS-LAPTOP, Line 2
+The operation failed because an index or statistics with name 'i_wrh_order_master_repair_type_master_sent_addtnl_ts' already exists on table 'dbo.CWRH_ORDER_MASTER_REPAIR_TYPE_MASTER'.
+Msg 2714, Level 16, State 3, Server POLUS-LAPTOP, Procedure utfVWFE_Inquire_addtnl_ts_by_car_id, Line 76
+There is already an object named 'utfVWFE_Inquire_addtnl_ts_by_car_id' in the database.
+Msg 2705, Level 16, State 4, Server POLUS-LAPTOP, Line 3
+Column names in each table must be unique. Column name 'addtnl_ts' in table 'dbo.CWRH_ORDER_MASTER_REPAIR_TYPE_MASTER' is specified more than once.
+Msg 15233, Level 16, State 1, Server POLUS-LAPTOP, Procedure sp_addextendedproperty, Line 38
+Property cannot be added. Property 'MS_Description' already exists for 'dbo.CWRH_ORDER_MASTER_REPAIR_TYPE_MASTER.addtnl_ts'.
+Msg 1913, Level 16, State 1, Server POLUS-LAPTOP, Line 2
+The operation failed because an index or statistics with name 'i_wrh_order_master_repair_type_master_addtnl_ts' already exists on table 'dbo.CWRH_ORDER_MASTER_REPAIR_TYPE_MASTER'.
+Cannot add rows to sysdepends for the current object because it depends on the missing object 'dbo.utfVWFE_select_addtnl_ts_by_car_id'. The object will still be created.
+ 
+===============================================================================
+=          Registering devchange                                              =
+===============================================================================
+ 
+Registering devchange.
+Msg 2627, Level 14, State 1, Server POLUS-LAPTOP, Line 2
+Violation of PRIMARY KEY constraint 'SYS_DC_PK'. Cannot insert duplicate key in object 'dbo.sys_dc'.
+The statement has been terminated.
+ 
+finish_time            
+-----------------------
+2009-05-28 12:57:57.273
+
+(1 rows affected)
+ 
+===============================================================================
+=          Script dc_00469.sql finished                                =
+===============================================================================
+ 

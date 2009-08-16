@@ -1,0 +1,557 @@
+'instance_name' scripting variable not defined.
+'dba_user_pwd' scripting variable not defined.
+Changed database context to 'ANGEL_TO_001_TEST4'.
+ 
+===============================================================================
+=          Starting script _drop_chis_all_objects.sql                         =
+===============================================================================
+ 
+Dropping trigger "TIUD_CPRT_EMPLOYEE_TYPE_HIS_ALL"...
+...trigger "TIUD_CPRT_EMPLOYEE_TYPE_HIS_ALL" dropped.
+Dropping trigger "TIUD_CLOC_STATE_HIS_ALL"...
+...trigger "TIUD_CLOC_STATE_HIS_ALL" dropped.
+Dropping trigger "TIUD_CRPR_REPAIR_TYPE_MASTER_HIS_ALL"...
+...trigger "TIUD_CRPR_REPAIR_TYPE_MASTER_HIS_ALL" dropped.
+Dropping trigger "TIUD_CDRV_DRIVER_CONTROL_HIS_ALL"...
+...trigger "TIUD_CDRV_DRIVER_CONTROL_HIS_ALL" dropped.
+Dropping trigger "TIUD_CPRT_EMPLOYEE_EVENT_HIS_ALL"...
+...trigger "TIUD_CPRT_EMPLOYEE_EVENT_HIS_ALL" dropped.
+Dropping trigger "TIUD_CLOC_STREET_HIS_ALL"...
+...trigger "TIUD_CLOC_STREET_HIS_ALL" dropped.
+Dropping trigger "TIUD_CRPR_REPAIR_ZONE_DETAIL_HIS_ALL"...
+...trigger "TIUD_CRPR_REPAIR_ZONE_DETAIL_HIS_ALL" dropped.
+Dropping trigger "TIUD_CDRV_DRIVER_LIST_HIS_ALL"...
+...trigger "TIUD_CDRV_DRIVER_LIST_HIS_ALL" dropped.
+Dropping trigger "TIUD_CUSR_AUTHENTICATION_HIS_ALL"...
+...trigger "TIUD_CUSR_AUTHENTICATION_HIS_ALL" dropped.
+Dropping trigger "TIUD_CNOT_NOTE_HIS_ALL"...
+...trigger "TIUD_CNOT_NOTE_HIS_ALL" dropped.
+Dropping trigger "TIUD_CRPR_REPAIR_ZONE_MASTER_HIS_ALL"...
+...trigger "TIUD_CRPR_REPAIR_ZONE_MASTER_HIS_ALL" dropped.
+Dropping trigger "TIUD_CRPR_REPAIR_BILL_MASTER_HIS_ALL"...
+...trigger "TIUD_CRPR_REPAIR_BILL_MASTER_HIS_ALL" dropped.
+Dropping trigger "TIUD_CNOT_NOTE_LINK_HIS_ALL"...
+...trigger "TIUD_CNOT_NOTE_LINK_HIS_ALL" dropped.
+Dropping trigger "TIUD_CWRH_GOOD_CATEGORY_HIS_ALL"...
+...trigger "TIUD_CWRH_GOOD_CATEGORY_HIS_ALL" dropped.
+Dropping trigger "TIUD_CCAR_FUEL_MODEL_HIS_ALL"...
+...trigger "TIUD_CCAR_FUEL_MODEL_HIS_ALL" dropped.
+Dropping trigger "TIUD_CDRV_DRIVER_LIST_STATE_HIS_ALL"...
+...trigger "TIUD_CDRV_DRIVER_LIST_STATE_HIS_ALL" dropped.
+Dropping trigger "TIUD_CDRV_DRIVER_PLAN_DETAIL2_HIS_ALL"...
+...trigger "TIUD_CDRV_DRIVER_PLAN_DETAIL2_HIS_ALL" dropped.
+Dropping trigger "TIUD_CNOT_NOTE_TYPE_HIS_ALL"...
+...trigger "TIUD_CNOT_NOTE_TYPE_HIS_ALL" dropped.
+Dropping trigger "TIUD_CRPR_REPAIR_TYPE_DETAIL_HIS_ALL"...
+...trigger "TIUD_CRPR_REPAIR_TYPE_DETAIL_HIS_ALL" dropped.
+Dropping trigger "TIUD_CRPR_REPAIR_BILL_DETAIL_HIS_ALL"...
+...trigger "TIUD_CRPR_REPAIR_BILL_DETAIL_HIS_ALL" dropped.
+Dropping trigger "TIUD_CCAR_CAR_HIS_ALL"...
+...trigger "TIUD_CCAR_CAR_HIS_ALL" dropped.
+Dropping trigger "TIUD_CWRH_GOOD_CATEGORY_PRICE_HIS_ALL"...
+...trigger "TIUD_CWRH_GOOD_CATEGORY_PRICE_HIS_ALL" dropped.
+Dropping trigger "TIUD_CDRV_DRIVER_LIST_TYPE_HIS_ALL"...
+...trigger "TIUD_CDRV_DRIVER_LIST_TYPE_HIS_ALL" dropped.
+Dropping trigger "TIUD_CCAR_CAR_KIND_HIS_ALL"...
+...trigger "TIUD_CCAR_CAR_KIND_HIS_ALL" dropped.
+Dropping trigger "TIUD_CWRH_WRH_DEMAND_MASTER_TYPE_HIS_ALL"...
+...trigger "TIUD_CWRH_WRH_DEMAND_MASTER_TYPE_HIS_ALL" dropped.
+Dropping trigger "TIUD_CPRT_EMPLOYEE_HIS_ALL"...
+...trigger "TIUD_CPRT_EMPLOYEE_HIS_ALL" dropped.
+Dropping trigger "TIUD_CWRH_GOOD_CATEGORY_TYPE_HIS_ALL"...
+...trigger "TIUD_CWRH_GOOD_CATEGORY_TYPE_HIS_ALL" dropped.
+Dropping trigger "TIUD_CCAR_CAR_MARK_HIS_ALL"...
+...trigger "TIUD_CCAR_CAR_MARK_HIS_ALL" dropped.
+Dropping trigger "TIUD_CDRV_TRAILER_HIS_ALL"...
+...trigger "TIUD_CDRV_TRAILER_HIS_ALL" dropped.
+Dropping trigger "TIUD_CPRT_GROUP_HIS_ALL"...
+...trigger "TIUD_CPRT_GROUP_HIS_ALL" dropped.
+Dropping trigger "TIUD_CWRH_WAREHOUSE_ITEM_HIS_ALL"...
+...trigger "TIUD_CWRH_WAREHOUSE_ITEM_HIS_ALL" dropped.
+Dropping trigger "TIUD_CCAR_CAR_MODEL_HIS_ALL"...
+...trigger "TIUD_CCAR_CAR_MODEL_HIS_ALL" dropped.
+Dropping trigger "TIUD_CPRT_ORGANIZATION_HIS_ALL"...
+...trigger "TIUD_CPRT_ORGANIZATION_HIS_ALL" dropped.
+Dropping trigger "TIUD_CWRH_WAREHOUSE_TYPE_HIS_ALL"...
+...trigger "TIUD_CWRH_WAREHOUSE_TYPE_HIS_ALL" dropped.
+Dropping trigger "TIUD_CCAR_CAR_STATE_HIS_ALL"...
+...trigger "TIUD_CCAR_CAR_STATE_HIS_ALL" dropped.
+Dropping trigger "TIUD_CRPR_REPAIR_TYPE_MASTER_KIND_HIS_ALL"...
+...trigger "TIUD_CRPR_REPAIR_TYPE_MASTER_KIND_HIS_ALL" dropped.
+Dropping trigger "TIUD_CDRV_DRIVER_PLAN_DETAIL_HIS_ALL"...
+...trigger "TIUD_CDRV_DRIVER_PLAN_DETAIL_HIS_ALL" dropped.
+Dropping trigger "TIUD_CPRT_PARTY_HIS_ALL"...
+...trigger "TIUD_CPRT_PARTY_HIS_ALL" dropped.
+Dropping trigger "TIUD_CCAR_CAR_TYPE_HIS_ALL"...
+...trigger "TIUD_CCAR_CAR_TYPE_HIS_ALL" dropped.
+Dropping trigger "TIUD_CLOC_ABBREVIATION_HIS_ALL"...
+...trigger "TIUD_CLOC_ABBREVIATION_HIS_ALL" dropped.
+Dropping trigger "TIUD_CCAR_CAR_RETURN_REASON_TYPE_HIS_ALL"...
+...trigger "TIUD_CCAR_CAR_RETURN_REASON_TYPE_HIS_ALL" dropped.
+Dropping trigger "TIUD_CPRT_PERSON_HIS_ALL"...
+...trigger "TIUD_CPRT_PERSON_HIS_ALL" dropped.
+Dropping trigger "TIUD_CWRH_WRH_DEMAND_MASTER_HIS_ALL"...
+...trigger "TIUD_CWRH_WRH_DEMAND_MASTER_HIS_ALL" dropped.
+Dropping trigger "TIUD_CCAR_FUEL_TYPE_HIS_ALL"...
+...trigger "TIUD_CCAR_FUEL_TYPE_HIS_ALL" dropped.
+Dropping trigger "TIUD_CLOC_COUNTRY_HIS_ALL"...
+...trigger "TIUD_CLOC_COUNTRY_HIS_ALL" dropped.
+Dropping trigger "TIUD_CCAR_CAR_RETURN_HIS_ALL"...
+...trigger "TIUD_CCAR_CAR_RETURN_HIS_ALL" dropped.
+Dropping trigger "TIUD_CCAR_ADDTNL_TS_TYPE_MASTER_HIS_ALL"...
+...trigger "TIUD_CCAR_ADDTNL_TS_TYPE_MASTER_HIS_ALL" dropped.
+Dropping trigger "TIUD_CPRT_USER_HIS_ALL"...
+...trigger "TIUD_CPRT_USER_HIS_ALL" dropped.
+Dropping trigger "TIUD_CWRH_WRH_ORDER_MASTER_TYPE_HIS_ALL"...
+...trigger "TIUD_CWRH_WRH_ORDER_MASTER_TYPE_HIS_ALL" dropped.
+Dropping trigger "TIUD_CWRH_WRH_INCOME_DETAIL_HIS_ALL"...
+...trigger "TIUD_CWRH_WRH_INCOME_DETAIL_HIS_ALL" dropped.
+Dropping trigger "TIUD_CLOC_DISTRICT_HIS_ALL"...
+...trigger "TIUD_CLOC_DISTRICT_HIS_ALL" dropped.
+Dropping trigger "TIUD_CPRT_USER_GROUP_HIS_ALL"...
+...trigger "TIUD_CPRT_USER_GROUP_HIS_ALL" dropped.
+Dropping trigger "TIUD_CWRH_WRH_INCOME_MASTER_HIS_ALL"...
+...trigger "TIUD_CWRH_WRH_INCOME_MASTER_HIS_ALL" dropped.
+Dropping trigger "TIUD_CWRH_ORDER_MASTER_REPAIR_TYPE_MASTER_HIS_ALL"...
+...trigger "TIUD_CWRH_ORDER_MASTER_REPAIR_TYPE_MASTER_HIS_ALL" dropped.
+Dropping trigger "TIUD_CLOC_LOCATION_HIS_ALL"...
+...trigger "TIUD_CLOC_LOCATION_HIS_ALL" dropped.
+Dropping trigger "TIUD_CCAR_CONDITION_HIS_ALL"...
+...trigger "TIUD_CCAR_CONDITION_HIS_ALL" dropped.
+Dropping trigger "TIUD_CWRH_WRH_ORDER_DETAIL_HIS_ALL"...
+...trigger "TIUD_CWRH_WRH_ORDER_DETAIL_HIS_ALL" dropped.
+Dropping trigger "TIUD_CLOC_LOCATION_LINK_HIS_ALL"...
+...trigger "TIUD_CLOC_LOCATION_LINK_HIS_ALL" dropped.
+Dropping trigger "TIUD_CWRH_WRH_ORDER_MASTER_HIS_ALL"...
+...trigger "TIUD_CWRH_WRH_ORDER_MASTER_HIS_ALL" dropped.
+Dropping trigger "TIUD_CLOC_LOCATION_TYPE_HIS_ALL"...
+...trigger "TIUD_CLOC_LOCATION_TYPE_HIS_ALL" dropped.
+Dropping trigger "TIUD_CCAR_TS_TYPE_RELATION_HIS_ALL"...
+...trigger "TIUD_CCAR_TS_TYPE_RELATION_HIS_ALL" dropped.
+Dropping trigger "TIUD_CCAR_REPAIR_TYPE_RELATION_HIS_ALL"...
+...trigger "TIUD_CCAR_REPAIR_TYPE_RELATION_HIS_ALL" dropped.
+Dropping trigger "TIUD_CCAR_TS_TYPE_MASTER_HIS_ALL"...
+...trigger "TIUD_CCAR_TS_TYPE_MASTER_HIS_ALL" dropped.
+Dropping trigger "TIUD_CLOC_REGION_HIS_ALL"...
+...trigger "TIUD_CLOC_REGION_HIS_ALL" dropped.
+Dropping trigger "TIUD_CDRV_MONTH_PLAN_HIS_ALL"...
+...trigger "TIUD_CDRV_MONTH_PLAN_HIS_ALL" dropped.
+Dropping trigger "TIUD_CCAR_TS_TYPE_ROUTE_DETAIL_HIS_ALL"...
+...trigger "TIUD_CCAR_TS_TYPE_ROUTE_DETAIL_HIS_ALL" dropped.
+Dropping trigger "TIUD_CDEV_DEVICE_HIS_ALL"...
+...trigger "TIUD_CDEV_DEVICE_HIS_ALL" dropped.
+Dropping trigger "TIUD_CLOC_SETTLEMENT_HIS_ALL"...
+...trigger "TIUD_CLOC_SETTLEMENT_HIS_ALL" dropped.
+Dropping trigger "TIUD_CDRV_DRIVER_PLAN_HIS_ALL"...
+...trigger "TIUD_CDRV_DRIVER_PLAN_HIS_ALL" dropped.
+Dropping trigger "TIUD_CCAR_TS_TYPE_ROUTE_MASTER_HIS_ALL"...
+...trigger "TIUD_CCAR_TS_TYPE_ROUTE_MASTER_HIS_ALL" dropped.
+Dropping trigger "TIUD_CDRV_CONTROL_TYPE_HIS_ALL"...
+...trigger "TIUD_CDRV_CONTROL_TYPE_HIS_ALL" dropped.
+Dropping trigger "TIUD_CSYS_CONST_HIS_ALL"...
+...trigger "TIUD_CSYS_CONST_HIS_ALL" dropped.
+ 
+===============================================================================
+=          Starting script dc_00400.sql                                =
+===============================================================================
+ 
+Msg 2601, Level 14, State 1, Server SRV-TS, Line 4
+Cannot insert duplicate key row in object 'dbo.CCAR_CAR_RETURN_REASON_TYPE' with unique index 'u_CCAR_CAR_RETURN_REASON_TYPE_short_name'.
+The statement has been terminated.
+ 
+===============================================================================
+=          Registering devchange                                              =
+===============================================================================
+ 
+Registering devchange.
+
+(1 rows affected)
+ 
+finish_time            
+-----------------------
+2009-04-02 12:58:10.967
+
+(1 rows affected)
+ 
+===============================================================================
+=          Script dc_00400.sql finished                                =
+===============================================================================
+ 
+ 
+===============================================================================
+=          Starting script _add_chis_all_objects.sql                          =
+===============================================================================
+ 
+Adding trigger dbo.TIUD_CWRH_WRH_DEMAND_MASTER_HIS_ALL ...
+...trigger dbo.TIUD_CWRH_WRH_DEMAND_MASTER_HIS_ALL added.
+           
+-----------
+          1
+Adding trigger dbo.TIUD_CCAR_FUEL_TYPE_HIS_ALL ...
+...trigger dbo.TIUD_CCAR_FUEL_TYPE_HIS_ALL added.
+           
+-----------
+          2
+Adding trigger dbo.TIUD_CLOC_COUNTRY_HIS_ALL ...
+...trigger dbo.TIUD_CLOC_COUNTRY_HIS_ALL added.
+           
+-----------
+          3
+Adding trigger dbo.TIUD_CCAR_CAR_RETURN_HIS_ALL ...
+...trigger dbo.TIUD_CCAR_CAR_RETURN_HIS_ALL added.
+           
+-----------
+          4
+Adding trigger dbo.TIUD_CCAR_ADDTNL_TS_TYPE_MASTER_HIS_ALL ...
+...trigger dbo.TIUD_CCAR_ADDTNL_TS_TYPE_MASTER_HIS_ALL added.
+           
+-----------
+          5
+Adding trigger dbo.TIUD_CPRT_USER_HIS_ALL ...
+...trigger dbo.TIUD_CPRT_USER_HIS_ALL added.
+           
+-----------
+          6
+Adding trigger dbo.TIUD_CWRH_WRH_ORDER_MASTER_TYPE_HIS_ALL ...
+...trigger dbo.TIUD_CWRH_WRH_ORDER_MASTER_TYPE_HIS_ALL added.
+           
+-----------
+          7
+Adding trigger dbo.TIUD_CWRH_WRH_INCOME_DETAIL_HIS_ALL ...
+...trigger dbo.TIUD_CWRH_WRH_INCOME_DETAIL_HIS_ALL added.
+           
+-----------
+          8
+Adding trigger dbo.TIUD_CLOC_DISTRICT_HIS_ALL ...
+...trigger dbo.TIUD_CLOC_DISTRICT_HIS_ALL added.
+           
+-----------
+          9
+Adding trigger dbo.TIUD_CPRT_USER_GROUP_HIS_ALL ...
+...trigger dbo.TIUD_CPRT_USER_GROUP_HIS_ALL added.
+           
+-----------
+         10
+Adding trigger dbo.TIUD_CWRH_WRH_INCOME_MASTER_HIS_ALL ...
+...trigger dbo.TIUD_CWRH_WRH_INCOME_MASTER_HIS_ALL added.
+           
+-----------
+         11
+Adding trigger dbo.TIUD_CWRH_ORDER_MASTER_REPAIR_TYPE_MASTER_HIS_ALL ...
+...trigger dbo.TIUD_CWRH_ORDER_MASTER_REPAIR_TYPE_MASTER_HIS_ALL added.
+           
+-----------
+         12
+Adding trigger dbo.TIUD_CLOC_LOCATION_HIS_ALL ...
+...trigger dbo.TIUD_CLOC_LOCATION_HIS_ALL added.
+           
+-----------
+         13
+Adding trigger dbo.TIUD_CCAR_CONDITION_HIS_ALL ...
+...trigger dbo.TIUD_CCAR_CONDITION_HIS_ALL added.
+           
+-----------
+         14
+Adding trigger dbo.TIUD_CWRH_WRH_ORDER_DETAIL_HIS_ALL ...
+...trigger dbo.TIUD_CWRH_WRH_ORDER_DETAIL_HIS_ALL added.
+           
+-----------
+         15
+Adding trigger dbo.TIUD_CLOC_LOCATION_LINK_HIS_ALL ...
+...trigger dbo.TIUD_CLOC_LOCATION_LINK_HIS_ALL added.
+           
+-----------
+         16
+Adding trigger dbo.TIUD_CWRH_WRH_ORDER_MASTER_HIS_ALL ...
+...trigger dbo.TIUD_CWRH_WRH_ORDER_MASTER_HIS_ALL added.
+           
+-----------
+         17
+Adding trigger dbo.TIUD_CLOC_LOCATION_TYPE_HIS_ALL ...
+...trigger dbo.TIUD_CLOC_LOCATION_TYPE_HIS_ALL added.
+           
+-----------
+         18
+Adding trigger dbo.TIUD_CCAR_TS_TYPE_RELATION_HIS_ALL ...
+...trigger dbo.TIUD_CCAR_TS_TYPE_RELATION_HIS_ALL added.
+           
+-----------
+         19
+Adding trigger dbo.TIUD_CCAR_REPAIR_TYPE_RELATION_HIS_ALL ...
+...trigger dbo.TIUD_CCAR_REPAIR_TYPE_RELATION_HIS_ALL added.
+           
+-----------
+         20
+Adding trigger dbo.TIUD_CCAR_TS_TYPE_MASTER_HIS_ALL ...
+...trigger dbo.TIUD_CCAR_TS_TYPE_MASTER_HIS_ALL added.
+           
+-----------
+         21
+Adding trigger dbo.TIUD_CLOC_REGION_HIS_ALL ...
+...trigger dbo.TIUD_CLOC_REGION_HIS_ALL added.
+           
+-----------
+         22
+Adding trigger dbo.TIUD_CDRV_MONTH_PLAN_HIS_ALL ...
+...trigger dbo.TIUD_CDRV_MONTH_PLAN_HIS_ALL added.
+           
+-----------
+         23
+Adding trigger dbo.TIUD_CCAR_TS_TYPE_ROUTE_DETAIL_HIS_ALL ...
+...trigger dbo.TIUD_CCAR_TS_TYPE_ROUTE_DETAIL_HIS_ALL added.
+           
+-----------
+         24
+Adding trigger dbo.TIUD_CDEV_DEVICE_HIS_ALL ...
+...trigger dbo.TIUD_CDEV_DEVICE_HIS_ALL added.
+           
+-----------
+         25
+Adding trigger dbo.TIUD_CLOC_SETTLEMENT_HIS_ALL ...
+...trigger dbo.TIUD_CLOC_SETTLEMENT_HIS_ALL added.
+           
+-----------
+         26
+Adding trigger dbo.TIUD_CDRV_DRIVER_PLAN_HIS_ALL ...
+...trigger dbo.TIUD_CDRV_DRIVER_PLAN_HIS_ALL added.
+           
+-----------
+         27
+Adding trigger dbo.TIUD_CCAR_TS_TYPE_ROUTE_MASTER_HIS_ALL ...
+...trigger dbo.TIUD_CCAR_TS_TYPE_ROUTE_MASTER_HIS_ALL added.
+           
+-----------
+         28
+Adding trigger dbo.TIUD_CDRV_CONTROL_TYPE_HIS_ALL ...
+...trigger dbo.TIUD_CDRV_CONTROL_TYPE_HIS_ALL added.
+           
+-----------
+         29
+Adding trigger dbo.TIUD_CPRT_EMPLOYEE_TYPE_HIS_ALL ...
+...trigger dbo.TIUD_CPRT_EMPLOYEE_TYPE_HIS_ALL added.
+           
+-----------
+         30
+Adding trigger dbo.TIUD_CLOC_STATE_HIS_ALL ...
+...trigger dbo.TIUD_CLOC_STATE_HIS_ALL added.
+           
+-----------
+         31
+Adding trigger dbo.TIUD_CRPR_REPAIR_TYPE_MASTER_HIS_ALL ...
+...trigger dbo.TIUD_CRPR_REPAIR_TYPE_MASTER_HIS_ALL added.
+           
+-----------
+         32
+Adding trigger dbo.TIUD_CDRV_DRIVER_CONTROL_HIS_ALL ...
+...trigger dbo.TIUD_CDRV_DRIVER_CONTROL_HIS_ALL added.
+           
+-----------
+         33
+Adding trigger dbo.TIUD_CPRT_EMPLOYEE_EVENT_HIS_ALL ...
+...trigger dbo.TIUD_CPRT_EMPLOYEE_EVENT_HIS_ALL added.
+           
+-----------
+         34
+Adding trigger dbo.TIUD_CLOC_STREET_HIS_ALL ...
+...trigger dbo.TIUD_CLOC_STREET_HIS_ALL added.
+           
+-----------
+         35
+Adding trigger dbo.TIUD_CRPR_REPAIR_ZONE_DETAIL_HIS_ALL ...
+...trigger dbo.TIUD_CRPR_REPAIR_ZONE_DETAIL_HIS_ALL added.
+           
+-----------
+         36
+Adding trigger dbo.TIUD_CDRV_DRIVER_LIST_HIS_ALL ...
+...trigger dbo.TIUD_CDRV_DRIVER_LIST_HIS_ALL added.
+           
+-----------
+         37
+Adding trigger dbo.TIUD_CUSR_AUTHENTICATION_HIS_ALL ...
+...trigger dbo.TIUD_CUSR_AUTHENTICATION_HIS_ALL added.
+           
+-----------
+         38
+Adding trigger dbo.TIUD_CNOT_NOTE_HIS_ALL ...
+...trigger dbo.TIUD_CNOT_NOTE_HIS_ALL added.
+           
+-----------
+         39
+Adding trigger dbo.TIUD_CRPR_REPAIR_ZONE_MASTER_HIS_ALL ...
+...trigger dbo.TIUD_CRPR_REPAIR_ZONE_MASTER_HIS_ALL added.
+           
+-----------
+         40
+Adding trigger dbo.TIUD_CRPR_REPAIR_BILL_MASTER_HIS_ALL ...
+...trigger dbo.TIUD_CRPR_REPAIR_BILL_MASTER_HIS_ALL added.
+           
+-----------
+         41
+Adding trigger dbo.TIUD_CNOT_NOTE_LINK_HIS_ALL ...
+...trigger dbo.TIUD_CNOT_NOTE_LINK_HIS_ALL added.
+           
+-----------
+         42
+Adding trigger dbo.TIUD_CWRH_GOOD_CATEGORY_HIS_ALL ...
+...trigger dbo.TIUD_CWRH_GOOD_CATEGORY_HIS_ALL added.
+           
+-----------
+         43
+Adding trigger dbo.TIUD_CCAR_FUEL_MODEL_HIS_ALL ...
+...trigger dbo.TIUD_CCAR_FUEL_MODEL_HIS_ALL added.
+           
+-----------
+         44
+Adding trigger dbo.TIUD_CDRV_DRIVER_LIST_STATE_HIS_ALL ...
+...trigger dbo.TIUD_CDRV_DRIVER_LIST_STATE_HIS_ALL added.
+           
+-----------
+         45
+Adding trigger dbo.TIUD_CDRV_DRIVER_PLAN_DETAIL2_HIS_ALL ...
+...trigger dbo.TIUD_CDRV_DRIVER_PLAN_DETAIL2_HIS_ALL added.
+           
+-----------
+         46
+Adding trigger dbo.TIUD_CNOT_NOTE_TYPE_HIS_ALL ...
+...trigger dbo.TIUD_CNOT_NOTE_TYPE_HIS_ALL added.
+           
+-----------
+         47
+Adding trigger dbo.TIUD_CRPR_REPAIR_TYPE_DETAIL_HIS_ALL ...
+...trigger dbo.TIUD_CRPR_REPAIR_TYPE_DETAIL_HIS_ALL added.
+           
+-----------
+         48
+Adding trigger dbo.TIUD_CRPR_REPAIR_BILL_DETAIL_HIS_ALL ...
+...trigger dbo.TIUD_CRPR_REPAIR_BILL_DETAIL_HIS_ALL added.
+           
+-----------
+         49
+Adding trigger dbo.TIUD_CCAR_CAR_HIS_ALL ...
+...trigger dbo.TIUD_CCAR_CAR_HIS_ALL added.
+           
+-----------
+         50
+Adding trigger dbo.TIUD_CWRH_GOOD_CATEGORY_PRICE_HIS_ALL ...
+...trigger dbo.TIUD_CWRH_GOOD_CATEGORY_PRICE_HIS_ALL added.
+           
+-----------
+         51
+Adding trigger dbo.TIUD_CDRV_DRIVER_LIST_TYPE_HIS_ALL ...
+...trigger dbo.TIUD_CDRV_DRIVER_LIST_TYPE_HIS_ALL added.
+           
+-----------
+         52
+Adding trigger dbo.TIUD_CCAR_CAR_KIND_HIS_ALL ...
+...trigger dbo.TIUD_CCAR_CAR_KIND_HIS_ALL added.
+           
+-----------
+         53
+Adding trigger dbo.TIUD_CWRH_WRH_DEMAND_MASTER_TYPE_HIS_ALL ...
+...trigger dbo.TIUD_CWRH_WRH_DEMAND_MASTER_TYPE_HIS_ALL added.
+           
+-----------
+         54
+Adding trigger dbo.TIUD_CPRT_EMPLOYEE_HIS_ALL ...
+...trigger dbo.TIUD_CPRT_EMPLOYEE_HIS_ALL added.
+           
+-----------
+         55
+Adding trigger dbo.TIUD_CWRH_GOOD_CATEGORY_TYPE_HIS_ALL ...
+...trigger dbo.TIUD_CWRH_GOOD_CATEGORY_TYPE_HIS_ALL added.
+           
+-----------
+         56
+Adding trigger dbo.TIUD_CCAR_CAR_MARK_HIS_ALL ...
+...trigger dbo.TIUD_CCAR_CAR_MARK_HIS_ALL added.
+           
+-----------
+         57
+Adding trigger dbo.TIUD_CDRV_TRAILER_HIS_ALL ...
+...trigger dbo.TIUD_CDRV_TRAILER_HIS_ALL added.
+           
+-----------
+         58
+Adding trigger dbo.TIUD_CPRT_GROUP_HIS_ALL ...
+...trigger dbo.TIUD_CPRT_GROUP_HIS_ALL added.
+           
+-----------
+         59
+Adding trigger dbo.TIUD_CWRH_WAREHOUSE_ITEM_HIS_ALL ...
+...trigger dbo.TIUD_CWRH_WAREHOUSE_ITEM_HIS_ALL added.
+           
+-----------
+         60
+Adding trigger dbo.TIUD_CCAR_CAR_MODEL_HIS_ALL ...
+...trigger dbo.TIUD_CCAR_CAR_MODEL_HIS_ALL added.
+           
+-----------
+         61
+Adding trigger dbo.TIUD_CPRT_ORGANIZATION_HIS_ALL ...
+...trigger dbo.TIUD_CPRT_ORGANIZATION_HIS_ALL added.
+           
+-----------
+         62
+Adding trigger dbo.TIUD_CWRH_WAREHOUSE_TYPE_HIS_ALL ...
+...trigger dbo.TIUD_CWRH_WAREHOUSE_TYPE_HIS_ALL added.
+           
+-----------
+         63
+Adding trigger dbo.TIUD_CCAR_CAR_STATE_HIS_ALL ...
+...trigger dbo.TIUD_CCAR_CAR_STATE_HIS_ALL added.
+           
+-----------
+         64
+Adding trigger dbo.TIUD_CRPR_REPAIR_TYPE_MASTER_KIND_HIS_ALL ...
+...trigger dbo.TIUD_CRPR_REPAIR_TYPE_MASTER_KIND_HIS_ALL added.
+           
+-----------
+         65
+Adding trigger dbo.TIUD_CDRV_DRIVER_PLAN_DETAIL_HIS_ALL ...
+...trigger dbo.TIUD_CDRV_DRIVER_PLAN_DETAIL_HIS_ALL added.
+           
+-----------
+         66
+Adding trigger dbo.TIUD_CPRT_PARTY_HIS_ALL ...
+...trigger dbo.TIUD_CPRT_PARTY_HIS_ALL added.
+           
+-----------
+         67
+Adding trigger dbo.TIUD_CWRH_WRH_DEMAND_DETAIL_HIS_ALL ...
+Msg 137, Level 15, State 2, Server SRV-TS, Procedure TIUD_CWRH_WRH_DEMAND_DETAIL_HIS_ALL, Line 1
+Must declare the scalar variable "@new_id".
+Msg 137, Level 15, State 2, Server SRV-TS, Procedure TIUD_CWRH_WRH_DEMAND_DETAIL_HIS_ALL, Line 1
+Must declare the scalar variable "@new_id".
+Msg 137, Level 15, State 2, Server SRV-TS, Procedure TIUD_CWRH_WRH_DEMAND_DETAIL_HIS_ALL, Line 1
+Must declare the scalar variable "@new_id".
+Msg 137, Level 15, State 2, Server SRV-TS, Procedure TIUD_CWRH_WRH_DEMAND_DETAIL_HIS_ALL, Line 1
+Must declare the scalar variable "@new_id".
+...trigger dbo.TIUD_CWRH_WRH_DEMAND_DETAIL_HIS_ALL added.
+           
+-----------
+         68
+Adding trigger dbo.TIUD_CCAR_CAR_TYPE_HIS_ALL ...
+...trigger dbo.TIUD_CCAR_CAR_TYPE_HIS_ALL added.
+           
+-----------
+         69
+Adding trigger dbo.TIUD_CLOC_ABBREVIATION_HIS_ALL ...
+...trigger dbo.TIUD_CLOC_ABBREVIATION_HIS_ALL added.
+           
+-----------
+         70
+Adding trigger dbo.TIUD_CCAR_CAR_RETURN_REASON_TYPE_HIS_ALL ...
+...trigger dbo.TIUD_CCAR_CAR_RETURN_REASON_TYPE_HIS_ALL added.
+           
+-----------
+         71
+Adding trigger dbo.TIUD_CPRT_PERSON_HIS_ALL ...
+...trigger dbo.TIUD_CPRT_PERSON_HIS_ALL added.
+           
+-----------
+         72
+Adding trigger dbo.TIUD_CSYS_CONST_HIS_ALL ...
+...trigger dbo.TIUD_CSYS_CONST_HIS_ALL added.
+           
+-----------
+         73

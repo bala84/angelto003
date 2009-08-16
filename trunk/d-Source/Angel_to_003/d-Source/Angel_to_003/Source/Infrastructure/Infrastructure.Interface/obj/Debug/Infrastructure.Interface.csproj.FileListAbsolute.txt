@@ -1,0 +1,10 @@
+G:\work\Angel_to_003\d-Source\Angel_to_003\Source\Infrastructure\Infrastructure.Interface\bin\Debug\Infrastructure.Interface.dll
+G:\work\Angel_to_003\d-Source\Angel_to_003\Source\Infrastructure\Infrastructure.Interface\bin\Debug\Infrastructure.Interface.pdb
+G:\work\Angel_to_003\d-Source\Angel_to_003\Source\Infrastructure\Infrastructure.Interface\bin\Debug\Microsoft.Practices.CompositeUI.dll
+G:\work\Angel_to_003\d-Source\Angel_to_003\Source\Infrastructure\Infrastructure.Interface\bin\Debug\Microsoft.Practices.CompositeUI.WinForms.dll
+G:\work\Angel_to_003\d-Source\Angel_to_003\Source\Infrastructure\Infrastructure.Interface\bin\Debug\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll
+G:\work\Angel_to_003\d-Source\Angel_to_003\Source\Infrastructure\Infrastructure.Interface\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+G:\work\Angel_to_003\d-Source\Angel_to_003\Source\Infrastructure\Infrastructure.Interface\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+G:\work\Angel_to_003\d-Source\Angel_to_003\Source\Infrastructure\Infrastructure.Interface\obj\Debug\ResolveAssemblyReference.cache
+G:\work\Angel_to_003\d-Source\Angel_to_003\Source\Infrastructure\Infrastructure.Interface\obj\Debug\Infrastructure.Interface.dll
+G:\work\Angel_to_003\d-Source\Angel_to_003\Source\Infrastructure\Infrastructure.Interface\obj\Debug\Infrastructure.Interface.pdb

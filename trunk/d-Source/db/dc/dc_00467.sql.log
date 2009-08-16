@@ -1,0 +1,36 @@
+'instance_name' scripting variable not defined.
+'dba_user_pwd' scripting variable not defined.
+Changed database context to 'ANGEL_TO_001_TEST4'.
+ 
+===============================================================================
+=          Starting script _drop_chis_all_objects.sql                         =
+===============================================================================
+ 
+ 
+===============================================================================
+=          Starting script dc_00467.sql                                =
+===============================================================================
+ 
+Msg 3701, Level 11, State 7, Server SRV-TS, Line 3
+Cannot drop the index 'dbo.CCAR_CAR.u_ccar_car_state_number_card_number', because it does not exist or you do not have permission.
+Msg 1913, Level 16, State 1, Server SRV-TS, Line 2
+The operation failed because an index or statistics with name 'u_ccar_car_card_number' already exists on table 'dbo.CCAR_CAR'.
+ 
+===============================================================================
+=          Registering devchange                                              =
+===============================================================================
+ 
+Registering devchange.
+
+(1 rows affected)
+ 
+finish_time            
+-----------------------
+2009-05-21 11:51:23.700
+
+(1 rows affected)
+ 
+===============================================================================
+=          Script dc_00467.sql finished                                =
+===============================================================================
+ 

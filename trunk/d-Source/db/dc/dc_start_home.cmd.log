@@ -1,0 +1,6 @@
+Msg 102, Level 15, State 1, Server POLUS-LAPTOP, Line 1
+Incorrect syntax near '1.1'.
+Msg 102, Level 15, State 1, Server POLUS-LAPTOP, Line 19
+Incorrect syntax near '%LOG_DIR%'.
+Msg 102, Level 15, State 1, Server POLUS-LAPTOP, Line 23
+Incorrect syntax near '='.

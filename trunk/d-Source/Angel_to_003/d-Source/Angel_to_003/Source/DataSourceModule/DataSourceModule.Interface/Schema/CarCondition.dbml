@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="ANGEL_TO_001_TEST4" Class="DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=localhost;Initial Catalog=ANGEL_TO_001_TEST4;Persist Security Info=True;User ID=ANGEL_TO_001_TEST_OWNER2" SettingsObjectName="Angel_to_003.DataSourceModule.Interface.Properties.Settings" SettingsPropertyName="ANGEL_TO_001_TEST4ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.CCAR_CONDITION" Member="CCAR_CONDITION">
+    <Type Name="CCAR_CONDITION">
+      <Column Name="sys_status" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="sys_comment" Type="System.String" DbType="VarChar(2000) NOT NULL" CanBeNull="false" />
+      <Column Name="sys_date_modified" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="sys_date_created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="sys_user_modified" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="sys_user_created" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="car_id" Type="System.Decimal" DbType="Decimal(38,0) NOT NULL" CanBeNull="false" />
+      <Column Name="ts_type_master_id" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="employee_id" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="run" Type="System.Decimal" DbType="Decimal(18,9) NOT NULL" CanBeNull="false" />
+      <Column Name="speedometer_start_indctn" Type="System.Decimal" DbType="Decimal(18,9) NOT NULL" CanBeNull="false" />
+      <Column Name="speedometer_end_indctn" Type="System.Decimal" DbType="Decimal(18,9) NOT NULL" CanBeNull="false" />
+      <Column Name="id" Type="System.Decimal" DbType="Decimal(38,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="last_run" Type="System.Decimal" DbType="Decimal(18,9) NOT NULL" CanBeNull="false" />
+      <Column Name="last_ts_type_master_id" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="fuel_start_left" Type="System.Decimal" DbType="Decimal(18,9) NOT NULL" CanBeNull="false" />
+      <Column Name="fuel_end_left" Type="System.Decimal" DbType="Decimal(18,9) NOT NULL" CanBeNull="false" />
+      <Column Name="overrun" Type="System.Decimal" DbType="Decimal(18,9)" CanBeNull="true" />
+      <Column Name="in_tolerance" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ts_type_route_detail_id" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="last_ts_type_route_detail_id" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.uspVCAR_CONDITION_SelectCar" Method="uspVCAR_CONDITION_SelectCar">
+    <Parameter Name="p_start_date" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="p_end_date" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="p_Str" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="p_Srch_Type" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="p_Top_n_by_rank" Type="System.Int16" DbType="SmallInt" />
+    <ElementType Name="uspVCAR_CONDITION_SelectCarResult">
+      <Column Name="id" Type="System.Decimal" DbType="Decimal(0,0) NOT NULL" CanBeNull="false" />
+      <Column Name="sys_status" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="sys_comment" Type="System.String" DbType="VarChar(2000) NOT NULL" CanBeNull="false" />
+      <Column Name="sys_date_modified" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="sys_date_created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="sys_user_modified" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="sys_user_created" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="car_id" Type="System.Decimal" DbType="Decimal(0,0) NOT NULL" CanBeNull="false" />
+      <Column Name="state_number" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="ts_type_master_id" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="ts_type_name" Type="System.String" DbType="VarChar(53)" CanBeNull="true" />
+      <Column Name="car_mark_model_name" Type="System.String" DbType="VarChar(63) NOT NULL" CanBeNull="false" />
+      <Column Name="car_mark_id" Type="System.Decimal" DbType="Decimal(0,0) NOT NULL" CanBeNull="false" />
+      <Column Name="car_model_id" Type="System.Decimal" DbType="Decimal(0,0) NOT NULL" CanBeNull="false" />
+      <Column Name="employee_id" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="FIO" Type="System.String" DbType="VarChar(105)" CanBeNull="true" />
+      <Column Name="car_state_id" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="car_state_name" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="car_type_id" Type="System.Decimal" DbType="Decimal(0,0) NOT NULL" CanBeNull="false" />
+      <Column Name="run" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="last_ts_type_master_id" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="edit_state" Type="System.Char" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="fuel_start_left" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="fuel_end_left" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="speedometer_start_indctn" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="speedometer_end_indctn" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="sent_to" Type="System.Char" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="last_run" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="overrun" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="in_tolerance" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ts_type_route_detail_id" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="last_ts_type_route_detail_id" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="addtnl_ts" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.uspVCAR_CONDITION_SelectFreight" Method="uspVCAR_CONDITION_SelectFreight">
+    <Parameter Name="p_start_date" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="p_end_date" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="p_Str" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="p_Srch_Type" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="p_Top_n_by_rank" Type="System.Int16" DbType="SmallInt" />
+    <ElementType Name="uspVCAR_CONDITION_SelectFreightResult">
+      <Column Name="id" Type="System.Decimal" DbType="Decimal(0,0) NOT NULL" CanBeNull="false" />
+      <Column Name="sys_status" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="sys_comment" Type="System.String" DbType="VarChar(2000) NOT NULL" CanBeNull="false" />
+      <Column Name="sys_date_modified" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="sys_date_created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="sys_user_modified" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="sys_user_created" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="car_id" Type="System.Decimal" DbType="Decimal(0,0) NOT NULL" CanBeNull="false" />
+      <Column Name="state_number" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="ts_type_master_id" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="ts_type_name" Type="System.String" DbType="VarChar(53)" CanBeNull="true" />
+      <Column Name="car_mark_model_name" Type="System.String" DbType="VarChar(63) NOT NULL" CanBeNull="false" />
+      <Column Name="car_mark_id" Type="System.Decimal" DbType="Decimal(0,0) NOT NULL" CanBeNull="false" />
+      <Column Name="car_model_id" Type="System.Decimal" DbType="Decimal(0,0) NOT NULL" CanBeNull="false" />
+      <Column Name="employee_id" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="FIO" Type="System.String" DbType="VarChar(105)" CanBeNull="true" />
+      <Column Name="car_state_id" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="car_state_name" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="car_type_id" Type="System.Decimal" DbType="Decimal(0,0) NOT NULL" CanBeNull="false" />
+      <Column Name="run" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="last_ts_type_master_id" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="edit_state" Type="System.Char" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="fuel_start_left" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="fuel_end_left" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="speedometer_start_indctn" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="speedometer_end_indctn" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="sent_to" Type="System.Char" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="last_run" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="overrun" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="in_tolerance" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ts_type_route_detail_id" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="last_ts_type_route_detail_id" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="addtnl_ts" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

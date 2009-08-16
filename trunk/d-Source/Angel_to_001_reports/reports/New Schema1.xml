@@ -1,0 +1,56 @@
+<Schema name="New Schema1">
+	<Dimension type="StandardDimension" foreignKey="" name="dim_car_kind">
+		<Hierarchy name="New Hierarchy 0" hasAll="true" allMemberName="&#1042;&#1089;&#1077; &#1074;&#1080;&#1076;&#1099; &#1072;/&#1084;" allMemberCaption="&#1042;&#1089;&#1077; &#1074;&#1080;&#1076;&#1099; &#1072;/&#1084;" primaryKey="car_kind_short_name" primaryKeyTable="dim_car_kind">
+			<Table name="dim_car_kind" schema="dbo">
+			</Table>
+		</Hierarchy>
+	</Dimension>
+	<Dimension type="StandardDimension" foreignKey="" name="dim_ccar_car">
+		<Hierarchy name="New Hierarchy 0" hasAll="true" allMemberName="&#1042;&#1089;&#1077; &#1072;/&#1084;" allMemberCaption="&#1042;&#1089;&#1077; &#1072;/&#1084;" primaryKey="car_state_number" primaryKeyTable="dim_ccar_car">
+			<Table name="dim_ccar_car" schema="dbo">
+			</Table>
+		</Hierarchy>
+	</Dimension>
+	<Dimension type="StandardDimension" foreignKey="" name="dim_cdrv_driver_list">
+		<Hierarchy name="New Hierarchy 0" hasAll="true" allMemberName="&#1042;&#1089;&#1077; &#1087;/&#1083;" allMemberCaption="&#1042;&#1089;&#1077; &#1087;/&#1083;" primaryKey="drvl_number" primaryKeyTable="dim_cdrv_driver_list">
+			<Table name="dim_cdrv_driver_list" schema="dbo">
+			</Table>
+		</Hierarchy>
+	</Dimension>
+	<Dimension type="StandardDimension" foreignKey="" name="dim_crpr_repair_type">
+		<Hierarchy name="New Hierarchy 0" hasAll="true" allMemberName="&#1042;&#1089;&#1077; &#1088;&#1077;&#1084;&#1086;&#1085;&#1090;&#1099;" allMemberCaption="&#1042;&#1089;&#1077; &#1088;&#1077;&#1084;&#1086;&#1085;&#1090;&#1099;" primaryKey="rtm_short_name" primaryKeyTable="dim_crpr_repair_type">
+			<Table name="dim_crpr_repair_type" schema="dbo">
+			</Table>
+		</Hierarchy>
+	</Dimension>
+	<Dimension type="StandardDimension" foreignKey="" name="dim_crpr_repair_type_master_kind">
+		<Hierarchy name="dim_crpr_repair_type_master_kind" hasAll="true" allMemberName="&#1042;&#1089;&#1077; &#1074;&#1080;&#1076;&#1099; &#1088;&#1077;&#1084;&#1086;&#1085;&#1090;&#1086;&#1074;" allMemberCaption="&#1042;&#1089;&#1077; &#1074;&#1080;&#1076;&#1099; &#1088;&#1077;&#1084;&#1086;&#1085;&#1090;&#1086;&#1074;" primaryKey="rtmk_short_name" primaryKeyTable="dim_crpr_repair_type_master_kind">
+			<Table name="dim_crpr_repair_type_master_kind" schema="dbo">
+			</Table>
+		</Hierarchy>
+	</Dimension>
+	<Dimension type="StandardDimension" foreignKey="" name="dim_cwrh_wrh_order">
+		<Hierarchy name="dim_cwrh_wrh_order" hasAll="true" allMemberName="&#1042;&#1089;&#1077; &#1079;/&#1085;" allMemberCaption="&#1042;&#1089;&#1077; &#1079;/&#1085;" primaryKey="wro_number" primaryKeyTable="dim_cwrh_wrh_order">
+			<Table name="dim_cwrh_wrh_order" schema="dbo">
+			</Table>
+		</Hierarchy>
+	</Dimension>
+	<Cube name="wrh_car" caption="&#1055;&#1086;&#1082;&#1072;&#1079;&#1072;&#1090;&#1077;&#1083;&#1080; &#1092;&#1091;&#1085;&#1082;&#1094;&#1080;&#1086;&#1085;&#1080;&#1088;&#1086;&#1074;&#1072;&#1085;&#1080; &#1072;/&#1084;" cache="true" enabled="true">
+		<Table name="wrh_car" schema="dbo">
+		</Table>
+		<DimensionUsage source="dim_car_kind" name="dim_car_kind" foreignKey="car_kind_short_name">
+		</DimensionUsage>
+		<DimensionUsage source="dim_ccar_car" name="dim_ccar_car" foreignKey="car_state_number">
+		</DimensionUsage>
+		<DimensionUsage source="dim_cdrv_driver_list" name="dim_cdrv_driver_list" foreignKey="drvl_number">
+		</DimensionUsage>
+		<DimensionUsage source="dim_crpr_repair_type" name="dim_crpr_repair_type" foreignKey="rtm_short_name">
+		</DimensionUsage>
+		<DimensionUsage source="dim_crpr_repair_type_master_kind" name="dim_crpr_repair_type_master_kind" foreignKey="rtmk_short_name">
+		</DimensionUsage>
+		<DimensionUsage source="dim_cwrh_wrh_order" name="dim_cwrh_wrh_order" foreignKey="wro_number">
+		</DimensionUsage>
+		<Measure name="Count_wo" column="wro_id" datatype="Integer" aggregator="distinct count" caption="&#1050;&#1086;&#1083;-&#1074;&#1086; &#1088;&#1077;&#1084;&#1086;&#1085;&#1090;&#1086;&#1074;" visible="true">
+		</Measure>
+	</Cube>
+</Schema>

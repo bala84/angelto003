@@ -1,0 +1,40 @@
+'instance_name' scripting variable not defined.
+'dba_user_pwd' scripting variable not defined.
+Changed database context to 'ANGEL_TO_001_TEST4'.
+ 
+===============================================================================
+=          Starting script dc_00206.sql                                =
+===============================================================================
+ 
+start_time             
+-----------------------
+2008-12-26 14:29:01.437
+
+(1 rows affected)
+ 
+user                                                                                                                            
+--------------------------------------------------------------------------------------------------------------------------------
+ANGEL_TO_001_TEST_OWNER4                                                                                                        
+
+(1 rows affected)
+ 
+ 
+===============================================================================
+=          Registering devchange                                              =
+===============================================================================
+ 
+Registering devchange.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 2
+Violation of PRIMARY KEY constraint 'SYS_DC_PK'. Cannot insert duplicate key in object 'dbo.sys_dc'.
+The statement has been terminated.
+ 
+finish_time            
+-----------------------
+2008-12-26 14:29:01.653
+
+(1 rows affected)
+ 
+===============================================================================
+=          Script dc_00206.sql finished                                =
+===============================================================================
+ 

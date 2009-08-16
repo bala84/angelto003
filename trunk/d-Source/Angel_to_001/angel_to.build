@@ -1,0 +1,31 @@
+<project name="Angel_to_001" default="rebuild">
+    <property name="configuration" value="release"/>
+    
+    <target name="clean" description="Delete all previously compiled binaries.">
+        <delete>
+            <fileset>
+                <include name="**/bin/**" />
+                <include name="**/obj/**" />
+                <include name="**/*.suo" />
+                <include name="**/*.user" />
+            </fileset>
+        </delete>
+    </target>
+    
+    <target name="build" description="Build all targets.">
+        <call target="build.winforms"/>
+    </target>
+    
+    <target name="rebuild" depends="clean, build" />
+
+    <target name="build.winforms">
+    	<echo message="Build Directory is ..." />
+		<msbuild project=".\Angel_to_001.sln">
+              <arg value="/property:Configuration=${configuration}" />                                  
+              <arg value="/t:Build" />
+       </msbuild>
+        <property name="expected.output" value="bin\${configuration}\Angel_TO.exe"/>
+        <fail unless="${file::exists(expected.output)}">Output file doesn't exist in ${expected.output}</fail>
+    </target>
+    
+</project>

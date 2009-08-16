@@ -1,0 +1,36 @@
+'instance_name' scripting variable not defined.
+'dba_user_pwd' scripting variable not defined.
+Changed database context to 'ANGEL_TO_001_TEST5'.
+ 
+===============================================================================
+=          Starting script dc_00204.sql                                =
+===============================================================================
+ 
+start_time             
+-----------------------
+2009-04-06 12:19:14.640
+
+(1 rows affected)
+ 
+user                                                                                                                            
+--------------------------------------------------------------------------------------------------------------------------------
+ANGEL_TO_001_TEST_OWNER4                                                                                                        
+
+(1 rows affected)
+ 
+Msg 15335, Level 11, State 1, Server SRV-TS, Procedure sp_rename, Line 402
+Error: The new name 'ts_type_route_master_id' is already in use as a COLUMN name and would cause a duplicate that is not permitted.
+Msg 2705, Level 16, State 4, Server SRV-TS, Line 4
+Column names in each table must be unique. Column name 'ts_type_master_id' in table 'dbo.CCAR_TS_TYPE_ROUTE_DETAIL' is specified more than once.
+Msg 15135, Level 16, State 2, Server SRV-TS, Procedure sp_addextendedproperty, Line 38
+Object is invalid. Extended properties are not permitted on 'ANGEL_TO_001_TEST_OWNER4.CCAR_TS_TYPE_ROUTE_DETAIL.ts_type_master_id', or the object does not exist.
+Msg 2714, Level 16, State 4, Server SRV-TS, Line 4
+There is already an object named 'CCAR_TS_TYPE_DETAIL_TS_TYPE_MASTER_ID_FK' in the database.
+Msg 1750, Level 16, State 1, Server SRV-TS, Line 4
+Could not create constraint. See previous errors.
+Msg 1913, Level 16, State 1, Server SRV-TS, Line 2
+The operation failed because an index or statistics with name 'ifk_ts_type_master_id_ts_type_detail' already exists on table 'dbo.CCAR_TS_TYPE_ROUTE_DETAIL'.
+Msg 1913, Level 16, State 1, Server SRV-TS, Line 3
+The operation failed because an index or statistics with name 'u_ts_type_mstr_route_mstr_ordrd_ts_type_d' already exists on table 'dbo.CCAR_TS_TYPE_ROUTE_DETAIL'.
+Msg 15335, Level 11, State 1, Server SRV-TS, Procedure sp_rename, Line 402
+Error: The new name 'ts_type_route_master_id' is already in use as a COLUMN name and would cause a duplicate that is not permitted.

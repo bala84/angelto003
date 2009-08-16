@@ -1,0 +1,46 @@
+'instance_name' scripting variable not defined.
+'dba_user_pwd' scripting variable not defined.
+Changed database context to 'ANGEL_TO_001_TEST5'.
+ 
+===============================================================================
+=          Starting script dc_00203.sql                                =
+===============================================================================
+ 
+start_time             
+-----------------------
+2009-04-06 12:19:13.483
+
+(1 rows affected)
+ 
+user                                                                                                                            
+--------------------------------------------------------------------------------------------------------------------------------
+ANGEL_TO_001_TEST_OWNER4                                                                                                        
+
+(1 rows affected)
+ 
+Msg 2714, Level 16, State 3, Server SRV-TS, Procedure utfVCAR_TS_TYPE_ROUTE_MASTER, Line 22
+There is already an object named 'utfVCAR_TS_TYPE_ROUTE_MASTER' in the database.
+Msg 2714, Level 16, State 3, Server SRV-TS, Procedure uspVCAR_TS_TYPE_ROUTE_MASTER_SelectAll, Line 31
+There is already an object named 'uspVCAR_TS_TYPE_ROUTE_MASTER_SelectAll' in the database.
+Msg 2714, Level 16, State 3, Server SRV-TS, Procedure uspVCAR_TS_TYPE_ROUTE_MASTER_SaveById, Line 57
+There is already an object named 'uspVCAR_TS_TYPE_ROUTE_MASTER_SaveById' in the database.
+ 
+===============================================================================
+=          Registering devchange                                              =
+===============================================================================
+ 
+Registering devchange.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 2
+Violation of PRIMARY KEY constraint 'SYS_DC_PK'. Cannot insert duplicate key in object 'dbo.sys_dc'.
+The statement has been terminated.
+ 
+finish_time            
+-----------------------
+2009-04-06 12:19:14.187
+
+(1 rows affected)
+ 
+===============================================================================
+=          Script dc_00203.sql finished                                =
+===============================================================================
+ 

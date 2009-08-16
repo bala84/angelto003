@@ -1,0 +1,1192 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <ProjectGuid>{AFEC754A-EB7F-4C5B-9DD2-CD264CDE7290}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Angel_to_001</RootNamespace>
+    <AssemblyName>Angel_TO</AssemblyName>
+    <ApplicationIcon>ico\angel_to_001.ico</ApplicationIcon>
+    <ManifestCertificateThumbprint>0614936A5390C0D963CCEBCC57868F0F15D6865D</ManifestCertificateThumbprint>
+    <ManifestKeyFile>Angel_to_001_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>true</SignManifests>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <PublishUrl>C:\Work\Polus\Angel-TO-001\d-Source\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <TargetCulture>ru-RU</TargetCulture>
+    <ProductName>Ангел-ТО</ProductName>
+    <PublisherName>Полюс ИТ</PublisherName>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <BootstrapperComponentsLocation>Relative</BootstrapperComponentsLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <ItemGroup>
+    <Reference Include="itextsharp, Version=4.1.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Documents and Settings\Валера\Desktop\itextsharp-4.1.2-dll\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PdfSharp, Version=1.2.1269.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Documents and Settings\Валера\Desktop\PDFSharp-1.2.1269.beta+MigraDocLite-1.2.2546\bin\PdfSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Acrobat.cs" />
+    <Compile Include="ANGEL_TO_001.cs">
+      <DependentUpon>ANGEL_TO_001.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ANGEL_TO_001.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ANGEL_TO_001.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ANGEL_TO_001_Car.cs">
+      <DependentUpon>ANGEL_TO_001_Car.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ANGEL_TO_001_Car.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ANGEL_TO_001_Car.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ANGEL_TO_001_Car_kind.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ANGEL_TO_001_Car_kind.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ANGEL_TO_001_Car_model.cs">
+      <DependentUpon>ANGEL_TO_001_Car_model.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ANGEL_TO_001_Car_model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ANGEL_TO_001_Car_model.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ANGEL_TO_001_Car_SelectById.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ANGEL_TO_001_Car_SelectById.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ANGEL_TO_001_Car_type.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ANGEL_TO_001_Car_type.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ANGEL_TO_001_Condition_car.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ANGEL_TO_001_Condition_car.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ANGEL_TO_001_Condition_freight.cs">
+      <DependentUpon>ANGEL_TO_001_Condition_freight.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ANGEL_TO_001_Condition_freight.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ANGEL_TO_001_Condition_freight.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ANGEL_TO_001_Driver_control.cs">
+      <DependentUpon>ANGEL_TO_001_Driver_control.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ANGEL_TO_001_Driver_control.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ANGEL_TO_001_Driver_control.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ANGEL_TO_001_Driver_list_car.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ANGEL_TO_001_Driver_list_car.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ANGEL_TO_001_Driver_list_detail.cs">
+      <DependentUpon>ANGEL_TO_001_Driver_list_detail.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ANGEL_TO_001_Driver_list_detail.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ANGEL_TO_001_Driver_list_detail.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ANGEL_TO_001_Driver_list_freight.cs">
+      <DependentUpon>ANGEL_TO_001_Driver_list_freight.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ANGEL_TO_001_Driver_list_freight.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ANGEL_TO_001_Driver_list_freight.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ANGEL_TO_001_Driver_list_type.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ANGEL_TO_001_Driver_list_type.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ANGEL_TO_001_Driver_trailer.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ANGEL_TO_001_Driver_trailer.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ANGEL_TO_001_Employee.cs">
+      <DependentUpon>ANGEL_TO_001_Employee.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ANGEL_TO_001_Employee.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ANGEL_TO_001_Employee.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ANGEL_TO_001_Employee_type.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ANGEL_TO_001_Employee_type.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ANGEL_TO_001_Fuel_type.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ANGEL_TO_001_Fuel_type.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ANGEL_TO_001_Last_ts_type.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ANGEL_TO_001_Last_ts_type.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ANGEL_TO_001_Organization.cs">
+      <DependentUpon>ANGEL_TO_001_Organization.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ANGEL_TO_001_Organization.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ANGEL_TO_001_Organization.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ANGEL_TO_001_Person.cs">
+      <DependentUpon>ANGEL_TO_001_Person.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ANGEL_TO_001_Person.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ANGEL_TO_001_Person.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ANGEL_TO_001_Ts_type_detail.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ANGEL_TO_001_Ts_type_detail.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ANGEL_TO_001_Ts_type_detail_master.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ANGEL_TO_001_Ts_type_detail_master.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ANGEL_TO_001_Ts_type_master.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ANGEL_TO_001_Ts_type_master.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Car.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Car.Designer.cs">
+      <DependentUpon>Car.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Car_condition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Car_condition.Designer.cs">
+      <DependentUpon>Car_condition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Car_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Car_detail.Designer.cs">
+      <DependentUpon>Car_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Car_kind_chooser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Car_kind_chooser.Designer.cs">
+      <DependentUpon>Car_kind_chooser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Car_mark.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Car_mark.Designer.cs">
+      <DependentUpon>Car_mark.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Car_model.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Car_model.Designer.cs">
+      <DependentUpon>Car_model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Car_noexit_reason_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Car_noexit_reason_detail.Designer.cs">
+      <DependentUpon>Car_noexit_reason_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Car_repair_type_given.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Car_repair_type_given.Designer.cs">
+      <DependentUpon>Car_repair_type_given.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Car_return_reason_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Car_return_reason_detail.Designer.cs">
+      <DependentUpon>Car_return_reason_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Car_type_chooser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Car_type_chooser.Designer.cs">
+      <DependentUpon>Car_type_chooser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Change_parameters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Change_parameters.Designer.cs">
+      <DependentUpon>Change_parameters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigSettings.cs" />
+    <Compile Include="Const.cs" />
+    <Compile Include="Driver_plan_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Driver_plan_detail.Designer.cs">
+      <DependentUpon>Driver_plan_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Driver_plan_detail_rep_viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Driver_plan_detail_rep_viewer.Designer.cs">
+      <DependentUpon>Driver_plan_detail_rep_viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Noexit_reason_type.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Noexit_reason_type.Designer.cs">
+      <DependentUpon>Noexit_reason_type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Options.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Options.Designer.cs">
+      <DependentUpon>Options.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Repair_type_kind_chooser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Repair_type_kind_chooser.Designer.cs">
+      <DependentUpon>Repair_type_kind_chooser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Date_chooser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Date_chooser.Designer.cs">
+      <DependentUpon>Date_chooser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog.Designer.cs">
+      <DependentUpon>Dialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Driver_list_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Driver_list_detail.Designer.cs">
+      <DependentUpon>Driver_list_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Driver_list_master.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Driver_list_master.Designer.cs">
+      <DependentUpon>Driver_list_master.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Driver_list_type.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Driver_list_type.Designer.cs">
+      <DependentUpon>Driver_list_type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee.Designer.cs">
+      <DependentUpon>Employee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employee_event.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee_event.Designer.cs">
+      <DependentUpon>Employee_event.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employee_type.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee_type.Designer.cs">
+      <DependentUpon>Employee_type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fuel_type.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fuel_type.Designer.cs">
+      <DependentUpon>Fuel_type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Good_category.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Good_category.Designer.cs">
+      <DependentUpon>Good_category.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Good_category_type.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Good_category_type.Designer.cs">
+      <DependentUpon>Good_category_type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Head_driver_list.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Head_driver_list.Designer.cs">
+      <DependentUpon>Head_driver_list.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Head_order.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Head_order.Designer.cs">
+      <DependentUpon>Head_order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Just.cs" />
+    <Compile Include="Last_ts_type.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Last_ts_type.Designer.cs">
+      <DependentUpon>Last_ts_type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Load_warehouse_item.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Load_warehouse_item.Designer.cs">
+      <DependentUpon>Load_warehouse_item.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Driver_exit_month_plan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Driver_exit_month_plan.Designer.cs">
+      <DependentUpon>Driver_exit_month_plan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MSExcel.cs" />
+    <Compile Include="Organization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Organization.Designer.cs">
+      <DependentUpon>Organization.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Person.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Person.Designer.cs">
+      <DependentUpon>Person.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Print_blank.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Print_blank.Designer.cs">
+      <DependentUpon>Print_blank.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Repair_bill_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Repair_bill_detail.Designer.cs">
+      <DependentUpon>Repair_bill_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Repair_bill_master.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Repair_bill_master.Designer.cs">
+      <DependentUpon>Repair_bill_master.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Repair_type_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Repair_type_detail.Designer.cs">
+      <DependentUpon>Repair_type_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Repair_type_master.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Repair_type_master.Designer.cs">
+      <DependentUpon>Repair_type_master.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report_setup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report_setup.Designer.cs">
+      <DependentUpon>Report_setup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Return_reason_type.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Return_reason_type.Designer.cs">
+      <DependentUpon>Return_reason_type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Route_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Route_detail.Designer.cs">
+      <DependentUpon>Route_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Route_master.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Route_master.Designer.cs">
+      <DependentUpon>Route_master.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Serial_log.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Serial_log.Designer.cs">
+      <DependentUpon>Serial_log.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="Ts_type.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ts_type.Designer.cs">
+      <DependentUpon>Ts_type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ts_type_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ts_type_detail.Designer.cs">
+      <DependentUpon>Ts_type_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_Defender.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Defender.Designer.cs">
+      <DependentUpon>UI_Defender.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Warehouse_demand_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Warehouse_demand_detail.Designer.cs">
+      <DependentUpon>Warehouse_demand_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Warehouse_demand_master.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Warehouse_demand_master.Designer.cs">
+      <DependentUpon>Warehouse_demand_master.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Warehouse_income_list.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Warehouse_income_list.Designer.cs">
+      <DependentUpon>Warehouse_income_list.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Warehouse_income_master.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Warehouse_income_master.Designer.cs">
+      <DependentUpon>Warehouse_income_master.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Warehouse_item.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Warehouse_item.Designer.cs">
+      <DependentUpon>Warehouse_item.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Warehouse_order.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Warehouse_order.Designer.cs">
+      <DependentUpon>Warehouse_order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Warehouse_order_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Warehouse_order_detail.Designer.cs">
+      <DependentUpon>Warehouse_order_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Warehouse_type.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Warehouse_type.Designer.cs">
+      <DependentUpon>Warehouse_type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Warehouse_income_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Warehouse_income_detail.Designer.cs">
+      <DependentUpon>Warehouse_income_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wrh_income_order_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wrh_income_order_detail.Designer.cs">
+      <DependentUpon>Wrh_income_order_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wrh_income_order_detail_rep_viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wrh_income_order_detail_rep_viewer.Designer.cs">
+      <DependentUpon>Wrh_income_order_detail_rep_viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wrh_income_order_master.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wrh_income_order_master.Designer.cs">
+      <DependentUpon>Wrh_income_order_master.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Car.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Car.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Car_condition.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Car_condition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Car_detail.resx">
+      <DependentUpon>Car_detail.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Car_kind_chooser.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Car_kind_chooser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Car_mark.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Car_mark.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Car_model.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Car_model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Car_noexit_reason_detail.resx">
+      <DependentUpon>Car_noexit_reason_detail.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Car_repair_type_given.resx">
+      <DependentUpon>Car_repair_type_given.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Car_return_reason_detail.resx">
+      <DependentUpon>Car_return_reason_detail.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Car_type_chooser.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Car_type_chooser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Change_parameters.resx">
+      <DependentUpon>Change_parameters.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Driver_plan_detail.resx">
+      <DependentUpon>Driver_plan_detail.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Driver_plan_detail_report.rdlc">
+    </EmbeddedResource>
+    <EmbeddedResource Include="Driver_plan_detail_rep_viewer.resx">
+      <DependentUpon>Driver_plan_detail_rep_viewer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Noexit_reason_type.resx">
+      <DependentUpon>Noexit_reason_type.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Options.resx">
+      <DependentUpon>Options.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Repair_type_kind_chooser.resx">
+      <DependentUpon>Repair_type_kind_chooser.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Date_chooser.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Date_chooser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog.resx">
+      <DependentUpon>Dialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Driver_list_detail.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Driver_list_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Driver_list_master.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Driver_list_master.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Driver_list_type.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Driver_list_type.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee.resx">
+      <DependentUpon>Employee.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee_event.resx">
+      <DependentUpon>Employee_event.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee_type.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Employee_type.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fuel_type.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Fuel_type.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Good_category.resx">
+      <DependentUpon>Good_category.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Good_category_type.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Good_category_type.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Head_driver_list.resx">
+      <DependentUpon>Head_driver_list.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Head_order.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Head_order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Last_ts_type.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Last_ts_type.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Load_warehouse_item.resx">
+      <DependentUpon>Load_warehouse_item.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.Designer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Driver_exit_month_plan.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Driver_exit_month_plan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Organization.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Organization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Person.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Person.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Print_blank.resx">
+      <DependentUpon>Print_blank.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Repair_bill_detail.resx">
+      <DependentUpon>Repair_bill_detail.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Repair_bill_master.resx">
+      <DependentUpon>Repair_bill_master.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Repair_type_detail.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Repair_type_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Repair_type_master.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Repair_type_master.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report_setup.resx">
+      <DependentUpon>Report_setup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Return_reason_type.resx">
+      <DependentUpon>Return_reason_type.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Route_detail.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Route_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Route_master.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Route_master.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Serial_log.resx">
+      <DependentUpon>Serial_log.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ts_type.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Ts_type.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ts_type_detail.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Ts_type_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Defender.resx">
+      <DependentUpon>UI_Defender.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Warehouse_demand_detail.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Warehouse_demand_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Warehouse_demand_master.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Warehouse_demand_master.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Warehouse_income_list.resx">
+      <DependentUpon>Warehouse_income_list.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Warehouse_income_master.resx">
+      <DependentUpon>Warehouse_income_master.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Warehouse_item.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Warehouse_item.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Warehouse_order.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Warehouse_order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Warehouse_order_detail.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Warehouse_order_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Warehouse_type.resx">
+      <DependentUpon>Warehouse_type.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Warehouse_income_detail.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Warehouse_income_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wrh_income_order_detail.resx">
+      <DependentUpon>Wrh_income_order_detail.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wrh_income_order_detail2.rdlc" />
+    <EmbeddedResource Include="Wrh_income_order_detail_rep_viewer.resx">
+      <DependentUpon>Wrh_income_order_detail_rep_viewer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wrh_income_order_master.resx">
+      <DependentUpon>Wrh_income_order_master.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="ANGEL_TO_001.xsc">
+      <DependentUpon>ANGEL_TO_001.xsd</DependentUpon>
+    </None>
+    <None Include="ANGEL_TO_001.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ANGEL_TO_001.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ANGEL_TO_001.xss">
+      <DependentUpon>ANGEL_TO_001.xsd</DependentUpon>
+    </None>
+    <None Include="ANGEL_TO_001_Car.xsc">
+      <DependentUpon>ANGEL_TO_001_Car.xsd</DependentUpon>
+    </None>
+    <None Include="ANGEL_TO_001_Car.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ANGEL_TO_001_Car.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ANGEL_TO_001_Car.xss">
+      <DependentUpon>ANGEL_TO_001_Car.xsd</DependentUpon>
+    </None>
+    <None Include="ANGEL_TO_001_Car_kind.xsc">
+      <DependentUpon>ANGEL_TO_001_Car_kind.xsd</DependentUpon>
+    </None>
+    <None Include="ANGEL_TO_001_Car_kind.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ANGEL_TO_001_Car_kind.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ANGEL_TO_001_Car_kind.xss">
+      <DependentUpon>ANGEL_TO_001_Car_kind.xsd</DependentUpon>
+    </None>
+    <None Include="ANGEL_TO_001_Car_model.xsc">
+      <DependentUpon>ANGEL_TO_001_Car_model.xsd</DependentUpon>
+    </None>
+    <None Include="ANGEL_TO_001_Car_model.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ANGEL_TO_001_Car_model.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ANGEL_TO_001_Car_model.xss">
+      <DependentUpon>ANGEL_TO_001_Car_model.xsd</DependentUpon>
+    </None>
+    <None Include="ANGEL_TO_001_Car_SelectById.xsc">
+      <DependentUpon>ANGEL_TO_001_Car_SelectById.xsd</DependentUpon>
+    </None>
+    <None Include="ANGEL_TO_001_Car_SelectById.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ANGEL_TO_001_Car_SelectById.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ANGEL_TO_001_Car_SelectById.xss">
+      <DependentUpon>ANGEL_TO_001_Car_SelectById.xsd</DependentUpon>
+    </None>
+    <None Include="ANGEL_TO_001_Car_type.xsc">
+      <DependentUpon>ANGEL_TO_001_Car_type.xsd</DependentUpon>
+    </None>
+    <None Include="ANGEL_TO_001_Car_type.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ANGEL_TO_001_Car_type.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ANGEL_TO_001_Car_type.xss">
+      <DependentUpon>ANGEL_TO_001_Car_type.xsd</DependentUpon>
+    </None>
+    <None Include="ANGEL_TO_001_Condition_car.xsc">
+      <DependentUpon>ANGEL_TO_001_Condition_car.xsd</DependentUpon>
+    </None>
+    <None Include="ANGEL_TO_001_Condition_car.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ANGEL_TO_001_Condition_car.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ANGEL_TO_001_Condition_car.xss">
+      <DependentUpon>ANGEL_TO_001_Condition_car.xsd</DependentUpon>
+    </None>
+    <None Include="ANGEL_TO_001_Condition_freight.xsc">
+      <DependentUpon>ANGEL_TO_001_Condition_freight.xsd</DependentUpon>
+    </None>
+    <None Include="ANGEL_TO_001_Condition_freight.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ANGEL_TO_001_Condition_freight.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ANGEL_TO_001_Condition_freight.xss">
+      <DependentUpon>ANGEL_TO_001_Condition_freight.xsd</DependentUpon>
+    </None>
+    <None Include="ANGEL_TO_001_Driver_control.xsc">
+      <DependentUpon>ANGEL_TO_001_Driver_control.xsd</DependentUpon>
+    </None>
+    <None Include="ANGEL_TO_001_Driver_control.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ANGEL_TO_001_Driver_control.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ANGEL_TO_001_Driver_control.xss">
+      <DependentUpon>ANGEL_TO_001_Driver_control.xsd</DependentUpon>
+    </None>
+    <None Include="ANGEL_TO_001_Driver_list_car.xsc">
+      <DependentUpon>ANGEL_TO_001_Driver_list_car.xsd</DependentUpon>
+    </None>
+    <None Include="ANGEL_TO_001_Driver_list_car.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ANGEL_TO_001_Driver_list_car.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ANGEL_TO_001_Driver_list_car.xss">
+      <DependentUpon>ANGEL_TO_001_Driver_list_car.xsd</DependentUpon>
+    </None>
+    <None Include="ANGEL_TO_001_Driver_list_detail.xsc">
+      <DependentUpon>ANGEL_TO_001_Driver_list_detail.xsd</DependentUpon>
+    </None>
+    <None Include="ANGEL_TO_001_Driver_list_detail.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ANGEL_TO_001_Driver_list_detail.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ANGEL_TO_001_Driver_list_detail.xss">
+      <DependentUpon>ANGEL_TO_001_Driver_list_detail.xsd</DependentUpon>
+    </None>
+    <None Include="ANGEL_TO_001_Driver_list_freight.xsc">
+      <DependentUpon>ANGEL_TO_001_Driver_list_freight.xsd</DependentUpon>
+    </None>
+    <None Include="ANGEL_TO_001_Driver_list_freight.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ANGEL_TO_001_Driver_list_freight.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ANGEL_TO_001_Driver_list_freight.xss">
+      <DependentUpon>ANGEL_TO_001_Driver_list_freight.xsd</DependentUpon>
+    </None>
+    <None Include="ANGEL_TO_001_Driver_list_type.xsc">
+      <DependentUpon>ANGEL_TO_001_Driver_list_type.xsd</DependentUpon>
+    </None>
+    <None Include="ANGEL_TO_001_Driver_list_type.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ANGEL_TO_001_Driver_list_type.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ANGEL_TO_001_Driver_list_type.xss">
+      <DependentUpon>ANGEL_TO_001_Driver_list_type.xsd</DependentUpon>
+    </None>
+    <None Include="ANGEL_TO_001_Driver_trailer.xsc">
+      <DependentUpon>ANGEL_TO_001_Driver_trailer.xsd</DependentUpon>
+    </None>
+    <None Include="ANGEL_TO_001_Driver_trailer.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ANGEL_TO_001_Driver_trailer.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ANGEL_TO_001_Driver_trailer.xss">
+      <DependentUpon>ANGEL_TO_001_Driver_trailer.xsd</DependentUpon>
+    </None>
+    <None Include="ANGEL_TO_001_Employee.xsc">
+      <DependentUpon>ANGEL_TO_001_Employee.xsd</DependentUpon>
+    </None>
+    <None Include="ANGEL_TO_001_Employee.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ANGEL_TO_001_Employee.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ANGEL_TO_001_Employee.xss">
+      <DependentUpon>ANGEL_TO_001_Employee.xsd</DependentUpon>
+    </None>
+    <None Include="ANGEL_TO_001_Employee_type.xsc">
+      <DependentUpon>ANGEL_TO_001_Employee_type.xsd</DependentUpon>
+    </None>
+    <None Include="ANGEL_TO_001_Employee_type.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ANGEL_TO_001_Employee_type.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ANGEL_TO_001_Employee_type.xss">
+      <DependentUpon>ANGEL_TO_001_Employee_type.xsd</DependentUpon>
+    </None>
+    <None Include="ANGEL_TO_001_Fuel_type.xsc">
+      <DependentUpon>ANGEL_TO_001_Fuel_type.xsd</DependentUpon>
+    </None>
+    <None Include="ANGEL_TO_001_Fuel_type.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ANGEL_TO_001_Fuel_type.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ANGEL_TO_001_Fuel_type.xss">
+      <DependentUpon>ANGEL_TO_001_Fuel_type.xsd</DependentUpon>
+    </None>
+    <None Include="ANGEL_TO_001_Last_ts_type.xsc">
+      <DependentUpon>ANGEL_TO_001_Last_ts_type.xsd</DependentUpon>
+    </None>
+    <None Include="ANGEL_TO_001_Last_ts_type.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ANGEL_TO_001_Last_ts_type.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ANGEL_TO_001_Last_ts_type.xss">
+      <DependentUpon>ANGEL_TO_001_Last_ts_type.xsd</DependentUpon>
+    </None>
+    <None Include="ANGEL_TO_001_Organization.xsc">
+      <DependentUpon>ANGEL_TO_001_Organization.xsd</DependentUpon>
+    </None>
+    <None Include="ANGEL_TO_001_Organization.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ANGEL_TO_001_Organization.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ANGEL_TO_001_Organization.xss">
+      <DependentUpon>ANGEL_TO_001_Organization.xsd</DependentUpon>
+    </None>
+    <None Include="ANGEL_TO_001_Person.xsc">
+      <DependentUpon>ANGEL_TO_001_Person.xsd</DependentUpon>
+    </None>
+    <None Include="ANGEL_TO_001_Person.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ANGEL_TO_001_Person.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ANGEL_TO_001_Person.xss">
+      <DependentUpon>ANGEL_TO_001_Person.xsd</DependentUpon>
+    </None>
+    <None Include="Angel_to_001_TemporaryKey.pfx" />
+    <None Include="ANGEL_TO_001_Ts_type_detail.xsc">
+      <DependentUpon>ANGEL_TO_001_Ts_type_detail.xsd</DependentUpon>
+    </None>
+    <None Include="ANGEL_TO_001_Ts_type_detail.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ANGEL_TO_001_Ts_type_detail.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ANGEL_TO_001_Ts_type_detail.xss">
+      <DependentUpon>ANGEL_TO_001_Ts_type_detail.xsd</DependentUpon>
+    </None>
+    <None Include="ANGEL_TO_001_Ts_type_detail_master.xsc">
+      <DependentUpon>ANGEL_TO_001_Ts_type_detail_master.xsd</DependentUpon>
+    </None>
+    <None Include="ANGEL_TO_001_Ts_type_detail_master.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ANGEL_TO_001_Ts_type_detail_master.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ANGEL_TO_001_Ts_type_detail_master.xss">
+      <DependentUpon>ANGEL_TO_001_Ts_type_detail_master.xsd</DependentUpon>
+    </None>
+    <None Include="ANGEL_TO_001_Ts_type_master.xsc">
+      <DependentUpon>ANGEL_TO_001_Ts_type_master.xsd</DependentUpon>
+    </None>
+    <None Include="ANGEL_TO_001_Ts_type_master.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ANGEL_TO_001_Ts_type_master.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ANGEL_TO_001_Ts_type_master.xss">
+      <DependentUpon>ANGEL_TO_001_Ts_type_master.xsd</DependentUpon>
+    </None>
+    <None Include="app.config" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ico\angel_to_001.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="angel_to.build" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.2.0">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 2.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Установщик Windows 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="itextsharp.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="PdfSharp.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="sounds\sndIncMsg.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="load\" />
+  </ItemGroup>
+</Project>

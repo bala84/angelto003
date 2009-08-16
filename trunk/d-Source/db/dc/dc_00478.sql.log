@@ -1,0 +1,40 @@
+'instance_name' scripting variable not defined.
+'dba_user_pwd' scripting variable not defined.
+Changed database context to 'ANGEL_TO_001_TEST4'.
+ 
+===============================================================================
+=          Starting script _drop_chis_all_objects.sql                         =
+===============================================================================
+ 
+ 
+===============================================================================
+=          Starting script dc_00478.sql                                =
+===============================================================================
+ 
+Msg 2714, Level 16, State 3, Server SRV-TS, Procedure usfConstDecimal, Line 29
+There is already an object named 'usfConstDecimal' in the database.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 3
+Violation of PRIMARY KEY constraint 'csys_const_pk'. Cannot insert duplicate key in object 'dbo.csys_const'.
+The statement has been terminated.
+Msg 2714, Level 16, State 3, Server SRV-TS, Procedure uspVREP_WRH_ORDER_REPAIR_TYPE_COUNT_SUM_SelectAll, Line 163
+There is already an object named 'uspVREP_WRH_ORDER_REPAIR_TYPE_COUNT_SUM_SelectAll' in the database.
+ 
+===============================================================================
+=          Registering devchange                                              =
+===============================================================================
+ 
+Registering devchange.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 2
+Violation of PRIMARY KEY constraint 'SYS_DC_PK'. Cannot insert duplicate key in object 'dbo.sys_dc'.
+The statement has been terminated.
+ 
+finish_time            
+-----------------------
+2009-07-13 15:23:32.233
+
+(1 rows affected)
+ 
+===============================================================================
+=          Script dc_00478.sql finished                                =
+===============================================================================
+ 

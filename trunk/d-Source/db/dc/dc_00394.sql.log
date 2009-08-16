@@ -1,0 +1,48 @@
+'instance_name' scripting variable not defined.
+'dba_user_pwd' scripting variable not defined.
+Changed database context to 'ANGEL_TO_001_TEST4'.
+ 
+===============================================================================
+=          Starting script _drop_chis_all_objects.sql                         =
+===============================================================================
+ 
+ 
+===============================================================================
+=          Starting script dc_00394.sql                                =
+===============================================================================
+ 
+Msg 2705, Level 16, State 4, Server SRV-TS, Line 3
+Column names in each table must be unique. Column name 'mech_employee_id' in table 'dbo.CDRV_DRIVER_PLAN_DETAIL' is specified more than once.
+Msg 1913, Level 16, State 1, Server SRV-TS, Line 2
+The operation failed because an index or statistics with name 'ifk_cdrv_driver_plan_detail_mech_employee_id' already exists on table 'dbo.CDRV_DRIVER_PLAN_DETAIL'.
+Msg 15233, Level 16, State 1, Server SRV-TS, Procedure sp_addextendedproperty, Line 38
+Property cannot be added. Property 'MS_Description' already exists for 'dbo.CDRV_DRIVER_PLAN_DETAIL.mech_employee_id'.
+Msg 2714, Level 16, State 4, Server SRV-TS, Line 2
+There is already an object named 'CDRV_DRIVER_PLAN_DETAIL_MECH_EMP_ID_FK' in the database.
+Msg 1750, Level 16, State 1, Server SRV-TS, Line 2
+Could not create constraint. See previous errors.
+ 
+===============================================================================
+=          Registering devchange                                              =
+===============================================================================
+ 
+Registering devchange.
+Msg 2627, Level 14, State 1, Server SRV-TS, Line 2
+Violation of PRIMARY KEY constraint 'SYS_DC_PK'. Cannot insert duplicate key in object 'dbo.sys_dc'.
+The statement has been terminated.
+ 
+finish_time            
+-----------------------
+2009-04-02 12:56:33.340
+
+(1 rows affected)
+ 
+===============================================================================
+=          Script dc_00394.sql finished                                =
+===============================================================================
+ 
+ 
+===============================================================================
+=          Starting script _add_chis_all_objects.sql                          =
+===============================================================================
+ 

@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Thu Apr 17 09:08:14 MSD 2008
+onejar.license.required=false
+manifest.classpath=
+manifest.removesigners=true
+onejar.checkbox=true
+jarname=Angel_to_001_reports_fat.jar
+manifest.mergeall=true
+manifest.mainclass=Report_setup
+manifest.file=<createnew>
+jarname.isextern=false
+onejar.expand=
+excludes=
+includes=
